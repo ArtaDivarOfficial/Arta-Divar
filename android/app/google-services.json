@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "74992322760",
+    "project_id": "arta-divar-4bd17",
+    "storage_bucket": "arta-divar-4bd17.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:74992322760:android:675eb8dbef9522fdcabdfd",
+        "android_client_info": {
+          "package_name": "com.arta.afghan.its.divar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "74992322760-7ep9micip4l0aabojgjkiid74q88002e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5TO2dLaUPfo9pLWBx38hExJPsQmVPHAo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "74992322760-7ep9micip4l0aabojgjkiid74q88002e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
