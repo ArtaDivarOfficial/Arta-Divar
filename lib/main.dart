@@ -13,8 +13,10 @@ import 'package:divar/translations/locale_keys.g.dart';
 import 'package:divar/utilities/app_router.dart';
 import 'package:divar/constants/colors.dart';
 
-Future<void> main() async {
+import 'screens/initial_screens/splash_screen/splash_screen.dart';
+import 'screens/main_screens/home_screen/home_screen.dart';
 
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
   await Firebase.initializeApp();
@@ -79,6 +81,18 @@ class MyApp extends StatelessWidget {
         supportedLocales: context.supportedLocales,
         locale: context.locale,
         onGenerateRoute: appRouter.onGenerateRoute,
+        theme: ThemeData(
+          scaffoldBackgroundColor: kWhiteColor,
+          appBarTheme: const AppBarTheme(
+            backgroundColor: kTransparentColor,
+            elevation: 0,
+          ),
+        ),
+        routes: {
+          SplashScreen.id: (context) => const SplashScreen(),
+          HomeScreen.id: (context) => const HomeScreen(),
+        },
+        initialRoute: HomeScreen.id,
       ),
     );
   }
