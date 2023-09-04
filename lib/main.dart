@@ -5,15 +5,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:divar/constants/colors.dart';
 import 'package:divar/packages/connectivity_plus/cubit/connectivity_plus_cubit.dart';
 import 'package:divar/repositories/customers_repository/cubit/customer_cubit.dart';
 import 'package:divar/repositories/items_respositories/bags_respository/backpack_repository/cubit/backpack_cubit.dart';
 import 'package:divar/repositories/otp_code_repository/cubit/otp_code_cubit.dart';
 import 'package:divar/translations/locale_keys.g.dart';
 import 'package:divar/utilities/app_router.dart';
+import 'package:divar/constants/colors.dart';
 
 Future<void> main() async {
+
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
   await Firebase.initializeApp();

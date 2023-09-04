@@ -3,6 +3,11 @@ import 'package:flutter/material.dart';
 // Constant Colors
 const kTransparentColor = Colors.transparent;
 
+// Colors
+const kWhiteColor = Colors.white;
+const kGreyColor = Colors.grey;
+const kBlackColor = Colors.black;
+
 // App Colors light
 final kLightBackgroundColor = Colors.grey.shade100;
 const kLightPrimaryColor = Color(0xFF0D5C75);
