@@ -1,13 +1,13 @@
-class BusinessConstants {
+class ClothingConstants {
   // API Constants
-  static const String apiAddBusiness = '/add_business';
-  static const String apiShowBusinessDetails = '/show_business_details';
-  static const String apiEditBusiness = '/edit_business';
-  static const String apiDeleteBusiness = '/delete_business';
-  static const String apiShowAllBusinesses = '/show_all_businesses';
-  static const String apiSearchBusiness = '/search_business';
-  static const String apiBusinessesImages = '/businesses_images';
-  static const String apiSoldBusiness = '/sold_business';
+  static const String apiAddClothing = '/add_clothing';
+  static const String apiShowClothingDetails = '/show_clothing_details';
+  static const String apiEditClothing = '/edit_clothing';
+  static const String apiDeleteClothing = '/delete_clothing';
+  static const String apiShowAllClothings = '/show_all_clothings';
+  static const String apiSearchClothing = '/search_clothing';
+  static const String apiClothingsImages = '/clothings_images';
+  static const String apiSoldClothing = '/sold_clothing';
   // Model Constants
   static const String itemId = 'item_id';
   static const String itemCustomerId = 'item_customer_id';
@@ -18,6 +18,9 @@ class BusinessConstants {
   static const String itemAddress = 'item_address';
   static const String itemTotalPrice = 'item_total_price';
   static const String itemPriceType = 'item_price_type';
+  static const String itemType = 'item_type';
+  static const String itemMaterial = 'item_material';
+  static const String itemColor = 'item_color';
   static const String itemDescription = 'item_description';
   static const String itemStatus = 'item_status';
   static const String itemPublishStatus = 'item_publish_status';
