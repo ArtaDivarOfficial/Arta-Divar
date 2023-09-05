@@ -1,4 +1,4 @@
-class ClothingModel {
+class JewelleryModel {
   // final int? itemId;
   // final String? itemCustomerId;
   // final int? itemCategoryId;
@@ -9,11 +9,11 @@ class ClothingModel {
   // final String? itemTotalPrice;
   // final int? itemPriceType;
   // final int? itemType;
-  // final String? itemMaterial;
-  // final String? itemColor;
-  // final String? itemSize;
-  // final String? itemBrand;
+  // final int? itemKarat;
+  // final int? itemKartyType;
+  // final double? itemWeight;
   // final String? itemMadeOf;
+  // final String? itemConstructionWages;
   // final String? itemDescription;
   // final String? itemStatus;
   // final String? itemPublishStatus;

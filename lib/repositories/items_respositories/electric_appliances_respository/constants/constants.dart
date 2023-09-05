@@ -1,13 +1,18 @@
-class ClothingConstants {
+class ElectricAppliancesConstants {
   // API Constants
-  static const String apiAddClothing = '/add_clothing';
-  static const String apiShowClothingDetails = '/show_clothing_details';
-  static const String apiEditClothing = '/edit_clothing';
-  static const String apiDeleteClothing = '/delete_clothing';
-  static const String apiShowAllClothings = '/show_all_clothings';
-  static const String apiSearchClothing = '/search_clothing';
-  static const String apiClothingsImages = '/clothings_images';
-  static const String apiSoldClothing = '/sold_clothing';
+  static const String apiAddElectricAppliances = '/add_electric_appliances';
+  static const String apiShowElectricAppliancesDetails =
+      '/show_electric_appliances_details';
+  static const String apiEditElectricAppliances = '/edit_electric_appliances';
+  static const String apiDeleteElectricAppliances =
+      '/delete_electric_appliances';
+  static const String apiShowAllElectricApplianceses =
+      '/show_all_electric_applianceses';
+  static const String apiSearchElectricAppliances =
+      '/search_electric_appliances';
+  static const String apiElectricAppliancesesImages =
+      '/electric_applianceses_images';
+  static const String apiSoldElectricAppliances = '/sold_electric_appliances';
   // Model Constants
   static const String itemId = 'item_id';
   static const String itemCustomerId = 'item_customer_id';
@@ -18,12 +23,9 @@ class ClothingConstants {
   static const String itemAddress = 'item_address';
   static const String itemTotalPrice = 'item_total_price';
   static const String itemPriceType = 'item_price_type';
-  static const String itemType = 'item_type';
-  static const String itemMaterial = 'item_material';
-  static const String itemColor = 'item_color';
-  static const String itemSize = 'item_size';
   static const String itemBrand = 'item_brand';
   static const String itemMadeOf = 'item_made_of';
+  static const String itemWattOrWolt = 'item_watt_or_wolt';
   static const String itemDescription = 'item_description';
   static const String itemStatus = 'item_status';
   static const String itemPublishStatus = 'item_publish_status';

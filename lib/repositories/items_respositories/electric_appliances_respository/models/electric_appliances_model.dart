@@ -1,4 +1,4 @@
-class ClothingModel {
+class ElectricAppliancesModel {
   // final int? itemId;
   // final String? itemCustomerId;
   // final int? itemCategoryId;
@@ -8,12 +8,9 @@ class ClothingModel {
   // final String? itemAddress;
   // final String? itemTotalPrice;
   // final int? itemPriceType;
-  // final int? itemType;
-  // final String? itemMaterial;
-  // final String? itemColor;
-  // final String? itemSize;
   // final String? itemBrand;
   // final String? itemMadeOf;
+  // final String? itemWattOrWolt;
   // final String? itemDescription;
   // final String? itemStatus;
   // final String? itemPublishStatus;

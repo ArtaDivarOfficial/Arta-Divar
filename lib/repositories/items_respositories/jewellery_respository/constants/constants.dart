@@ -1,13 +1,13 @@
-class ClothingConstants {
+class JewelleryConstants {
   // API Constants
-  static const String apiAddClothing = '/add_clothing';
-  static const String apiShowClothingDetails = '/show_clothing_details';
-  static const String apiEditClothing = '/edit_clothing';
-  static const String apiDeleteClothing = '/delete_clothing';
-  static const String apiShowAllClothings = '/show_all_clothings';
-  static const String apiSearchClothing = '/search_clothing';
-  static const String apiClothingsImages = '/clothings_images';
-  static const String apiSoldClothing = '/sold_clothing';
+  static const String apiAddJewellery = '/add_jewellery';
+  static const String apiShowJewelleryDetails = '/show_jewellery_details';
+  static const String apiEditJewellery = '/edit_jewellery';
+  static const String apiDeleteJewellery = '/delete_jewellery';
+  static const String apiShowAllJewellery = '/show_all_jewellery';
+  static const String apiSearchJewellery = '/search_jewellery';
+  static const String apiJewelleryImages = '/jewellery_images';
+  static const String apiSoldJewellery = '/sold_jewellery';
   // Model Constants
   static const String itemId = 'item_id';
   static const String itemCustomerId = 'item_customer_id';
@@ -19,11 +19,11 @@ class ClothingConstants {
   static const String itemTotalPrice = 'item_total_price';
   static const String itemPriceType = 'item_price_type';
   static const String itemType = 'item_type';
-  static const String itemMaterial = 'item_material';
-  static const String itemColor = 'item_color';
-  static const String itemSize = 'item_size';
-  static const String itemBrand = 'item_brand';
+  static const String itemKarat = 'item_karat';
+  static const String itemKartyType = 'item_karty_type';
+  static const String itemWeight = 'item_weight';
   static const String itemMadeOf = 'item_made_of';
+  static const String itemConstructionWages = 'item_construction_wages';
   static const String itemDescription = 'item_description';
   static const String itemStatus = 'item_status';
   static const String itemPublishStatus = 'item_publish_status';
