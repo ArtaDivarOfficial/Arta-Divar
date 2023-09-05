@@ -14,17 +14,17 @@ class JewelleryCubit extends Cubit<JewelleryState> {
   late PaginationModel? _paginationModel;
   late CancelToken _cancelToken;
   late Response? _response;
-  late List<JewelleryModel>? _cosmeticsModelsList;
+  late List<JewelleryModel>? _jewelleryModelsList;
 
   JewelleryCubit() : super(JewelleryLoading()) {
     _dio = MyDio.getInstance();
     _cancelToken = MyDio.cancelToken;
-    _cosmeticsModelsList = [];
+    _jewelleryModelsList = [];
   }
 
   void emitGetJewellerys() async {
     try {
-      _cosmeticsModelsList = [];
+      _jewelleryModelsList = [];
       emit(JewelleryLoading());
       emit(JewelleryFetchingData());
       _cancelToken = CancelToken();
@@ -33,11 +33,11 @@ class JewelleryCubit extends Cubit<JewelleryState> {
           cancelToken: _cancelToken);
       if (_response!.statusCode == 200) {
         _paginationModel = PaginationModel.fromMap(_response!.data);
-        List? cosmeticsItemsList = _paginationModel!.paginationData;
-        cosmeticsItemsList?.forEach((cosmeticsMapModel) {
-          // _cosmeticsModelsList!.add(JewelleryModel.fromMapItemModel(cosmeticsMapModel));
+        List? jewelleryItemsList = _paginationModel!.paginationData;
+        jewelleryItemsList?.forEach((jewelleryMapModel) {
+          // _jewelleryModelsList!.add(JewelleryModel.fromMapItemModel(jewelleryMapModel));
         });
-        emit(JewellerysListLoaded(_cosmeticsModelsList!));
+        emit(JewellerysListLoaded(_jewelleryModelsList!));
       } else {
         emit(JewelleryError('error'));
       }

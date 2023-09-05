@@ -14,17 +14,17 @@ class EstateCubit extends Cubit<EstateState> {
   late PaginationModel? _paginationModel;
   late CancelToken _cancelToken;
   late Response? _response;
-  late List<EstateModel>? _cosmeticsModelsList;
+  late List<EstateModel>? _estateModelsList;
 
   EstateCubit() : super(EstateLoading()) {
     _dio = MyDio.getInstance();
     _cancelToken = MyDio.cancelToken;
-    _cosmeticsModelsList = [];
+    _estateModelsList = [];
   }
 
   void emitGetEstates() async {
     try {
-      _cosmeticsModelsList = [];
+      _estateModelsList = [];
       emit(EstateLoading());
       emit(EstateFetchingData());
       _cancelToken = CancelToken();
@@ -33,11 +33,11 @@ class EstateCubit extends Cubit<EstateState> {
           cancelToken: _cancelToken);
       if (_response!.statusCode == 200) {
         _paginationModel = PaginationModel.fromMap(_response!.data);
-        List? cosmeticsItemsList = _paginationModel!.paginationData;
-        cosmeticsItemsList?.forEach((cosmeticsMapModel) {
-          // _cosmeticsModelsList!.add(EstateModel.fromMapItemModel(cosmeticsMapModel));
+        List? estateItemsList = _paginationModel!.paginationData;
+        estateItemsList?.forEach((estateMapModel) {
+          // _estateModelsList!.add(EstateModel.fromMapItemModel(estateMapModel));
         });
-        emit(EstatesListLoaded(_cosmeticsModelsList!));
+        emit(EstatesListLoaded(_estateModelsList!));
       } else {
         emit(EstateError('error'));
       }

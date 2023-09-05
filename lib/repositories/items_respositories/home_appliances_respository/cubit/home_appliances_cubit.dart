@@ -14,17 +14,17 @@ class HomeAppliancesCubit extends Cubit<HomeAppliancesState> {
   late PaginationModel? _paginationModel;
   late CancelToken _cancelToken;
   late Response? _response;
-  late List<HomeAppliancesModel>? _cosmeticsModelsList;
+  late List<HomeAppliancesModel>? _homeAppliancesModelsList;
 
   HomeAppliancesCubit() : super(HomeAppliancesLoading()) {
     _dio = MyDio.getInstance();
     _cancelToken = MyDio.cancelToken;
-    _cosmeticsModelsList = [];
+    _homeAppliancesModelsList = [];
   }
 
   void emitGetHomeAppliancess() async {
     try {
-      _cosmeticsModelsList = [];
+      _homeAppliancesModelsList = [];
       emit(HomeAppliancesLoading());
       emit(HomeAppliancesFetchingData());
       _cancelToken = CancelToken();
@@ -33,11 +33,11 @@ class HomeAppliancesCubit extends Cubit<HomeAppliancesState> {
           cancelToken: _cancelToken);
       if (_response!.statusCode == 200) {
         _paginationModel = PaginationModel.fromMap(_response!.data);
-        List? cosmeticsItemsList = _paginationModel!.paginationData;
-        cosmeticsItemsList?.forEach((cosmeticsMapModel) {
-          // _cosmeticsModelsList!.add(HomeAppliancesModel.fromMapItemModel(cosmeticsMapModel));
+        List? homeAppliancesItemsList = _paginationModel!.paginationData;
+        homeAppliancesItemsList?.forEach((homeAppliancesMapModel) {
+          // _homeAppliancesModelsList!.add(HomeAppliancesModel.fromMapItemModel(homeAppliancesMapModel));
         });
-        emit(HomeAppliancessListLoaded(_cosmeticsModelsList!));
+        emit(HomeAppliancessListLoaded(_homeAppliancesModelsList!));
       } else {
         emit(HomeAppliancesError('error'));
       }

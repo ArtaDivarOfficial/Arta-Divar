@@ -14,17 +14,17 @@ class ElectricAppliancesCubit extends Cubit<ElectricAppliancesState> {
   late PaginationModel? _paginationModel;
   late CancelToken _cancelToken;
   late Response? _response;
-  late List<ElectricAppliancesModel>? _cosmeticsModelsList;
+  late List<ElectricAppliancesModel>? _electricAppliancesModelsList;
 
   ElectricAppliancesCubit() : super(ElectricAppliancesLoading()) {
     _dio = MyDio.getInstance();
     _cancelToken = MyDio.cancelToken;
-    _cosmeticsModelsList = [];
+    _electricAppliancesModelsList = [];
   }
 
   void emitGetElectricAppliancess() async {
     try {
-      _cosmeticsModelsList = [];
+      _electricAppliancesModelsList = [];
       emit(ElectricAppliancesLoading());
       emit(ElectricAppliancesFetchingData());
       _cancelToken = CancelToken();
@@ -33,11 +33,11 @@ class ElectricAppliancesCubit extends Cubit<ElectricAppliancesState> {
           cancelToken: _cancelToken);
       if (_response!.statusCode == 200) {
         _paginationModel = PaginationModel.fromMap(_response!.data);
-        List? cosmeticsItemsList = _paginationModel!.paginationData;
-        cosmeticsItemsList?.forEach((cosmeticsMapModel) {
-          // _cosmeticsModelsList!.add(ElectricAppliancesModel.fromMapItemModel(cosmeticsMapModel));
+        List? electricAppliancesItemsList = _paginationModel!.paginationData;
+        electricAppliancesItemsList?.forEach((electricAppliancesMapModel) {
+          // _electricAppliancesModelsList!.add(ElectricAppliancesModel.fromMapItemModel(electricAppliancesMapModel));
         });
-        emit(ElectricAppliancessListLoaded(_cosmeticsModelsList!));
+        emit(ElectricAppliancessListLoaded(_electricAppliancesModelsList!));
       } else {
         emit(ElectricAppliancesError('error'));
       }

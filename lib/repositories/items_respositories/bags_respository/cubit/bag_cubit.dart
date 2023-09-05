@@ -3,7 +3,6 @@ import 'package:dio/dio.dart';
 import 'package:divar/packages/dio/dio.dart';
 import 'package:divar/repositories/items_respositories/bags_respository/constants/constants.dart';
 import 'package:divar/repositories/items_respositories/bags_respository/models/bag_model.dart';
-import 'package:divar/repositories/items_respositories/item_repository/models/item_model.dart';
 import 'package:divar/repositories/pagination_repository/models/pagination_model.dart';
 import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';

@@ -14,17 +14,17 @@ class OnlineGamesCubit extends Cubit<OnlineGamesState> {
   late PaginationModel? _paginationModel;
   late CancelToken _cancelToken;
   late Response? _response;
-  late List<OnlineGamesModel>? _cosmeticsModelsList;
+  late List<OnlineGamesModel>? _onlineGamesModelsList;
 
   OnlineGamesCubit() : super(OnlineGamesLoading()) {
     _dio = MyDio.getInstance();
     _cancelToken = MyDio.cancelToken;
-    _cosmeticsModelsList = [];
+    _onlineGamesModelsList = [];
   }
 
   void emitGetOnlineGamess() async {
     try {
-      _cosmeticsModelsList = [];
+      _onlineGamesModelsList = [];
       emit(OnlineGamesLoading());
       emit(OnlineGamesFetchingData());
       _cancelToken = CancelToken();
@@ -33,11 +33,11 @@ class OnlineGamesCubit extends Cubit<OnlineGamesState> {
           cancelToken: _cancelToken);
       if (_response!.statusCode == 200) {
         _paginationModel = PaginationModel.fromMap(_response!.data);
-        List? cosmeticsItemsList = _paginationModel!.paginationData;
-        cosmeticsItemsList?.forEach((cosmeticsMapModel) {
-          // _cosmeticsModelsList!.add(OnlineGamesModel.fromMapItemModel(cosmeticsMapModel));
+        List? onlineGamesItemsList = _paginationModel!.paginationData;
+        onlineGamesItemsList?.forEach((onlineGamesMapModel) {
+          // _onlineGamesModelsList!.add(OnlineGamesModel.fromMapItemModel(onlineGamesMapModel));
         });
-        emit(OnlineGamessListLoaded(_cosmeticsModelsList!));
+        emit(OnlineGamessListLoaded(_onlineGamesModelsList!));
       } else {
         emit(OnlineGamesError('error'));
       }
