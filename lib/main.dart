@@ -1,14 +1,12 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:divar/repositories/items_respositories/bags_respository/cubit/bag_cubit.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import 'package:divar/constants/colors.dart';
 import 'package:divar/packages/connectivity_plus/cubit/connectivity_plus_cubit.dart';
 import 'package:divar/repositories/customers_repository/cubit/customer_cubit.dart';
-import 'package:divar/repositories/items_respositories/bags_respository/backpack_repository/cubit/backpack_cubit.dart';
 import 'package:divar/repositories/otp_code_repository/cubit/otp_code_cubit.dart';
 import 'package:divar/translations/locale_keys.g.dart';
 import 'package:divar/utilities/app_router.dart';
@@ -62,13 +60,13 @@ class MyApp extends StatelessWidget {
           create: (context) => ConnectivityPlusCubit(),
         ),
         BlocProvider(
-          create: (context) => BackpackCubit(),
-        ),
-        BlocProvider(
           create: (context) => CustomerCubit(),
         ),
         BlocProvider(
           create: (context) => OtpCodeCubit(),
+        ),
+        BlocProvider(
+          create: (context) => BagCubit(),
         ),
       ],
       child: MaterialApp(
