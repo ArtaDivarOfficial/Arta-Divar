@@ -1,13 +1,12 @@
-class BagConstants {
-  // API Constants
-  static const String apiAddBag = '/add_bag';
-  static const String apiShowBagDetails = '/show_bag_details';
-  static const String apiEditBag = '/edit_bag';
-  static const String apiDeleteBag = '/delete_bag';
-  static const String apiShowAllBags = '/show_all_bags';
-  static const String apiSearchBag = '/search_bag';
-  static const String apiBagsImages = '/bags_images';
-  static const String apiSoldBag = '/sold_bag';
+class BusinessConstants {
+  static const String apiAddBusiness = '/add_business';
+  static const String apiShowBusinessDetails = '/show_business_details';
+  static const String apiEditBusiness = '/edit_business';
+  static const String apiDeleteBusiness = '/delete_business';
+  static const String apiShowAllBusinesses = '/show_all_businesses';
+  static const String apiSearchBusiness = '/search_business';
+  static const String apiBusinessesImages = '/businesses_images';
+  static const String apiSoldBusiness = '/sold_business';
   // Model Constants
   static const String itemId = 'item_id';
   static const String itemCustomerId = 'item_customer_id';
@@ -18,9 +17,6 @@ class BagConstants {
   static const String itemAddress = 'item_address';
   static const String itemTotalPrice = 'item_total_price';
   static const String itemPriceType = 'item_price_type';
-  static const String itemType = 'item_type';
-  static const String itemMaterial = 'item_material';
-  static const String itemColor = 'item_color';
   static const String itemDescription = 'item_description';
   static const String itemStatus = 'item_status';
   static const String itemPublishStatus = 'item_publish_status';

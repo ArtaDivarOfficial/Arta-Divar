@@ -8,21 +8,15 @@ class BagLoading extends BagState {}
 class BagFetchingData extends BagState {}
 
 class BagsListLoaded extends BagState {
-  final List<ItemModel> bagModelsList;
+  final List<BagModel> bagModelsList;
 
   BagsListLoaded(this.bagModelsList);
 }
 
 class BagItemLoaded extends BagState {
-  final ItemModel bagModel;
-
-  BagItemLoaded(this.bagModel);
-}
-
-class BagLoadedById extends BagState {
   final BagModel bagModel;
 
-  BagLoadedById(this.bagModel);
+  BagItemLoaded(this.bagModel);
 }
 
 class BagEmpty extends BagState {}

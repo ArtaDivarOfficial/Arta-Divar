@@ -15,7 +15,7 @@ class BagCubit extends Cubit<BagState> {
   late PaginationModel? _paginationModel;
   late CancelToken _cancelToken;
   late Response? _response;
-  late List<ItemModel>? _bagModelsList;
+  late List<BagModel>? _bagModelsList;
 
   BagCubit() : super(BagLoading()) {
     _dio = MyDio.getInstance();
@@ -36,7 +36,7 @@ class BagCubit extends Cubit<BagState> {
         _paginationModel = PaginationModel.fromMap(_response!.data);
         List? bagItemsList = _paginationModel!.paginationData;
         bagItemsList?.forEach((bagMapModel) {
-          _bagModelsList!.add(ItemModel.fromMap(bagMapModel));
+          _bagModelsList!.add(BagModel.fromMapItemModel(bagMapModel));
         });
         emit(BagsListLoaded(_bagModelsList!));
       } else {
