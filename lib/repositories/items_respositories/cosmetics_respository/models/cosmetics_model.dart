@@ -9,7 +9,7 @@ class CosmeticsModel {
   // final String? itemTotalPrice;
   // final int? itemPriceType;
   // final String? itemBrand;
-  // final String? itemMadeOf;
+  // final String? itemMadeOf; &
   // final String? itemDescription;
   // final String? itemStatus;
   // final String? itemPublishStatus;

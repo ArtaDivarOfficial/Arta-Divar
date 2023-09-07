@@ -14,16 +14,16 @@ class EstateModel {
   // final int? itemRoomCount;
   // final double? itemFloor;
   // final int? itemSaleType;
-  // final int? itemDocumentType;
+  // final int? itemDocumentType; &
   // final int? itemElectricityMeterType;
   // final int? itemWaterMeterType;
-  // final bool? itemParking;
-  // final bool? itemLift;
-  // final bool? itemWarehouse;
-  // final bool? itemBalcony;
-  // final bool? itemHeatingAndCoolingSystem;
+  // final bool? itemParking; &
+  // final bool? itemLift; &
+  // final bool? itemWarehouse; &
+  // final bool? itemBalcony; &
+  // final bool? itemHeatingAndCoolingSystem; &
   // final String? itemDescription;
-  // final String? itemStatus;
+  // final String? itemStatus; &
   // final String? itemPublishStatus;
   // final String? itemSoldStatus;
   // final String? itemCreatedAt;

@@ -8,7 +8,7 @@ class ElectricAppliancesModel {
   // final String? itemAddress;
   // final String? itemTotalPrice;
   // final int? itemPriceType;
-  // final String? itemBrand;
+  // final String? itemBrand; &
   // final String? itemMadeOf;
   // final String? itemWattOrWolt;
   // final String? itemDescription;

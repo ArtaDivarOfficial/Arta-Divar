@@ -1,4 +1,4 @@
-class HomeAppliancesModel {
+class ScrapModel {
   // final int? itemId;
   // final String? itemCustomerId;
   // final int? itemCategoryId;
@@ -6,9 +6,12 @@ class HomeAppliancesModel {
   // final List<String>? itemImages;
   // final String? itemTitle;
   // final String? itemAddress;
-  // final String? itemTotalPrice;
+  // final String? itemPerMeterPrice;
   // final int? itemPriceType;
-  // final String? itemBrand; %
+  // final int? itemType;
+  // final String? itemMadeOf; &
+  // final String? itemBrand;
+  // final String? itemColor;
   // final String? itemDescription;
   // final String? itemStatus;
   // final String? itemPublishStatus;

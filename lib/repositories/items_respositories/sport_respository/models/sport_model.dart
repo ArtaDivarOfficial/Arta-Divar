@@ -1,4 +1,4 @@
-class HomeAppliancesModel {
+class SportModel {
   // final int? itemId;
   // final String? itemCustomerId;
   // final int? itemCategoryId;
@@ -8,7 +8,11 @@ class HomeAppliancesModel {
   // final String? itemAddress;
   // final String? itemTotalPrice;
   // final int? itemPriceType;
-  // final String? itemBrand; %
+  // final String? itemMadeOf; &
+  // final String? itemMaterial; &
+  // final String? itemColor;
+  // final String? itemBrand;
+  // final String? itemSize;
   // final String? itemDescription;
   // final String? itemStatus;
   // final String? itemPublishStatus;

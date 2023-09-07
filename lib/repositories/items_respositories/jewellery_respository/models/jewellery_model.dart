@@ -12,7 +12,7 @@ class JewelleryModel {
   // final int? itemKarat;
   // final int? itemKartyType;
   // final double? itemWeight;
-  // final String? itemMadeOf;
+  // final String? itemMadeOf; &
   // final String? itemConstructionWages;
   // final String? itemDescription;
   // final String? itemStatus;

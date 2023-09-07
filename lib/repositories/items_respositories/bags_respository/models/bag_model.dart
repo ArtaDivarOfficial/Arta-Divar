@@ -17,7 +17,7 @@ class BagModel {
   final String? itemMaterial;
   final String? itemColor;
   final String? itemDescription;
-  final String? itemStatus;
+  final int? itemStatus;
   final String? itemPublishStatus;
   final String? itemSoldStatus;
   final String? itemCreatedAt;
@@ -58,7 +58,7 @@ class BagModel {
     this.itemMaterial = '',
     this.itemColor = '',
     this.itemDescription = '',
-    this.itemStatus = '',
+    this.itemStatus = -1,
     required this.itemPublishStatus,
     required this.itemSoldStatus,
     required this.itemCreatedAt,
@@ -184,7 +184,7 @@ class BagModel {
     String? itemMaterial,
     String? itemColor,
     String? itemDescription,
-    String? itemStatus,
+    int? itemStatus,
     String? itemPublishStatus,
     String? itemSoldStatus,
     String? itemCreatedAt,
@@ -295,7 +295,7 @@ class BagModel {
           ? map[BagConstants.itemDescription] as String
           : null,
       itemStatus: map[BagConstants.itemStatus] != null
-          ? map[BagConstants.itemStatus] as String
+          ? map[BagConstants.itemStatus] as int
           : null,
       itemPublishStatus: map[BagConstants.itemPublishStatus] != null
           ? map[BagConstants.itemPublishStatus] as String

@@ -1,13 +1,21 @@
-class ClothingConstants {
+class SuppliesAndEquipmentsConstants {
   // API Constants
-  static const String apiAddClothing = '/add_clothing';
-  static const String apiShowClothingDetails = '/show_clothing_details';
-  static const String apiEditClothing = '/edit_clothing';
-  static const String apiDeleteClothing = '/delete_clothing';
-  static const String apiShowAllClothings = '/show_all_clothings';
-  static const String apiSearchClothing = '/search_clothing';
-  static const String apiClothingsImages = '/clothings_images';
-  static const String apiSoldClothing = '/sold_clothing';
+  static const String apiAddSuppliesAndEquipments =
+      '/add_supplies_and_equipments';
+  static const String apiShowSuppliesAndEquipmentsDetails =
+      '/show_supplies_and_equipments_details';
+  static const String apiEditSuppliesAndEquipments =
+      '/edit_supplies_and_equipments';
+  static const String apiDeleteSuppliesAndEquipments =
+      '/delete_supplies_and_equipments';
+  static const String apiShowAllSuppliesAndEquipments =
+      '/show_all_supplies_and_equipments';
+  static const String apiSearchSuppliesAndEquipments =
+      '/search_supplies_and_equipments';
+  static const String apiSuppliesAndEquipmentsImages =
+      '/supplies_and_equipments_images';
+  static const String apiSoldSuppliesAndEquipments =
+      '/sold_supplies_and_equipments';
   // Model Constants
   static const String itemId = 'item_id';
   static const String itemCustomerId = 'item_customer_id';
@@ -18,10 +26,7 @@ class ClothingConstants {
   static const String itemAddress = 'item_address';
   static const String itemTotalPrice = 'item_total_price';
   static const String itemPriceType = 'item_price_type';
-  static const String itemType = 'item_type';
-  static const String itemColor = 'item_color';
-  static const String itemSize = 'item_size';
-  static const String itemBrand = 'item_brand';
+  static const String itemMadeOf = 'item_made_of';
   static const String itemDescription = 'item_description';
   static const String itemStatus = 'item_status';
   static const String itemPublishStatus = 'item_publish_status';

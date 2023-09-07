@@ -1,13 +1,13 @@
-class ClothingConstants {
+class ScrapConstants {
   // API Constants
-  static const String apiAddClothing = '/add_clothing';
-  static const String apiShowClothingDetails = '/show_clothing_details';
-  static const String apiEditClothing = '/edit_clothing';
-  static const String apiDeleteClothing = '/delete_clothing';
-  static const String apiShowAllClothings = '/show_all_clothings';
-  static const String apiSearchClothing = '/search_clothing';
-  static const String apiClothingsImages = '/clothings_images';
-  static const String apiSoldClothing = '/sold_clothing';
+  static const String apiAddScrap = '/add_scrap';
+  static const String apiShowScrapDetails = '/show_scrap_details';
+  static const String apiEditScrap = '/edit_scrap';
+  static const String apiDeleteScrap = '/delete_scrap';
+  static const String apiShowAllScraps = '/show_all_scraps';
+  static const String apiSearchScrap = '/search_scrap';
+  static const String apiScrapsImages = '/scraps_images';
+  static const String apiSoldScrap = '/sold_scrap';
   // Model Constants
   static const String itemId = 'item_id';
   static const String itemCustomerId = 'item_customer_id';
@@ -16,12 +16,12 @@ class ClothingConstants {
   static const String itemImages = 'item_images';
   static const String itemTitle = 'item_title';
   static const String itemAddress = 'item_address';
-  static const String itemTotalPrice = 'item_total_price';
+  static const String itemPerMeterPrice = 'item_per_meter_price';
   static const String itemPriceType = 'item_price_type';
   static const String itemType = 'item_type';
-  static const String itemColor = 'item_color';
-  static const String itemSize = 'item_size';
+  static const String itemMadeOf = 'item_made_of';
   static const String itemBrand = 'item_brand';
+  static const String itemColor = 'item_color';
   static const String itemDescription = 'item_description';
   static const String itemStatus = 'item_status';
   static const String itemPublishStatus = 'item_publish_status';

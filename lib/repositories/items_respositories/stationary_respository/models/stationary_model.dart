@@ -1,4 +1,4 @@
-class HomeAppliancesModel {
+class StationaryModel {
   // final int? itemId;
   // final String? itemCustomerId;
   // final int? itemCategoryId;
@@ -8,7 +8,13 @@ class HomeAppliancesModel {
   // final String? itemAddress;
   // final String? itemTotalPrice;
   // final int? itemPriceType;
-  // final String? itemBrand; %
+  // final String? itemType; &
+  // final String? itemWriter;
+  // final String? itemTranslator;
+  // final int? itemPrintYear; &
+  // final int? itemWrapper; &
+  // final int? itemPageCount;
+  // final String? itemColor; &
   // final String? itemDescription;
   // final String? itemStatus;
   // final String? itemPublishStatus;
