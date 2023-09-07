@@ -10,12 +10,11 @@ class BagModel {
   final int? itemSubCategoryId;
   final List<String>? itemImages;
   final String? itemTitle;
-  final String? itemAddress;
+  final int? itemProvince;
+  final String? itemRegion;
   final String? itemTotalPrice;
   final int? itemPriceType;
   final int? itemType;
-  final String? itemMaterial;
-  final String? itemColor;
   final String? itemDescription;
   final int? itemStatus;
   final String? itemPublishStatus;
@@ -24,24 +23,23 @@ class BagModel {
   final String? itemUpdatedAt;
 
   BagModel({
-    this.itemId,
-    this.itemCustomerId,
-    this.itemCategoryId,
-    this.itemSubCategoryId,
-    this.itemImages,
-    this.itemTitle,
-    this.itemAddress,
-    this.itemTotalPrice,
-    this.itemPriceType,
-    this.itemType,
-    this.itemMaterial,
-    this.itemColor,
-    this.itemDescription,
-    this.itemStatus,
-    this.itemPublishStatus,
-    this.itemSoldStatus,
-    this.itemCreatedAt,
-    this.itemUpdatedAt,
+    required this.itemId,
+    required this.itemCustomerId,
+    required this.itemCategoryId,
+    required this.itemSubCategoryId,
+    required this.itemImages,
+    required this.itemTitle,
+    required this.itemProvince,
+    required this.itemRegion,
+    required this.itemTotalPrice,
+    required this.itemPriceType,
+    required this.itemType,
+    required this.itemDescription,
+    required this.itemStatus,
+    required this.itemPublishStatus,
+    required this.itemSoldStatus,
+    required this.itemCreatedAt,
+    required this.itemUpdatedAt,
   });
 
   BagModel.itemModel({
@@ -51,12 +49,11 @@ class BagModel {
     required this.itemSubCategoryId,
     required this.itemImages,
     required this.itemTitle,
-    required this.itemAddress,
+    required this.itemProvince,
+    required this.itemRegion,
     required this.itemTotalPrice,
     required this.itemPriceType,
     this.itemType = -1,
-    this.itemMaterial = '',
-    this.itemColor = '',
     this.itemDescription = '',
     this.itemStatus = -1,
     required this.itemPublishStatus,
@@ -72,12 +69,11 @@ class BagModel {
     required this.itemSubCategoryId,
     required this.itemImages,
     required this.itemTitle,
-    required this.itemAddress,
+    required this.itemProvince,
+    required this.itemRegion,
     required this.itemTotalPrice,
     required this.itemPriceType,
     required this.itemType,
-    required this.itemMaterial,
-    required this.itemColor,
     required this.itemDescription,
     required this.itemStatus,
     required this.itemPublishStatus,
@@ -93,12 +89,11 @@ class BagModel {
     required this.itemSubCategoryId,
     required this.itemImages,
     required this.itemTitle,
-    required this.itemAddress,
+    required this.itemProvince,
+    required this.itemRegion,
     required this.itemTotalPrice,
     required this.itemPriceType,
     this.itemType = -1,
-    required this.itemMaterial,
-    required this.itemColor,
     required this.itemDescription,
     required this.itemStatus,
     required this.itemPublishStatus,
@@ -114,12 +109,11 @@ class BagModel {
     required this.itemSubCategoryId,
     required this.itemImages,
     required this.itemTitle,
-    required this.itemAddress,
+    required this.itemProvince,
+    required this.itemRegion,
     required this.itemTotalPrice,
     required this.itemPriceType,
     this.itemType = -1,
-    required this.itemMaterial,
-    required this.itemColor,
     required this.itemDescription,
     required this.itemStatus,
     required this.itemPublishStatus,
@@ -135,12 +129,11 @@ class BagModel {
     required this.itemSubCategoryId,
     required this.itemImages,
     required this.itemTitle,
-    required this.itemAddress,
+    required this.itemProvince,
+    required this.itemRegion,
     required this.itemTotalPrice,
     required this.itemPriceType,
     this.itemType = -1,
-    required this.itemMaterial,
-    required this.itemColor,
     required this.itemDescription,
     required this.itemStatus,
     required this.itemPublishStatus,
@@ -149,19 +142,18 @@ class BagModel {
     required this.itemUpdatedAt,
   });
 
-  BagModel.otherBagModel({
+  BagModel.otherBagsModel({
     required this.itemId,
     required this.itemCustomerId,
     required this.itemCategoryId,
     required this.itemSubCategoryId,
     required this.itemImages,
     required this.itemTitle,
-    required this.itemAddress,
+    required this.itemProvince,
+    required this.itemRegion,
     required this.itemTotalPrice,
     required this.itemPriceType,
     this.itemType = -1,
-    required this.itemMaterial,
-    required this.itemColor,
     required this.itemDescription,
     required this.itemStatus,
     required this.itemPublishStatus,
@@ -177,7 +169,8 @@ class BagModel {
     int? itemSubCategoryId,
     List<String>? itemImages,
     String? itemTitle,
-    String? itemAddress,
+    int? itemProvince,
+    String? itemRegion,
     String? itemTotalPrice,
     int? itemPriceType,
     int? itemType,
@@ -197,12 +190,11 @@ class BagModel {
       itemSubCategoryId: itemSubCategoryId ?? this.itemSubCategoryId,
       itemImages: itemImages ?? this.itemImages,
       itemTitle: itemTitle ?? this.itemTitle,
-      itemAddress: itemAddress ?? this.itemAddress,
+      itemProvince: itemProvince ?? this.itemProvince,
+      itemRegion: itemRegion ?? this.itemRegion,
       itemTotalPrice: itemTotalPrice ?? this.itemTotalPrice,
       itemPriceType: itemPriceType ?? this.itemPriceType,
       itemType: itemType ?? this.itemType,
-      itemMaterial: itemMaterial ?? this.itemMaterial,
-      itemColor: itemColor ?? this.itemColor,
       itemDescription: itemDescription ?? this.itemDescription,
       itemStatus: itemStatus ?? this.itemStatus,
       itemPublishStatus: itemPublishStatus ?? this.itemPublishStatus,
@@ -220,12 +212,11 @@ class BagModel {
       BagConstants.itemSubCategoryId: itemSubCategoryId,
       BagConstants.itemImages: itemImages,
       BagConstants.itemTitle: itemTitle,
-      BagConstants.itemAddress: itemAddress,
+      BagConstants.itemProvince: itemProvince,
+      BagConstants.itemRegion: itemRegion,
       BagConstants.itemTotalPrice: itemTotalPrice,
       BagConstants.itemPriceType: itemPriceType,
       BagConstants.itemType: itemType,
-      BagConstants.itemMaterial: itemMaterial,
-      BagConstants.itemColor: itemColor,
       BagConstants.itemDescription: itemDescription,
       BagConstants.itemStatus: itemStatus,
       BagConstants.itemPublishStatus: itemPublishStatus,
@@ -243,7 +234,8 @@ class BagModel {
       BagConstants.itemSubCategoryId: itemSubCategoryId,
       BagConstants.itemImages: itemImages,
       BagConstants.itemTitle: itemTitle,
-      BagConstants.itemAddress: itemAddress,
+      BagConstants.itemProvince: itemProvince,
+      BagConstants.itemRegion: itemRegion,
       BagConstants.itemTotalPrice: itemTotalPrice,
       BagConstants.itemPriceType: itemPriceType,
       BagConstants.itemPublishStatus: itemPublishStatus,
@@ -273,8 +265,11 @@ class BagModel {
       itemTitle: map[BagConstants.itemTitle] != null
           ? map[BagConstants.itemTitle] as String
           : null,
-      itemAddress: map[BagConstants.itemAddress] != null
-          ? map[BagConstants.itemAddress] as String
+      itemProvince: map[BagConstants.itemProvince] != null
+          ? map[BagConstants.itemProvince] as int
+          : null,
+      itemRegion: map[BagConstants.itemRegion] != null
+          ? map[BagConstants.itemRegion] as String
           : null,
       itemTotalPrice: map[BagConstants.itemTotalPrice] != null
           ? map[BagConstants.itemTotalPrice] as String
@@ -284,12 +279,6 @@ class BagModel {
           : null,
       itemType: map[BagConstants.itemType] != null
           ? map[BagConstants.itemType] as int
-          : null,
-      itemMaterial: map[BagConstants.itemMaterial] != null
-          ? map[BagConstants.itemMaterial] as String
-          : null,
-      itemColor: map[BagConstants.itemColor] != null
-          ? map[BagConstants.itemColor] as String
           : null,
       itemDescription: map[BagConstants.itemDescription] != null
           ? map[BagConstants.itemDescription] as String
@@ -332,8 +321,11 @@ class BagModel {
       itemTitle: map[BagConstants.itemTitle] != null
           ? map[BagConstants.itemTitle] as String
           : null,
-      itemAddress: map[BagConstants.itemAddress] != null
-          ? map[BagConstants.itemAddress] as String
+      itemProvince: map[BagConstants.itemProvince] != null
+          ? map[BagConstants.itemProvince] as int
+          : null,
+      itemRegion: map[BagConstants.itemRegion] != null
+          ? map[BagConstants.itemRegion] as String
           : null,
       itemTotalPrice: map[BagConstants.itemTotalPrice] != null
           ? map[BagConstants.itemTotalPrice] as String
@@ -366,7 +358,7 @@ class BagModel {
 
   @override
   String toString() {
-    return 'BagModel(itemId: $itemId, itemCustomerId: $itemCustomerId, itemCategoryId: $itemCategoryId, itemSubCategoryId: $itemSubCategoryId, itemImages: $itemImages, itemTitle: $itemTitle, itemAddress: $itemAddress, itemTotalPrice: $itemTotalPrice, itemPriceType: $itemPriceType, itemType: $itemType, itemMaterial: $itemMaterial, itemColor: $itemColor, itemDescription: $itemDescription, itemStatus: $itemStatus, itemPublishStatus: $itemPublishStatus, itemSoldStatus: $itemSoldStatus, itemCreatedAt: $itemCreatedAt, itemUpdatedAt: $itemUpdatedAt)';
+    return 'BagModel(itemId: $itemId, itemCustomerId: $itemCustomerId, itemCategoryId: $itemCategoryId, itemSubCategoryId: $itemSubCategoryId, itemImages: $itemImages, itemTitle: $itemTitle, itemProvince: $itemProvince, itemRegion: $itemRegion, itemTotalPrice: $itemTotalPrice, itemPriceType: $itemPriceType, itemType: $itemType, itemDescription: $itemDescription, itemStatus: $itemStatus, itemPublishStatus: $itemPublishStatus, itemSoldStatus: $itemSoldStatus, itemCreatedAt: $itemCreatedAt, itemUpdatedAt: $itemUpdatedAt)';
   }
 
   @override
@@ -379,12 +371,11 @@ class BagModel {
         other.itemSubCategoryId == itemSubCategoryId &&
         listEquals(other.itemImages, itemImages) &&
         other.itemTitle == itemTitle &&
-        other.itemAddress == itemAddress &&
+        other.itemProvince == itemProvince &&
+        other.itemRegion == itemRegion &&
         other.itemTotalPrice == itemTotalPrice &&
         other.itemPriceType == itemPriceType &&
         other.itemType == itemType &&
-        other.itemMaterial == itemMaterial &&
-        other.itemColor == itemColor &&
         other.itemDescription == itemDescription &&
         other.itemStatus == itemStatus &&
         other.itemPublishStatus == itemPublishStatus &&
@@ -401,12 +392,11 @@ class BagModel {
         itemSubCategoryId.hashCode ^
         itemImages.hashCode ^
         itemTitle.hashCode ^
-        itemAddress.hashCode ^
+        itemProvince.hashCode ^
+        itemRegion.hashCode ^
         itemTotalPrice.hashCode ^
         itemPriceType.hashCode ^
         itemType.hashCode ^
-        itemMaterial.hashCode ^
-        itemColor.hashCode ^
         itemDescription.hashCode ^
         itemStatus.hashCode ^
         itemPublishStatus.hashCode ^

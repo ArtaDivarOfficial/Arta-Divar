@@ -10,7 +10,8 @@ class BusinessModel {
   final int? itemSubCategoryId;
   final List<String>? itemImages;
   final String? itemTitle;
-  final String? itemAddress;
+  final int? itemProvince;
+  final String? itemRegion;
   final String? itemTotalPrice;
   final int? itemPriceType;
   final String? itemDescription;
@@ -21,129 +22,136 @@ class BusinessModel {
   final String? itemUpdatedAt;
 
   BusinessModel({
-    this.itemId,
-    this.itemCustomerId,
-    this.itemCategoryId,
-    this.itemSubCategoryId,
-    this.itemImages,
-    this.itemTitle,
-    this.itemAddress,
-    this.itemTotalPrice,
-    this.itemPriceType,
-    this.itemDescription,
-    this.itemStatus,
-    this.itemPublishStatus,
-    this.itemSoldStatus,
-    this.itemCreatedAt,
-    this.itemUpdatedAt,
+    required this.itemId,
+    required this.itemCustomerId,
+    required this.itemCategoryId,
+    required this.itemSubCategoryId,
+    required this.itemImages,
+    required this.itemTitle,
+    required this.itemProvince,
+    required this.itemRegion,
+    required this.itemTotalPrice,
+    required this.itemPriceType,
+    required this.itemDescription,
+    required this.itemStatus,
+    required this.itemPublishStatus,
+    required this.itemSoldStatus,
+    required this.itemCreatedAt,
+    required this.itemUpdatedAt,
   });
 
   BusinessModel.itemModel({
-    this.itemId,
-    this.itemCustomerId,
-    this.itemCategoryId,
-    this.itemSubCategoryId,
-    this.itemImages,
-    this.itemTitle,
-    this.itemAddress,
-    this.itemTotalPrice,
-    this.itemPriceType,
+    required this.itemId,
+    required this.itemCustomerId,
+    required this.itemCategoryId,
+    required this.itemSubCategoryId,
+    required this.itemImages,
+    required this.itemTitle,
+    required this.itemProvince,
+    required this.itemRegion,
+    required this.itemTotalPrice,
+    required this.itemPriceType,
     this.itemDescription = '',
     this.itemStatus = -1,
-    this.itemPublishStatus,
-    this.itemSoldStatus,
-    this.itemCreatedAt,
-    this.itemUpdatedAt,
+    required this.itemPublishStatus,
+    required this.itemSoldStatus,
+    required this.itemCreatedAt,
+    required this.itemUpdatedAt,
   });
 
   BusinessModel.mdfModel({
-    this.itemId,
-    this.itemCustomerId,
-    this.itemCategoryId,
-    this.itemSubCategoryId,
-    this.itemImages,
-    this.itemTitle,
-    this.itemAddress,
-    this.itemTotalPrice,
-    this.itemPriceType,
-    this.itemDescription,
-    this.itemStatus,
-    this.itemPublishStatus,
-    this.itemSoldStatus,
-    this.itemCreatedAt,
-    this.itemUpdatedAt,
+    required this.itemId,
+    required this.itemCustomerId,
+    required this.itemCategoryId,
+    required this.itemSubCategoryId,
+    required this.itemImages,
+    required this.itemTitle,
+    required this.itemProvince,
+    required this.itemRegion,
+    required this.itemTotalPrice,
+    required this.itemPriceType,
+    required this.itemDescription,
+    required this.itemStatus,
+    required this.itemPublishStatus,
+    required this.itemSoldStatus,
+    required this.itemCreatedAt,
+    required this.itemUpdatedAt,
   });
 
   BusinessModel.upvcModel({
-    this.itemId,
-    this.itemCustomerId,
-    this.itemCategoryId,
-    this.itemSubCategoryId,
-    this.itemImages,
-    this.itemTitle,
-    this.itemAddress,
-    this.itemTotalPrice,
-    this.itemPriceType,
-    this.itemDescription,
-    this.itemStatus,
-    this.itemPublishStatus,
-    this.itemSoldStatus,
-    this.itemCreatedAt,
-    this.itemUpdatedAt,
+    required this.itemId,
+    required this.itemCustomerId,
+    required this.itemCategoryId,
+    required this.itemSubCategoryId,
+    required this.itemImages,
+    required this.itemTitle,
+    required this.itemProvince,
+    required this.itemRegion,
+    required this.itemTotalPrice,
+    required this.itemPriceType,
+    required this.itemDescription,
+    required this.itemStatus,
+    required this.itemPublishStatus,
+    required this.itemSoldStatus,
+    required this.itemCreatedAt,
+    required this.itemUpdatedAt,
   });
 
   BusinessModel.carpentaryModel({
-    this.itemId,
-    this.itemCustomerId,
-    this.itemCategoryId,
-    this.itemSubCategoryId,
-    this.itemImages,
-    this.itemTitle,
-    this.itemAddress,
-    this.itemTotalPrice,
-    this.itemPriceType,
-    this.itemDescription,
-    this.itemStatus,
-    this.itemPublishStatus,
-    this.itemSoldStatus,
-    this.itemCreatedAt,
-    this.itemUpdatedAt,
+    required this.itemId,
+    required this.itemCustomerId,
+    required this.itemCategoryId,
+    required this.itemSubCategoryId,
+    required this.itemImages,
+    required this.itemTitle,
+    required this.itemProvince,
+    required this.itemRegion,
+    required this.itemTotalPrice,
+    required this.itemPriceType,
+    required this.itemDescription,
+    required this.itemStatus,
+    required this.itemPublishStatus,
+    required this.itemSoldStatus,
+    required this.itemCreatedAt,
+    required this.itemUpdatedAt,
   });
 
   BusinessModel.metalWorkModel({
-    this.itemId,
-    this.itemCustomerId,
-    this.itemCategoryId,
-    this.itemSubCategoryId,
-    this.itemImages,
-    this.itemTitle,
-    this.itemAddress,
-    this.itemTotalPrice,
-    this.itemPriceType,
-    this.itemDescription,
-    this.itemStatus,
-    this.itemPublishStatus,
-    this.itemSoldStatus,
-    this.itemCreatedAt,
-    this.itemUpdatedAt,
+    required this.itemId,
+    required this.itemCustomerId,
+    required this.itemCategoryId,
+    required this.itemSubCategoryId,
+    required this.itemImages,
+    required this.itemTitle,
+    required this.itemProvince,
+    required this.itemRegion,
+    required this.itemTotalPrice,
+    required this.itemPriceType,
+    required this.itemDescription,
+    required this.itemStatus,
+    required this.itemPublishStatus,
+    required this.itemSoldStatus,
+    required this.itemCreatedAt,
+    required this.itemUpdatedAt,
   });
 
   BusinessModel.otherBusinessModel({
-    this.itemId,
-    this.itemCustomerId,
-    this.itemCategoryId,
-    this.itemSubCategoryId,
-    this.itemImages,
-    this.itemTitle,
-    this.itemAddress,
-    this.itemTotalPrice,
-    this.itemPriceType,
-    this.itemDescription,
-    this.itemStatus,
-    this.itemPublishStatus,
-    this.itemSoldStatus,
-    this.itemCreatedAt,
-    this.itemUpdatedAt,
+    required this.itemId,
+    required this.itemCustomerId,
+    required this.itemCategoryId,
+    required this.itemSubCategoryId,
+    required this.itemImages,
+    required this.itemTitle,
+    required this.itemProvince,
+    required this.itemRegion,
+    required this.itemTotalPrice,
+    required this.itemPriceType,
+    required this.itemDescription,
+    required this.itemStatus,
+    required this.itemPublishStatus,
+    required this.itemSoldStatus,
+    required this.itemCreatedAt,
+    required this.itemUpdatedAt,
   });
 
   BusinessModel copyWith({
@@ -153,7 +161,8 @@ class BusinessModel {
     int? itemSubCategoryId,
     List<String>? itemImages,
     String? itemTitle,
-    String? itemAddress,
+    int? itemProvince,
+    String? itemRegion,
     String? itemTotalPrice,
     int? itemPriceType,
     String? itemDescription,
@@ -170,7 +179,8 @@ class BusinessModel {
       itemSubCategoryId: itemSubCategoryId ?? this.itemSubCategoryId,
       itemImages: itemImages ?? this.itemImages,
       itemTitle: itemTitle ?? this.itemTitle,
-      itemAddress: itemAddress ?? this.itemAddress,
+      itemProvince: itemProvince ?? this.itemProvince,
+      itemRegion: itemRegion ?? this.itemRegion,
       itemTotalPrice: itemTotalPrice ?? this.itemTotalPrice,
       itemPriceType: itemPriceType ?? this.itemPriceType,
       itemDescription: itemDescription ?? this.itemDescription,
@@ -190,7 +200,8 @@ class BusinessModel {
       BusinessConstants.itemSubCategoryId: itemSubCategoryId,
       BusinessConstants.itemImages: itemImages,
       BusinessConstants.itemTitle: itemTitle,
-      BusinessConstants.itemAddress: itemAddress,
+      BusinessConstants.itemProvince: itemProvince,
+      BusinessConstants.itemRegion: itemRegion,
       BusinessConstants.itemTotalPrice: itemTotalPrice,
       BusinessConstants.itemPriceType: itemPriceType,
       BusinessConstants.itemDescription: itemDescription,
@@ -210,7 +221,8 @@ class BusinessModel {
       BusinessConstants.itemSubCategoryId: itemSubCategoryId,
       BusinessConstants.itemImages: itemImages,
       BusinessConstants.itemTitle: itemTitle,
-      BusinessConstants.itemAddress: itemAddress,
+      BusinessConstants.itemProvince: itemProvince,
+      BusinessConstants.itemRegion: itemRegion,
       BusinessConstants.itemTotalPrice: itemTotalPrice,
       BusinessConstants.itemPriceType: itemPriceType,
       BusinessConstants.itemPublishStatus: itemPublishStatus,
@@ -241,8 +253,11 @@ class BusinessModel {
       itemTitle: map[BusinessConstants.itemTitle] != null
           ? map[BusinessConstants.itemTitle] as String
           : null,
-      itemAddress: map[BusinessConstants.itemAddress] != null
-          ? map[BusinessConstants.itemAddress] as String
+      itemProvince: map[BusinessConstants.itemProvince] != null
+          ? map[BusinessConstants.itemProvince] as int
+          : null,
+      itemRegion: map[BusinessConstants.itemRegion] != null
+          ? map[BusinessConstants.itemRegion] as String
           : null,
       itemTotalPrice: map[BusinessConstants.itemTotalPrice] != null
           ? map[BusinessConstants.itemTotalPrice] as String
@@ -292,8 +307,11 @@ class BusinessModel {
       itemTitle: map[BusinessConstants.itemTitle] != null
           ? map[BusinessConstants.itemTitle] as String
           : null,
-      itemAddress: map[BusinessConstants.itemAddress] != null
-          ? map[BusinessConstants.itemAddress] as String
+      itemProvince: map[BusinessConstants.itemProvince] != null
+          ? map[BusinessConstants.itemProvince] as int
+          : null,
+      itemRegion: map[BusinessConstants.itemRegion] != null
+          ? map[BusinessConstants.itemRegion] as String
           : null,
       itemTotalPrice: map[BusinessConstants.itemTotalPrice] != null
           ? map[BusinessConstants.itemTotalPrice] as String
@@ -326,7 +344,7 @@ class BusinessModel {
 
   @override
   String toString() {
-    return 'BusinessModel(itemId: $itemId, itemCustomerId: $itemCustomerId, itemCategoryId: $itemCategoryId, itemSubCategoryId: $itemSubCategoryId, itemImages: $itemImages, itemTitle: $itemTitle, itemAddress: $itemAddress, itemTotalPrice: $itemTotalPrice, itemPriceType: $itemPriceType, itemDescription: $itemDescription, itemStatus: $itemStatus, itemPublishStatus: $itemPublishStatus, itemSoldStatus: $itemSoldStatus, itemCreatedAt: $itemCreatedAt, itemUpdatedAt: $itemUpdatedAt)';
+    return 'BusinessModel(itemId: $itemId, itemCustomerId: $itemCustomerId, itemCategoryId: $itemCategoryId, itemSubCategoryId: $itemSubCategoryId, itemImages: $itemImages, itemTitle: $itemTitle, itemProvince: $itemProvince, itemRegion: $itemRegion, itemTotalPrice: $itemTotalPrice, itemPriceType: $itemPriceType, itemDescription: $itemDescription, itemStatus: $itemStatus, itemPublishStatus: $itemPublishStatus, itemSoldStatus: $itemSoldStatus, itemCreatedAt: $itemCreatedAt, itemUpdatedAt: $itemUpdatedAt)';
   }
 
   @override
@@ -339,7 +357,8 @@ class BusinessModel {
         other.itemSubCategoryId == itemSubCategoryId &&
         listEquals(other.itemImages, itemImages) &&
         other.itemTitle == itemTitle &&
-        other.itemAddress == itemAddress &&
+        other.itemProvince == itemProvince &&
+        other.itemRegion == itemRegion &&
         other.itemTotalPrice == itemTotalPrice &&
         other.itemPriceType == itemPriceType &&
         other.itemDescription == itemDescription &&
@@ -358,7 +377,8 @@ class BusinessModel {
         itemSubCategoryId.hashCode ^
         itemImages.hashCode ^
         itemTitle.hashCode ^
-        itemAddress.hashCode ^
+        itemProvince.hashCode ^
+        itemRegion.hashCode ^
         itemTotalPrice.hashCode ^
         itemPriceType.hashCode ^
         itemDescription.hashCode ^

@@ -15,12 +15,11 @@ class BagConstants {
   static const String itemSubCategoryId = 'item_sub_category_id';
   static const String itemImages = 'item_images';
   static const String itemTitle = 'item_title';
-  static const String itemAddress = 'item_address';
+  static const String itemProvince = 'item_province';
+  static const String itemRegion = 'item_region';
   static const String itemTotalPrice = 'item_total_price';
   static const String itemPriceType = 'item_price_type';
   static const String itemType = 'item_type';
-  static const String itemMaterial = 'item_material';
-  static const String itemColor = 'item_color';
   static const String itemDescription = 'item_description';
   static const String itemStatus = 'item_status';
   static const String itemPublishStatus = 'item_publish_status';
