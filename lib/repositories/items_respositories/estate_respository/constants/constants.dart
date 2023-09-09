@@ -15,7 +15,8 @@ class EstateConstants {
   static const String itemSubCategoryId = 'item_sub_category_id';
   static const String itemImages = 'item_images';
   static const String itemTitle = 'item_title';
-  static const String itemAddress = 'item_address';
+  static const String itemProvince = 'item_province';
+  static const String itemRegion = 'item_region';
   static const String itemTotalPrice = 'item_total_price';
   static const String itemPriceType = 'item_price_type';
   static const String itemBuildingMeterage = 'item_building_meterage';
@@ -24,15 +25,9 @@ class EstateConstants {
   static const String itemRoomCount = 'item_room_count';
   static const String itemFloor = 'item_floor';
   static const String itemSaleType = 'item_sale_type';
-  static const String itemDocumentType = 'item_document_type';
   static const String itemElectricityMeterType = 'item_electricity_meter_type';
   static const String itemWaterMeterType = 'item_water_meter_type';
   static const String itemParking = 'item_parking';
-  static const String itemLift = 'item_lift';
-  static const String itemWarehouse = 'item_warehouse';
-  static const String itemBalcony = 'item_balcony';
-  static const String itemHeatingAndCoolingSystem =
-      'item_heating_and_cooling_system';
   static const String itemDescription = 'item_description';
   static const String itemStatus = 'item_status';
   static const String itemPublishStatus = 'item_publish_status';

@@ -287,9 +287,6 @@ class ElectricAppliancesModel {
       itemPriceType: map[ElectricAppliancesConstants.itemPriceType] != null
           ? map[ElectricAppliancesConstants.itemPriceType] as int
           : null,
-      itemDescription: map[ElectricAppliancesConstants.itemDescription] != null
-          ? map[ElectricAppliancesConstants.itemDescription] as String
-          : null,
       itemPublishStatus:
           map[ElectricAppliancesConstants.itemPublishStatus] != null
               ? map[ElectricAppliancesConstants.itemPublishStatus] as String
