@@ -1,8 +1,8 @@
 import 'package:bloc/bloc.dart';
 import 'package:dio/dio.dart';
 import 'package:divar/packages/dio/dio.dart';
-import 'package:divar/repositories/items_respositories/technology_respository/constants/constants.dart';
-import 'package:divar/repositories/items_respositories/technology_respository/models/technology_model.dart';
+import 'package:divar/repositories/items_respositories/technology_respository/technology_respository/constants/constants.dart';
+import 'package:divar/repositories/items_respositories/technology_respository/technology_respository/models/technology_model.dart';
 import 'package:divar/repositories/pagination_repository/models/pagination_model.dart';
 import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
