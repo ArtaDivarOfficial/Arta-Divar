@@ -15,15 +15,13 @@ class OnlineGamesConstants {
   static const String itemSubCategoryId = 'item_sub_category_id';
   static const String itemImages = 'item_images';
   static const String itemTitle = 'item_title';
-  static const String itemAddress = 'item_address';
+  static const String itemProvince = 'item_province';
+  static const String itemRegion = 'item_region';
   static const String itemTotalPrice = 'item_total_price';
   static const String itemPriceType = 'item_price_type';
   static const String itemLevel = 'item_level';
   static const String itemHighestRank = 'item_highest_rank';
-  static const String itemCharactersCount = 'item_characters_count';
-  static const String itemStartSeasion = 'item_start_seasion';
   static const String itemTownHallLevel = 'item_town_hall_level';
-  static const String itemXPLevel = 'item_xp_level';
   static const String itemClanLevel = 'item_clan_level';
   static const String itemDescription = 'item_description';
   static const String itemStatus = 'item_status';

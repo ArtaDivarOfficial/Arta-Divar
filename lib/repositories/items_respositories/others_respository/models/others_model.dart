@@ -1,17 +1,310 @@
+import 'dart:convert';
+
+import 'package:divar/repositories/items_respositories/others_respository/constants/constants.dart';
+import 'package:flutter/foundation.dart';
+
 class OthersModel {
-  // final int? itemId;
-  // final String? itemCustomerId;
-  // final int? itemCategoryId;
-  // final int? itemSubCategoryId;
-  // final List<String>? itemImages;
-  // final String? itemTitle;
-  // final String? itemAddress;
-  // final String? itemTotalPrice;
-  // final int? itemPriceType;
-  // final String? itemDescription;
-  // final String? itemStatus;
-  // final String? itemPublishStatus;
-  // final String? itemSoldStatus;
-  // final String? itemCreatedAt;
-  // final String? itemUpdatedAt;
+  final int? itemId;
+  final String? itemCustomerId;
+  final int? itemCategoryId;
+  final int? itemSubCategoryId;
+  final List<String>? itemImages;
+  final String? itemTitle;
+  final int? itemProvince;
+  final String? itemRegion;
+  final String? itemTotalPrice;
+  final int? itemPriceType;
+  final String? itemDescription;
+  final int? itemStatus;
+  final String? itemPublishStatus;
+  final String? itemSoldStatus;
+  final String? itemCreatedAt;
+  final String? itemUpdatedAt;
+
+  OthersModel({
+    this.itemId,
+    this.itemCustomerId,
+    this.itemCategoryId,
+    this.itemSubCategoryId,
+    this.itemImages,
+    this.itemTitle,
+    this.itemProvince,
+    this.itemRegion,
+    this.itemTotalPrice,
+    this.itemPriceType,
+    this.itemDescription,
+    this.itemStatus,
+    this.itemPublishStatus,
+    this.itemSoldStatus,
+    this.itemCreatedAt,
+    this.itemUpdatedAt,
+  });
+
+  OthersModel.itemModel({
+    this.itemId,
+    this.itemCustomerId,
+    this.itemCategoryId,
+    this.itemSubCategoryId,
+    this.itemImages,
+    this.itemTitle,
+    this.itemProvince,
+    this.itemRegion,
+    this.itemTotalPrice,
+    this.itemPriceType,
+    this.itemDescription = '',
+    this.itemStatus = -1,
+    this.itemPublishStatus,
+    this.itemSoldStatus,
+    this.itemCreatedAt,
+    this.itemUpdatedAt,
+  });
+
+  OthersModel.otherModel({
+    this.itemId,
+    this.itemCustomerId,
+    this.itemCategoryId,
+    this.itemSubCategoryId,
+    this.itemImages,
+    this.itemTitle,
+    this.itemProvince,
+    this.itemRegion,
+    this.itemTotalPrice,
+    this.itemPriceType,
+    this.itemDescription,
+    this.itemStatus,
+    this.itemPublishStatus,
+    this.itemSoldStatus,
+    this.itemCreatedAt,
+    this.itemUpdatedAt,
+  });
+
+  OthersModel copyWith({
+    int? itemId,
+    String? itemCustomerId,
+    int? itemCategoryId,
+    int? itemSubCategoryId,
+    List<String>? itemImages,
+    String? itemTitle,
+    int? itemProvince,
+    String? itemRegion,
+    String? itemTotalPrice,
+    int? itemPriceType,
+    String? itemDescription,
+    int? itemStatus,
+    String? itemPublishStatus,
+    String? itemSoldStatus,
+    String? itemCreatedAt,
+    String? itemUpdatedAt,
+  }) {
+    return OthersModel(
+      itemId: itemId ?? this.itemId,
+      itemCustomerId: itemCustomerId ?? this.itemCustomerId,
+      itemCategoryId: itemCategoryId ?? this.itemCategoryId,
+      itemSubCategoryId: itemSubCategoryId ?? this.itemSubCategoryId,
+      itemImages: itemImages ?? this.itemImages,
+      itemTitle: itemTitle ?? this.itemTitle,
+      itemProvince: itemProvince ?? this.itemProvince,
+      itemRegion: itemRegion ?? this.itemRegion,
+      itemTotalPrice: itemTotalPrice ?? this.itemTotalPrice,
+      itemPriceType: itemPriceType ?? this.itemPriceType,
+      itemDescription: itemDescription ?? this.itemDescription,
+      itemStatus: itemStatus ?? this.itemStatus,
+      itemPublishStatus: itemPublishStatus ?? this.itemPublishStatus,
+      itemSoldStatus: itemSoldStatus ?? this.itemSoldStatus,
+      itemCreatedAt: itemCreatedAt ?? this.itemCreatedAt,
+      itemUpdatedAt: itemUpdatedAt ?? this.itemUpdatedAt,
+    );
+  }
+
+  Map<String, dynamic> toMap() {
+    return <String, dynamic>{
+      OthersConstants.itemId: itemId,
+      OthersConstants.itemCustomerId: itemCustomerId,
+      OthersConstants.itemCategoryId: itemCategoryId,
+      OthersConstants.itemSubCategoryId: itemSubCategoryId,
+      OthersConstants.itemImages: itemImages,
+      OthersConstants.itemTitle: itemTitle,
+      OthersConstants.itemProvince: itemProvince,
+      OthersConstants.itemRegion: itemRegion,
+      OthersConstants.itemTotalPrice: itemTotalPrice,
+      OthersConstants.itemPriceType: itemPriceType,
+      OthersConstants.itemDescription: itemDescription,
+      OthersConstants.itemStatus: itemStatus,
+      OthersConstants.itemPublishStatus: itemPublishStatus,
+      OthersConstants.itemSoldStatus: itemSoldStatus,
+      OthersConstants.itemCreatedAt: itemCreatedAt,
+      OthersConstants.itemUpdatedAt: itemUpdatedAt,
+    };
+  }
+
+  Map<String, dynamic> toMapItemModel() {
+    return <String, dynamic>{
+      OthersConstants.itemId: itemId,
+      OthersConstants.itemCustomerId: itemCustomerId,
+      OthersConstants.itemCategoryId: itemCategoryId,
+      OthersConstants.itemSubCategoryId: itemSubCategoryId,
+      OthersConstants.itemImages: itemImages,
+      OthersConstants.itemTitle: itemTitle,
+      OthersConstants.itemProvince: itemProvince,
+      OthersConstants.itemRegion: itemRegion,
+      OthersConstants.itemTotalPrice: itemTotalPrice,
+      OthersConstants.itemPriceType: itemPriceType,
+      OthersConstants.itemPublishStatus: itemPublishStatus,
+      OthersConstants.itemSoldStatus: itemSoldStatus,
+      OthersConstants.itemCreatedAt: itemCreatedAt,
+      OthersConstants.itemUpdatedAt: itemUpdatedAt,
+    };
+  }
+
+  factory OthersModel.fromMap(Map<String, dynamic> map) {
+    return OthersModel(
+      itemId: map[OthersConstants.itemId] != null
+          ? map[OthersConstants.itemId] as int
+          : null,
+      itemCustomerId: map[OthersConstants.itemCustomerId] != null
+          ? map[OthersConstants.itemCustomerId] as String
+          : null,
+      itemCategoryId: map[OthersConstants.itemCategoryId] != null
+          ? map[OthersConstants.itemCategoryId] as int
+          : null,
+      itemSubCategoryId: map[OthersConstants.itemSubCategoryId] != null
+          ? map[OthersConstants.itemSubCategoryId] as int
+          : null,
+      itemImages: map[OthersConstants.itemImages] != null
+          ? List<String>.from((map[OthersConstants.itemImages] as List<String>))
+          : null,
+      itemTitle: map[OthersConstants.itemTitle] != null
+          ? map[OthersConstants.itemTitle] as String
+          : null,
+      itemProvince: map[OthersConstants.itemProvince] != null
+          ? map[OthersConstants.itemProvince] as int
+          : null,
+      itemRegion: map[OthersConstants.itemRegion] != null
+          ? map[OthersConstants.itemRegion] as String
+          : null,
+      itemTotalPrice: map[OthersConstants.itemTotalPrice] != null
+          ? map[OthersConstants.itemTotalPrice] as String
+          : null,
+      itemPriceType: map[OthersConstants.itemPriceType] != null
+          ? map[OthersConstants.itemPriceType] as int
+          : null,
+      itemDescription: map[OthersConstants.itemDescription] != null
+          ? map[OthersConstants.itemDescription] as String
+          : null,
+      itemStatus: map[OthersConstants.itemStatus] != null
+          ? map[OthersConstants.itemStatus] as int
+          : null,
+      itemPublishStatus: map[OthersConstants.itemPublishStatus] != null
+          ? map[OthersConstants.itemPublishStatus] as String
+          : null,
+      itemSoldStatus: map[OthersConstants.itemSoldStatus] != null
+          ? map[OthersConstants.itemSoldStatus] as String
+          : null,
+      itemCreatedAt: map[OthersConstants.itemCreatedAt] != null
+          ? map[OthersConstants.itemCreatedAt] as String
+          : null,
+      itemUpdatedAt: map[OthersConstants.itemUpdatedAt] != null
+          ? map[OthersConstants.itemUpdatedAt] as String
+          : null,
+    );
+  }
+
+  factory OthersModel.fromMapItemModel(Map<String, dynamic> map) {
+    return OthersModel(
+      itemId: map[OthersConstants.itemId] != null
+          ? map[OthersConstants.itemId] as int
+          : null,
+      itemCustomerId: map[OthersConstants.itemCustomerId] != null
+          ? map[OthersConstants.itemCustomerId] as String
+          : null,
+      itemCategoryId: map[OthersConstants.itemCategoryId] != null
+          ? map[OthersConstants.itemCategoryId] as int
+          : null,
+      itemSubCategoryId: map[OthersConstants.itemSubCategoryId] != null
+          ? map[OthersConstants.itemSubCategoryId] as int
+          : null,
+      itemImages: map[OthersConstants.itemImages] != null
+          ? List<String>.from((map[OthersConstants.itemImages] as List<String>))
+          : null,
+      itemTitle: map[OthersConstants.itemTitle] != null
+          ? map[OthersConstants.itemTitle] as String
+          : null,
+      itemProvince: map[OthersConstants.itemProvince] != null
+          ? map[OthersConstants.itemProvince] as int
+          : null,
+      itemRegion: map[OthersConstants.itemRegion] != null
+          ? map[OthersConstants.itemRegion] as String
+          : null,
+      itemTotalPrice: map[OthersConstants.itemTotalPrice] != null
+          ? map[OthersConstants.itemTotalPrice] as String
+          : null,
+      itemPriceType: map[OthersConstants.itemPriceType] != null
+          ? map[OthersConstants.itemPriceType] as int
+          : null,
+      itemPublishStatus: map[OthersConstants.itemPublishStatus] != null
+          ? map[OthersConstants.itemPublishStatus] as String
+          : null,
+      itemSoldStatus: map[OthersConstants.itemSoldStatus] != null
+          ? map[OthersConstants.itemSoldStatus] as String
+          : null,
+      itemCreatedAt: map[OthersConstants.itemCreatedAt] != null
+          ? map[OthersConstants.itemCreatedAt] as String
+          : null,
+      itemUpdatedAt: map[OthersConstants.itemUpdatedAt] != null
+          ? map[OthersConstants.itemUpdatedAt] as String
+          : null,
+    );
+  }
+
+  String toJson() => json.encode(toMap());
+
+  factory OthersModel.fromJson(String source) =>
+      OthersModel.fromMap(json.decode(source) as Map<String, dynamic>);
+
+  @override
+  String toString() {
+    return 'OthersModel(itemId: $itemId, itemCustomerId: $itemCustomerId, itemCategoryId: $itemCategoryId, itemSubCategoryId: $itemSubCategoryId, itemImages: $itemImages, itemTitle: $itemTitle, itemProvince: $itemProvince, itemRegion: $itemRegion, itemTotalPrice: $itemTotalPrice, itemPriceType: $itemPriceType, itemDescription: $itemDescription, itemStatus: $itemStatus, itemPublishStatus: $itemPublishStatus, itemSoldStatus: $itemSoldStatus, itemCreatedAt: $itemCreatedAt, itemUpdatedAt: $itemUpdatedAt)';
+  }
+
+  @override
+  bool operator ==(covariant OthersModel other) {
+    if (identical(this, other)) return true;
+
+    return other.itemId == itemId &&
+        other.itemCustomerId == itemCustomerId &&
+        other.itemCategoryId == itemCategoryId &&
+        other.itemSubCategoryId == itemSubCategoryId &&
+        listEquals(other.itemImages, itemImages) &&
+        other.itemTitle == itemTitle &&
+        other.itemProvince == itemProvince &&
+        other.itemRegion == itemRegion &&
+        other.itemTotalPrice == itemTotalPrice &&
+        other.itemPriceType == itemPriceType &&
+        other.itemDescription == itemDescription &&
+        other.itemStatus == itemStatus &&
+        other.itemPublishStatus == itemPublishStatus &&
+        other.itemSoldStatus == itemSoldStatus &&
+        other.itemCreatedAt == itemCreatedAt &&
+        other.itemUpdatedAt == itemUpdatedAt;
+  }
+
+  @override
+  int get hashCode {
+    return itemId.hashCode ^
+        itemCustomerId.hashCode ^
+        itemCategoryId.hashCode ^
+        itemSubCategoryId.hashCode ^
+        itemImages.hashCode ^
+        itemTitle.hashCode ^
+        itemProvince.hashCode ^
+        itemRegion.hashCode ^
+        itemTotalPrice.hashCode ^
+        itemPriceType.hashCode ^
+        itemDescription.hashCode ^
+        itemStatus.hashCode ^
+        itemPublishStatus.hashCode ^
+        itemSoldStatus.hashCode ^
+        itemCreatedAt.hashCode ^
+        itemUpdatedAt.hashCode;
+  }
 }
