@@ -16,7 +16,7 @@ class BagModel {
   final String? itemTotalPrice;
   final int? itemPriceType;
   final int? itemType;
-  // final int? itemMaterial;
+  final String? itemMaterial;
   final String? itemDescription;
   final int? itemStatus;
   final String? itemPublishStatus;
@@ -36,6 +36,7 @@ class BagModel {
     required this.itemTotalPrice,
     required this.itemPriceType,
     required this.itemType,
+    required this.itemMaterial,
     required this.itemDescription,
     required this.itemStatus,
     required this.itemPublishStatus,
@@ -56,6 +57,7 @@ class BagModel {
     required this.itemTotalPrice,
     required this.itemPriceType,
     this.itemType = -1,
+    this.itemMaterial = '',
     this.itemDescription = '',
     this.itemStatus = -1,
     required this.itemPublishStatus,
@@ -76,6 +78,7 @@ class BagModel {
     required this.itemTotalPrice,
     required this.itemPriceType,
     required this.itemType,
+    required this.itemMaterial,
     required this.itemDescription,
     required this.itemStatus,
     required this.itemPublishStatus,
@@ -96,6 +99,7 @@ class BagModel {
     required this.itemTotalPrice,
     required this.itemPriceType,
     this.itemType = -1,
+    required this.itemMaterial,
     required this.itemDescription,
     required this.itemStatus,
     required this.itemPublishStatus,
@@ -116,6 +120,7 @@ class BagModel {
     required this.itemTotalPrice,
     required this.itemPriceType,
     this.itemType = -1,
+    required this.itemMaterial,
     required this.itemDescription,
     required this.itemStatus,
     required this.itemPublishStatus,
@@ -136,6 +141,7 @@ class BagModel {
     required this.itemTotalPrice,
     required this.itemPriceType,
     this.itemType = -1,
+    required this.itemMaterial,
     required this.itemDescription,
     required this.itemStatus,
     required this.itemPublishStatus,
@@ -156,6 +162,7 @@ class BagModel {
     required this.itemTotalPrice,
     required this.itemPriceType,
     this.itemType = -1,
+    required this.itemMaterial,
     required this.itemDescription,
     required this.itemStatus,
     required this.itemPublishStatus,
@@ -197,6 +204,7 @@ class BagModel {
       itemTotalPrice: itemTotalPrice ?? this.itemTotalPrice,
       itemPriceType: itemPriceType ?? this.itemPriceType,
       itemType: itemType ?? this.itemType,
+      itemMaterial: itemMaterial ?? this.itemMaterial,
       itemDescription: itemDescription ?? this.itemDescription,
       itemStatus: itemStatus ?? this.itemStatus,
       itemPublishStatus: itemPublishStatus ?? this.itemPublishStatus,
@@ -219,6 +227,7 @@ class BagModel {
       BagConstants.itemTotalPrice: itemTotalPrice,
       BagConstants.itemPriceType: itemPriceType,
       BagConstants.itemType: itemType,
+      BagConstants.itemMaterial: itemMaterial,
       BagConstants.itemDescription: itemDescription,
       BagConstants.itemStatus: itemStatus,
       BagConstants.itemPublishStatus: itemPublishStatus,
@@ -283,6 +292,9 @@ class BagModel {
           : null,
       itemType: map[BagConstants.itemType] != null
           ? map[BagConstants.itemType] as int
+          : null,
+      itemMaterial: map[BagConstants.itemMaterial] != null
+          ? map[BagConstants.itemMaterial] as String
           : null,
       itemDescription: map[BagConstants.itemDescription] != null
           ? map[BagConstants.itemDescription] as String
@@ -364,7 +376,7 @@ class BagModel {
 
   @override
   String toString() {
-    return 'BagModel(itemId: $itemId, itemCustomerId: $itemCustomerId, itemCategoryId: $itemCategoryId, itemSubCategoryId: $itemSubCategoryId, itemImages: $itemImages, itemTitle: $itemTitle, itemProvince: $itemProvince, itemRegion: $itemRegion, itemTotalPrice: $itemTotalPrice, itemPriceType: $itemPriceType, itemType: $itemType, itemDescription: $itemDescription, itemStatus: $itemStatus, itemPublishStatus: $itemPublishStatus, itemSoldStatus: $itemSoldStatus, itemCreatedAt: $itemCreatedAt, itemUpdatedAt: $itemUpdatedAt)';
+    return 'BagModel(itemId: $itemId, itemCustomerId: $itemCustomerId, itemCategoryId: $itemCategoryId, itemSubCategoryId: $itemSubCategoryId, itemImages: $itemImages, itemTitle: $itemTitle, itemProvince: $itemProvince, itemRegion: $itemRegion, itemTotalPrice: $itemTotalPrice, itemPriceType: $itemPriceType, itemType: $itemType, itemMaterial: $itemMaterial, itemDescription: $itemDescription, itemStatus: $itemStatus, itemPublishStatus: $itemPublishStatus, itemSoldStatus: $itemSoldStatus, itemCreatedAt: $itemCreatedAt, itemUpdatedAt: $itemUpdatedAt)';
   }
 
   @override
@@ -382,6 +394,7 @@ class BagModel {
         other.itemTotalPrice == itemTotalPrice &&
         other.itemPriceType == itemPriceType &&
         other.itemType == itemType &&
+        other.itemMaterial == itemMaterial &&
         other.itemDescription == itemDescription &&
         other.itemStatus == itemStatus &&
         other.itemPublishStatus == itemPublishStatus &&
@@ -403,6 +416,7 @@ class BagModel {
         itemTotalPrice.hashCode ^
         itemPriceType.hashCode ^
         itemType.hashCode ^
+        itemMaterial.hashCode ^
         itemDescription.hashCode ^
         itemStatus.hashCode ^
         itemPublishStatus.hashCode ^
