@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:divar/repositories/items_respositories/my_advertisements_repository/constants/constants.dart';
 import 'package:flutter/foundation.dart';
 
-class MyAdvertisementsModel {
+class MyAdvertisementModel {
   final int itemId;
   final String itemCustomerId;
   final int itemCategoryId;
@@ -18,7 +18,7 @@ class MyAdvertisementsModel {
   final String itemCreatedAt;
   final String itemUpdatedAt;
 
-  MyAdvertisementsModel({
+  MyAdvertisementModel({
     required this.itemId,
     required this.itemCustomerId,
     required this.itemCategoryId,
@@ -34,7 +34,7 @@ class MyAdvertisementsModel {
     required this.itemUpdatedAt,
   });
 
-  MyAdvertisementsModel copyWith({
+  MyAdvertisementModel copyWith({
     int? itemId,
     String? itemCustomerId,
     int? itemCategoryId,
@@ -49,7 +49,7 @@ class MyAdvertisementsModel {
     String? itemCreatedAt,
     String? itemUpdatedAt,
   }) {
-    return MyAdvertisementsModel(
+    return MyAdvertisementModel(
       itemId: itemId ?? this.itemId,
       itemCustomerId: itemCustomerId ?? this.itemCustomerId,
       itemCategoryId: itemCategoryId ?? this.itemCategoryId,
@@ -84,8 +84,8 @@ class MyAdvertisementsModel {
     };
   }
 
-  factory MyAdvertisementsModel.fromMap(Map<String, dynamic> map) {
-    return MyAdvertisementsModel(
+  factory MyAdvertisementModel.fromMap(Map<String, dynamic> map) {
+    return MyAdvertisementModel(
       itemId: map[MyAdvertisementsConstants.itemId] as int,
       itemCustomerId: map[MyAdvertisementsConstants.itemCustomerId] as String,
       itemCategoryId: map[MyAdvertisementsConstants.itemCategoryId] as int,
@@ -107,17 +107,16 @@ class MyAdvertisementsModel {
 
   String toJson() => json.encode(toMap());
 
-  factory MyAdvertisementsModel.fromJson(String source) =>
-      MyAdvertisementsModel.fromMap(
-          json.decode(source) as Map<String, dynamic>);
+  factory MyAdvertisementModel.fromJson(String source) =>
+      MyAdvertisementModel.fromMap(json.decode(source) as Map<String, dynamic>);
 
   @override
   String toString() {
-    return 'MyAdvertisementsModel(itemId: $itemId, itemCustomerId: $itemCustomerId, itemCategoryId: $itemCategoryId, itemSubCategoryId: $itemSubCategoryId, itemImages: $itemImages, itemTitle: $itemTitle, itemAddress: $itemAddress, itemTotalPrice: $itemTotalPrice, itemPriceType: $itemPriceType, itemPublishStatus: $itemPublishStatus, itemSoldStatus: $itemSoldStatus, itemCreatedAt: $itemCreatedAt, itemUpdatedAt: $itemUpdatedAt)';
+    return 'MyAdvertisementModel(itemId: $itemId, itemCustomerId: $itemCustomerId, itemCategoryId: $itemCategoryId, itemSubCategoryId: $itemSubCategoryId, itemImages: $itemImages, itemTitle: $itemTitle, itemAddress: $itemAddress, itemTotalPrice: $itemTotalPrice, itemPriceType: $itemPriceType, itemPublishStatus: $itemPublishStatus, itemSoldStatus: $itemSoldStatus, itemCreatedAt: $itemCreatedAt, itemUpdatedAt: $itemUpdatedAt)';
   }
 
   @override
-  bool operator ==(covariant MyAdvertisementsModel other) {
+  bool operator ==(covariant MyAdvertisementModel other) {
     if (identical(this, other)) return true;
 
     return other.itemId == itemId &&
