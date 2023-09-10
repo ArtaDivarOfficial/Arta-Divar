@@ -1,5 +1,7 @@
 import 'dart:convert';
 
+import 'package:divar/heplers/functions/helper_functions.dart';
+import 'package:divar/packages/dio/dio.dart';
 import 'package:divar/repositories/items_respositories/bags_respository/constants/constants.dart';
 import 'package:flutter/foundation.dart';
 
@@ -259,8 +261,10 @@ class BagModel {
       itemSubCategoryId: map[BagConstants.itemSubCategoryId] != null
           ? map[BagConstants.itemCategoryId] as int
           : null,
-      itemImages: map[BagConstants.itemImages] != null
-          ? List<String>.from((map[BagConstants.itemImages] as List<String>))
+      itemImages: HelperFunctions.getImages(
+                  map, BagConstants.itemImages, BagConstants.apiBagsImages) !=
+              null
+          ? []
           : null,
       itemTitle: map[BagConstants.itemTitle] != null
           ? map[BagConstants.itemTitle] as String
@@ -315,8 +319,10 @@ class BagModel {
       itemSubCategoryId: map[BagConstants.itemSubCategoryId] != null
           ? map[BagConstants.itemCategoryId] as int
           : null,
-      itemImages: map[BagConstants.itemImages] != null
-          ? List<String>.from((map[BagConstants.itemImages] as List<String>))
+      itemImages: HelperFunctions.getImages(
+                  map, BagConstants.itemImages, BagConstants.apiBagsImages) !=
+              null
+          ? []
           : null,
       itemTitle: map[BagConstants.itemTitle] != null
           ? map[BagConstants.itemTitle] as String
