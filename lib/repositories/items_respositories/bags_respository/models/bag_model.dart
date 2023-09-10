@@ -1,7 +1,6 @@
 import 'dart:convert';
 
 import 'package:divar/heplers/functions/helper_functions.dart';
-import 'package:divar/packages/dio/dio.dart';
 import 'package:divar/repositories/items_respositories/bags_respository/constants/constants.dart';
 import 'package:flutter/foundation.dart';
 
@@ -17,6 +16,7 @@ class BagModel {
   final String? itemTotalPrice;
   final int? itemPriceType;
   final int? itemType;
+  // final int? itemMaterial;
   final String? itemDescription;
   final int? itemStatus;
   final String? itemPublishStatus;

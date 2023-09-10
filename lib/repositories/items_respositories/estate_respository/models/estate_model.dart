@@ -164,6 +164,33 @@ class EstateModel {
     required this.itemUpdatedAt,
   });
 
+  EstateModel.inventoryModel({
+    required this.itemId,
+    required this.itemCustomerId,
+    required this.itemCategoryId,
+    required this.itemSubCategoryId,
+    required this.itemImages,
+    required this.itemTitle,
+    required this.itemProvince,
+    required this.itemRegion,
+    required this.itemTotalPrice,
+    required this.itemPriceType,
+    this.itemBuildingMeterage = -1,
+    required this.itemLandMeterage,
+    required this.itemPerMeterPrice,
+    this.itemRoomCount = -1,
+    required this.itemFloor,
+    required this.itemSaleType,
+    required this.itemElectricityMeterType,
+    required this.itemWaterMeterType,
+    this.itemParking = false,
+    required this.itemDescription,
+    required this.itemPublishStatus,
+    required this.itemSoldStatus,
+    required this.itemCreatedAt,
+    required this.itemUpdatedAt,
+  });
+
   EstateModel copyWith({
     int? itemId,
     String? itemCustomerId,

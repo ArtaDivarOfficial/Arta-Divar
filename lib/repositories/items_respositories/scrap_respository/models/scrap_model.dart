@@ -18,7 +18,6 @@ class ScrapModel {
   final String? itemBrand;
   final String? itemColor;
   final String? itemDescription;
-  final int? itemStatus;
   final String? itemPublishStatus;
   final String? itemSoldStatus;
   final String? itemCreatedAt;
@@ -39,7 +38,6 @@ class ScrapModel {
     required this.itemBrand,
     required this.itemColor,
     required this.itemDescription,
-    required this.itemStatus,
     required this.itemPublishStatus,
     required this.itemSoldStatus,
     required this.itemCreatedAt,
@@ -61,7 +59,6 @@ class ScrapModel {
     this.itemBrand = '',
     this.itemColor = '',
     this.itemDescription = '',
-    this.itemStatus = -1,
     required this.itemPublishStatus,
     required this.itemSoldStatus,
     required this.itemCreatedAt,
@@ -83,7 +80,6 @@ class ScrapModel {
     required this.itemBrand,
     required this.itemColor,
     required this.itemDescription,
-    required this.itemStatus,
     required this.itemPublishStatus,
     required this.itemSoldStatus,
     required this.itemCreatedAt,
@@ -126,7 +122,6 @@ class ScrapModel {
       itemBrand: itemBrand ?? this.itemBrand,
       itemColor: itemColor ?? this.itemColor,
       itemDescription: itemDescription ?? this.itemDescription,
-      itemStatus: itemStatus ?? this.itemStatus,
       itemPublishStatus: itemPublishStatus ?? this.itemPublishStatus,
       itemSoldStatus: itemSoldStatus ?? this.itemSoldStatus,
       itemCreatedAt: itemCreatedAt ?? this.itemCreatedAt,
@@ -150,7 +145,6 @@ class ScrapModel {
       ScrapConstants.itemBrand: itemBrand,
       ScrapConstants.itemColor: itemColor,
       ScrapConstants.itemDescription: itemDescription,
-      ScrapConstants.itemStatus: itemStatus,
       ScrapConstants.itemPublishStatus: itemPublishStatus,
       ScrapConstants.itemSoldStatus: itemSoldStatus,
       ScrapConstants.itemCreatedAt: itemCreatedAt,
@@ -221,9 +215,6 @@ class ScrapModel {
       itemDescription: map[ScrapConstants.itemDescription] != null
           ? map[ScrapConstants.itemDescription] as String
           : null,
-      itemStatus: map[ScrapConstants.itemStatus] != null
-          ? map[ScrapConstants.itemStatus] as int
-          : null,
       itemPublishStatus: map[ScrapConstants.itemPublishStatus] != null
           ? map[ScrapConstants.itemPublishStatus] as String
           : null,
@@ -293,7 +284,7 @@ class ScrapModel {
 
   @override
   String toString() {
-    return 'ScrapModel(itemId: $itemId, itemCustomerId: $itemCustomerId, itemCategoryId: $itemCategoryId, itemSubCategoryId: $itemSubCategoryId, itemImages: $itemImages, itemTitle: $itemTitle, itemProvince: $itemProvince, itemRegion: $itemRegion, itemPerMeterPrice: $itemPerMeterPrice, itemPriceType: $itemPriceType, itemType: $itemType, itemBrand: $itemBrand, itemColor: $itemColor, itemDescription: $itemDescription, itemStatus: $itemStatus, itemPublishStatus: $itemPublishStatus, itemSoldStatus: $itemSoldStatus, itemCreatedAt: $itemCreatedAt, itemUpdatedAt: $itemUpdatedAt)';
+    return 'ScrapModel(itemId: $itemId, itemCustomerId: $itemCustomerId, itemCategoryId: $itemCategoryId, itemSubCategoryId: $itemSubCategoryId, itemImages: $itemImages, itemTitle: $itemTitle, itemProvince: $itemProvince, itemRegion: $itemRegion, itemPerMeterPrice: $itemPerMeterPrice, itemPriceType: $itemPriceType, itemType: $itemType, itemBrand: $itemBrand, itemColor: $itemColor, itemDescription: $itemDescription, itemPublishStatus: $itemPublishStatus, itemSoldStatus: $itemSoldStatus, itemCreatedAt: $itemCreatedAt, itemUpdatedAt: $itemUpdatedAt)';
   }
 
   @override
@@ -314,7 +305,6 @@ class ScrapModel {
         other.itemBrand == itemBrand &&
         other.itemColor == itemColor &&
         other.itemDescription == itemDescription &&
-        other.itemStatus == itemStatus &&
         other.itemPublishStatus == itemPublishStatus &&
         other.itemSoldStatus == itemSoldStatus &&
         other.itemCreatedAt == itemCreatedAt &&
@@ -337,7 +327,6 @@ class ScrapModel {
         itemBrand.hashCode ^
         itemColor.hashCode ^
         itemDescription.hashCode ^
-        itemStatus.hashCode ^
         itemPublishStatus.hashCode ^
         itemSoldStatus.hashCode ^
         itemCreatedAt.hashCode ^
