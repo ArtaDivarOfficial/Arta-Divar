@@ -232,7 +232,7 @@ class BusinessModel {
     };
   }
 
-  factory BusinessModel.fromMap(Map<String, dynamic> map) {
+  factory BusinessModel.fromMap(Map<Object?, Object?> map) {
     return BusinessModel(
       itemId: map[BusinessConstants.itemId] != null
           ? map[BusinessConstants.itemId] as int
@@ -286,7 +286,7 @@ class BusinessModel {
     );
   }
 
-  factory BusinessModel.fromMapItemModel(Map<String, dynamic> map) {
+  factory BusinessModel.fromMapItemModel(Map<Object?, Object?> map) {
     return BusinessModel.itemModel(
       itemId: map[BusinessConstants.itemId] != null
           ? map[BusinessConstants.itemId] as int

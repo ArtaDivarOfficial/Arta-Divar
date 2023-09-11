@@ -171,7 +171,7 @@ class ScrapModel {
     };
   }
 
-  factory ScrapModel.fromMap(Map<String, dynamic> map) {
+  factory ScrapModel.fromMap(Map<Object?, Object?> map) {
     return ScrapModel(
       itemId: map[ScrapConstants.itemId] != null
           ? map[ScrapConstants.itemId] as int
@@ -230,7 +230,7 @@ class ScrapModel {
     );
   }
 
-  factory ScrapModel.fromMapItemModel(Map<String, dynamic> map) {
+  factory ScrapModel.fromMapItemModel(Map<Object?, Object?> map) {
     return ScrapModel.itemModel(
       itemId: map[ScrapConstants.itemId] != null
           ? map[ScrapConstants.itemId] as int

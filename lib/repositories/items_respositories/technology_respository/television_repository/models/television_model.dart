@@ -198,7 +198,7 @@ class TelevisionModel {
     };
   }
 
-  factory TelevisionModel.fromMap(Map<String, dynamic> map) {
+  factory TelevisionModel.fromMap(Map<Object?, Object?> map) {
     return TelevisionModel(
       itemId: map[TelevisionConstants.itemId] != null
           ? map[TelevisionConstants.itemId] as int
@@ -270,7 +270,7 @@ class TelevisionModel {
     );
   }
 
-  factory TelevisionModel.fromMapItemModel(Map<String, dynamic> map) {
+  factory TelevisionModel.fromMapItemModel(Map<Object?, Object?> map) {
     return TelevisionModel.itemModel(
       itemId: map[TelevisionConstants.itemId] != null
           ? map[TelevisionConstants.itemId] as int

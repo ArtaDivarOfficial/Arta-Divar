@@ -191,7 +191,7 @@ class ElectricAppliancesModel {
     };
   }
 
-  factory ElectricAppliancesModel.fromMap(Map<String, dynamic> map) {
+  factory ElectricAppliancesModel.fromMap(Map<Object?, Object?> map) {
     return ElectricAppliancesModel(
       itemId: map[ElectricAppliancesConstants.itemId] != null
           ? map[ElectricAppliancesConstants.itemId] as int
@@ -253,7 +253,7 @@ class ElectricAppliancesModel {
     );
   }
 
-  factory ElectricAppliancesModel.fromMapItemModel(Map<String, dynamic> map) {
+  factory ElectricAppliancesModel.fromMapItemModel(Map<Object?, Object?> map) {
     return ElectricAppliancesModel.itemModel(
       itemId: map[ElectricAppliancesConstants.itemId] != null
           ? map[ElectricAppliancesConstants.itemId] as int

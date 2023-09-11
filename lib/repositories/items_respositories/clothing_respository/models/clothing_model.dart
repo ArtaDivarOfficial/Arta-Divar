@@ -345,7 +345,7 @@ class ClothingModel {
     };
   }
 
-  factory ClothingModel.fromMap(Map<String, dynamic> map) {
+  factory ClothingModel.fromMap(Map<Object?, Object?> map) {
     return ClothingModel(
       itemId: map[ClothingConstants.itemId] != null
           ? map[ClothingConstants.itemId] as int
@@ -411,7 +411,7 @@ class ClothingModel {
     );
   }
 
-  factory ClothingModel.fromMapItemModel(Map<String, dynamic> map) {
+  factory ClothingModel.fromMapItemModel(Map<Object?, Object?> map) {
     return ClothingModel.itemModel(
       itemId: map[ClothingConstants.itemId] != null
           ? map[ClothingConstants.itemId] as int

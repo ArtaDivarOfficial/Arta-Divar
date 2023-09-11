@@ -336,7 +336,7 @@ class JewelleryModel {
     };
   }
 
-  factory JewelleryModel.fromMap(Map<String, dynamic> map) {
+  factory JewelleryModel.fromMap(Map<Object?, Object?> map) {
     return JewelleryModel(
       itemId: map[JewelleryConstants.itemId] != null
           ? map[JewelleryConstants.itemId] as int
@@ -406,7 +406,7 @@ class JewelleryModel {
     );
   }
 
-  factory JewelleryModel.fromMapItemModel(Map<String, dynamic> map) {
+  factory JewelleryModel.fromMapItemModel(Map<Object?, Object?> map) {
     return JewelleryModel.itemModel(
       itemId: map[JewelleryConstants.itemId] != null
           ? map[JewelleryConstants.itemId] as int

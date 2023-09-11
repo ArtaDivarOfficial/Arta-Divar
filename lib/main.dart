@@ -1,3 +1,5 @@
+import 'package:divar/repositories/chats_repositories/chat_messages_repository/cubit/chat_message_cubit.dart';
+import 'package:divar/repositories/chats_repositories/chat_repository/cubit/chat_cubit.dart';
 import 'package:divar/repositories/customers_repositories/cubit/customer_cubit.dart';
 import 'package:divar/repositories/items_respositories/bags_respository/cubit/bag_cubit.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -64,6 +66,12 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => OtpCodeCubit(),
+        ),
+        BlocProvider(
+          create: (context) => ChatCubit(),
+        ),
+        BlocProvider(
+          create: (context) => ChatMessageCubit(),
         ),
         BlocProvider(
           create: (context) => BagCubit(),

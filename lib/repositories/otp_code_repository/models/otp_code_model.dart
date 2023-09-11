@@ -49,7 +49,7 @@ class OTPCodeModel {
     };
   }
 
-  factory OTPCodeModel.fromMap(Map<String, dynamic> map) {
+  factory OTPCodeModel.fromMap(Map<Object?, Object?> map) {
     return OTPCodeModel(
       otpCodeId: map[OTPCodeConstants.otpCodeId] != null
           ? map[OTPCodeConstants.otpCodeId] as String

@@ -391,7 +391,7 @@ class TechnologyModel {
     };
   }
 
-  factory TechnologyModel.fromMap(Map<String, dynamic> map) {
+  factory TechnologyModel.fromMap(Map<Object?, Object?> map) {
     return TechnologyModel(
       itemId: map[TechnologyConstants.itemId] != null
           ? map[TechnologyConstants.itemId] as int
@@ -475,7 +475,7 @@ class TechnologyModel {
     );
   }
 
-  factory TechnologyModel.fromMapItemModel(Map<String, dynamic> map) {
+  factory TechnologyModel.fromMapItemModel(Map<Object?, Object?> map) {
     return TechnologyModel.itemModel(
       itemId: map[TechnologyConstants.itemId] != null
           ? map[TechnologyConstants.itemId] as int

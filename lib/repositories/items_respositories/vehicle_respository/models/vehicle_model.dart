@@ -331,7 +331,7 @@ class VehicleModel {
     };
   }
 
-  factory VehicleModel.fromMap(Map<String, dynamic> map) {
+  factory VehicleModel.fromMap(Map<Object?, Object?> map) {
     return VehicleModel(
       itemId: map[VehicleConstants.itemId] != null
           ? map[VehicleConstants.itemId] as int
@@ -412,7 +412,7 @@ class VehicleModel {
     );
   }
 
-  factory VehicleModel.fromMapItemModel(Map<String, dynamic> map) {
+  factory VehicleModel.fromMapItemModel(Map<Object?, Object?> map) {
     return VehicleModel.itemModel(
       itemId: map[VehicleConstants.itemId] != null
           ? map[VehicleConstants.itemId] as int

@@ -84,7 +84,7 @@ class ItemModel {
     };
   }
 
-  factory ItemModel.fromMap(Map<String, dynamic> map) {
+  factory ItemModel.fromMap(Map<Object?, Object?> map) {
     return ItemModel(
       itemId: map[ItemConstants.itemId] as int,
       itemCustomerId: map[ItemConstants.itemCustomerId] as String,

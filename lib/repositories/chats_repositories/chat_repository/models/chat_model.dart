@@ -5,7 +5,7 @@ import 'package:divar/repositories/chats_repositories/chat_repository/constants/
 class ChatModel {
   final String? chatId;
   final String? chatSenderId;
-  final String? chatReciverId;
+  final String? chatReceiverId;
   final String? chatLastMessage;
   final int? chatLastMessageTime;
   final bool? chatIsNewMessage;
@@ -13,7 +13,7 @@ class ChatModel {
   ChatModel({
     required this.chatId,
     required this.chatSenderId,
-    required this.chatReciverId,
+    required this.chatReceiverId,
     required this.chatLastMessage,
     required this.chatLastMessageTime,
     required this.chatIsNewMessage,
@@ -22,7 +22,7 @@ class ChatModel {
   ChatModel copyWith({
     String? chatId,
     String? chatSenderId,
-    String? chatReciverId,
+    String? chatReceiverId,
     String? chatLastMessage,
     int? chatLastMessageTime,
     bool? chatIsNewMessage,
@@ -30,7 +30,7 @@ class ChatModel {
     return ChatModel(
       chatId: chatId ?? this.chatId,
       chatSenderId: chatSenderId ?? this.chatSenderId,
-      chatReciverId: chatReciverId ?? this.chatReciverId,
+      chatReceiverId: chatReceiverId ?? this.chatReceiverId,
       chatLastMessage: chatLastMessage ?? this.chatLastMessage,
       chatLastMessageTime: chatLastMessageTime ?? this.chatLastMessageTime,
       chatIsNewMessage: chatIsNewMessage ?? this.chatIsNewMessage,
@@ -41,14 +41,14 @@ class ChatModel {
     return <String, dynamic>{
       ChatConstants.chatId: chatId,
       ChatConstants.chatSenderId: chatSenderId,
-      ChatConstants.chatReciverId: chatReciverId,
+      ChatConstants.chatReceiverId: chatReceiverId,
       ChatConstants.chatLastMessage: chatLastMessage,
       ChatConstants.chatLastMessageTime: chatLastMessageTime,
       ChatConstants.chatIsNewMessage: chatIsNewMessage,
     };
   }
 
-  factory ChatModel.fromMap(Map<String, dynamic> map) {
+  factory ChatModel.fromMap(Map<Object?, Object?> map) {
     return ChatModel(
       chatId: map[ChatConstants.chatId] != null
           ? map[ChatConstants.chatId] as String
@@ -56,8 +56,8 @@ class ChatModel {
       chatSenderId: map[ChatConstants.chatSenderId] != null
           ? map[ChatConstants.chatSenderId] as String
           : null,
-      chatReciverId: map[ChatConstants.chatReciverId] != null
-          ? map[ChatConstants.chatReciverId] as String
+      chatReceiverId: map[ChatConstants.chatReceiverId] != null
+          ? map[ChatConstants.chatReceiverId] as String
           : null,
       chatLastMessage: map[ChatConstants.chatLastMessage] != null
           ? map[ChatConstants.chatLastMessage] as String
@@ -78,7 +78,7 @@ class ChatModel {
 
   @override
   String toString() {
-    return 'ChatModel(chatId: $chatId, chatSenderId: $chatSenderId, chatReciverId: $chatReciverId, chatLastMessage: $chatLastMessage, chatLastMessageTime: $chatLastMessageTime, chatIsNewMessage: $chatIsNewMessage)';
+    return 'ChatModel(chatId: $chatId, chatSenderId: $chatSenderId, chatReceiverId: $chatReceiverId, chatLastMessage: $chatLastMessage, chatLastMessageTime: $chatLastMessageTime, chatIsNewMessage: $chatIsNewMessage)';
   }
 
   @override
@@ -87,7 +87,7 @@ class ChatModel {
 
     return other.chatId == chatId &&
         other.chatSenderId == chatSenderId &&
-        other.chatReciverId == chatReciverId &&
+        other.chatReceiverId == chatReceiverId &&
         other.chatLastMessage == chatLastMessage &&
         other.chatLastMessageTime == chatLastMessageTime &&
         other.chatIsNewMessage == chatIsNewMessage;
@@ -97,7 +97,7 @@ class ChatModel {
   int get hashCode {
     return chatId.hashCode ^
         chatSenderId.hashCode ^
-        chatReciverId.hashCode ^
+        chatReceiverId.hashCode ^
         chatLastMessage.hashCode ^
         chatLastMessageTime.hashCode ^
         chatIsNewMessage.hashCode;

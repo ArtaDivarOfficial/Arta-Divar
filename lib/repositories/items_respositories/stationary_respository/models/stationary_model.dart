@@ -287,7 +287,7 @@ class StationaryModel {
     };
   }
 
-  factory StationaryModel.fromMap(Map<String, dynamic> map) {
+  factory StationaryModel.fromMap(Map<Object?, Object?> map) {
     return StationaryModel(
       itemId: map[StationaryConstants.itemId] != null
           ? map[StationaryConstants.itemId] as int
@@ -350,7 +350,7 @@ class StationaryModel {
     );
   }
 
-  factory StationaryModel.fromMapItemModel(Map<String, dynamic> map) {
+  factory StationaryModel.fromMapItemModel(Map<Object?, Object?> map) {
     return StationaryModel.itemModel(
       itemId: map[StationaryConstants.itemId] != null
           ? map[StationaryConstants.itemId] as int

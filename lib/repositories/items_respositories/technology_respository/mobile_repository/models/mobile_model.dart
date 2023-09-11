@@ -213,7 +213,7 @@ class MobileModel {
     };
   }
 
-  factory MobileModel.fromMap(Map<String, dynamic> map) {
+  factory MobileModel.fromMap(Map<Object?, Object?> map) {
     return MobileModel(
       itemId: map[MobileConstants.itemId] != null
           ? map[MobileConstants.itemId] as int
@@ -290,7 +290,7 @@ class MobileModel {
     );
   }
 
-  factory MobileModel.fromMapItemModel(Map<String, dynamic> map) {
+  factory MobileModel.fromMapItemModel(Map<Object?, Object?> map) {
     return MobileModel.itemModel(
       itemId: map[MobileConstants.itemId] != null
           ? map[MobileConstants.itemId] as int

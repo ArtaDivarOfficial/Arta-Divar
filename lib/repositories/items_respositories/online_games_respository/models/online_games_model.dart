@@ -276,7 +276,7 @@ class OnlineGamesModel {
     };
   }
 
-  factory OnlineGamesModel.fromMap(Map<String, dynamic> map) {
+  factory OnlineGamesModel.fromMap(Map<Object?, Object?> map) {
     return OnlineGamesModel(
       itemId: map[OnlineGamesConstants.itemId] != null
           ? map[OnlineGamesConstants.itemId] as int
@@ -342,7 +342,7 @@ class OnlineGamesModel {
     );
   }
 
-  factory OnlineGamesModel.fromMapItemModel(Map<String, dynamic> map) {
+  factory OnlineGamesModel.fromMapItemModel(Map<Object?, Object?> map) {
     return OnlineGamesModel.itemModel(
       itemId: map[OnlineGamesConstants.itemId] != null
           ? map[OnlineGamesConstants.itemId] as int

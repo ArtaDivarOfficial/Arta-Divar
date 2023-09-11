@@ -84,7 +84,7 @@ class MyAdvertisementModel {
     };
   }
 
-  factory MyAdvertisementModel.fromMap(Map<String, dynamic> map) {
+  factory MyAdvertisementModel.fromMap(Map<Object?, Object?> map) {
     return MyAdvertisementModel(
       itemId: map[MyAdvertisementsConstants.itemId] as int,
       itemCustomerId: map[MyAdvertisementsConstants.itemCustomerId] as String,

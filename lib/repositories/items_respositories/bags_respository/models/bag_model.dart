@@ -256,7 +256,7 @@ class BagModel {
     };
   }
 
-  factory BagModel.fromMap(Map<String, dynamic> map) {
+  factory BagModel.fromMap(Map<Object?, Object?> map) {
     return BagModel(
       itemId: map[BagConstants.itemId] != null
           ? map[BagConstants.itemId] as int
@@ -317,7 +317,7 @@ class BagModel {
     );
   }
 
-  factory BagModel.fromMapItemModel(Map<String, dynamic> map) {
+  factory BagModel.fromMapItemModel(Map<Object?, Object?> map) {
     return BagModel.itemModel(
       itemId: map[BagConstants.itemId] != null
           ? map[BagConstants.itemId] as int

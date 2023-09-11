@@ -156,7 +156,7 @@ class OthersModel {
     };
   }
 
-  factory OthersModel.fromMap(Map<String, dynamic> map) {
+  factory OthersModel.fromMap(Map<Object?, Object?> map) {
     return OthersModel(
       itemId: map[OthersConstants.itemId] != null
           ? map[OthersConstants.itemId] as int
@@ -209,7 +209,7 @@ class OthersModel {
     );
   }
 
-  factory OthersModel.fromMapItemModel(Map<String, dynamic> map) {
+  factory OthersModel.fromMapItemModel(Map<Object?, Object?> map) {
     return OthersModel.itemModel(
       itemId: map[OthersConstants.itemId] != null
           ? map[OthersConstants.itemId] as int

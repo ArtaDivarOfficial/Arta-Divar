@@ -243,7 +243,7 @@ class CosmeticsModel {
     };
   }
 
-  factory CosmeticsModel.fromMap(Map<String, dynamic> map) {
+  factory CosmeticsModel.fromMap(Map<Object?, Object?> map) {
     return CosmeticsModel(
       itemId: map[CosmeticsConstants.itemId] != null
           ? map[CosmeticsConstants.itemId] as int
@@ -300,7 +300,7 @@ class CosmeticsModel {
     );
   }
 
-  factory CosmeticsModel.fromMapItemModel(Map<String, dynamic> map) {
+  factory CosmeticsModel.fromMapItemModel(Map<Object?, Object?> map) {
     return CosmeticsModel.itemModel(
       itemId: map[CosmeticsConstants.itemId] != null
           ? map[CosmeticsConstants.itemId] as int

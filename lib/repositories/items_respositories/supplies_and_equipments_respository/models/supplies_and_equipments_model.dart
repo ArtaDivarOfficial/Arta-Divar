@@ -243,7 +243,7 @@ class SuppliesAndEquipmentsModel {
     };
   }
 
-  factory SuppliesAndEquipmentsModel.fromMap(Map<String, dynamic> map) {
+  factory SuppliesAndEquipmentsModel.fromMap(Map<Object?, Object?> map) {
     return SuppliesAndEquipmentsModel(
       itemId: map[SuppliesAndEquipmentsConstants.itemId] != null
           ? map[SuppliesAndEquipmentsConstants.itemId] as int

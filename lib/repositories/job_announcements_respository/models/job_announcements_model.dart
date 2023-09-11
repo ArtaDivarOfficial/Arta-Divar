@@ -214,7 +214,7 @@ class JobAnnouncementModel {
     };
   }
 
-  factory JobAnnouncementModel.fromMap(Map<String, dynamic> map) {
+  factory JobAnnouncementModel.fromMap(Map<Object?, Object?> map) {
     return JobAnnouncementModel(
       itemId: map[JobAnnouncementsConstants.itemId] != null
           ? map[JobAnnouncementsConstants.itemId] as int
@@ -300,7 +300,7 @@ class JobAnnouncementModel {
     );
   }
 
-  factory JobAnnouncementModel.fromMapItemModel(Map<String, dynamic> map) {
+  factory JobAnnouncementModel.fromMapItemModel(Map<Object?, Object?> map) {
     return JobAnnouncementModel.itemModel(
       itemId: map[JobAnnouncementsConstants.itemId] != null
           ? map[JobAnnouncementsConstants.itemId] as int

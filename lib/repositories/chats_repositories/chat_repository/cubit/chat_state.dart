@@ -8,9 +8,10 @@ class ChatLoading extends ChatState {}
 class ChatFetchingData extends ChatState {}
 
 class ChatsListLoaded extends ChatState {
-  final List<ChatModel> chatsModelsList;
+  final List<ChatModel> chatModelsList;
+  final List<CustomerModel> customerModelsList;
 
-  ChatsListLoaded(this.chatsModelsList);
+  ChatsListLoaded(this.chatModelsList, this.customerModelsList);
 }
 
 class ChatEmpty extends ChatState {}

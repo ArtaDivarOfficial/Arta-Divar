@@ -6,7 +6,7 @@ class PaginationModel {
   static late final PaginationModel? _paginationModel;
 
   final int? paginationCurrentPage;
-  final List? paginationData;
+  final List<Object?>? paginationData;
   final String? paginationFirstPageUrl;
   final String? paginationNextPageUrl;
 
@@ -24,7 +24,7 @@ class PaginationModel {
 
   PaginationModel copyWith({
     int? paginationCurrentPage,
-    List? paginationData,
+    List<Object?>? paginationData,
     String? paginationFirstPageUrl,
     String? paginationNextPageUrl,
   }) {
@@ -48,13 +48,13 @@ class PaginationModel {
     };
   }
 
-  factory PaginationModel.fromMap(Map<String, dynamic> map) {
+  factory PaginationModel.fromMap(Map<Object?, Object?> map) {
     return PaginationModel(
       paginationCurrentPage:
           map[PaginationConstants.paginationCurrentPage] != null
               ? map[PaginationConstants.paginationCurrentPage] as int
               : null,
-      paginationData: map[PaginationConstants.paginationData],
+      // paginationData: map[PaginationConstants.paginationData],
       paginationFirstPageUrl:
           map[PaginationConstants.paginationFirstPageUrl] != null
               ? map[PaginationConstants.paginationFirstPageUrl] as String

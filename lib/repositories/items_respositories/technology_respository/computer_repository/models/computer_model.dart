@@ -205,7 +205,7 @@ class ComputerModel {
     };
   }
 
-  factory ComputerModel.fromMap(Map<String, dynamic> map) {
+  factory ComputerModel.fromMap(Map<Object?, Object?> map) {
     return ComputerModel(
       itemId: map[ComputerConstants.itemId] != null
           ? map[ComputerConstants.itemId] as int
@@ -280,7 +280,7 @@ class ComputerModel {
     );
   }
 
-  factory ComputerModel.fromMapItemModel(Map<String, dynamic> map) {
+  factory ComputerModel.fromMapItemModel(Map<Object?, Object?> map) {
     return ComputerModel.itemModel(
       itemId: map[ComputerConstants.itemId] != null
           ? map[ComputerConstants.itemId] as int

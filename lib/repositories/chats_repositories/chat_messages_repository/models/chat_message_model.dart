@@ -53,7 +53,7 @@ class ChatMessageModel {
     };
   }
 
-  factory ChatMessageModel.fromMap(Map<String, dynamic> map) {
+  factory ChatMessageModel.fromMap(Map<Object?, Object?> map) {
     return ChatMessageModel(
       chatId: map[ChatMessageConstants.chatId] != null
           ? map[ChatMessageConstants.chatId] as String

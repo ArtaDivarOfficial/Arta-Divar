@@ -265,7 +265,7 @@ class SportModel {
     };
   }
 
-  factory SportModel.fromMap(Map<String, dynamic> map) {
+  factory SportModel.fromMap(Map<Object?, Object?> map) {
     return SportModel(
       itemId: map[SportConstants.itemId] != null
           ? map[SportConstants.itemId] as int
@@ -327,7 +327,7 @@ class SportModel {
     );
   }
 
-  factory SportModel.fromMapItemModel(Map<String, dynamic> map) {
+  factory SportModel.fromMapItemModel(Map<Object?, Object?> map) {
     return SportModel.itemModel(
       itemId: map[SportConstants.itemId] != null
           ? map[SportConstants.itemId] as int

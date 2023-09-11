@@ -294,7 +294,7 @@ class EstateModel {
     };
   }
 
-  factory EstateModel.fromMap(Map<String, dynamic> map) {
+  factory EstateModel.fromMap(Map<Object?, Object?> map) {
     return EstateModel(
       itemId: map[EstateConstants.itemId] != null
           ? map[EstateConstants.itemId] as int
@@ -372,7 +372,7 @@ class EstateModel {
     );
   }
 
-  factory EstateModel.fromMapItemModel(Map<String, dynamic> map) {
+  factory EstateModel.fromMapItemModel(Map<Object?, Object?> map) {
     return EstateModel.itemModel(
       itemId: map[EstateConstants.itemId] != null
           ? map[EstateConstants.itemId] as int
