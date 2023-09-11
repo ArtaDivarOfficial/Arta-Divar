@@ -43,6 +43,12 @@ dependencies:
   meta: ^1.8.0
   dio: ^5.3.2
   sms_otp_auto_verify: ^2.1.0
+  flutter_launcher_icons: ^0.13.1
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/app_logo/app_logo.png"
 
 dev_dependencies:
   flutter_test:
