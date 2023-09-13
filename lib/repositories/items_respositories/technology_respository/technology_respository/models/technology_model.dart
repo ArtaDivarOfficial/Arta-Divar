@@ -12,7 +12,7 @@ class TechnologyModel {
   final String? itemTitle;
   final int? itemProvince;
   final String? itemRegion;
-  final String? itemTotalPrice;
+  final double? itemTotalPrice;
   final int? itemPriceType;
   final int? itemSalePriceType;
   final int? itemDiscountAmount;
@@ -321,7 +321,7 @@ class TechnologyModel {
     String? itemTitle,
     int? itemProvince,
     String? itemRegion,
-    String? itemTotalPrice,
+    double? itemTotalPrice,
     int? itemPriceType,
     int? itemSalePriceType,
     int? itemDiscountAmount,
@@ -462,7 +462,7 @@ class TechnologyModel {
           ? map[TechnologyConstants.itemRegion] as String
           : null,
       itemTotalPrice: map[TechnologyConstants.itemTotalPrice] != null
-          ? map[TechnologyConstants.itemTotalPrice] as String
+          ? map[TechnologyConstants.itemTotalPrice] as double
           : null,
       itemPriceType: map[TechnologyConstants.itemPriceType] != null
           ? map[TechnologyConstants.itemPriceType] as int
@@ -556,7 +556,7 @@ class TechnologyModel {
           ? map[TechnologyConstants.itemRegion] as String
           : null,
       itemTotalPrice: map[TechnologyConstants.itemTotalPrice] != null
-          ? map[TechnologyConstants.itemTotalPrice] as String
+          ? map[TechnologyConstants.itemTotalPrice] as double
           : null,
       itemPriceType: map[TechnologyConstants.itemPriceType] != null
           ? map[TechnologyConstants.itemPriceType] as int

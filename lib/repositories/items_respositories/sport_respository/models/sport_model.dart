@@ -12,7 +12,7 @@ class SportModel {
   final String? itemTitle;
   final int? itemProvince;
   final String? itemRegion;
-  final String? itemTotalPrice;
+  final double? itemTotalPrice;
   final int? itemPriceType;
   final int? itemSalePriceType;
   final int? itemDiscountAmount;
@@ -211,7 +211,7 @@ class SportModel {
     String? itemTitle,
     int? itemProvince,
     String? itemRegion,
-    String? itemTotalPrice,
+    double? itemTotalPrice,
     int? itemPriceType,
     int? itemSalePriceType,
     int? itemDiscountAmount,
@@ -329,7 +329,7 @@ class SportModel {
           ? map[SportConstants.itemRegion] as String
           : null,
       itemTotalPrice: map[SportConstants.itemTotalPrice] != null
-          ? map[SportConstants.itemTotalPrice] as String
+          ? map[SportConstants.itemTotalPrice] as double
           : null,
       itemPriceType: map[SportConstants.itemPriceType] != null
           ? map[SportConstants.itemPriceType] as int
@@ -400,7 +400,7 @@ class SportModel {
           ? map[SportConstants.itemRegion] as String
           : null,
       itemTotalPrice: map[SportConstants.itemTotalPrice] != null
-          ? map[SportConstants.itemTotalPrice] as String
+          ? map[SportConstants.itemTotalPrice] as double
           : null,
       itemPriceType: map[SportConstants.itemPriceType] != null
           ? map[SportConstants.itemPriceType] as int

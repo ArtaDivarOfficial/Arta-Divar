@@ -13,7 +13,7 @@ class BagModel {
   final String? itemTitle;
   final int? itemProvince;
   final String? itemRegion;
-  final String? itemTotalPrice;
+  final double? itemTotalPrice;
   final int? itemPriceType;
   final int? itemSalePriceType;
   final int? itemDiscountAmount;
@@ -204,7 +204,7 @@ class BagModel {
     String? itemTitle,
     int? itemProvince,
     String? itemRegion,
-    String? itemTotalPrice,
+    double? itemTotalPrice,
     int? itemPriceType,
     int? itemSalePriceType,
     int? itemDiscountAmount,
@@ -322,7 +322,7 @@ class BagModel {
           ? map[BagConstants.itemRegion] as String
           : null,
       itemTotalPrice: map[BagConstants.itemTotalPrice] != null
-          ? map[BagConstants.itemTotalPrice] as String
+          ? map[BagConstants.itemTotalPrice] as double
           : null,
       itemPriceType: map[BagConstants.itemPriceType] != null
           ? map[BagConstants.itemPriceType] as int
@@ -392,7 +392,7 @@ class BagModel {
           ? map[BagConstants.itemRegion] as String
           : null,
       itemTotalPrice: map[BagConstants.itemTotalPrice] != null
-          ? map[BagConstants.itemTotalPrice] as String
+          ? map[BagConstants.itemTotalPrice] as double
           : null,
       itemPriceType: map[BagConstants.itemPriceType] != null
           ? map[BagConstants.itemPriceType] as int

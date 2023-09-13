@@ -12,7 +12,7 @@ class MobileModel {
   final String? itemTitle;
   final int? itemProvince;
   final String? itemRegion;
-  final String? itemTotalPrice;
+  final double? itemTotalPrice;
   final int? itemPriceType;
   final int? itemSalePriceType;
   final int? itemDiscountAmount;
@@ -131,7 +131,7 @@ class MobileModel {
     String? itemTitle,
     int? itemProvince,
     String? itemRegion,
-    String? itemTotalPrice,
+    double? itemTotalPrice,
     int? itemPriceType,
     int? itemSalePriceType,
     int? itemDiscountAmount,
@@ -265,7 +265,7 @@ class MobileModel {
           ? map[MobileConstants.itemRegion] as String
           : null,
       itemTotalPrice: map[MobileConstants.itemTotalPrice] != null
-          ? map[MobileConstants.itemTotalPrice] as String
+          ? map[MobileConstants.itemTotalPrice] as double
           : null,
       itemPriceType: map[MobileConstants.itemPriceType] != null
           ? map[MobileConstants.itemPriceType] as int
@@ -352,7 +352,7 @@ class MobileModel {
           ? map[MobileConstants.itemRegion] as String
           : null,
       itemTotalPrice: map[MobileConstants.itemTotalPrice] != null
-          ? map[MobileConstants.itemTotalPrice] as String
+          ? map[MobileConstants.itemTotalPrice] as double
           : null,
       itemPriceType: map[MobileConstants.itemPriceType] != null
           ? map[MobileConstants.itemPriceType] as int

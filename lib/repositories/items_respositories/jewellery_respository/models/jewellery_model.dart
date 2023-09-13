@@ -12,7 +12,7 @@ class JewelleryModel {
   final String? itemTitle;
   final int? itemProvince;
   final String? itemRegion;
-  final String? itemTotalPrice;
+  final double? itemTotalPrice;
   final int? itemPriceType;
   final int? itemSalePriceType;
   final int? itemDiscountAmount;
@@ -281,7 +281,7 @@ class JewelleryModel {
     String? itemTitle,
     int? itemProvince,
     String? itemRegion,
-    String? itemTotalPrice,
+    double? itemTotalPrice,
     int? itemPriceType,
     int? itemSalePriceType,
     int? itemDiscountAmount,
@@ -407,7 +407,7 @@ class JewelleryModel {
           ? map[JewelleryConstants.itemRegion] as String
           : null,
       itemTotalPrice: map[JewelleryConstants.itemTotalPrice] != null
-          ? map[JewelleryConstants.itemTotalPrice] as String
+          ? map[JewelleryConstants.itemTotalPrice] as double
           : null,
       itemPriceType: map[JewelleryConstants.itemPriceType] != null
           ? map[JewelleryConstants.itemPriceType] as int
@@ -487,7 +487,7 @@ class JewelleryModel {
           ? map[JewelleryConstants.itemRegion] as String
           : null,
       itemTotalPrice: map[JewelleryConstants.itemTotalPrice] != null
-          ? map[JewelleryConstants.itemTotalPrice] as String
+          ? map[JewelleryConstants.itemTotalPrice] as double
           : null,
       itemPriceType: map[JewelleryConstants.itemPriceType] != null
           ? map[JewelleryConstants.itemPriceType] as int

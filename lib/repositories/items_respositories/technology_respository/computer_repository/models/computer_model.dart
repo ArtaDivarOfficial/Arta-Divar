@@ -12,7 +12,7 @@ class ComputerModel {
   final String? itemTitle;
   final int? itemProvince;
   final String? itemRegion;
-  final String? itemTotalPrice;
+  final double? itemTotalPrice;
   final int? itemPriceType;
   final int? itemSalePriceType;
   final int? itemDiscountAmount;
@@ -127,7 +127,7 @@ class ComputerModel {
     String? itemTitle,
     int? itemProvince,
     String? itemRegion,
-    String? itemTotalPrice,
+    double? itemTotalPrice,
     int? itemPriceType,
     int? itemSalePriceType,
     int? itemDiscountAmount,
@@ -258,7 +258,7 @@ class ComputerModel {
           ? map[ComputerConstants.itemRegion] as String
           : null,
       itemTotalPrice: map[ComputerConstants.itemTotalPrice] != null
-          ? map[ComputerConstants.itemTotalPrice] as String
+          ? map[ComputerConstants.itemTotalPrice] as double
           : null,
       itemPriceType: map[ComputerConstants.itemPriceType] != null
           ? map[ComputerConstants.itemPriceType] as int
@@ -343,7 +343,7 @@ class ComputerModel {
           ? map[ComputerConstants.itemRegion] as String
           : null,
       itemTotalPrice: map[ComputerConstants.itemTotalPrice] != null
-          ? map[ComputerConstants.itemTotalPrice] as String
+          ? map[ComputerConstants.itemTotalPrice] as double
           : null,
       itemPriceType: map[ComputerConstants.itemPriceType] != null
           ? map[ComputerConstants.itemPriceType] as int

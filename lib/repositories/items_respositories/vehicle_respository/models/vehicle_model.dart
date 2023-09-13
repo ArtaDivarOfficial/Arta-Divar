@@ -12,7 +12,7 @@ class VehicleModel {
   final String? itemTitle;
   final int? itemProvince;
   final String? itemRegion;
-  final String? itemTotalPrice;
+  final double? itemTotalPrice;
   final int? itemPriceType;
   final int? itemSalePriceType;
   final int? itemDiscountAmount;
@@ -259,7 +259,7 @@ class VehicleModel {
     String? itemTitle,
     int? itemProvince,
     String? itemRegion,
-    String? itemTotalPrice,
+    double? itemTotalPrice,
     int? itemPriceType,
     int? itemSalePriceType,
     int? itemDiscountAmount,
@@ -396,7 +396,7 @@ class VehicleModel {
           ? map[VehicleConstants.itemRegion] as String
           : null,
       itemTotalPrice: map[VehicleConstants.itemTotalPrice] != null
-          ? map[VehicleConstants.itemTotalPrice] as String
+          ? map[VehicleConstants.itemTotalPrice] as double
           : null,
       itemPriceType: map[VehicleConstants.itemPriceType] != null
           ? map[VehicleConstants.itemPriceType] as int
@@ -487,7 +487,7 @@ class VehicleModel {
           ? map[VehicleConstants.itemRegion] as String
           : null,
       itemTotalPrice: map[VehicleConstants.itemTotalPrice] != null
-          ? map[VehicleConstants.itemTotalPrice] as String
+          ? map[VehicleConstants.itemTotalPrice] as double
           : null,
       itemPriceType: map[VehicleConstants.itemPriceType] != null
           ? map[VehicleConstants.itemPriceType] as int

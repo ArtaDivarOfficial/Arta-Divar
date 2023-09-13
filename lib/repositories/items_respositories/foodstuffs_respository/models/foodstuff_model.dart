@@ -12,7 +12,7 @@ class FoodstuffModel {
   final String? itemTitle;
   final int? itemProvince;
   final String? itemRegion;
-  final String? itemTotalPrice;
+  final double? itemTotalPrice;
   final int? itemPriceType;
   final int? itemSalePriceType;
   final int? itemDiscountAmount;
@@ -74,7 +74,7 @@ class FoodstuffModel {
     String? itemTitle,
     int? itemProvince,
     String? itemRegion,
-    String? itemTotalPrice,
+    double? itemTotalPrice,
     int? itemPriceType,
     int? itemSalePriceType,
     int? itemDiscountAmount,
@@ -181,7 +181,7 @@ class FoodstuffModel {
           ? map[FoodstuffsConstants.itemRegion] as String
           : null,
       itemTotalPrice: map[FoodstuffsConstants.itemTotalPrice] != null
-          ? map[FoodstuffsConstants.itemTotalPrice] as String
+          ? map[FoodstuffsConstants.itemTotalPrice] as double
           : null,
       itemPriceType: map[FoodstuffsConstants.itemPriceType] != null
           ? map[FoodstuffsConstants.itemPriceType] as int
@@ -242,7 +242,7 @@ class FoodstuffModel {
           ? map[FoodstuffsConstants.itemRegion] as String
           : null,
       itemTotalPrice: map[FoodstuffsConstants.itemTotalPrice] != null
-          ? map[FoodstuffsConstants.itemTotalPrice] as String
+          ? map[FoodstuffsConstants.itemTotalPrice] as double
           : null,
       itemPriceType: map[FoodstuffsConstants.itemPriceType] != null
           ? map[FoodstuffsConstants.itemPriceType] as int

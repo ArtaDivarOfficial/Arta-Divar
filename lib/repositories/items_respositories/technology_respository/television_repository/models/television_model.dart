@@ -12,7 +12,7 @@ class TelevisionModel {
   final String? itemTitle;
   final int? itemProvince;
   final String? itemRegion;
-  final String? itemTotalPrice;
+  final double? itemTotalPrice;
   final int? itemPriceType;
   final int? itemSalePriceType;
   final int? itemDiscountAmount;
@@ -123,7 +123,7 @@ class TelevisionModel {
     String? itemTitle,
     int? itemProvince,
     String? itemRegion,
-    String? itemTotalPrice,
+    double? itemTotalPrice,
     int? itemPriceType,
     int? itemSalePriceType,
     int? itemDiscountAmount,
@@ -251,7 +251,7 @@ class TelevisionModel {
           ? map[TelevisionConstants.itemRegion] as String
           : null,
       itemTotalPrice: map[TelevisionConstants.itemTotalPrice] != null
-          ? map[TelevisionConstants.itemTotalPrice] as String
+          ? map[TelevisionConstants.itemTotalPrice] as double
           : null,
       itemPriceType: map[TelevisionConstants.itemPriceType] != null
           ? map[TelevisionConstants.itemPriceType] as int
@@ -333,7 +333,7 @@ class TelevisionModel {
           ? map[TelevisionConstants.itemRegion] as String
           : null,
       itemTotalPrice: map[TelevisionConstants.itemTotalPrice] != null
-          ? map[TelevisionConstants.itemTotalPrice] as String
+          ? map[TelevisionConstants.itemTotalPrice] as double
           : null,
       itemPriceType: map[TelevisionConstants.itemPriceType] != null
           ? map[TelevisionConstants.itemPriceType] as int

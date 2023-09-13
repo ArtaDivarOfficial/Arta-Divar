@@ -12,7 +12,7 @@ class OnlineGamesModel {
   final String? itemTitle;
   final int? itemProvince;
   final String? itemRegion;
-  final String? itemTotalPrice;
+  final double? itemTotalPrice;
   final int? itemPriceType;
   final int? itemSalePriceType;
   final int? itemDiscountAmount;
@@ -219,7 +219,7 @@ class OnlineGamesModel {
     String? itemTitle,
     int? itemProvince,
     String? itemRegion,
-    String? itemTotalPrice,
+    double? itemTotalPrice,
     int? itemPriceType,
     int? itemSalePriceType,
     int? itemDiscountAmount,
@@ -341,7 +341,7 @@ class OnlineGamesModel {
           ? map[OnlineGamesConstants.itemRegion] as String
           : null,
       itemTotalPrice: map[OnlineGamesConstants.itemTotalPrice] != null
-          ? map[OnlineGamesConstants.itemTotalPrice] as String
+          ? map[OnlineGamesConstants.itemTotalPrice] as double
           : null,
       itemPriceType: map[OnlineGamesConstants.itemPriceType] != null
           ? map[OnlineGamesConstants.itemPriceType] as int
@@ -417,7 +417,7 @@ class OnlineGamesModel {
           ? map[OnlineGamesConstants.itemRegion] as String
           : null,
       itemTotalPrice: map[OnlineGamesConstants.itemTotalPrice] != null
-          ? map[OnlineGamesConstants.itemTotalPrice] as String
+          ? map[OnlineGamesConstants.itemTotalPrice] as double
           : null,
       itemPriceType: map[OnlineGamesConstants.itemPriceType] != null
           ? map[OnlineGamesConstants.itemPriceType] as int

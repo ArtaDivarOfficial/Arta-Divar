@@ -12,7 +12,7 @@ class BusinessModel {
   final String? itemTitle;
   final int? itemProvince;
   final String? itemRegion;
-  final String? itemTotalPrice;
+  final double? itemTotalPrice;
   final int? itemPriceType;
   final int? itemSalePriceType;
   final int? itemDiscountAmount;
@@ -187,7 +187,7 @@ class BusinessModel {
     String? itemTitle,
     int? itemProvince,
     String? itemRegion,
-    String? itemTotalPrice,
+    double? itemTotalPrice,
     int? itemPriceType,
     int? itemSalePriceType,
     int? itemDiscountAmount,
@@ -297,7 +297,7 @@ class BusinessModel {
           ? map[BusinessConstants.itemRegion] as String
           : null,
       itemTotalPrice: map[BusinessConstants.itemTotalPrice] != null
-          ? map[BusinessConstants.itemTotalPrice] as String
+          ? map[BusinessConstants.itemTotalPrice] as double
           : null,
       itemPriceType: map[BusinessConstants.itemPriceType] != null
           ? map[BusinessConstants.itemPriceType] as int
@@ -361,7 +361,7 @@ class BusinessModel {
           ? map[BusinessConstants.itemRegion] as String
           : null,
       itemTotalPrice: map[BusinessConstants.itemTotalPrice] != null
-          ? map[BusinessConstants.itemTotalPrice] as String
+          ? map[BusinessConstants.itemTotalPrice] as double
           : null,
       itemPriceType: map[BusinessConstants.itemPriceType] != null
           ? map[BusinessConstants.itemPriceType] as int

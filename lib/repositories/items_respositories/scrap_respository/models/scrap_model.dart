@@ -12,7 +12,7 @@ class ScrapModel {
   final String? itemTitle;
   final int? itemProvince;
   final String? itemRegion;
-  final String? itemPerMeterPrice;
+  final double? itemPerMeterPrice;
   final int? itemPriceType;
   final int? itemSalePriceType;
   final int? itemDiscountAmount;
@@ -107,7 +107,7 @@ class ScrapModel {
     String? itemTitle,
     int? itemProvince,
     String? itemRegion,
-    String? itemPerMeterPrice,
+    double? itemPerMeterPrice,
     int? itemPriceType,
     int? itemSalePriceType,
     int? itemDiscountAmount,
@@ -223,7 +223,7 @@ class ScrapModel {
           ? map[ScrapConstants.itemRegion] as String
           : null,
       itemPerMeterPrice: map[ScrapConstants.itemPerMeterPrice] != null
-          ? map[ScrapConstants.itemPerMeterPrice] as String
+          ? map[ScrapConstants.itemPerMeterPrice] as double
           : null,
       itemPriceType: map[ScrapConstants.itemPriceType] != null
           ? map[ScrapConstants.itemPriceType] as int
@@ -291,7 +291,7 @@ class ScrapModel {
           ? map[ScrapConstants.itemRegion] as String
           : null,
       itemPerMeterPrice: map[ScrapConstants.itemPerMeterPrice] != null
-          ? map[ScrapConstants.itemPerMeterPrice] as String
+          ? map[ScrapConstants.itemPerMeterPrice] as double
           : null,
       itemPriceType: map[ScrapConstants.itemPriceType] != null
           ? map[ScrapConstants.itemPriceType] as int

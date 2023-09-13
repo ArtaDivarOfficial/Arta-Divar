@@ -12,7 +12,7 @@ class EstateModel {
   final String? itemTitle;
   final int? itemProvince;
   final String? itemRegion;
-  final String? itemTotalPrice;
+  final double? itemTotalPrice;
   final int? itemPriceType;
   final int? itemSalePriceType;
   final int? itemDiscountAmount;
@@ -221,7 +221,7 @@ class EstateModel {
     String? itemTitle,
     int? itemProvince,
     String? itemRegion,
-    String? itemTotalPrice,
+    double? itemTotalPrice,
     int? itemPriceType,
     int? itemSalePriceType,
     int? itemDiscountAmount,
@@ -355,7 +355,7 @@ class EstateModel {
           ? map[EstateConstants.itemRegion] as String
           : null,
       itemTotalPrice: map[EstateConstants.itemTotalPrice] != null
-          ? map[EstateConstants.itemTotalPrice] as String
+          ? map[EstateConstants.itemTotalPrice] as double
           : null,
       itemPriceType: map[EstateConstants.itemPriceType] != null
           ? map[EstateConstants.itemPriceType] as int
@@ -443,7 +443,7 @@ class EstateModel {
           ? map[EstateConstants.itemRegion] as String
           : null,
       itemTotalPrice: map[EstateConstants.itemTotalPrice] != null
-          ? map[EstateConstants.itemTotalPrice] as String
+          ? map[EstateConstants.itemTotalPrice] as double
           : null,
       itemPriceType: map[EstateConstants.itemPriceType] != null
           ? map[EstateConstants.itemPriceType] as int

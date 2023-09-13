@@ -12,7 +12,7 @@ class StationaryModel {
   final String? itemTitle;
   final int? itemProvince;
   final String? itemRegion;
-  final String? itemTotalPrice;
+  final double? itemTotalPrice;
   final int? itemPriceType;
   final int? itemSalePriceType;
   final int? itemDiscountAmount;
@@ -236,7 +236,7 @@ class StationaryModel {
     String? itemTitle,
     int? itemProvince,
     String? itemRegion,
-    String? itemTotalPrice,
+    double? itemTotalPrice,
     int? itemPriceType,
     int? itemSalePriceType,
     int? itemDiscountAmount,
@@ -355,7 +355,7 @@ class StationaryModel {
           ? map[StationaryConstants.itemRegion] as String
           : null,
       itemTotalPrice: map[StationaryConstants.itemTotalPrice] != null
-          ? map[StationaryConstants.itemTotalPrice] as String
+          ? map[StationaryConstants.itemTotalPrice] as double
           : null,
       itemPriceType: map[StationaryConstants.itemPriceType] != null
           ? map[StationaryConstants.itemPriceType] as int
@@ -428,7 +428,7 @@ class StationaryModel {
           ? map[StationaryConstants.itemRegion] as String
           : null,
       itemTotalPrice: map[StationaryConstants.itemTotalPrice] != null
-          ? map[StationaryConstants.itemTotalPrice] as String
+          ? map[StationaryConstants.itemTotalPrice] as double
           : null,
       itemPriceType: map[StationaryConstants.itemPriceType] != null
           ? map[StationaryConstants.itemPriceType] as int

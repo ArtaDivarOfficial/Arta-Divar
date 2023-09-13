@@ -12,7 +12,7 @@ class OthersModel {
   final String? itemTitle;
   final int? itemProvince;
   final String? itemRegion;
-  final String? itemTotalPrice;
+  final double? itemTotalPrice;
   final int? itemPriceType;
   final int? itemSalePriceType;
   final int? itemDiscountAmount;
@@ -99,7 +99,7 @@ class OthersModel {
     String? itemTitle,
     int? itemProvince,
     String? itemRegion,
-    String? itemTotalPrice,
+    double? itemTotalPrice,
     int? itemPriceType,
     int? itemSalePriceType,
     int? itemDiscountAmount,
@@ -208,7 +208,7 @@ class OthersModel {
           ? map[OthersConstants.itemRegion] as String
           : null,
       itemTotalPrice: map[OthersConstants.itemTotalPrice] != null
-          ? map[OthersConstants.itemTotalPrice] as String
+          ? map[OthersConstants.itemTotalPrice] as double
           : null,
       itemPriceType: map[OthersConstants.itemPriceType] != null
           ? map[OthersConstants.itemPriceType] as int
@@ -271,7 +271,7 @@ class OthersModel {
           ? map[OthersConstants.itemRegion] as String
           : null,
       itemTotalPrice: map[OthersConstants.itemTotalPrice] != null
-          ? map[OthersConstants.itemTotalPrice] as String
+          ? map[OthersConstants.itemTotalPrice] as double
           : null,
       itemPriceType: map[OthersConstants.itemPriceType] != null
           ? map[OthersConstants.itemPriceType] as int

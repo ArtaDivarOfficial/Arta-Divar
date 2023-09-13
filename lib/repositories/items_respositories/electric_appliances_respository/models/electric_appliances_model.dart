@@ -12,7 +12,7 @@ class ElectricAppliancesModel {
   final String? itemTitle;
   final int? itemProvince;
   final String? itemRegion;
-  final String? itemTotalPrice;
+  final double? itemTotalPrice;
   final int? itemPriceType;
   final int? itemSalePriceType;
   final int? itemDiscountAmount;
@@ -131,7 +131,7 @@ class ElectricAppliancesModel {
     String? itemTitle,
     int? itemProvince,
     String? itemRegion,
-    String? itemTotalPrice,
+    double? itemTotalPrice,
     int? itemPriceType,
     int? itemSalePriceType,
     int? itemDiscountAmount,
@@ -250,7 +250,7 @@ class ElectricAppliancesModel {
           ? map[ElectricAppliancesConstants.itemRegion] as String
           : null,
       itemTotalPrice: map[ElectricAppliancesConstants.itemTotalPrice] != null
-          ? map[ElectricAppliancesConstants.itemTotalPrice] as String
+          ? map[ElectricAppliancesConstants.itemTotalPrice] as double
           : null,
       itemPriceType: map[ElectricAppliancesConstants.itemPriceType] != null
           ? map[ElectricAppliancesConstants.itemPriceType] as int
@@ -324,7 +324,7 @@ class ElectricAppliancesModel {
           ? map[ElectricAppliancesConstants.itemRegion] as String
           : null,
       itemTotalPrice: map[ElectricAppliancesConstants.itemTotalPrice] != null
-          ? map[ElectricAppliancesConstants.itemTotalPrice] as String
+          ? map[ElectricAppliancesConstants.itemTotalPrice] as double
           : null,
       itemPriceType: map[ElectricAppliancesConstants.itemPriceType] != null
           ? map[ElectricAppliancesConstants.itemPriceType] as int

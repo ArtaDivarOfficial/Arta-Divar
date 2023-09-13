@@ -12,7 +12,7 @@ class ToyModel {
   final String? itemTitle;
   final int? itemProvince;
   final String? itemRegion;
-  final String? itemTotalPrice;
+  final double? itemTotalPrice;
   final int? itemPriceType;
   final int? itemSalePriceType;
   final int? itemDiscountAmount;
@@ -103,7 +103,7 @@ class ToyModel {
     String? itemTitle,
     int? itemProvince,
     String? itemRegion,
-    String? itemTotalPrice,
+    double? itemTotalPrice,
     int? itemPriceType,
     int? itemSalePriceType,
     int? itemDiscountAmount,
@@ -215,7 +215,7 @@ class ToyModel {
           ? map[ToyConstants.itemRegion] as String
           : null,
       itemTotalPrice: map[ToyConstants.itemTotalPrice] != null
-          ? map[ToyConstants.itemTotalPrice] as String
+          ? map[ToyConstants.itemTotalPrice] as double
           : null,
       itemPriceType: map[ToyConstants.itemPriceType] != null
           ? map[ToyConstants.itemPriceType] as int
@@ -280,7 +280,7 @@ class ToyModel {
           ? map[ToyConstants.itemRegion] as String
           : null,
       itemTotalPrice: map[ToyConstants.itemTotalPrice] != null
-          ? map[ToyConstants.itemTotalPrice] as String
+          ? map[ToyConstants.itemTotalPrice] as double
           : null,
       itemPriceType: map[ToyConstants.itemPriceType] != null
           ? map[ToyConstants.itemPriceType] as int

@@ -11,7 +11,7 @@ class MyAdvertisementModel {
   final List<String>? itemImages;
   final String? itemTitle;
   final String? itemAddress;
-  final String? itemTotalPrice;
+  final double? itemTotalPrice;
   final int? itemPriceType;
   final int? itemSalePriceType;
   final int? itemDiscountAmount;
@@ -67,7 +67,7 @@ class MyAdvertisementModel {
     List<String>? itemImages,
     String? itemTitle,
     String? itemAddress,
-    String? itemTotalPrice,
+    double? itemTotalPrice,
     int? itemPriceType,
     int? itemSalePriceType,
     int? itemDiscountAmount,
@@ -166,7 +166,7 @@ class MyAdvertisementModel {
           ? map[MyAdvertisementsConstants.itemAddress] as String
           : null,
       itemTotalPrice: map[MyAdvertisementsConstants.itemTotalPrice] != null
-          ? map[MyAdvertisementsConstants.itemTotalPrice] as String
+          ? map[MyAdvertisementsConstants.itemTotalPrice] as double
           : null,
       itemPriceType: map[MyAdvertisementsConstants.itemPriceType] != null
           ? map[MyAdvertisementsConstants.itemPriceType] as int
@@ -226,7 +226,7 @@ class MyAdvertisementModel {
           ? map[MyAdvertisementsConstants.itemAddress] as String
           : null,
       itemTotalPrice: map[MyAdvertisementsConstants.itemTotalPrice] != null
-          ? map[MyAdvertisementsConstants.itemTotalPrice] as String
+          ? map[MyAdvertisementsConstants.itemTotalPrice] as double
           : null,
       itemPriceType: map[MyAdvertisementsConstants.itemPriceType] != null
           ? map[MyAdvertisementsConstants.itemPriceType] as int

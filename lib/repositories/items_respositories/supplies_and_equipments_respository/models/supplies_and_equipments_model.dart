@@ -12,7 +12,7 @@ class SuppliesAndEquipmentsModel {
   final String? itemTitle;
   final int? itemProvince;
   final String? itemRegion;
-  final String? itemTotalPrice;
+  final double? itemTotalPrice;
   final int? itemPriceType;
   final int? itemSalePriceType;
   final int? itemDiscountAmount;
@@ -195,7 +195,7 @@ class SuppliesAndEquipmentsModel {
     String? itemTitle,
     int? itemProvince,
     String? itemRegion,
-    String? itemTotalPrice,
+    double? itemTotalPrice,
     int? itemPriceType,
     int? itemSalePriceType,
     int? itemDiscountAmount,
@@ -311,7 +311,7 @@ class SuppliesAndEquipmentsModel {
           ? map[SuppliesAndEquipmentsConstants.itemRegion] as String
           : null,
       itemTotalPrice: map[SuppliesAndEquipmentsConstants.itemTotalPrice] != null
-          ? map[SuppliesAndEquipmentsConstants.itemTotalPrice] as String
+          ? map[SuppliesAndEquipmentsConstants.itemTotalPrice] as double
           : null,
       itemPriceType: map[SuppliesAndEquipmentsConstants.itemPriceType] != null
           ? map[SuppliesAndEquipmentsConstants.itemPriceType] as int
@@ -385,7 +385,7 @@ class SuppliesAndEquipmentsModel {
           ? map[SuppliesAndEquipmentsConstants.itemRegion] as String
           : null,
       itemTotalPrice: map[SuppliesAndEquipmentsConstants.itemTotalPrice] != null
-          ? map[SuppliesAndEquipmentsConstants.itemTotalPrice] as String
+          ? map[SuppliesAndEquipmentsConstants.itemTotalPrice] as double
           : null,
       itemPriceType: map[SuppliesAndEquipmentsConstants.itemPriceType] != null
           ? map[SuppliesAndEquipmentsConstants.itemPriceType] as int

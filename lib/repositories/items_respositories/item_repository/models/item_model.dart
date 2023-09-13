@@ -11,7 +11,7 @@ class ItemModel {
   final List<String>? itemImages;
   final String? itemTitle;
   final String? itemAddress;
-  final String? itemTotalPrice;
+  final double? itemTotalPrice;
   final int? itemPriceType;
   final int? itemSalePriceType;
   final int? itemDiscountAmount;
@@ -67,7 +67,7 @@ class ItemModel {
     List<String>? itemImages,
     String? itemTitle,
     String? itemAddress,
-    String? itemTotalPrice,
+    double? itemTotalPrice,
     int? itemPriceType,
     int? itemSalePriceType,
     int? itemDiscountAmount,
@@ -164,7 +164,7 @@ class ItemModel {
           ? map[ItemConstants.itemAddress] as String
           : null,
       itemTotalPrice: map[ItemConstants.itemTotalPrice] != null
-          ? map[ItemConstants.itemTotalPrice] as String
+          ? map[ItemConstants.itemTotalPrice] as double
           : null,
       itemPriceType: map[ItemConstants.itemPriceType] != null
           ? map[ItemConstants.itemPriceType] as int
@@ -217,7 +217,7 @@ class ItemModel {
           ? map[ItemConstants.itemAddress] as String
           : null,
       itemTotalPrice: map[ItemConstants.itemTotalPrice] != null
-          ? map[ItemConstants.itemTotalPrice] as String
+          ? map[ItemConstants.itemTotalPrice] as double
           : null,
       itemPriceType: map[ItemConstants.itemPriceType] != null
           ? map[ItemConstants.itemPriceType] as int

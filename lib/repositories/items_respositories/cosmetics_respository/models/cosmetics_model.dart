@@ -12,7 +12,7 @@ class CosmeticsModel {
   final String? itemTitle;
   final int? itemProvince;
   final String? itemRegion;
-  final String? itemTotalPrice;
+  final double? itemTotalPrice;
   final int? itemPriceType;
   final int? itemSalePriceType;
   final int? itemDiscountAmount;
@@ -195,7 +195,7 @@ class CosmeticsModel {
     String? itemTitle,
     int? itemProvince,
     String? itemRegion,
-    String? itemTotalPrice,
+    double? itemTotalPrice,
     int? itemPriceType,
     int? itemSalePriceType,
     int? itemDiscountAmount,
@@ -308,7 +308,7 @@ class CosmeticsModel {
           ? map[CosmeticsConstants.itemRegion] as String
           : null,
       itemTotalPrice: map[CosmeticsConstants.itemTotalPrice] != null
-          ? map[CosmeticsConstants.itemTotalPrice] as String
+          ? map[CosmeticsConstants.itemTotalPrice] as double
           : null,
       itemPriceType: map[CosmeticsConstants.itemPriceType] != null
           ? map[CosmeticsConstants.itemPriceType] as int
@@ -375,7 +375,7 @@ class CosmeticsModel {
           ? map[CosmeticsConstants.itemRegion] as String
           : null,
       itemTotalPrice: map[CosmeticsConstants.itemTotalPrice] != null
-          ? map[CosmeticsConstants.itemTotalPrice] as String
+          ? map[CosmeticsConstants.itemTotalPrice] as double
           : null,
       itemPriceType: map[CosmeticsConstants.itemPriceType] != null
           ? map[CosmeticsConstants.itemPriceType] as int
