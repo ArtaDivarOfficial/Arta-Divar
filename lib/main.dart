@@ -11,7 +11,7 @@ import 'package:divar/constants/colors.dart';
 import 'package:divar/packages/connectivity_plus/cubit/connectivity_plus_cubit.dart';
 import 'package:divar/repositories/otp_code_repository/cubit/otp_code_cubit.dart';
 import 'package:divar/translations/locale_keys.g.dart';
-import 'package:divar/utilities/app_router.dart';
+import 'package:divar/utilities/app_router/app_router.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
