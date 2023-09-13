@@ -12,12 +12,6 @@ class AppBarWidget extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
       child: Row(
         children: [
-          GestureDetector(
-            onTap: () {
-              Scaffold.of(context).openDrawer();
-            },
-            child: const Icon(Icons.menu_rounded, size: 35),
-          ),
           const Spacer(flex: 2),
           Image.asset('assets/images/logo.png', scale: 20),
           const Spacer(),

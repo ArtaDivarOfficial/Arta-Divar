@@ -23,8 +23,8 @@ class HorizontalCategoriesWidgets extends StatelessWidget {
           ),
           const SizedBox(height: 10),
           Wrap(
-            runSpacing: 15,
-            spacing: 13,
+            runSpacing: 20,
+            spacing: 20,
             children: [
               ...List.generate(
                 categoriesSvgList.length,

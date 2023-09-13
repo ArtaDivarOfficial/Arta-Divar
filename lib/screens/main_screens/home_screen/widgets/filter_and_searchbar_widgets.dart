@@ -18,13 +18,23 @@ class FilterAndSearchBarWidgets extends StatelessWidget {
         children: [
           Expanded(
             flex: 9,
-            child: SizedBox(
+            child: Container(
               height: 35,
+              decoration: BoxDecoration(
+                color: kWhiteColor,
+                borderRadius: BorderRadius.circular(7),
+                boxShadow: [
+                  BoxShadow(
+                    offset: const Offset(0, 2),
+                    color: kBlackColor.withOpacity(0.1),
+                    blurRadius: 3,
+                  ),
+                ],
+              ),
               child: TextField(
                 decoration: InputDecoration(
-                  enabledBorder: const OutlineInputBorder(),
-                  focusedBorder: const OutlineInputBorder(),
-                  disabledBorder: const OutlineInputBorder(),
+                  enabledBorder: InputBorder.none,
+                  focusedBorder: InputBorder.none,
                   hintText: 'اپل واچ سریز ۸',
                   contentPadding:
                       const EdgeInsets.symmetric(vertical: 0, horizontal: 10),
@@ -59,7 +69,14 @@ class FilterAndSearchBarWidgets extends StatelessWidget {
               height: 35,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(5),
-                border: Border.all(color: kBlackColor),
+                color: kWhiteColor,
+                boxShadow: [
+                  BoxShadow(
+                    offset: const Offset(0, 2),
+                    color: kBlackColor.withOpacity(0.1),
+                    blurRadius: 3,
+                  ),
+                ],
               ),
               child: GestureDetector(
                 onTap: () {},

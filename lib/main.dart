@@ -1,4 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:divar/entry_point_screen.dart';
+import 'package:divar/screens/main_screens/add_screen/add_screen.dart';
+import 'package:divar/screens/main_screens/details_screen/details_screen.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -82,17 +85,25 @@ class MyApp extends StatelessWidget {
         locale: context.locale,
         onGenerateRoute: appRouter.onGenerateRoute,
         theme: ThemeData(
-          scaffoldBackgroundColor: kWhiteColor,
           appBarTheme: const AppBarTheme(
             backgroundColor: kTransparentColor,
             elevation: 0,
+            iconTheme: IconThemeData(color: kBlackColor),
+            titleTextStyle: TextStyle(
+              color: kBlackColor,
+              fontSize: 22,
+              fontWeight: FontWeight.w600,
+            ),
           ),
         ),
         routes: {
           SplashScreen.id: (context) => const SplashScreen(),
           HomeScreen.id: (context) => const HomeScreen(),
+          DetailsScreen.id: (context) => const DetailsScreen(),
+          EntryPointScreen.id: (context) => const EntryPointScreen(),
+          AddScreen.id: (context) => const AddScreen(),
         },
-        initialRoute: HomeScreen.id,
+        initialRoute: AddScreen.id,
       ),
     );
   }

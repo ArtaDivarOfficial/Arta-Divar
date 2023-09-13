@@ -8,42 +8,42 @@ List<Map<String, dynamic>> categoriesSvgList = [
   {
     'icon': 'assets/icons/home_property.svg',
     'category_title': 'املاک',
+    'height': 17.0,
   },
   {
-    'icon': 'assets/icons/cloth_rack.svg',
-    'category_title': 'لوازم خانه',
+    'icon': 'assets/icons/home_appliances.svg',
+    'category_title': 'وسایل خانه',
+    'height': 20.0,
   },
   {
-    'icon': 'assets/icons/industry_item_machine3.svg',
-    'category_title': 'ماشین آلات صنعتی',
+    'icon': 'assets/icons/vehicles.svg',
+    'category_title': 'وسایط نقلیه',
+    'height': 20.0,
+  },
+  {
+    'icon': 'assets/icons/technology.svg',
+    'category_title': 'تکنالوژی',
+    'height': 25.0,
+  },
+  {
+    'icon': 'assets/icons/clothes.svg',
+    'category_title': 'پوشاک',
+    'height': 24.0,
   },
   {
     'icon': 'assets/icons/jewelery.svg',
     'category_title': 'جواهرات',
+    'height': 20.0,
   },
   {
-    'icon': 'assets/icons/occupation.svg',
-    'category_title': 'کسب و کار',
-  },
-  {
-    'icon': 'assets/icons/sports.svg',
-    'category_title': 'ورزش',
-  },
-  {
-    'icon': 'assets/icons/technology_accessories.svg',
-    'category_title': 'لوازم جانبی',
-  },
-  {
-    'icon': 'assets/icons/soap2.svg',
-    'category_title': 'لوازم بهداشتی',
-  },
-  {
-    'icon': 'assets/icons/toolbox.svg',
-    'category_title': 'لوازم و تجهیزات',
+    'icon': 'assets/icons/advertisement.svg',
+    'category_title': 'اعلانات کاریابی',
+    'height': 20.0,
   },
   {
     'icon': 'assets/icons/rest.svg',
     'category_title': 'بیشتر',
+    'height': 20.0,
   },
 ];
 
