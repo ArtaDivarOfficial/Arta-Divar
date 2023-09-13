@@ -9,10 +9,12 @@ class CustomTextField extends StatelessWidget {
     required this.text,
     required this.hintText,
     required this.maxLength,
+    this.textInputType,
   });
   final String text;
   final String hintText;
   final int maxLength;
+  final TextInputType? textInputType;
 
   @override
   Widget build(BuildContext context) {
@@ -36,6 +38,7 @@ class CustomTextField extends StatelessWidget {
           child: Expanded(
             // An Expanded for TextField to take all available space
             child: TextField(
+              keyboardType: textInputType ?? TextInputType.text,
               maxLength: maxLength,
               buildCounter: (context,
                   {required currentLength, required isFocused, maxLength}) {

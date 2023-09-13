@@ -1,5 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:divar/entry_point_screen.dart';
+import 'package:divar/screens/initial_screens/registration_screens/sign_in_sign_up_screen.dart';
 import 'package:divar/screens/main_screens/add_screen/add_screen.dart';
 import 'package:divar/screens/main_screens/details_screen/details_screen.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -102,8 +103,9 @@ class MyApp extends StatelessWidget {
           DetailsScreen.id: (context) => const DetailsScreen(),
           EntryPointScreen.id: (context) => const EntryPointScreen(),
           AddScreen.id: (context) => const AddScreen(),
+          SignInSignUpScreen.id: (context) => const SignInSignUpScreen(),
         },
-        initialRoute: AddScreen.id,
+        initialRoute: SignInSignUpScreen.id,
       ),
     );
   }
