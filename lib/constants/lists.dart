@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 List<String> advertisementBannerList = [
   'assets/images/banner1.png',
   'assets/images/banner2.jpg',
@@ -123,4 +125,37 @@ List<Map<String, dynamic>> itemsList = [
     'address': 'کابل، کارته نو',
     'price': '۱۳۰۰۰۰',
   },
+];
+
+// Drawer Items List
+List<Map<String, dynamic>> dashboardDrawerItemsList = [
+  {'category_index': 1, 'icon': Icons.home, 'title': 'Home'},
+  {
+    'category_index': 1,
+    'icon': Icons.currency_exchange_rounded,
+    'title': 'Exchange Rates'
+  },
+  {
+    'category_index': 1,
+    'icon': Icons.wb_sunny_rounded,
+    'title': 'Weather Forecast'
+  },
+  {
+    'category_index': 1,
+    'icon': Icons.location_on_rounded,
+    'title': 'My Location'
+  },
+  {'category_index': 1, 'icon': Icons.language_rounded, 'title': 'Language'},
+  {'category_index': 1, 'icon': Icons.book_rounded, 'title': 'References'},
+];
+List<Map<String, dynamic>> communicationDrawerItemsList = [
+  {
+    'category_index': 2,
+    'icon': Icons.contact_mail_rounded,
+    'title': 'Contact Us'
+  },
+  {'category_index': 2, 'icon': Icons.share_rounded, 'title': 'Share'},
+];
+List<Map<String, dynamic>> appDrawerItemsList = [
+  {'category_index': 3, 'icon': Icons.exit_to_app_rounded, 'title': 'Exit'},
 ];

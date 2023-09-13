@@ -48,6 +48,7 @@ dependencies:
   flutter_svg: ^2.0.5
   dotted_border: ^2.0.0+3
   carousel_slider: ^4.2.1
+  shrink_sidemenu: ^2.0.0+2-null-safety
 
 flutter_icons:
   android: true
