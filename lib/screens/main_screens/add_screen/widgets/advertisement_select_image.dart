@@ -14,22 +14,45 @@ class AdvertisementSelectImage extends StatefulWidget {
 
 class _AdvertisementSelectImageState extends State<AdvertisementSelectImage> {
   int imgCounter = 0;
+  int selectedImage = 1;
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const SizedBox(height: 15),
-        const Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20),
-          child: Text(
-            'عکس آگهی',
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.w600,
-            ),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              const Text(
+                'عکس آگهی',
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              selectedImage > 1
+                  ? GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          selectedImage = 1;
+                        });
+                      },
+                      child: const Text(
+                        'باز نشانی',
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    )
+                  : const SizedBox(),
+            ],
           ),
         ),
+        const SizedBox(height: 5),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Wrap(
@@ -38,45 +61,54 @@ class _AdvertisementSelectImageState extends State<AdvertisementSelectImage> {
             runSpacing: 12,
             children: [
               ...List.generate(
-                3,
-                (index) => DottedBorder(
-                  dashPattern: const [15],
-                  child: Container(
-                    width: 105,
-                    height: 105,
-                    decoration: BoxDecoration(
-                      color: kWhiteColor,
-                      borderRadius: BorderRadius.circular(5),
-                    ),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(
+                selectedImage,
+                (index) => GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      if (selectedImage <= 10) {
+                        selectedImage++;
+                      }
+                    });
+                  },
+                  child: DottedBorder(
+                    dashPattern: const [15],
+                    child: Container(
+                      width: 105,
+                      height: 105,
+                      decoration: BoxDecoration(
+                        color: kWhiteColor,
+                        borderRadius: BorderRadius.circular(5),
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            index != 0
+                                ? Icons.photo_camera_rounded
+                                : Icons.add_a_photo,
+                            size: index != 0 ? 45 : 35,
+                          ),
+                          const SizedBox(height: 8),
                           index != 0
-                              ? Icons.photo_camera_rounded
-                              : Icons.add_a_photo,
-                          size: index != 0 ? 45 : 35,
-                        ),
-                        const SizedBox(height: 8),
-                        index != 0
-                            ? const SizedBox()
-                            : Column(
-                                crossAxisAlignment: CrossAxisAlignment.end,
-                                children: [
-                                  const Text(
-                                    'افزودن عکس',
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.w600,
-                                      fontSize: 13,
+                              ? const SizedBox()
+                              : Column(
+                                  crossAxisAlignment: CrossAxisAlignment.end,
+                                  children: [
+                                    const Text(
+                                      'افزودن عکس',
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.w600,
+                                        fontSize: 13,
+                                      ),
                                     ),
-                                  ),
-                                  Text(
-                                    '$imgCounter/10',
-                                    style: const TextStyle(fontSize: 8),
-                                  ),
-                                ],
-                              ),
-                      ],
+                                    Text(
+                                      '$imgCounter/10',
+                                      style: const TextStyle(fontSize: 8),
+                                    ),
+                                  ],
+                                ),
+                        ],
+                      ),
                     ),
                   ),
                 ),

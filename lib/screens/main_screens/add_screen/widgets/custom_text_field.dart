@@ -50,7 +50,9 @@ class CustomTextField extends StatelessWidget {
                 );
               },
               decoration: InputDecoration(
-                enabledBorder: const OutlineInputBorder(),
+                enabledBorder: const OutlineInputBorder(
+                  borderSide: BorderSide(color: kGreyColor),
+                ),
                 focusedBorder: const OutlineInputBorder(),
                 hintText: hintText,
                 border: const OutlineInputBorder(),

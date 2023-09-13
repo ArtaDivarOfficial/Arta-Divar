@@ -24,50 +24,57 @@ class _AddScreenState extends State<AddScreen> {
           title: const Text('ثبت آگهی'),
         ),
         body: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              // لیست تایل برای راهنمای ثبت آگهی
-              SubmitAdGuideListTileWidget(
-                title: 'راهنمایی ثبت آگهی',
-                icon: Icons.help_outline_outlined,
-                trailingWidget: const Icon(
-                  Icons.arrow_back_ios_new_rounded,
-                  size: 15,
+          child: SizedBox(
+            height: MediaQuery.of(context).size.height -
+                MediaQuery.of(context).padding.top -
+                kToolbarHeight,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                // لیست تایل برای راهنمای ثبت آگهی
+                SubmitAdGuideListTileWidget(
+                  title: 'راهنمایی ثبت آگهی',
+                  icon: Icons.help_outline_outlined,
+                  trailingWidget: const Icon(
+                    Icons.arrow_back_ios_new_rounded,
+                    size: 15,
+                  ),
+                  onListTilePressed: () {},
                 ),
-                onListTilePressed: () {},
-              ),
-              // انتخاب عکس با ویجت رپ به صورت افقی
-              const AdvertisementSelectImage(),
-              const Divider(indent: 20, endIndent: 20),
-              // لیست تایل برای گزینه های انتخابی مثل وضعیت
-              ListTileWidget(
-                title: 'وضعیت',
-                onListTilePressed: () {},
-                trailingText: 'انتخاب',
-              ),
-              const Divider(indent: 20, endIndent: 20),
-              // تکست فیلد همراه شمارش گر حروف برای صفحه اضافه کردن
-              const CustomTextField(
-                text: 'عنوان',
-                maxLength: 32,
-                hintText: 'اپل واچ سریز ۸',
-              ),
-              const Divider(indent: 20, endIndent: 20),
-              // توگل برای گزینه های دو انتخابی
-              const ToggleWidget(
-                title: 'پارکینگ',
-              ),
-              const Divider(indent: 20, endIndent: 20),
-              const ToggleWidget(
-                title: 'مالچه',
-              ),
-              // تکست باتون «ادامه» برای رفتن به صفحه بعدی
-              ContinueTextButtonWidget(
-                text: 'ادامه',
-                onPressed: () {},
-              ),
-            ],
+                // انتخاب عکس با ویجت رپ به صورت افقی
+                const AdvertisementSelectImage(),
+                const Divider(indent: 20, endIndent: 20),
+                // لیست تایل برای گزینه های انتخابی مثل وضعیت
+                ListTileWidget(
+                  title: 'وضعیت',
+                  onListTilePressed: () {},
+                  trailingText: 'انتخاب',
+                ),
+                const Divider(indent: 20, endIndent: 20),
+                // تکست فیلد همراه شمارش گر حروف برای صفحه اضافه کردن
+                const CustomTextField(
+                  text: 'عنوان',
+                  maxLength: 32,
+                  hintText: 'اپل واچ سریز ۸',
+                ),
+                const Divider(indent: 20, endIndent: 20),
+                // توگل برای گزینه های دو انتخابی
+                const ToggleWidget(
+                  title: 'پارکینگ',
+                ),
+                const Divider(indent: 20, endIndent: 20),
+                const ToggleWidget(
+                  title: 'مالچه',
+                ),
+                // SizedBox(height: MediaQuery.of(context).size.height * 0.1),
+                Spacer(),
+                // تکست باتون «ادامه» برای رفتن به صفحه بعدی
+                ContinueTextButtonWidget(
+                  text: 'ادامه',
+                  onPressed: () {},
+                ),
+              ],
+            ),
           ),
         ),
       ),
