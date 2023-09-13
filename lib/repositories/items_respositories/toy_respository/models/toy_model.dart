@@ -14,6 +14,9 @@ class ToyModel {
   final String? itemRegion;
   final String? itemTotalPrice;
   final int? itemPriceType;
+  final int? itemSalePriceType;
+  final int? itemDiscountAmount;
+  final int? itemDiscountAmountType;
   final int? itemType;
   final String? itemDescription;
   final int? itemStatus;
@@ -33,6 +36,9 @@ class ToyModel {
     required this.itemRegion,
     required this.itemTotalPrice,
     required this.itemPriceType,
+    required this.itemSalePriceType,
+    required this.itemDiscountAmount,
+    required this.itemDiscountAmountType,
     required this.itemType,
     required this.itemDescription,
     required this.itemStatus,
@@ -53,6 +59,9 @@ class ToyModel {
     required this.itemRegion,
     required this.itemTotalPrice,
     required this.itemPriceType,
+    this.itemSalePriceType = -1,
+    this.itemDiscountAmount = -1,
+    this.itemDiscountAmountType = -1,
     this.itemType = -1,
     this.itemDescription = '',
     this.itemStatus = -1,
@@ -73,6 +82,9 @@ class ToyModel {
     required this.itemRegion,
     required this.itemTotalPrice,
     required this.itemPriceType,
+    required this.itemSalePriceType,
+    required this.itemDiscountAmount,
+    required this.itemDiscountAmountType,
     required this.itemType,
     required this.itemDescription,
     required this.itemStatus,
@@ -93,6 +105,9 @@ class ToyModel {
     String? itemRegion,
     String? itemTotalPrice,
     int? itemPriceType,
+    int? itemSalePriceType,
+    int? itemDiscountAmount,
+    int? itemDiscountAmountType,
     int? itemType,
     String? itemDescription,
     int? itemStatus,
@@ -112,6 +127,10 @@ class ToyModel {
       itemRegion: itemRegion ?? this.itemRegion,
       itemTotalPrice: itemTotalPrice ?? this.itemTotalPrice,
       itemPriceType: itemPriceType ?? this.itemPriceType,
+      itemSalePriceType: itemSalePriceType ?? this.itemSalePriceType,
+      itemDiscountAmount: itemDiscountAmount ?? this.itemDiscountAmount,
+      itemDiscountAmountType:
+          itemDiscountAmountType ?? this.itemDiscountAmountType,
       itemType: itemType ?? this.itemType,
       itemDescription: itemDescription ?? this.itemDescription,
       itemStatus: itemStatus ?? this.itemStatus,
@@ -134,6 +153,9 @@ class ToyModel {
       ToyConstants.itemRegion: itemRegion,
       ToyConstants.itemTotalPrice: itemTotalPrice,
       ToyConstants.itemPriceType: itemPriceType,
+      ToyConstants.itemSalePriceType: itemSalePriceType,
+      ToyConstants.itemDiscountAmount: itemDiscountAmount,
+      ToyConstants.itemDiscountAmountType: itemDiscountAmountType,
       ToyConstants.itemType: itemType,
       ToyConstants.itemDescription: itemDescription,
       ToyConstants.itemStatus: itemStatus,
@@ -156,6 +178,9 @@ class ToyModel {
       ToyConstants.itemRegion: itemRegion,
       ToyConstants.itemTotalPrice: itemTotalPrice,
       ToyConstants.itemPriceType: itemPriceType,
+      ToyConstants.itemSalePriceType: itemSalePriceType,
+      ToyConstants.itemDiscountAmount: itemDiscountAmount,
+      ToyConstants.itemDiscountAmountType: itemDiscountAmountType,
       ToyConstants.itemPublishStatus: itemPublishStatus,
       ToyConstants.itemSoldStatus: itemSoldStatus,
       ToyConstants.itemCreatedAt: itemCreatedAt,
@@ -194,6 +219,15 @@ class ToyModel {
           : null,
       itemPriceType: map[ToyConstants.itemPriceType] != null
           ? map[ToyConstants.itemPriceType] as int
+          : null,
+      itemSalePriceType: map[ToyConstants.itemSalePriceType] != null
+          ? map[ToyConstants.itemSalePriceType] as int
+          : null,
+      itemDiscountAmount: map[ToyConstants.itemDiscountAmount] != null
+          ? map[ToyConstants.itemDiscountAmount] as int
+          : null,
+      itemDiscountAmountType: map[ToyConstants.itemDiscountAmountType] != null
+          ? map[ToyConstants.itemDiscountAmountType] as int
           : null,
       itemType: map[ToyConstants.itemType] != null
           ? map[ToyConstants.itemType] as int
@@ -251,6 +285,15 @@ class ToyModel {
       itemPriceType: map[ToyConstants.itemPriceType] != null
           ? map[ToyConstants.itemPriceType] as int
           : null,
+      itemSalePriceType: map[ToyConstants.itemSalePriceType] != null
+          ? map[ToyConstants.itemSalePriceType] as int
+          : null,
+      itemDiscountAmount: map[ToyConstants.itemDiscountAmount] != null
+          ? map[ToyConstants.itemDiscountAmount] as int
+          : null,
+      itemDiscountAmountType: map[ToyConstants.itemDiscountAmountType] != null
+          ? map[ToyConstants.itemDiscountAmountType] as int
+          : null,
       itemPublishStatus: map[ToyConstants.itemPublishStatus] != null
           ? map[ToyConstants.itemPublishStatus] as String
           : null,
@@ -273,7 +316,7 @@ class ToyModel {
 
   @override
   String toString() {
-    return 'ToyModel(itemId: $itemId, itemCustomerId: $itemCustomerId, itemCategoryId: $itemCategoryId, itemSubCategoryId: $itemSubCategoryId, itemImages: $itemImages, itemTitle: $itemTitle, itemProvince: $itemProvince, itemRegion: $itemRegion, itemTotalPrice: $itemTotalPrice, itemPriceType: $itemPriceType, itemType: $itemType, itemDescription: $itemDescription, itemStatus: $itemStatus, itemPublishStatus: $itemPublishStatus, itemSoldStatus: $itemSoldStatus, itemCreatedAt: $itemCreatedAt, itemUpdatedAt: $itemUpdatedAt)';
+    return 'ToyModel(itemId: $itemId, itemCustomerId: $itemCustomerId, itemCategoryId: $itemCategoryId, itemSubCategoryId: $itemSubCategoryId, itemImages: $itemImages, itemTitle: $itemTitle, itemProvince: $itemProvince, itemRegion: $itemRegion, itemTotalPrice: $itemTotalPrice, itemPriceType: $itemPriceType, itemSalePriceType: $itemSalePriceType, itemDiscountAmount: $itemDiscountAmount, itemDiscountAmountType: $itemDiscountAmountType, itemType: $itemType, itemDescription: $itemDescription, itemStatus: $itemStatus, itemPublishStatus: $itemPublishStatus, itemSoldStatus: $itemSoldStatus, itemCreatedAt: $itemCreatedAt, itemUpdatedAt: $itemUpdatedAt)';
   }
 
   @override
@@ -290,6 +333,9 @@ class ToyModel {
         other.itemRegion == itemRegion &&
         other.itemTotalPrice == itemTotalPrice &&
         other.itemPriceType == itemPriceType &&
+        other.itemSalePriceType == itemSalePriceType &&
+        other.itemDiscountAmount == itemDiscountAmount &&
+        other.itemDiscountAmountType == itemDiscountAmountType &&
         other.itemType == itemType &&
         other.itemDescription == itemDescription &&
         other.itemStatus == itemStatus &&
@@ -311,6 +357,9 @@ class ToyModel {
         itemRegion.hashCode ^
         itemTotalPrice.hashCode ^
         itemPriceType.hashCode ^
+        itemSalePriceType.hashCode ^
+        itemDiscountAmount.hashCode ^
+        itemDiscountAmountType.hashCode ^
         itemType.hashCode ^
         itemDescription.hashCode ^
         itemStatus.hashCode ^

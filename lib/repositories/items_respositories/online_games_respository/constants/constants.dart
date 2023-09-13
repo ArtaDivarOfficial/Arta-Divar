@@ -19,6 +19,9 @@ class OnlineGamesConstants {
   static const String itemRegion = 'item_region';
   static const String itemTotalPrice = 'item_total_price';
   static const String itemPriceType = 'item_price_type';
+  static const String itemSalePriceType = 'item_sale_price_type';
+  static const String itemDiscountAmount = 'item_discount_amount';
+  static const String itemDiscountAmountType = 'item_discount_amount_type';
   static const String itemLevel = 'item_level';
   static const String itemHighestRank = 'item_highest_rank';
   static const String itemTownHallLevel = 'item_town_hall_level';

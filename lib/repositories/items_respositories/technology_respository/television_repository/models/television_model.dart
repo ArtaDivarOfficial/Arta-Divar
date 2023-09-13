@@ -14,6 +14,9 @@ class TelevisionModel {
   final String? itemRegion;
   final String? itemTotalPrice;
   final int? itemPriceType;
+  final int? itemSalePriceType;
+  final int? itemDiscountAmount;
+  final int? itemDiscountAmountType;
   final String? itemModel;
   final int? itemScreenSize;
   final String? itemDescription;
@@ -38,6 +41,9 @@ class TelevisionModel {
     required this.itemRegion,
     required this.itemTotalPrice,
     required this.itemPriceType,
+    required this.itemSalePriceType,
+    required this.itemDiscountAmount,
+    required this.itemDiscountAmountType,
     required this.itemModel,
     required this.itemScreenSize,
     required this.itemDescription,
@@ -63,6 +69,9 @@ class TelevisionModel {
     required this.itemRegion,
     required this.itemTotalPrice,
     required this.itemPriceType,
+    this.itemSalePriceType = -1,
+    this.itemDiscountAmount = -1,
+    this.itemDiscountAmountType = -1,
     this.itemModel = '',
     this.itemScreenSize = -1,
     this.itemDescription = '',
@@ -88,6 +97,9 @@ class TelevisionModel {
     required this.itemRegion,
     required this.itemTotalPrice,
     required this.itemPriceType,
+    required this.itemSalePriceType,
+    required this.itemDiscountAmount,
+    required this.itemDiscountAmountType,
     required this.itemModel,
     required this.itemScreenSize,
     required this.itemDescription,
@@ -113,6 +125,9 @@ class TelevisionModel {
     String? itemRegion,
     String? itemTotalPrice,
     int? itemPriceType,
+    int? itemSalePriceType,
+    int? itemDiscountAmount,
+    int? itemDiscountAmountType,
     String? itemModel,
     int? itemScreenSize,
     String? itemDescription,
@@ -137,6 +152,10 @@ class TelevisionModel {
       itemRegion: itemRegion ?? this.itemRegion,
       itemTotalPrice: itemTotalPrice ?? this.itemTotalPrice,
       itemPriceType: itemPriceType ?? this.itemPriceType,
+      itemSalePriceType: itemSalePriceType ?? this.itemSalePriceType,
+      itemDiscountAmount: itemDiscountAmount ?? this.itemDiscountAmount,
+      itemDiscountAmountType:
+          itemDiscountAmountType ?? this.itemDiscountAmountType,
       itemModel: itemModel ?? this.itemModel,
       itemScreenSize: itemScreenSize ?? this.itemScreenSize,
       itemDescription: itemDescription ?? this.itemDescription,
@@ -164,6 +183,9 @@ class TelevisionModel {
       TelevisionConstants.itemRegion: itemRegion,
       TelevisionConstants.itemTotalPrice: itemTotalPrice,
       TelevisionConstants.itemPriceType: itemPriceType,
+      TelevisionConstants.itemSalePriceType: itemSalePriceType,
+      TelevisionConstants.itemDiscountAmount: itemDiscountAmount,
+      TelevisionConstants.itemDiscountAmountType: itemDiscountAmountType,
       TelevisionConstants.itemModel: itemModel,
       TelevisionConstants.itemScreenSize: itemScreenSize,
       TelevisionConstants.itemDescription: itemDescription,
@@ -191,6 +213,9 @@ class TelevisionModel {
       TelevisionConstants.itemRegion: itemRegion,
       TelevisionConstants.itemTotalPrice: itemTotalPrice,
       TelevisionConstants.itemPriceType: itemPriceType,
+      TelevisionConstants.itemSalePriceType: itemSalePriceType,
+      TelevisionConstants.itemDiscountAmount: itemDiscountAmount,
+      TelevisionConstants.itemDiscountAmountType: itemDiscountAmountType,
       TelevisionConstants.itemPublishStatus: itemPublishStatus,
       TelevisionConstants.itemSoldStatus: itemSoldStatus,
       TelevisionConstants.itemCreatedAt: itemCreatedAt,
@@ -231,6 +256,16 @@ class TelevisionModel {
       itemPriceType: map[TelevisionConstants.itemPriceType] != null
           ? map[TelevisionConstants.itemPriceType] as int
           : null,
+      itemSalePriceType: map[TelevisionConstants.itemSalePriceType] != null
+          ? map[TelevisionConstants.itemSalePriceType] as int
+          : null,
+      itemDiscountAmount: map[TelevisionConstants.itemDiscountAmount] != null
+          ? map[TelevisionConstants.itemDiscountAmount] as int
+          : null,
+      itemDiscountAmountType:
+          map[TelevisionConstants.itemDiscountAmountType] != null
+              ? map[TelevisionConstants.itemDiscountAmountType] as int
+              : null,
       itemModel: map[TelevisionConstants.itemModel] != null
           ? map[TelevisionConstants.itemModel] as String
           : null,
@@ -303,6 +338,16 @@ class TelevisionModel {
       itemPriceType: map[TelevisionConstants.itemPriceType] != null
           ? map[TelevisionConstants.itemPriceType] as int
           : null,
+      itemSalePriceType: map[TelevisionConstants.itemSalePriceType] != null
+          ? map[TelevisionConstants.itemSalePriceType] as int
+          : null,
+      itemDiscountAmount: map[TelevisionConstants.itemDiscountAmount] != null
+          ? map[TelevisionConstants.itemDiscountAmount] as int
+          : null,
+      itemDiscountAmountType:
+          map[TelevisionConstants.itemDiscountAmountType] != null
+              ? map[TelevisionConstants.itemDiscountAmountType] as int
+              : null,
       itemPublishStatus: map[TelevisionConstants.itemPublishStatus] != null
           ? map[TelevisionConstants.itemPublishStatus] as String
           : null,
@@ -325,7 +370,7 @@ class TelevisionModel {
 
   @override
   String toString() {
-    return 'TelevisionModel(itemId: $itemId, itemCustomerId: $itemCustomerId, itemCategoryId: $itemCategoryId, itemSubCategoryId: $itemSubCategoryId, itemImages: $itemImages, itemTitle: $itemTitle, itemProvince: $itemProvince, itemRegion: $itemRegion, itemTotalPrice: $itemTotalPrice, itemPriceType: $itemPriceType, itemModel: $itemModel, itemScreenSize: $itemScreenSize, itemDescription: $itemDescription, itemStatus: $itemStatus, itemHDMIPortCount: $itemHDMIPortCount, itemUSBPortCount: $itemUSBPortCount, itemType: $itemType, itemChangable: $itemChangable, itemPublishStatus: $itemPublishStatus, itemSoldStatus: $itemSoldStatus, itemCreatedAt: $itemCreatedAt, itemUpdatedAt: $itemUpdatedAt)';
+    return 'TelevisionModel(itemId: $itemId, itemCustomerId: $itemCustomerId, itemCategoryId: $itemCategoryId, itemSubCategoryId: $itemSubCategoryId, itemImages: $itemImages, itemTitle: $itemTitle, itemProvince: $itemProvince, itemRegion: $itemRegion, itemTotalPrice: $itemTotalPrice, itemPriceType: $itemPriceType, itemSalePriceType: $itemSalePriceType, itemDiscountAmount: $itemDiscountAmount, itemDiscountAmountType: $itemDiscountAmountType, itemModel: $itemModel, itemScreenSize: $itemScreenSize, itemDescription: $itemDescription, itemStatus: $itemStatus, itemHDMIPortCount: $itemHDMIPortCount, itemUSBPortCount: $itemUSBPortCount, itemType: $itemType, itemChangable: $itemChangable, itemPublishStatus: $itemPublishStatus, itemSoldStatus: $itemSoldStatus, itemCreatedAt: $itemCreatedAt, itemUpdatedAt: $itemUpdatedAt)';
   }
 
   @override
@@ -342,6 +387,9 @@ class TelevisionModel {
         other.itemRegion == itemRegion &&
         other.itemTotalPrice == itemTotalPrice &&
         other.itemPriceType == itemPriceType &&
+        other.itemSalePriceType == itemSalePriceType &&
+        other.itemDiscountAmount == itemDiscountAmount &&
+        other.itemDiscountAmountType == itemDiscountAmountType &&
         other.itemModel == itemModel &&
         other.itemScreenSize == itemScreenSize &&
         other.itemDescription == itemDescription &&
@@ -368,6 +416,9 @@ class TelevisionModel {
         itemRegion.hashCode ^
         itemTotalPrice.hashCode ^
         itemPriceType.hashCode ^
+        itemSalePriceType.hashCode ^
+        itemDiscountAmount.hashCode ^
+        itemDiscountAmountType.hashCode ^
         itemModel.hashCode ^
         itemScreenSize.hashCode ^
         itemDescription.hashCode ^

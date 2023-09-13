@@ -2,7 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:dio/dio.dart';
 import 'package:divar/packages/dio/dio.dart';
 import 'package:divar/repositories/items_respositories/my_advertisements_repository/constants/constants.dart';
-import 'package:divar/repositories/items_respositories/my_advertisements_repository/models/my_advertisements_model.dart';
+import 'package:divar/repositories/items_respositories/my_advertisements_repository/models/my_advertisement_model.dart';
 import 'package:divar/repositories/pagination_repository/models/pagination_model.dart';
 import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';

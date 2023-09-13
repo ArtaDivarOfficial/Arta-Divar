@@ -14,6 +14,9 @@ class HomeAppliancesModel {
   final String? itemRegion;
   final String? itemTotalPrice;
   final int? itemPriceType;
+  final int? itemSalePriceType;
+  final int? itemDiscountAmount;
+  final int? itemDiscountAmountType;
   final String? itemBrand;
   final String? itemDescription;
   final int? itemStatus;
@@ -33,6 +36,9 @@ class HomeAppliancesModel {
     required this.itemRegion,
     required this.itemTotalPrice,
     required this.itemPriceType,
+    required this.itemSalePriceType,
+    required this.itemDiscountAmount,
+    required this.itemDiscountAmountType,
     required this.itemBrand,
     required this.itemDescription,
     required this.itemStatus,
@@ -53,6 +59,9 @@ class HomeAppliancesModel {
     required this.itemRegion,
     required this.itemTotalPrice,
     required this.itemPriceType,
+    this.itemSalePriceType = -1,
+    this.itemDiscountAmount = -1,
+    this.itemDiscountAmountType = -1,
     this.itemBrand = '',
     this.itemDescription = '',
     this.itemStatus = -1,
@@ -73,6 +82,9 @@ class HomeAppliancesModel {
     required this.itemRegion,
     required this.itemTotalPrice,
     required this.itemPriceType,
+    required this.itemSalePriceType,
+    required this.itemDiscountAmount,
+    required this.itemDiscountAmountType,
     required this.itemBrand,
     required this.itemDescription,
     required this.itemStatus,
@@ -93,6 +105,9 @@ class HomeAppliancesModel {
     required this.itemRegion,
     required this.itemTotalPrice,
     required this.itemPriceType,
+    required this.itemSalePriceType,
+    required this.itemDiscountAmount,
+    required this.itemDiscountAmountType,
     required this.itemBrand,
     required this.itemDescription,
     required this.itemStatus,
@@ -113,6 +128,9 @@ class HomeAppliancesModel {
     required this.itemRegion,
     required this.itemTotalPrice,
     required this.itemPriceType,
+    required this.itemSalePriceType,
+    required this.itemDiscountAmount,
+    required this.itemDiscountAmountType,
     required this.itemBrand,
     required this.itemDescription,
     required this.itemStatus,
@@ -133,6 +151,9 @@ class HomeAppliancesModel {
     required this.itemRegion,
     required this.itemTotalPrice,
     required this.itemPriceType,
+    required this.itemSalePriceType,
+    required this.itemDiscountAmount,
+    required this.itemDiscountAmountType,
     required this.itemBrand,
     required this.itemDescription,
     required this.itemStatus,
@@ -153,6 +174,9 @@ class HomeAppliancesModel {
     required this.itemRegion,
     required this.itemTotalPrice,
     required this.itemPriceType,
+    required this.itemSalePriceType,
+    required this.itemDiscountAmount,
+    required this.itemDiscountAmountType,
     required this.itemBrand,
     required this.itemDescription,
     required this.itemStatus,
@@ -173,6 +197,9 @@ class HomeAppliancesModel {
     String? itemRegion,
     String? itemTotalPrice,
     int? itemPriceType,
+    int? itemSalePriceType,
+    int? itemDiscountAmount,
+    int? itemDiscountAmountType,
     String? itemBrand,
     String? itemDescription,
     int? itemStatus,
@@ -192,6 +219,10 @@ class HomeAppliancesModel {
       itemRegion: itemRegion ?? this.itemRegion,
       itemTotalPrice: itemTotalPrice ?? this.itemTotalPrice,
       itemPriceType: itemPriceType ?? this.itemPriceType,
+      itemSalePriceType: itemSalePriceType ?? this.itemSalePriceType,
+      itemDiscountAmount: itemDiscountAmount ?? this.itemDiscountAmount,
+      itemDiscountAmountType:
+          itemDiscountAmountType ?? this.itemDiscountAmountType,
       itemBrand: itemBrand ?? this.itemBrand,
       itemDescription: itemDescription ?? this.itemDescription,
       itemStatus: itemStatus ?? this.itemStatus,
@@ -214,6 +245,9 @@ class HomeAppliancesModel {
       HomeAppliancesConstants.itemRegion: itemRegion,
       HomeAppliancesConstants.itemTotalPrice: itemTotalPrice,
       HomeAppliancesConstants.itemPriceType: itemPriceType,
+      HomeAppliancesConstants.itemSalePriceType: itemSalePriceType,
+      HomeAppliancesConstants.itemDiscountAmount: itemDiscountAmount,
+      HomeAppliancesConstants.itemDiscountAmountType: itemDiscountAmountType,
       HomeAppliancesConstants.itemBrand: itemBrand,
       HomeAppliancesConstants.itemDescription: itemDescription,
       HomeAppliancesConstants.itemStatus: itemStatus,
@@ -236,6 +270,9 @@ class HomeAppliancesModel {
       HomeAppliancesConstants.itemRegion: itemRegion,
       HomeAppliancesConstants.itemTotalPrice: itemTotalPrice,
       HomeAppliancesConstants.itemPriceType: itemPriceType,
+      HomeAppliancesConstants.itemSalePriceType: itemSalePriceType,
+      HomeAppliancesConstants.itemDiscountAmount: itemDiscountAmount,
+      HomeAppliancesConstants.itemDiscountAmountType: itemDiscountAmountType,
       HomeAppliancesConstants.itemPublishStatus: itemPublishStatus,
       HomeAppliancesConstants.itemSoldStatus: itemSoldStatus,
       HomeAppliancesConstants.itemCreatedAt: itemCreatedAt,
@@ -276,6 +313,17 @@ class HomeAppliancesModel {
       itemPriceType: map[HomeAppliancesConstants.itemPriceType] != null
           ? map[HomeAppliancesConstants.itemPriceType] as int
           : null,
+      itemSalePriceType: map[HomeAppliancesConstants.itemSalePriceType] != null
+          ? map[HomeAppliancesConstants.itemSalePriceType] as int
+          : null,
+      itemDiscountAmount:
+          map[HomeAppliancesConstants.itemDiscountAmount] != null
+              ? map[HomeAppliancesConstants.itemDiscountAmount] as int
+              : null,
+      itemDiscountAmountType:
+          map[HomeAppliancesConstants.itemDiscountAmountType] != null
+              ? map[HomeAppliancesConstants.itemDiscountAmountType] as int
+              : null,
       itemBrand: map[HomeAppliancesConstants.itemBrand] != null
           ? map[HomeAppliancesConstants.itemBrand] as String
           : null,
@@ -333,6 +381,17 @@ class HomeAppliancesModel {
       itemPriceType: map[HomeAppliancesConstants.itemPriceType] != null
           ? map[HomeAppliancesConstants.itemPriceType] as int
           : null,
+      itemSalePriceType: map[HomeAppliancesConstants.itemSalePriceType] != null
+          ? map[HomeAppliancesConstants.itemSalePriceType] as int
+          : null,
+      itemDiscountAmount:
+          map[HomeAppliancesConstants.itemDiscountAmount] != null
+              ? map[HomeAppliancesConstants.itemDiscountAmount] as int
+              : null,
+      itemDiscountAmountType:
+          map[HomeAppliancesConstants.itemDiscountAmountType] != null
+              ? map[HomeAppliancesConstants.itemDiscountAmountType] as int
+              : null,
       itemPublishStatus: map[HomeAppliancesConstants.itemPublishStatus] != null
           ? map[HomeAppliancesConstants.itemPublishStatus] as String
           : null,
@@ -355,7 +414,7 @@ class HomeAppliancesModel {
 
   @override
   String toString() {
-    return 'HomeAppliancesModel(itemId: $itemId, itemCustomerId: $itemCustomerId, itemCategoryId: $itemCategoryId, itemSubCategoryId: $itemSubCategoryId, itemImages: $itemImages, itemTitle: $itemTitle, itemProvince: $itemProvince, itemRegion: $itemRegion itemTotalPrice: $itemTotalPrice, itemPriceType: $itemPriceType, itemBrand: $itemBrand, itemDescription: $itemDescription, itemStatus: $itemStatus, itemPublishStatus: $itemPublishStatus, itemSoldStatus: $itemSoldStatus, itemCreatedAt: $itemCreatedAt, itemUpdatedAt: $itemUpdatedAt)';
+    return 'HomeAppliancesModel(itemId: $itemId, itemCustomerId: $itemCustomerId, itemCategoryId: $itemCategoryId, itemSubCategoryId: $itemSubCategoryId, itemImages: $itemImages, itemTitle: $itemTitle, itemProvince: $itemProvince, itemRegion: $itemRegion itemTotalPrice: $itemTotalPrice, itemPriceType: $itemPriceType, itemSalePriceType: $itemSalePriceType, itemDiscountAmount: $itemDiscountAmount, itemDiscountAmountType: $itemDiscountAmountType, itemBrand: $itemBrand, itemDescription: $itemDescription, itemStatus: $itemStatus, itemPublishStatus: $itemPublishStatus, itemSoldStatus: $itemSoldStatus, itemCreatedAt: $itemCreatedAt, itemUpdatedAt: $itemUpdatedAt)';
   }
 
   @override
@@ -372,6 +431,9 @@ class HomeAppliancesModel {
         other.itemRegion == itemRegion &&
         other.itemTotalPrice == itemTotalPrice &&
         other.itemPriceType == itemPriceType &&
+        other.itemSalePriceType == itemSalePriceType &&
+        other.itemDiscountAmount == itemDiscountAmount &&
+        other.itemDiscountAmountType == itemDiscountAmountType &&
         other.itemBrand == itemBrand &&
         other.itemDescription == itemDescription &&
         other.itemStatus == itemStatus &&
@@ -393,6 +455,9 @@ class HomeAppliancesModel {
         itemRegion.hashCode ^
         itemTotalPrice.hashCode ^
         itemPriceType.hashCode ^
+        itemSalePriceType.hashCode ^
+        itemDiscountAmount.hashCode ^
+        itemDiscountAmountType.hashCode ^
         itemBrand.hashCode ^
         itemDescription.hashCode ^
         itemStatus.hashCode ^

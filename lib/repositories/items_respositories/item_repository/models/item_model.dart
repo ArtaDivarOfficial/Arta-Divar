@@ -4,19 +4,22 @@ import 'package:divar/repositories/items_respositories/item_repository/constants
 import 'package:flutter/foundation.dart';
 
 class ItemModel {
-  final int itemId;
-  final String itemCustomerId;
-  final int itemCategoryId;
-  final int itemSubCategoryId;
-  final List<String> itemImages;
-  final String itemTitle;
-  final String itemAddress;
-  final String itemTotalPrice;
-  final String itemPriceType;
-  final String itemPublishStatus;
-  final String itemSoldStatus;
-  final String itemCreatedAt;
-  final String itemUpdatedAt;
+  final int? itemId;
+  final String? itemCustomerId;
+  final int? itemCategoryId;
+  final int? itemSubCategoryId;
+  final List<String>? itemImages;
+  final String? itemTitle;
+  final String? itemAddress;
+  final String? itemTotalPrice;
+  final int? itemPriceType;
+  final int? itemSalePriceType;
+  final int? itemDiscountAmount;
+  final int? itemDiscountAmountType;
+  final String? itemPublishStatus;
+  final String? itemSoldStatus;
+  final String? itemCreatedAt;
+  final String? itemUpdatedAt;
 
   ItemModel({
     required this.itemId,
@@ -28,6 +31,28 @@ class ItemModel {
     required this.itemAddress,
     required this.itemTotalPrice,
     required this.itemPriceType,
+    required this.itemSalePriceType,
+    required this.itemDiscountAmount,
+    required this.itemDiscountAmountType,
+    required this.itemPublishStatus,
+    required this.itemSoldStatus,
+    required this.itemCreatedAt,
+    required this.itemUpdatedAt,
+  });
+
+  ItemModel.itemModel({
+    required this.itemId,
+    required this.itemCustomerId,
+    required this.itemCategoryId,
+    required this.itemSubCategoryId,
+    required this.itemImages,
+    required this.itemTitle,
+    required this.itemAddress,
+    required this.itemTotalPrice,
+    required this.itemPriceType,
+    required this.itemSalePriceType,
+    required this.itemDiscountAmount,
+    required this.itemDiscountAmountType,
     required this.itemPublishStatus,
     required this.itemSoldStatus,
     required this.itemCreatedAt,
@@ -43,7 +68,10 @@ class ItemModel {
     String? itemTitle,
     String? itemAddress,
     String? itemTotalPrice,
-    String? itemPriceType,
+    int? itemPriceType,
+    int? itemSalePriceType,
+    int? itemDiscountAmount,
+    int? itemDiscountAmountType,
     String? itemPublishStatus,
     String? itemSoldStatus,
     String? itemCreatedAt,
@@ -59,6 +87,10 @@ class ItemModel {
       itemAddress: itemAddress ?? this.itemAddress,
       itemTotalPrice: itemTotalPrice ?? this.itemTotalPrice,
       itemPriceType: itemPriceType ?? this.itemPriceType,
+      itemSalePriceType: itemSalePriceType ?? this.itemSalePriceType,
+      itemDiscountAmount: itemDiscountAmount ?? this.itemDiscountAmount,
+      itemDiscountAmountType:
+          itemDiscountAmountType ?? this.itemDiscountAmountType,
       itemPublishStatus: itemPublishStatus ?? this.itemPublishStatus,
       itemSoldStatus: itemSoldStatus ?? this.itemSoldStatus,
       itemCreatedAt: itemCreatedAt ?? this.itemCreatedAt,
@@ -77,6 +109,9 @@ class ItemModel {
       ItemConstants.itemAddress: itemAddress,
       ItemConstants.itemTotalPrice: itemTotalPrice,
       ItemConstants.itemPriceType: itemPriceType,
+      ItemConstants.itemSalePriceType: itemSalePriceType,
+      ItemConstants.itemDiscountAmount: itemDiscountAmount,
+      ItemConstants.itemDiscountAmountType: itemDiscountAmountType,
       ItemConstants.itemPublishStatus: itemPublishStatus,
       ItemConstants.itemSoldStatus: itemSoldStatus,
       ItemConstants.itemCreatedAt: itemCreatedAt,
@@ -84,22 +119,130 @@ class ItemModel {
     };
   }
 
-  factory ItemModel.fromMap(Map<Object?, Object?> map) {
+  Map<String, dynamic> toMapItemModel() {
+    return <String, dynamic>{
+      ItemConstants.itemId: itemId,
+      ItemConstants.itemCustomerId: itemCustomerId,
+      ItemConstants.itemCategoryId: itemCategoryId,
+      ItemConstants.itemSubCategoryId: itemSubCategoryId,
+      ItemConstants.itemImages: itemImages,
+      ItemConstants.itemTitle: itemTitle,
+      ItemConstants.itemAddress: itemAddress,
+      ItemConstants.itemTotalPrice: itemTotalPrice,
+      ItemConstants.itemPriceType: itemPriceType,
+      ItemConstants.itemSalePriceType: itemSalePriceType,
+      ItemConstants.itemDiscountAmount: itemDiscountAmount,
+      ItemConstants.itemDiscountAmountType: itemDiscountAmountType,
+      ItemConstants.itemPublishStatus: itemPublishStatus,
+      ItemConstants.itemSoldStatus: itemSoldStatus,
+      ItemConstants.itemCreatedAt: itemCreatedAt,
+      ItemConstants.itemUpdatedAt: itemUpdatedAt,
+    };
+  }
+
+  factory ItemModel.fromMap(Map<String, dynamic> map) {
     return ItemModel(
-      itemId: map[ItemConstants.itemId] as int,
-      itemCustomerId: map[ItemConstants.itemCustomerId] as String,
-      itemCategoryId: map[ItemConstants.itemCategoryId] as int,
-      itemSubCategoryId: map[ItemConstants.itemSubCategoryId] as int,
-      itemImages:
-          List<String>.from((map[ItemConstants.itemImages] as List<String>)),
-      itemTitle: map[ItemConstants.itemTitle] as String,
-      itemAddress: map[ItemConstants.itemAddress] as String,
-      itemTotalPrice: map[ItemConstants.itemTotalPrice] as String,
-      itemPriceType: map[ItemConstants.itemPriceType] as String,
-      itemPublishStatus: map[ItemConstants.itemPublishStatus] as String,
-      itemSoldStatus: map[ItemConstants.itemSoldStatus] as String,
-      itemCreatedAt: map[ItemConstants.itemCreatedAt] as String,
-      itemUpdatedAt: map[ItemConstants.itemUpdatedAt] as String,
+      itemId: map[ItemConstants.itemId] != null
+          ? map[ItemConstants.itemId] as int
+          : null,
+      itemCustomerId: map[ItemConstants.itemCustomerId] != null
+          ? map[ItemConstants.itemCustomerId] as String
+          : null,
+      itemCategoryId: map[ItemConstants.itemCategoryId] != null
+          ? map[ItemConstants.itemCategoryId] as int
+          : null,
+      itemSubCategoryId: map[ItemConstants.itemSubCategoryId] != null
+          ? map[ItemConstants.itemSubCategoryId] as int
+          : null,
+      itemImages: map[ItemConstants.itemImages] != null
+          ? List<String>.from((map[ItemConstants.itemImages] as List<String>))
+          : null,
+      itemTitle: map[ItemConstants.itemTitle] != null
+          ? map[ItemConstants.itemTitle] as String
+          : null,
+      itemAddress: map[ItemConstants.itemAddress] != null
+          ? map[ItemConstants.itemAddress] as String
+          : null,
+      itemTotalPrice: map[ItemConstants.itemTotalPrice] != null
+          ? map[ItemConstants.itemTotalPrice] as String
+          : null,
+      itemPriceType: map[ItemConstants.itemPriceType] != null
+          ? map[ItemConstants.itemPriceType] as int
+          : null,
+      itemSalePriceType: map[ItemConstants.itemSalePriceType] != null
+          ? map[ItemConstants.itemSalePriceType] as int
+          : null,
+      itemDiscountAmount: map[ItemConstants.itemDiscountAmount] != null
+          ? map[ItemConstants.itemDiscountAmount] as int
+          : null,
+      itemDiscountAmountType: map[ItemConstants.itemDiscountAmountType] != null
+          ? map[ItemConstants.itemDiscountAmountType] as int
+          : null,
+      itemPublishStatus: map[ItemConstants.itemPublishStatus] != null
+          ? map[ItemConstants.itemPublishStatus] as String
+          : null,
+      itemSoldStatus: map[ItemConstants.itemSoldStatus] != null
+          ? map[ItemConstants.itemSoldStatus] as String
+          : null,
+      itemCreatedAt: map[ItemConstants.itemCreatedAt] != null
+          ? map[ItemConstants.itemCreatedAt] as String
+          : null,
+      itemUpdatedAt: map[ItemConstants.itemUpdatedAt] != null
+          ? map[ItemConstants.itemUpdatedAt] as String
+          : null,
+    );
+  }
+
+  factory ItemModel.fromMapItemModel(Map<String, dynamic> map) {
+    return ItemModel.itemModel(
+      itemId: map[ItemConstants.itemId] != null
+          ? map[ItemConstants.itemId] as int
+          : null,
+      itemCustomerId: map[ItemConstants.itemCustomerId] != null
+          ? map[ItemConstants.itemCustomerId] as String
+          : null,
+      itemCategoryId: map[ItemConstants.itemCategoryId] != null
+          ? map[ItemConstants.itemCategoryId] as int
+          : null,
+      itemSubCategoryId: map[ItemConstants.itemSubCategoryId] != null
+          ? map[ItemConstants.itemSubCategoryId] as int
+          : null,
+      itemImages: map[ItemConstants.itemImages] != null
+          ? List<String>.from((map[ItemConstants.itemImages] as List<String>))
+          : null,
+      itemTitle: map[ItemConstants.itemTitle] != null
+          ? map[ItemConstants.itemTitle] as String
+          : null,
+      itemAddress: map[ItemConstants.itemAddress] != null
+          ? map[ItemConstants.itemAddress] as String
+          : null,
+      itemTotalPrice: map[ItemConstants.itemTotalPrice] != null
+          ? map[ItemConstants.itemTotalPrice] as String
+          : null,
+      itemPriceType: map[ItemConstants.itemPriceType] != null
+          ? map[ItemConstants.itemPriceType] as int
+          : null,
+      itemSalePriceType: map[ItemConstants.itemSalePriceType] != null
+          ? map[ItemConstants.itemSalePriceType] as int
+          : null,
+      itemDiscountAmount: map[ItemConstants.itemDiscountAmount] != null
+          ? map[ItemConstants.itemDiscountAmount] as int
+          : null,
+      itemDiscountAmountType: map[ItemConstants.itemDiscountAmountType] != null
+          ? map[ItemConstants.itemDiscountAmountType] as int
+          : null,
+      itemPublishStatus: map[ItemConstants.itemPublishStatus] != null
+          ? map[ItemConstants.itemPublishStatus] as String
+          : null,
+      itemSoldStatus: map[ItemConstants.itemSoldStatus] != null
+          ? map[ItemConstants.itemSoldStatus] as String
+          : null,
+      itemCreatedAt: map[ItemConstants.itemCreatedAt] != null
+          ? map[ItemConstants.itemCreatedAt] as String
+          : null,
+      itemUpdatedAt: map[ItemConstants.itemUpdatedAt] != null
+          ? map[ItemConstants.itemUpdatedAt] as String
+          : null,
     );
   }
 
@@ -110,7 +253,7 @@ class ItemModel {
 
   @override
   String toString() {
-    return 'ItemModel(itemId: $itemId, itemCustomerId: $itemCustomerId, itemCategoryId: $itemCategoryId, itemSubCategoryId: $itemSubCategoryId, itemImages: $itemImages, itemTitle: $itemTitle, itemAddress: $itemAddress, itemTotalPrice: $itemTotalPrice, itemPriceType: $itemPriceType, itemPublishStatus: $itemPublishStatus, itemSoldStatus: $itemSoldStatus, itemCreatedAt: $itemCreatedAt, itemUpdatedAt: $itemUpdatedAt)';
+    return 'ItemModel(itemId: $itemId, itemCustomerId: $itemCustomerId, itemCategoryId: $itemCategoryId, itemSubCategoryId: $itemSubCategoryId, itemImages: $itemImages, itemTitle: $itemTitle, itemAddress: $itemAddress, itemTotalPrice: $itemTotalPrice, itemPriceType: $itemPriceType, itemSalePriceType: $itemSalePriceType, itemDiscountAmount: $itemDiscountAmount, itemDiscountAmountType: $itemDiscountAmountType, itemPublishStatus: $itemPublishStatus, itemSoldStatus: $itemSoldStatus, itemCreatedAt: $itemCreatedAt, itemUpdatedAt: $itemUpdatedAt)';
   }
 
   @override
@@ -126,6 +269,9 @@ class ItemModel {
         other.itemAddress == itemAddress &&
         other.itemTotalPrice == itemTotalPrice &&
         other.itemPriceType == itemPriceType &&
+        other.itemSalePriceType == itemSalePriceType &&
+        other.itemDiscountAmount == itemDiscountAmount &&
+        other.itemDiscountAmountType == itemDiscountAmountType &&
         other.itemPublishStatus == itemPublishStatus &&
         other.itemSoldStatus == itemSoldStatus &&
         other.itemCreatedAt == itemCreatedAt &&
@@ -143,6 +289,9 @@ class ItemModel {
         itemAddress.hashCode ^
         itemTotalPrice.hashCode ^
         itemPriceType.hashCode ^
+        itemSalePriceType.hashCode ^
+        itemDiscountAmount.hashCode ^
+        itemDiscountAmountType.hashCode ^
         itemPublishStatus.hashCode ^
         itemSoldStatus.hashCode ^
         itemCreatedAt.hashCode ^

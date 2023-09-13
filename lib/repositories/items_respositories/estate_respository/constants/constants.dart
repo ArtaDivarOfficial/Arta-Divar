@@ -19,6 +19,9 @@ class EstateConstants {
   static const String itemRegion = 'item_region';
   static const String itemTotalPrice = 'item_total_price';
   static const String itemPriceType = 'item_price_type';
+  static const String itemSalePriceType = 'item_sale_price_type';
+  static const String itemDiscountAmount = 'item_discount_amount';
+  static const String itemDiscountAmountType = 'item_discount_amount_type';
   static const String itemBuildingMeterage = 'item_building_meterage';
   static const String itemLandMeterage = 'item_land_meterage';
   static const String itemPerMeterPrice = 'item_per_meter_price';

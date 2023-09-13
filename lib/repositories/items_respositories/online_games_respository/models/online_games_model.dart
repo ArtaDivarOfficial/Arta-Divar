@@ -14,6 +14,9 @@ class OnlineGamesModel {
   final String? itemRegion;
   final String? itemTotalPrice;
   final int? itemPriceType;
+  final int? itemSalePriceType;
+  final int? itemDiscountAmount;
+  final int? itemDiscountAmountType;
   final int? itemLevel;
   final String? itemHighestRank;
   final int? itemTownHallLevel;
@@ -36,6 +39,9 @@ class OnlineGamesModel {
     required this.itemRegion,
     required this.itemTotalPrice,
     required this.itemPriceType,
+    required this.itemSalePriceType,
+    required this.itemDiscountAmount,
+    required this.itemDiscountAmountType,
     required this.itemLevel,
     required this.itemHighestRank,
     required this.itemTownHallLevel,
@@ -59,6 +65,9 @@ class OnlineGamesModel {
     required this.itemRegion,
     required this.itemTotalPrice,
     required this.itemPriceType,
+    this.itemSalePriceType = -1,
+    this.itemDiscountAmount = -1,
+    this.itemDiscountAmountType = -1,
     this.itemLevel = -1,
     this.itemHighestRank = '',
     this.itemTownHallLevel = -1,
@@ -82,6 +91,9 @@ class OnlineGamesModel {
     required this.itemRegion,
     required this.itemTotalPrice,
     required this.itemPriceType,
+    required this.itemSalePriceType,
+    required this.itemDiscountAmount,
+    required this.itemDiscountAmountType,
     required this.itemLevel,
     required this.itemHighestRank,
     this.itemTownHallLevel = -1,
@@ -105,6 +117,9 @@ class OnlineGamesModel {
     required this.itemRegion,
     required this.itemTotalPrice,
     required this.itemPriceType,
+    required this.itemSalePriceType,
+    required this.itemDiscountAmount,
+    required this.itemDiscountAmountType,
     required this.itemLevel,
     required this.itemHighestRank,
     this.itemTownHallLevel = -1,
@@ -128,6 +143,9 @@ class OnlineGamesModel {
     required this.itemRegion,
     required this.itemTotalPrice,
     required this.itemPriceType,
+    required this.itemSalePriceType,
+    required this.itemDiscountAmount,
+    required this.itemDiscountAmountType,
     this.itemLevel = -1,
     this.itemHighestRank = '',
     required this.itemTownHallLevel,
@@ -151,6 +169,9 @@ class OnlineGamesModel {
     required this.itemRegion,
     required this.itemTotalPrice,
     required this.itemPriceType,
+    required this.itemSalePriceType,
+    required this.itemDiscountAmount,
+    required this.itemDiscountAmountType,
     this.itemLevel = -1,
     this.itemHighestRank = '',
     this.itemTownHallLevel = -1,
@@ -174,6 +195,9 @@ class OnlineGamesModel {
     required this.itemRegion,
     required this.itemTotalPrice,
     required this.itemPriceType,
+    required this.itemSalePriceType,
+    required this.itemDiscountAmount,
+    required this.itemDiscountAmountType,
     this.itemLevel = -1,
     this.itemHighestRank = '',
     this.itemTownHallLevel = -1,
@@ -197,6 +221,9 @@ class OnlineGamesModel {
     String? itemRegion,
     String? itemTotalPrice,
     int? itemPriceType,
+    int? itemSalePriceType,
+    int? itemDiscountAmount,
+    int? itemDiscountAmountType,
     int? itemLevel,
     String? itemHighestRank,
     int? itemTownHallLevel,
@@ -219,6 +246,10 @@ class OnlineGamesModel {
       itemRegion: itemRegion ?? this.itemRegion,
       itemTotalPrice: itemTotalPrice ?? this.itemTotalPrice,
       itemPriceType: itemPriceType ?? this.itemPriceType,
+      itemSalePriceType: itemSalePriceType ?? this.itemSalePriceType,
+      itemDiscountAmount: itemDiscountAmount ?? this.itemDiscountAmount,
+      itemDiscountAmountType:
+          itemDiscountAmountType ?? this.itemDiscountAmountType,
       itemLevel: itemLevel ?? this.itemLevel,
       itemHighestRank: itemHighestRank ?? this.itemHighestRank,
       itemTownHallLevel: itemTownHallLevel ?? this.itemTownHallLevel,
@@ -244,6 +275,9 @@ class OnlineGamesModel {
       OnlineGamesConstants.itemRegion: itemRegion,
       OnlineGamesConstants.itemTotalPrice: itemTotalPrice,
       OnlineGamesConstants.itemPriceType: itemPriceType,
+      OnlineGamesConstants.itemSalePriceType: itemSalePriceType,
+      OnlineGamesConstants.itemDiscountAmount: itemDiscountAmount,
+      OnlineGamesConstants.itemDiscountAmountType: itemDiscountAmountType,
       OnlineGamesConstants.itemLevel: itemLevel,
       OnlineGamesConstants.itemHighestRank: itemHighestRank,
       OnlineGamesConstants.itemTownHallLevel: itemTownHallLevel,
@@ -269,6 +303,9 @@ class OnlineGamesModel {
       OnlineGamesConstants.itemRegion: itemRegion,
       OnlineGamesConstants.itemTotalPrice: itemTotalPrice,
       OnlineGamesConstants.itemPriceType: itemPriceType,
+      OnlineGamesConstants.itemSalePriceType: itemSalePriceType,
+      OnlineGamesConstants.itemDiscountAmount: itemDiscountAmount,
+      OnlineGamesConstants.itemDiscountAmountType: itemDiscountAmountType,
       OnlineGamesConstants.itemPublishStatus: itemPublishStatus,
       OnlineGamesConstants.itemSoldStatus: itemSoldStatus,
       OnlineGamesConstants.itemCreatedAt: itemCreatedAt,
@@ -309,6 +346,16 @@ class OnlineGamesModel {
       itemPriceType: map[OnlineGamesConstants.itemPriceType] != null
           ? map[OnlineGamesConstants.itemPriceType] as int
           : null,
+      itemSalePriceType: map[OnlineGamesConstants.itemSalePriceType] != null
+          ? map[OnlineGamesConstants.itemSalePriceType] as int
+          : null,
+      itemDiscountAmount: map[OnlineGamesConstants.itemDiscountAmount] != null
+          ? map[OnlineGamesConstants.itemDiscountAmount] as int
+          : null,
+      itemDiscountAmountType:
+          map[OnlineGamesConstants.itemDiscountAmountType] != null
+              ? map[OnlineGamesConstants.itemDiscountAmountType] as int
+              : null,
       itemLevel: map[OnlineGamesConstants.itemLevel] != null
           ? map[OnlineGamesConstants.itemLevel] as int
           : null,
@@ -375,6 +422,16 @@ class OnlineGamesModel {
       itemPriceType: map[OnlineGamesConstants.itemPriceType] != null
           ? map[OnlineGamesConstants.itemPriceType] as int
           : null,
+      itemSalePriceType: map[OnlineGamesConstants.itemSalePriceType] != null
+          ? map[OnlineGamesConstants.itemSalePriceType] as int
+          : null,
+      itemDiscountAmount: map[OnlineGamesConstants.itemDiscountAmount] != null
+          ? map[OnlineGamesConstants.itemDiscountAmount] as int
+          : null,
+      itemDiscountAmountType:
+          map[OnlineGamesConstants.itemDiscountAmountType] != null
+              ? map[OnlineGamesConstants.itemDiscountAmountType] as int
+              : null,
       itemPublishStatus: map[OnlineGamesConstants.itemPublishStatus] != null
           ? map[OnlineGamesConstants.itemPublishStatus] as String
           : null,
@@ -397,7 +454,7 @@ class OnlineGamesModel {
 
   @override
   String toString() {
-    return 'OnlineGamesModel(itemId: $itemId, itemCustomerId: $itemCustomerId, itemCategoryId: $itemCategoryId, itemSubCategoryId: $itemSubCategoryId, itemImages: $itemImages, itemTitle: $itemTitle, itemProvince: $itemProvince, itemRegion: $itemRegion, itemTotalPrice: $itemTotalPrice, itemPriceType: $itemPriceType, itemLevel: $itemLevel, itemHighestRank: $itemHighestRank, itemTownHallLevel: $itemTownHallLevel, itemClanLevel: $itemClanLevel, itemDescription: $itemDescription, itemStatus: $itemStatus, itemPublishStatus: $itemPublishStatus, itemSoldStatus: $itemSoldStatus, itemCreatedAt: $itemCreatedAt, itemUpdatedAt: $itemUpdatedAt)';
+    return 'OnlineGamesModel(itemId: $itemId, itemCustomerId: $itemCustomerId, itemCategoryId: $itemCategoryId, itemSubCategoryId: $itemSubCategoryId, itemImages: $itemImages, itemTitle: $itemTitle, itemProvince: $itemProvince, itemRegion: $itemRegion, itemTotalPrice: $itemTotalPrice, itemPriceType: $itemPriceType, itemSalePriceType: $itemSalePriceType, itemDiscountAmount: $itemDiscountAmount, itemDiscountAmountType: $itemDiscountAmountType, itemLevel: $itemLevel, itemHighestRank: $itemHighestRank, itemTownHallLevel: $itemTownHallLevel, itemClanLevel: $itemClanLevel, itemDescription: $itemDescription, itemStatus: $itemStatus, itemPublishStatus: $itemPublishStatus, itemSoldStatus: $itemSoldStatus, itemCreatedAt: $itemCreatedAt, itemUpdatedAt: $itemUpdatedAt)';
   }
 
   @override
@@ -414,6 +471,9 @@ class OnlineGamesModel {
         other.itemRegion == itemRegion &&
         other.itemTotalPrice == itemTotalPrice &&
         other.itemPriceType == itemPriceType &&
+        other.itemSalePriceType == itemSalePriceType &&
+        other.itemDiscountAmount == itemDiscountAmount &&
+        other.itemDiscountAmountType == itemDiscountAmountType &&
         other.itemLevel == itemLevel &&
         other.itemHighestRank == itemHighestRank &&
         other.itemTownHallLevel == itemTownHallLevel &&
@@ -438,6 +498,9 @@ class OnlineGamesModel {
         itemRegion.hashCode ^
         itemTotalPrice.hashCode ^
         itemPriceType.hashCode ^
+        itemSalePriceType.hashCode ^
+        itemDiscountAmount.hashCode ^
+        itemDiscountAmountType.hashCode ^
         itemLevel.hashCode ^
         itemHighestRank.hashCode ^
         itemTownHallLevel.hashCode ^

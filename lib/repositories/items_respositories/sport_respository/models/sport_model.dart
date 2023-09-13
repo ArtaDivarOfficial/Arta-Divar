@@ -14,6 +14,9 @@ class SportModel {
   final String? itemRegion;
   final String? itemTotalPrice;
   final int? itemPriceType;
+  final int? itemSalePriceType;
+  final int? itemDiscountAmount;
+  final int? itemDiscountAmountType;
   final String? itemColor;
   final String? itemBrand;
   final String? itemSize;
@@ -35,6 +38,9 @@ class SportModel {
     required this.itemRegion,
     required this.itemTotalPrice,
     required this.itemPriceType,
+    required this.itemSalePriceType,
+    required this.itemDiscountAmount,
+    required this.itemDiscountAmountType,
     required this.itemColor,
     required this.itemBrand,
     required this.itemSize,
@@ -57,6 +63,9 @@ class SportModel {
     required this.itemRegion,
     required this.itemTotalPrice,
     required this.itemPriceType,
+    this.itemSalePriceType = -1,
+    this.itemDiscountAmount = -1,
+    this.itemDiscountAmountType = -1,
     this.itemColor = '',
     this.itemBrand = '',
     this.itemSize = '',
@@ -79,6 +88,9 @@ class SportModel {
     required this.itemRegion,
     required this.itemTotalPrice,
     required this.itemPriceType,
+    required this.itemSalePriceType,
+    required this.itemDiscountAmount,
+    required this.itemDiscountAmountType,
     required this.itemColor,
     required this.itemBrand,
     required this.itemSize,
@@ -101,6 +113,9 @@ class SportModel {
     required this.itemRegion,
     required this.itemTotalPrice,
     required this.itemPriceType,
+    required this.itemSalePriceType,
+    required this.itemDiscountAmount,
+    required this.itemDiscountAmountType,
     required this.itemColor,
     required this.itemBrand,
     required this.itemSize,
@@ -123,6 +138,9 @@ class SportModel {
     required this.itemRegion,
     required this.itemTotalPrice,
     required this.itemPriceType,
+    required this.itemSalePriceType,
+    required this.itemDiscountAmount,
+    required this.itemDiscountAmountType,
     this.itemColor = '',
     this.itemBrand = '',
     required this.itemSize,
@@ -145,6 +163,9 @@ class SportModel {
     required this.itemRegion,
     required this.itemTotalPrice,
     required this.itemPriceType,
+    required this.itemSalePriceType,
+    required this.itemDiscountAmount,
+    required this.itemDiscountAmountType,
     this.itemColor = '',
     this.itemBrand = '',
     this.itemSize = '',
@@ -167,6 +188,9 @@ class SportModel {
     required this.itemRegion,
     required this.itemTotalPrice,
     required this.itemPriceType,
+    required this.itemSalePriceType,
+    required this.itemDiscountAmount,
+    required this.itemDiscountAmountType,
     this.itemColor = '',
     this.itemBrand = '',
     this.itemSize = '',
@@ -189,6 +213,9 @@ class SportModel {
     String? itemRegion,
     String? itemTotalPrice,
     int? itemPriceType,
+    int? itemSalePriceType,
+    int? itemDiscountAmount,
+    int? itemDiscountAmountType,
     String? itemColor,
     String? itemBrand,
     String? itemSize,
@@ -210,6 +237,10 @@ class SportModel {
       itemRegion: itemRegion ?? this.itemRegion,
       itemTotalPrice: itemTotalPrice ?? this.itemTotalPrice,
       itemPriceType: itemPriceType ?? this.itemPriceType,
+      itemSalePriceType: itemSalePriceType ?? this.itemSalePriceType,
+      itemDiscountAmount: itemDiscountAmount ?? this.itemDiscountAmount,
+      itemDiscountAmountType:
+          itemDiscountAmountType ?? this.itemDiscountAmountType,
       itemColor: itemColor ?? this.itemColor,
       itemBrand: itemBrand ?? this.itemBrand,
       itemSize: itemSize ?? this.itemSize,
@@ -234,6 +265,9 @@ class SportModel {
       SportConstants.itemRegion: itemRegion,
       SportConstants.itemTotalPrice: itemTotalPrice,
       SportConstants.itemPriceType: itemPriceType,
+      SportConstants.itemSalePriceType: itemSalePriceType,
+      SportConstants.itemDiscountAmount: itemDiscountAmount,
+      SportConstants.itemDiscountAmountType: itemDiscountAmountType,
       SportConstants.itemColor: itemColor,
       SportConstants.itemBrand: itemBrand,
       SportConstants.itemSize: itemSize,
@@ -258,6 +292,9 @@ class SportModel {
       SportConstants.itemRegion: itemRegion,
       SportConstants.itemTotalPrice: itemTotalPrice,
       SportConstants.itemPriceType: itemPriceType,
+      SportConstants.itemSalePriceType: itemSalePriceType,
+      SportConstants.itemDiscountAmount: itemDiscountAmount,
+      SportConstants.itemDiscountAmountType: itemDiscountAmountType,
       SportConstants.itemPublishStatus: itemPublishStatus,
       SportConstants.itemSoldStatus: itemSoldStatus,
       SportConstants.itemCreatedAt: itemCreatedAt,
@@ -296,6 +333,15 @@ class SportModel {
           : null,
       itemPriceType: map[SportConstants.itemPriceType] != null
           ? map[SportConstants.itemPriceType] as int
+          : null,
+      itemSalePriceType: map[SportConstants.itemSalePriceType] != null
+          ? map[SportConstants.itemSalePriceType] as int
+          : null,
+      itemDiscountAmount: map[SportConstants.itemDiscountAmount] != null
+          ? map[SportConstants.itemDiscountAmount] as int
+          : null,
+      itemDiscountAmountType: map[SportConstants.itemDiscountAmountType] != null
+          ? map[SportConstants.itemDiscountAmountType] as int
           : null,
       itemColor: map[SportConstants.itemColor] != null
           ? map[SportConstants.itemColor] as String
@@ -359,6 +405,15 @@ class SportModel {
       itemPriceType: map[SportConstants.itemPriceType] != null
           ? map[SportConstants.itemPriceType] as int
           : null,
+      itemSalePriceType: map[SportConstants.itemSalePriceType] != null
+          ? map[SportConstants.itemSalePriceType] as int
+          : null,
+      itemDiscountAmount: map[SportConstants.itemDiscountAmount] != null
+          ? map[SportConstants.itemDiscountAmount] as int
+          : null,
+      itemDiscountAmountType: map[SportConstants.itemDiscountAmountType] != null
+          ? map[SportConstants.itemDiscountAmountType] as int
+          : null,
       itemPublishStatus: map[SportConstants.itemPublishStatus] != null
           ? map[SportConstants.itemPublishStatus] as String
           : null,
@@ -381,7 +436,7 @@ class SportModel {
 
   @override
   String toString() {
-    return 'SportModel(itemId: $itemId, itemCustomerId: $itemCustomerId, itemCategoryId: $itemCategoryId, itemSubCategoryId: $itemSubCategoryId, itemImages: $itemImages, itemTitle: $itemTitle, itemProvince: $itemProvince, itemRegion: $itemRegion, itemTotalPrice: $itemTotalPrice, itemPriceType: $itemPriceType, itemColor: $itemColor, itemBrand: $itemBrand, itemSize: $itemSize, itemDescription: $itemDescription, itemStatus: $itemStatus, itemPublishStatus: $itemPublishStatus, itemSoldStatus: $itemSoldStatus, itemCreatedAt: $itemCreatedAt, itemUpdatedAt: $itemUpdatedAt)';
+    return 'SportModel(itemId: $itemId, itemCustomerId: $itemCustomerId, itemCategoryId: $itemCategoryId, itemSubCategoryId: $itemSubCategoryId, itemImages: $itemImages, itemTitle: $itemTitle, itemProvince: $itemProvince, itemRegion: $itemRegion, itemTotalPrice: $itemTotalPrice, itemPriceType: $itemPriceType, itemSalePriceType: $itemSalePriceType, itemDiscountAmount: $itemDiscountAmount, itemDiscountAmountType: $itemDiscountAmountType, itemColor: $itemColor, itemBrand: $itemBrand, itemSize: $itemSize, itemDescription: $itemDescription, itemStatus: $itemStatus, itemPublishStatus: $itemPublishStatus, itemSoldStatus: $itemSoldStatus, itemCreatedAt: $itemCreatedAt, itemUpdatedAt: $itemUpdatedAt)';
   }
 
   @override
@@ -398,6 +453,9 @@ class SportModel {
         other.itemRegion == itemRegion &&
         other.itemTotalPrice == itemTotalPrice &&
         other.itemPriceType == itemPriceType &&
+        other.itemSalePriceType == itemSalePriceType &&
+        other.itemDiscountAmount == itemDiscountAmount &&
+        other.itemDiscountAmountType == itemDiscountAmountType &&
         other.itemColor == itemColor &&
         other.itemBrand == itemBrand &&
         other.itemSize == itemSize &&
@@ -421,6 +479,9 @@ class SportModel {
         itemRegion.hashCode ^
         itemTotalPrice.hashCode ^
         itemPriceType.hashCode ^
+        itemSalePriceType.hashCode ^
+        itemDiscountAmount.hashCode ^
+        itemDiscountAmountType.hashCode ^
         itemColor.hashCode ^
         itemBrand.hashCode ^
         itemSize.hashCode ^

@@ -14,6 +14,9 @@ class MobileModel {
   final String? itemRegion;
   final String? itemTotalPrice;
   final int? itemPriceType;
+  final int? itemSalePriceType;
+  final int? itemDiscountAmount;
+  final int? itemDiscountAmountType;
   final String? itemModel;
   final int? itemBatteryCapacity;
   final String? itemRam;
@@ -40,6 +43,9 @@ class MobileModel {
     required this.itemRegion,
     required this.itemTotalPrice,
     required this.itemPriceType,
+    required this.itemSalePriceType,
+    required this.itemDiscountAmount,
+    required this.itemDiscountAmountType,
     required this.itemModel,
     required this.itemBatteryCapacity,
     required this.itemRam,
@@ -67,6 +73,9 @@ class MobileModel {
     required this.itemRegion,
     required this.itemTotalPrice,
     required this.itemPriceType,
+    this.itemSalePriceType = -1,
+    this.itemDiscountAmount = -1,
+    this.itemDiscountAmountType = -1,
     this.itemModel = '',
     this.itemBatteryCapacity = -1,
     this.itemRam = '',
@@ -94,6 +103,9 @@ class MobileModel {
     required this.itemRegion,
     required this.itemTotalPrice,
     required this.itemPriceType,
+    required this.itemSalePriceType,
+    required this.itemDiscountAmount,
+    required this.itemDiscountAmountType,
     required this.itemModel,
     required this.itemBatteryCapacity,
     required this.itemRam,
@@ -121,6 +133,9 @@ class MobileModel {
     String? itemRegion,
     String? itemTotalPrice,
     int? itemPriceType,
+    int? itemSalePriceType,
+    int? itemDiscountAmount,
+    int? itemDiscountAmountType,
     String? itemModel,
     int? itemBatteryCapacity,
     String? itemRam,
@@ -147,6 +162,10 @@ class MobileModel {
       itemRegion: itemRegion ?? this.itemRegion,
       itemTotalPrice: itemTotalPrice ?? this.itemTotalPrice,
       itemPriceType: itemPriceType ?? this.itemPriceType,
+      itemSalePriceType: itemSalePriceType ?? this.itemSalePriceType,
+      itemDiscountAmount: itemDiscountAmount ?? this.itemDiscountAmount,
+      itemDiscountAmountType:
+          itemDiscountAmountType ?? this.itemDiscountAmountType,
       itemModel: itemModel ?? this.itemModel,
       itemBatteryCapacity: itemBatteryCapacity ?? this.itemBatteryCapacity,
       itemRam: itemRam ?? this.itemRam,
@@ -177,6 +196,9 @@ class MobileModel {
       MobileConstants.itemRegion: itemRegion,
       MobileConstants.itemTotalPrice: itemTotalPrice,
       MobileConstants.itemPriceType: itemPriceType,
+      MobileConstants.itemSalePriceType: itemSalePriceType,
+      MobileConstants.itemDiscountAmount: itemDiscountAmount,
+      MobileConstants.itemDiscountAmountType: itemDiscountAmountType,
       MobileConstants.itemModel: itemModel,
       MobileConstants.itemBatteryCapacity: itemBatteryCapacity,
       MobileConstants.itemRam: itemRam,
@@ -206,6 +228,9 @@ class MobileModel {
       MobileConstants.itemRegion: itemRegion,
       MobileConstants.itemTotalPrice: itemTotalPrice,
       MobileConstants.itemPriceType: itemPriceType,
+      MobileConstants.itemSalePriceType: itemSalePriceType,
+      MobileConstants.itemDiscountAmount: itemDiscountAmount,
+      MobileConstants.itemDiscountAmountType: itemDiscountAmountType,
       MobileConstants.itemPublishStatus: itemPublishStatus,
       MobileConstants.itemSoldStatus: itemSoldStatus,
       MobileConstants.itemCreatedAt: itemCreatedAt,
@@ -245,6 +270,16 @@ class MobileModel {
       itemPriceType: map[MobileConstants.itemPriceType] != null
           ? map[MobileConstants.itemPriceType] as int
           : null,
+      itemSalePriceType: map[MobileConstants.itemSalePriceType] != null
+          ? map[MobileConstants.itemSalePriceType] as int
+          : null,
+      itemDiscountAmount: map[MobileConstants.itemDiscountAmount] != null
+          ? map[MobileConstants.itemDiscountAmount] as int
+          : null,
+      itemDiscountAmountType:
+          map[MobileConstants.itemDiscountAmountType] != null
+              ? map[MobileConstants.itemDiscountAmountType] as int
+              : null,
       itemModel: map[MobileConstants.itemModel] != null
           ? map[MobileConstants.itemModel] as String
           : null,
@@ -322,6 +357,16 @@ class MobileModel {
       itemPriceType: map[MobileConstants.itemPriceType] != null
           ? map[MobileConstants.itemPriceType] as int
           : null,
+      itemSalePriceType: map[MobileConstants.itemSalePriceType] != null
+          ? map[MobileConstants.itemSalePriceType] as int
+          : null,
+      itemDiscountAmount: map[MobileConstants.itemDiscountAmount] != null
+          ? map[MobileConstants.itemDiscountAmount] as int
+          : null,
+      itemDiscountAmountType:
+          map[MobileConstants.itemDiscountAmountType] != null
+              ? map[MobileConstants.itemDiscountAmountType] as int
+              : null,
       itemPublishStatus: map[MobileConstants.itemPublishStatus] != null
           ? map[MobileConstants.itemPublishStatus] as String
           : null,
@@ -344,7 +389,7 @@ class MobileModel {
 
   @override
   String toString() {
-    return 'MobileModel(itemId: $itemId, itemCustomerId: $itemCustomerId, itemCategoryId: $itemCategoryId, itemSubCategoryId: $itemSubCategoryId, itemImages: $itemImages, itemTitle: $itemTitle, itemProvince: $itemProvince, itemRegion: $itemRegion, itemTotalPrice: $itemTotalPrice, itemPriceType: $itemPriceType, itemModel: $itemModel, itemBatteryCapacity: $itemBatteryCapacity, itemRam: $itemRam, itemStorage: $itemStorage, itemBrandAuthenticity: $itemBrandAuthenticity, itemSimCount: $itemSimCount, itemCamera: $itemCamera, itemDescription: $itemDescription, itemStatus: $itemStatus, itemChangable: $itemChangable, itemPublishStatus: $itemPublishStatus, itemSoldStatus: $itemSoldStatus, itemCreatedAt: $itemCreatedAt, itemUpdatedAt: $itemUpdatedAt)';
+    return 'MobileModel(itemId: $itemId, itemCustomerId: $itemCustomerId, itemCategoryId: $itemCategoryId, itemSubCategoryId: $itemSubCategoryId, itemImages: $itemImages, itemTitle: $itemTitle, itemProvince: $itemProvince, itemRegion: $itemRegion, itemTotalPrice: $itemTotalPrice, itemPriceType: $itemPriceType, itemSalePriceType: $itemSalePriceType, itemDiscountAmount: $itemDiscountAmount, itemDiscountAmountType: $itemDiscountAmountType, itemModel: $itemModel, itemBatteryCapacity: $itemBatteryCapacity, itemRam: $itemRam, itemStorage: $itemStorage, itemBrandAuthenticity: $itemBrandAuthenticity, itemSimCount: $itemSimCount, itemCamera: $itemCamera, itemDescription: $itemDescription, itemStatus: $itemStatus, itemChangable: $itemChangable, itemPublishStatus: $itemPublishStatus, itemSoldStatus: $itemSoldStatus, itemCreatedAt: $itemCreatedAt, itemUpdatedAt: $itemUpdatedAt)';
   }
 
   @override
@@ -361,6 +406,9 @@ class MobileModel {
         other.itemRegion == itemRegion &&
         other.itemTotalPrice == itemTotalPrice &&
         other.itemPriceType == itemPriceType &&
+        other.itemSalePriceType == itemSalePriceType &&
+        other.itemDiscountAmount == itemDiscountAmount &&
+        other.itemDiscountAmountType == itemDiscountAmountType &&
         other.itemModel == itemModel &&
         other.itemBatteryCapacity == itemBatteryCapacity &&
         other.itemRam == itemRam &&
@@ -389,6 +437,9 @@ class MobileModel {
         itemRegion.hashCode ^
         itemTotalPrice.hashCode ^
         itemPriceType.hashCode ^
+        itemSalePriceType.hashCode ^
+        itemDiscountAmount.hashCode ^
+        itemDiscountAmountType.hashCode ^
         itemModel.hashCode ^
         itemBatteryCapacity.hashCode ^
         itemRam.hashCode ^

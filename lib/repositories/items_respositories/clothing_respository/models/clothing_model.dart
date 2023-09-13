@@ -14,6 +14,9 @@ class ClothingModel {
   final String? itemRegion;
   final String? itemTotalPrice;
   final int? itemPriceType;
+  final int? itemSalePriceType;
+  final int? itemDiscountAmount;
+  final int? itemDiscountAmountType;
   final int? itemType;
   final String? itemColor;
   final String? itemSize;
@@ -36,6 +39,9 @@ class ClothingModel {
     required this.itemRegion,
     required this.itemTotalPrice,
     required this.itemPriceType,
+    required this.itemSalePriceType,
+    required this.itemDiscountAmount,
+    required this.itemDiscountAmountType,
     required this.itemType,
     required this.itemColor,
     required this.itemSize,
@@ -59,6 +65,9 @@ class ClothingModel {
     required this.itemRegion,
     required this.itemTotalPrice,
     required this.itemPriceType,
+    this.itemSalePriceType = -1,
+    this.itemDiscountAmount = -1,
+    this.itemDiscountAmountType = -1,
     this.itemType = -1,
     this.itemColor = '',
     this.itemSize = '',
@@ -82,6 +91,9 @@ class ClothingModel {
     required this.itemRegion,
     required this.itemTotalPrice,
     required this.itemPriceType,
+    required this.itemSalePriceType,
+    required this.itemDiscountAmount,
+    required this.itemDiscountAmountType,
     required this.itemType,
     required this.itemColor,
     required this.itemSize,
@@ -105,6 +117,9 @@ class ClothingModel {
     required this.itemRegion,
     required this.itemTotalPrice,
     required this.itemPriceType,
+    required this.itemSalePriceType,
+    required this.itemDiscountAmount,
+    required this.itemDiscountAmountType,
     required this.itemType,
     required this.itemColor,
     required this.itemSize,
@@ -128,6 +143,9 @@ class ClothingModel {
     required this.itemRegion,
     required this.itemTotalPrice,
     required this.itemPriceType,
+    required this.itemSalePriceType,
+    required this.itemDiscountAmount,
+    required this.itemDiscountAmountType,
     this.itemType = -1,
     required this.itemColor,
     required this.itemSize,
@@ -151,6 +169,9 @@ class ClothingModel {
     required this.itemRegion,
     required this.itemTotalPrice,
     required this.itemPriceType,
+    required this.itemSalePriceType,
+    required this.itemDiscountAmount,
+    required this.itemDiscountAmountType,
     this.itemType = -1,
     required this.itemColor,
     required this.itemSize,
@@ -174,6 +195,9 @@ class ClothingModel {
     required this.itemRegion,
     required this.itemTotalPrice,
     required this.itemPriceType,
+    required this.itemSalePriceType,
+    required this.itemDiscountAmount,
+    required this.itemDiscountAmountType,
     required this.itemType,
     required this.itemColor,
     required this.itemSize,
@@ -197,6 +221,9 @@ class ClothingModel {
     required this.itemRegion,
     required this.itemTotalPrice,
     required this.itemPriceType,
+    required this.itemSalePriceType,
+    required this.itemDiscountAmount,
+    required this.itemDiscountAmountType,
     required this.itemType,
     this.itemColor = '',
     this.itemSize = '',
@@ -220,6 +247,9 @@ class ClothingModel {
     required this.itemRegion,
     required this.itemTotalPrice,
     required this.itemPriceType,
+    required this.itemSalePriceType,
+    required this.itemDiscountAmount,
+    required this.itemDiscountAmountType,
     this.itemType = -1,
     this.itemColor = '',
     this.itemSize = '',
@@ -243,6 +273,9 @@ class ClothingModel {
     required this.itemRegion,
     required this.itemTotalPrice,
     required this.itemPriceType,
+    required this.itemSalePriceType,
+    required this.itemDiscountAmount,
+    required this.itemDiscountAmountType,
     this.itemType = -1,
     required this.itemColor,
     required this.itemSize,
@@ -266,6 +299,9 @@ class ClothingModel {
     String? itemRegion,
     String? itemTotalPrice,
     int? itemPriceType,
+    int? itemSalePriceType,
+    int? itemDiscountAmount,
+    int? itemDiscountAmountType,
     int? itemType,
     String? itemColor,
     String? itemSize,
@@ -288,6 +324,10 @@ class ClothingModel {
       itemRegion: itemRegion ?? this.itemRegion,
       itemTotalPrice: itemTotalPrice ?? this.itemTotalPrice,
       itemPriceType: itemPriceType ?? this.itemPriceType,
+      itemSalePriceType: itemSalePriceType ?? this.itemSalePriceType,
+      itemDiscountAmount: itemDiscountAmount ?? this.itemDiscountAmount,
+      itemDiscountAmountType:
+          itemDiscountAmountType ?? this.itemDiscountAmountType,
       itemType: itemType ?? this.itemType,
       itemColor: itemColor ?? this.itemColor,
       itemSize: itemSize ?? this.itemSize,
@@ -313,6 +353,9 @@ class ClothingModel {
       ClothingConstants.itemRegion: itemRegion,
       ClothingConstants.itemTotalPrice: itemTotalPrice,
       ClothingConstants.itemPriceType: itemPriceType,
+      ClothingConstants.itemSalePriceType: itemSalePriceType,
+      ClothingConstants.itemDiscountAmount: itemDiscountAmount,
+      ClothingConstants.itemDiscountAmountType: itemDiscountAmountType,
       ClothingConstants.itemType: itemType,
       ClothingConstants.itemColor: itemColor,
       ClothingConstants.itemSize: itemSize,
@@ -338,6 +381,9 @@ class ClothingModel {
       ClothingConstants.itemRegion: itemRegion,
       ClothingConstants.itemTotalPrice: itemTotalPrice,
       ClothingConstants.itemPriceType: itemPriceType,
+      ClothingConstants.itemSalePriceType: itemSalePriceType,
+      ClothingConstants.itemDiscountAmount: itemDiscountAmount,
+      ClothingConstants.itemDiscountAmountType: itemDiscountAmountType,
       ClothingConstants.itemPublishStatus: itemPublishStatus,
       ClothingConstants.itemSoldStatus: itemSoldStatus,
       ClothingConstants.itemCreatedAt: itemCreatedAt,
@@ -378,6 +424,16 @@ class ClothingModel {
       itemPriceType: map[ClothingConstants.itemPriceType] != null
           ? map[ClothingConstants.itemPriceType] as int
           : null,
+      itemSalePriceType: map[ClothingConstants.itemSalePriceType] != null
+          ? map[ClothingConstants.itemSalePriceType] as int
+          : null,
+      itemDiscountAmount: map[ClothingConstants.itemDiscountAmount] != null
+          ? map[ClothingConstants.itemDiscountAmount] as int
+          : null,
+      itemDiscountAmountType:
+          map[ClothingConstants.itemDiscountAmountType] != null
+              ? map[ClothingConstants.itemDiscountAmountType] as int
+              : null,
       itemType: map[ClothingConstants.itemType] != null
           ? map[ClothingConstants.itemType] as int
           : null,
@@ -444,6 +500,16 @@ class ClothingModel {
       itemPriceType: map[ClothingConstants.itemPriceType] != null
           ? map[ClothingConstants.itemPriceType] as int
           : null,
+      itemSalePriceType: map[ClothingConstants.itemSalePriceType] != null
+          ? map[ClothingConstants.itemSalePriceType] as int
+          : null,
+      itemDiscountAmount: map[ClothingConstants.itemDiscountAmount] != null
+          ? map[ClothingConstants.itemDiscountAmount] as int
+          : null,
+      itemDiscountAmountType:
+          map[ClothingConstants.itemDiscountAmountType] != null
+              ? map[ClothingConstants.itemDiscountAmountType] as int
+              : null,
       itemDescription: map[ClothingConstants.itemDescription] != null
           ? map[ClothingConstants.itemDescription] as String
           : null,
@@ -469,7 +535,7 @@ class ClothingModel {
 
   @override
   String toString() {
-    return 'ClothingModel(itemId: $itemId, itemCustomerId: $itemCustomerId, itemCategoryId: $itemCategoryId, itemSubCategoryId: $itemSubCategoryId, itemImages: $itemImages, itemTitle: $itemTitle, itemProvince: $itemProvince, itemRegion: $itemRegion, itemTotalPrice: $itemTotalPrice, itemPriceType: $itemPriceType, itemType: $itemType, itemColor: $itemColor, itemSize: $itemSize, itemBrand: $itemBrand, itemDescription: $itemDescription, itemStatus: $itemStatus, itemPublishStatus: $itemPublishStatus, itemSoldStatus: $itemSoldStatus, itemCreatedAt: $itemCreatedAt, itemUpdatedAt: $itemUpdatedAt)';
+    return 'ClothingModel(itemId: $itemId, itemCustomerId: $itemCustomerId, itemCategoryId: $itemCategoryId, itemSubCategoryId: $itemSubCategoryId, itemImages: $itemImages, itemTitle: $itemTitle, itemProvince: $itemProvince, itemRegion: $itemRegion, itemTotalPrice: $itemTotalPrice, itemPriceType: $itemPriceType, itemSalePriceType: $itemSalePriceType, itemDiscountAmount: $itemDiscountAmount, itemDiscountAmountType: $itemDiscountAmountType, itemType: $itemType, itemColor: $itemColor, itemSize: $itemSize, itemBrand: $itemBrand, itemDescription: $itemDescription, itemStatus: $itemStatus, itemPublishStatus: $itemPublishStatus, itemSoldStatus: $itemSoldStatus, itemCreatedAt: $itemCreatedAt, itemUpdatedAt: $itemUpdatedAt)';
   }
 
   @override
@@ -486,6 +552,9 @@ class ClothingModel {
         other.itemRegion == itemRegion &&
         other.itemTotalPrice == itemTotalPrice &&
         other.itemPriceType == itemPriceType &&
+        other.itemSalePriceType == itemSalePriceType &&
+        other.itemDiscountAmount == itemDiscountAmount &&
+        other.itemDiscountAmountType == itemDiscountAmountType &&
         other.itemType == itemType &&
         other.itemColor == itemColor &&
         other.itemSize == itemSize &&
@@ -510,6 +579,9 @@ class ClothingModel {
         itemRegion.hashCode ^
         itemTotalPrice.hashCode ^
         itemPriceType.hashCode ^
+        itemSalePriceType.hashCode ^
+        itemDiscountAmount.hashCode ^
+        itemDiscountAmountType.hashCode ^
         itemType.hashCode ^
         itemColor.hashCode ^
         itemSize.hashCode ^

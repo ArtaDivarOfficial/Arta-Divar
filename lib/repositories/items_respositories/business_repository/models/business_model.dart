@@ -14,6 +14,9 @@ class BusinessModel {
   final String? itemRegion;
   final String? itemTotalPrice;
   final int? itemPriceType;
+  final int? itemSalePriceType;
+  final int? itemDiscountAmount;
+  final int? itemDiscountAmountType;
   final String? itemDescription;
   final int? itemStatus;
   final String? itemPublishStatus;
@@ -32,6 +35,9 @@ class BusinessModel {
     required this.itemRegion,
     required this.itemTotalPrice,
     required this.itemPriceType,
+    required this.itemSalePriceType,
+    required this.itemDiscountAmount,
+    required this.itemDiscountAmountType,
     required this.itemDescription,
     required this.itemStatus,
     required this.itemPublishStatus,
@@ -51,6 +57,9 @@ class BusinessModel {
     required this.itemRegion,
     required this.itemTotalPrice,
     required this.itemPriceType,
+    this.itemSalePriceType = -1,
+    this.itemDiscountAmount = -1,
+    this.itemDiscountAmountType = -1,
     this.itemDescription = '',
     this.itemStatus = -1,
     required this.itemPublishStatus,
@@ -70,6 +79,9 @@ class BusinessModel {
     required this.itemRegion,
     required this.itemTotalPrice,
     required this.itemPriceType,
+    required this.itemSalePriceType,
+    required this.itemDiscountAmount,
+    required this.itemDiscountAmountType,
     required this.itemDescription,
     required this.itemStatus,
     required this.itemPublishStatus,
@@ -89,6 +101,9 @@ class BusinessModel {
     required this.itemRegion,
     required this.itemTotalPrice,
     required this.itemPriceType,
+    required this.itemSalePriceType,
+    required this.itemDiscountAmount,
+    required this.itemDiscountAmountType,
     required this.itemDescription,
     required this.itemStatus,
     required this.itemPublishStatus,
@@ -108,6 +123,9 @@ class BusinessModel {
     required this.itemRegion,
     required this.itemTotalPrice,
     required this.itemPriceType,
+    required this.itemSalePriceType,
+    required this.itemDiscountAmount,
+    required this.itemDiscountAmountType,
     required this.itemDescription,
     required this.itemStatus,
     required this.itemPublishStatus,
@@ -127,6 +145,9 @@ class BusinessModel {
     required this.itemRegion,
     required this.itemTotalPrice,
     required this.itemPriceType,
+    required this.itemSalePriceType,
+    required this.itemDiscountAmount,
+    required this.itemDiscountAmountType,
     required this.itemDescription,
     required this.itemStatus,
     required this.itemPublishStatus,
@@ -146,6 +167,9 @@ class BusinessModel {
     required this.itemRegion,
     required this.itemTotalPrice,
     required this.itemPriceType,
+    required this.itemSalePriceType,
+    required this.itemDiscountAmount,
+    required this.itemDiscountAmountType,
     required this.itemDescription,
     required this.itemStatus,
     required this.itemPublishStatus,
@@ -165,6 +189,9 @@ class BusinessModel {
     String? itemRegion,
     String? itemTotalPrice,
     int? itemPriceType,
+    int? itemSalePriceType,
+    int? itemDiscountAmount,
+    int? itemDiscountAmountType,
     String? itemDescription,
     int? itemStatus,
     String? itemPublishStatus,
@@ -183,6 +210,10 @@ class BusinessModel {
       itemRegion: itemRegion ?? this.itemRegion,
       itemTotalPrice: itemTotalPrice ?? this.itemTotalPrice,
       itemPriceType: itemPriceType ?? this.itemPriceType,
+      itemSalePriceType: itemSalePriceType ?? this.itemSalePriceType,
+      itemDiscountAmount: itemDiscountAmount ?? this.itemDiscountAmount,
+      itemDiscountAmountType:
+          itemDiscountAmountType ?? this.itemDiscountAmountType,
       itemDescription: itemDescription ?? this.itemDescription,
       itemStatus: itemStatus ?? this.itemStatus,
       itemPublishStatus: itemPublishStatus ?? this.itemPublishStatus,
@@ -204,6 +235,9 @@ class BusinessModel {
       BusinessConstants.itemRegion: itemRegion,
       BusinessConstants.itemTotalPrice: itemTotalPrice,
       BusinessConstants.itemPriceType: itemPriceType,
+      BusinessConstants.itemSalePriceType: itemSalePriceType,
+      BusinessConstants.itemDiscountAmount: itemDiscountAmount,
+      BusinessConstants.itemDiscountAmountType: itemDiscountAmountType,
       BusinessConstants.itemDescription: itemDescription,
       BusinessConstants.itemStatus: itemStatus,
       BusinessConstants.itemPublishStatus: itemPublishStatus,
@@ -225,6 +259,9 @@ class BusinessModel {
       BusinessConstants.itemRegion: itemRegion,
       BusinessConstants.itemTotalPrice: itemTotalPrice,
       BusinessConstants.itemPriceType: itemPriceType,
+      BusinessConstants.itemSalePriceType: itemSalePriceType,
+      BusinessConstants.itemDiscountAmount: itemDiscountAmount,
+      BusinessConstants.itemDiscountAmountType: itemDiscountAmountType,
       BusinessConstants.itemPublishStatus: itemPublishStatus,
       BusinessConstants.itemSoldStatus: itemSoldStatus,
       BusinessConstants.itemCreatedAt: itemCreatedAt,
@@ -265,6 +302,16 @@ class BusinessModel {
       itemPriceType: map[BusinessConstants.itemPriceType] != null
           ? map[BusinessConstants.itemPriceType] as int
           : null,
+      itemSalePriceType: map[BusinessConstants.itemSalePriceType] != null
+          ? map[BusinessConstants.itemSalePriceType] as int
+          : null,
+      itemDiscountAmount: map[BusinessConstants.itemDiscountAmount] != null
+          ? map[BusinessConstants.itemDiscountAmount] as int
+          : null,
+      itemDiscountAmountType:
+          map[BusinessConstants.itemDiscountAmountType] != null
+              ? map[BusinessConstants.itemDiscountAmountType] as int
+              : null,
       itemDescription: map[BusinessConstants.itemDescription] != null
           ? map[BusinessConstants.itemDescription] as String
           : null,
@@ -319,6 +366,16 @@ class BusinessModel {
       itemPriceType: map[BusinessConstants.itemPriceType] != null
           ? map[BusinessConstants.itemPriceType] as int
           : null,
+      itemSalePriceType: map[BusinessConstants.itemSalePriceType] != null
+          ? map[BusinessConstants.itemSalePriceType] as int
+          : null,
+      itemDiscountAmount: map[BusinessConstants.itemDiscountAmount] != null
+          ? map[BusinessConstants.itemDiscountAmount] as int
+          : null,
+      itemDiscountAmountType:
+          map[BusinessConstants.itemDiscountAmountType] != null
+              ? map[BusinessConstants.itemDiscountAmountType] as int
+              : null,
       itemDescription: map[BusinessConstants.itemDescription] != null
           ? map[BusinessConstants.itemDescription] as String
           : null,
@@ -344,7 +401,7 @@ class BusinessModel {
 
   @override
   String toString() {
-    return 'BusinessModel(itemId: $itemId, itemCustomerId: $itemCustomerId, itemCategoryId: $itemCategoryId, itemSubCategoryId: $itemSubCategoryId, itemImages: $itemImages, itemTitle: $itemTitle, itemProvince: $itemProvince, itemRegion: $itemRegion, itemTotalPrice: $itemTotalPrice, itemPriceType: $itemPriceType, itemDescription: $itemDescription, itemStatus: $itemStatus, itemPublishStatus: $itemPublishStatus, itemSoldStatus: $itemSoldStatus, itemCreatedAt: $itemCreatedAt, itemUpdatedAt: $itemUpdatedAt)';
+    return 'BusinessModel(itemId: $itemId, itemCustomerId: $itemCustomerId, itemCategoryId: $itemCategoryId, itemSubCategoryId: $itemSubCategoryId, itemImages: $itemImages, itemTitle: $itemTitle, itemProvince: $itemProvince, itemRegion: $itemRegion, itemTotalPrice: $itemTotalPrice, itemPriceType: $itemPriceType, itemSalePriceType: $itemSalePriceType, itemDiscountAmount: $itemDiscountAmount, itemDiscountAmountType: $itemDiscountAmountType, itemDescription: $itemDescription, itemStatus: $itemStatus, itemPublishStatus: $itemPublishStatus, itemSoldStatus: $itemSoldStatus, itemCreatedAt: $itemCreatedAt, itemUpdatedAt: $itemUpdatedAt)';
   }
 
   @override
@@ -361,6 +418,9 @@ class BusinessModel {
         other.itemRegion == itemRegion &&
         other.itemTotalPrice == itemTotalPrice &&
         other.itemPriceType == itemPriceType &&
+        other.itemSalePriceType == itemSalePriceType &&
+        other.itemDiscountAmount == itemDiscountAmount &&
+        other.itemDiscountAmountType == itemDiscountAmountType &&
         other.itemDescription == itemDescription &&
         other.itemStatus == itemStatus &&
         other.itemPublishStatus == itemPublishStatus &&
@@ -381,6 +441,9 @@ class BusinessModel {
         itemRegion.hashCode ^
         itemTotalPrice.hashCode ^
         itemPriceType.hashCode ^
+        itemSalePriceType.hashCode ^
+        itemDiscountAmount.hashCode ^
+        itemDiscountAmountType.hashCode ^
         itemDescription.hashCode ^
         itemStatus.hashCode ^
         itemPublishStatus.hashCode ^

@@ -14,6 +14,9 @@ class VehicleModel {
   final String? itemRegion;
   final String? itemTotalPrice;
   final int? itemPriceType;
+  final int? itemSalePriceType;
+  final int? itemDiscountAmount;
+  final int? itemDiscountAmountType;
   final int? itemUsedInKilometers;
   final String? itemModel;
   final int? itemCCCount;
@@ -41,6 +44,9 @@ class VehicleModel {
     required this.itemRegion,
     required this.itemTotalPrice,
     required this.itemPriceType,
+    required this.itemSalePriceType,
+    required this.itemDiscountAmount,
+    required this.itemDiscountAmountType,
     required this.itemUsedInKilometers,
     required this.itemModel,
     required this.itemCCCount,
@@ -69,6 +75,9 @@ class VehicleModel {
     required this.itemRegion,
     required this.itemTotalPrice,
     required this.itemPriceType,
+    this.itemSalePriceType = -1,
+    this.itemDiscountAmount = -1,
+    this.itemDiscountAmountType = -1,
     this.itemUsedInKilometers = -1,
     this.itemModel = '',
     this.itemCCCount = -1,
@@ -97,6 +106,9 @@ class VehicleModel {
     required this.itemRegion,
     required this.itemTotalPrice,
     required this.itemPriceType,
+    required this.itemSalePriceType,
+    required this.itemDiscountAmount,
+    required this.itemDiscountAmountType,
     required this.itemUsedInKilometers,
     required this.itemModel,
     this.itemCCCount = -1,
@@ -125,6 +137,9 @@ class VehicleModel {
     required this.itemRegion,
     required this.itemTotalPrice,
     required this.itemPriceType,
+    required this.itemSalePriceType,
+    required this.itemDiscountAmount,
+    required this.itemDiscountAmountType,
     required this.itemUsedInKilometers,
     required this.itemModel,
     required this.itemCCCount,
@@ -153,6 +168,9 @@ class VehicleModel {
     required this.itemRegion,
     required this.itemTotalPrice,
     required this.itemPriceType,
+    required this.itemSalePriceType,
+    required this.itemDiscountAmount,
+    required this.itemDiscountAmountType,
     required this.itemUsedInKilometers,
     required this.itemModel,
     required this.itemCCCount,
@@ -181,6 +199,9 @@ class VehicleModel {
     required this.itemRegion,
     required this.itemTotalPrice,
     required this.itemPriceType,
+    required this.itemSalePriceType,
+    required this.itemDiscountAmount,
+    required this.itemDiscountAmountType,
     this.itemUsedInKilometers = -1,
     this.itemModel = '',
     this.itemCCCount = -1,
@@ -209,6 +230,9 @@ class VehicleModel {
     required this.itemRegion,
     required this.itemTotalPrice,
     required this.itemPriceType,
+    required this.itemSalePriceType,
+    required this.itemDiscountAmount,
+    required this.itemDiscountAmountType,
     this.itemUsedInKilometers = -1,
     this.itemModel = '',
     this.itemCCCount = -1,
@@ -237,6 +261,9 @@ class VehicleModel {
     String? itemRegion,
     String? itemTotalPrice,
     int? itemPriceType,
+    int? itemSalePriceType,
+    int? itemDiscountAmount,
+    int? itemDiscountAmountType,
     int? itemUsedInKilometers,
     String? itemModel,
     int? itemCCCount,
@@ -264,6 +291,10 @@ class VehicleModel {
       itemRegion: itemRegion ?? this.itemRegion,
       itemTotalPrice: itemTotalPrice ?? this.itemTotalPrice,
       itemPriceType: itemPriceType ?? this.itemPriceType,
+      itemSalePriceType: itemSalePriceType ?? this.itemSalePriceType,
+      itemDiscountAmount: itemDiscountAmount ?? this.itemDiscountAmount,
+      itemDiscountAmountType:
+          itemDiscountAmountType ?? this.itemDiscountAmountType,
       itemUsedInKilometers: itemUsedInKilometers ?? this.itemUsedInKilometers,
       itemModel: itemModel ?? this.itemModel,
       itemCCCount: itemCCCount ?? this.itemCCCount,
@@ -294,6 +325,9 @@ class VehicleModel {
       VehicleConstants.itemRegion: itemRegion,
       VehicleConstants.itemTotalPrice: itemTotalPrice,
       VehicleConstants.itemPriceType: itemPriceType,
+      VehicleConstants.itemSalePriceType: itemSalePriceType,
+      VehicleConstants.itemDiscountAmount: itemDiscountAmount,
+      VehicleConstants.itemDiscountAmountType: itemDiscountAmountType,
       VehicleConstants.itemUsedInKilometers: itemUsedInKilometers,
       VehicleConstants.itemModel: itemModel,
       VehicleConstants.itemCCCount: itemCCCount,
@@ -324,6 +358,9 @@ class VehicleModel {
       VehicleConstants.itemRegion: itemRegion,
       VehicleConstants.itemTotalPrice: itemTotalPrice,
       VehicleConstants.itemPriceType: itemPriceType,
+      VehicleConstants.itemSalePriceType: itemSalePriceType,
+      VehicleConstants.itemDiscountAmount: itemDiscountAmount,
+      VehicleConstants.itemDiscountAmountType: itemDiscountAmountType,
       VehicleConstants.itemPublishStatus: itemPublishStatus,
       VehicleConstants.itemSoldStatus: itemSoldStatus,
       VehicleConstants.itemCreatedAt: itemCreatedAt,
@@ -364,6 +401,16 @@ class VehicleModel {
       itemPriceType: map[VehicleConstants.itemPriceType] != null
           ? map[VehicleConstants.itemPriceType] as int
           : null,
+      itemSalePriceType: map[VehicleConstants.itemSalePriceType] != null
+          ? map[VehicleConstants.itemSalePriceType] as int
+          : null,
+      itemDiscountAmount: map[VehicleConstants.itemDiscountAmount] != null
+          ? map[VehicleConstants.itemDiscountAmount] as int
+          : null,
+      itemDiscountAmountType:
+          map[VehicleConstants.itemDiscountAmountType] != null
+              ? map[VehicleConstants.itemDiscountAmountType] as int
+              : null,
       itemUsedInKilometers: map[VehicleConstants.itemUsedInKilometers] != null
           ? map[VehicleConstants.itemUsedInKilometers] as int
           : null,
@@ -445,6 +492,16 @@ class VehicleModel {
       itemPriceType: map[VehicleConstants.itemPriceType] != null
           ? map[VehicleConstants.itemPriceType] as int
           : null,
+      itemSalePriceType: map[VehicleConstants.itemSalePriceType] != null
+          ? map[VehicleConstants.itemSalePriceType] as int
+          : null,
+      itemDiscountAmount: map[VehicleConstants.itemDiscountAmount] != null
+          ? map[VehicleConstants.itemDiscountAmount] as int
+          : null,
+      itemDiscountAmountType:
+          map[VehicleConstants.itemDiscountAmountType] != null
+              ? map[VehicleConstants.itemDiscountAmountType] as int
+              : null,
       itemPublishStatus: map[VehicleConstants.itemPublishStatus] != null
           ? map[VehicleConstants.itemPublishStatus] as String
           : null,
@@ -467,7 +524,7 @@ class VehicleModel {
 
   @override
   String toString() {
-    return 'VehicleModel(itemId: $itemId, itemCustomerId: $itemCustomerId, itemCategoryId: $itemCategoryId, itemSubCategoryId: $itemSubCategoryId, itemImages: $itemImages, itemTitle: $itemTitle, itemProvince: $itemProvince, itemRegion: $itemRegion, itemTotalPrice: $itemTotalPrice, itemPriceType: $itemPriceType, itemUsedInKilometers: $itemUsedInKilometers, itemModel: $itemModel, itemCCCount: $itemCCCount, itemCylindersCount: $itemCylindersCount, itemDocumentType: $itemDocumentType, itemSteerType: $itemSteerType, itemGearbox: $itemGearbox, itemSize: $itemSize, itemDescription: $itemDescription, itemStatus: $itemStatus, itemChangable: $itemChangable, itemPublishStatus: $itemPublishStatus, itemSoldStatus: $itemSoldStatus, itemCreatedAt: $itemCreatedAt, itemUpdatedAt: $itemUpdatedAt)';
+    return 'VehicleModel(itemId: $itemId, itemCustomerId: $itemCustomerId, itemCategoryId: $itemCategoryId, itemSubCategoryId: $itemSubCategoryId, itemImages: $itemImages, itemTitle: $itemTitle, itemProvince: $itemProvince, itemRegion: $itemRegion, itemTotalPrice: $itemTotalPrice, itemPriceType: $itemPriceType, itemSalePriceType: $itemSalePriceType, itemDiscountAmount: $itemDiscountAmount, itemDiscountAmountType: $itemDiscountAmountType, itemUsedInKilometers: $itemUsedInKilometers, itemModel: $itemModel, itemCCCount: $itemCCCount, itemCylindersCount: $itemCylindersCount, itemDocumentType: $itemDocumentType, itemSteerType: $itemSteerType, itemGearbox: $itemGearbox, itemSize: $itemSize, itemDescription: $itemDescription, itemStatus: $itemStatus, itemChangable: $itemChangable, itemPublishStatus: $itemPublishStatus, itemSoldStatus: $itemSoldStatus, itemCreatedAt: $itemCreatedAt, itemUpdatedAt: $itemUpdatedAt)';
   }
 
   @override
@@ -484,6 +541,9 @@ class VehicleModel {
         other.itemRegion == itemRegion &&
         other.itemTotalPrice == itemTotalPrice &&
         other.itemPriceType == itemPriceType &&
+        other.itemSalePriceType == itemSalePriceType &&
+        other.itemDiscountAmount == itemDiscountAmount &&
+        other.itemDiscountAmountType == itemDiscountAmountType &&
         other.itemUsedInKilometers == itemUsedInKilometers &&
         other.itemModel == itemModel &&
         other.itemCCCount == itemCCCount &&
@@ -513,6 +573,9 @@ class VehicleModel {
         itemRegion.hashCode ^
         itemTotalPrice.hashCode ^
         itemPriceType.hashCode ^
+        itemSalePriceType.hashCode ^
+        itemDiscountAmount.hashCode ^
+        itemDiscountAmountType.hashCode ^
         itemUsedInKilometers.hashCode ^
         itemModel.hashCode ^
         itemCCCount.hashCode ^

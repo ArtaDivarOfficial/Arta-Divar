@@ -14,6 +14,9 @@ class JewelleryModel {
   final String? itemRegion;
   final String? itemTotalPrice;
   final int? itemPriceType;
+  final int? itemSalePriceType;
+  final int? itemDiscountAmount;
+  final int? itemDiscountAmountType;
   final int? itemType;
   final int? itemKarat;
   final int? itemKartyType;
@@ -37,6 +40,9 @@ class JewelleryModel {
     required this.itemRegion,
     required this.itemTotalPrice,
     required this.itemPriceType,
+    required this.itemSalePriceType,
+    required this.itemDiscountAmount,
+    required this.itemDiscountAmountType,
     required this.itemType,
     required this.itemKarat,
     required this.itemKartyType,
@@ -61,6 +67,9 @@ class JewelleryModel {
     required this.itemRegion,
     required this.itemTotalPrice,
     required this.itemPriceType,
+    this.itemSalePriceType = -1,
+    this.itemDiscountAmount = -1,
+    this.itemDiscountAmountType = -1,
     this.itemType = -1,
     this.itemKarat = -1,
     this.itemKartyType = -1,
@@ -85,6 +94,9 @@ class JewelleryModel {
     required this.itemRegion,
     required this.itemTotalPrice,
     required this.itemPriceType,
+    required this.itemSalePriceType,
+    required this.itemDiscountAmount,
+    required this.itemDiscountAmountType,
     required this.itemType,
     required this.itemKarat,
     this.itemKartyType = -1,
@@ -109,6 +121,9 @@ class JewelleryModel {
     required this.itemRegion,
     required this.itemTotalPrice,
     required this.itemPriceType,
+    required this.itemSalePriceType,
+    required this.itemDiscountAmount,
+    required this.itemDiscountAmountType,
     required this.itemType,
     required this.itemKarat,
     this.itemKartyType = -1,
@@ -133,6 +148,9 @@ class JewelleryModel {
     required this.itemRegion,
     required this.itemTotalPrice,
     required this.itemPriceType,
+    required this.itemSalePriceType,
+    required this.itemDiscountAmount,
+    required this.itemDiscountAmountType,
     required this.itemType,
     required this.itemKarat,
     this.itemKartyType = -1,
@@ -157,6 +175,9 @@ class JewelleryModel {
     required this.itemRegion,
     required this.itemTotalPrice,
     required this.itemPriceType,
+    required this.itemSalePriceType,
+    required this.itemDiscountAmount,
+    required this.itemDiscountAmountType,
     required this.itemType,
     required this.itemKarat,
     this.itemKartyType = -1,
@@ -181,6 +202,9 @@ class JewelleryModel {
     required this.itemRegion,
     required this.itemTotalPrice,
     required this.itemPriceType,
+    required this.itemSalePriceType,
+    required this.itemDiscountAmount,
+    required this.itemDiscountAmountType,
     required this.itemType,
     required this.itemKarat,
     this.itemKartyType = -1,
@@ -205,6 +229,9 @@ class JewelleryModel {
     required this.itemRegion,
     required this.itemTotalPrice,
     required this.itemPriceType,
+    required this.itemSalePriceType,
+    required this.itemDiscountAmount,
+    required this.itemDiscountAmountType,
     required this.itemType,
     required this.itemKarat,
     required this.itemKartyType,
@@ -229,6 +256,9 @@ class JewelleryModel {
     required this.itemRegion,
     required this.itemTotalPrice,
     required this.itemPriceType,
+    required this.itemSalePriceType,
+    required this.itemDiscountAmount,
+    required this.itemDiscountAmountType,
     required this.itemType,
     required this.itemKarat,
     this.itemKartyType = -1,
@@ -253,6 +283,9 @@ class JewelleryModel {
     String? itemRegion,
     String? itemTotalPrice,
     int? itemPriceType,
+    int? itemSalePriceType,
+    int? itemDiscountAmount,
+    int? itemDiscountAmountType,
     int? itemType,
     int? itemKarat,
     int? itemKartyType,
@@ -276,6 +309,10 @@ class JewelleryModel {
       itemRegion: itemRegion ?? this.itemRegion,
       itemTotalPrice: itemTotalPrice ?? this.itemTotalPrice,
       itemPriceType: itemPriceType ?? this.itemPriceType,
+      itemSalePriceType: itemSalePriceType ?? this.itemSalePriceType,
+      itemDiscountAmount: itemDiscountAmount ?? this.itemDiscountAmount,
+      itemDiscountAmountType:
+          itemDiscountAmountType ?? this.itemDiscountAmountType,
       itemType: itemType ?? this.itemType,
       itemKarat: itemKarat ?? this.itemKarat,
       itemKartyType: itemKartyType ?? this.itemKartyType,
@@ -303,6 +340,9 @@ class JewelleryModel {
       JewelleryConstants.itemRegion: itemRegion,
       JewelleryConstants.itemTotalPrice: itemTotalPrice,
       JewelleryConstants.itemPriceType: itemPriceType,
+      JewelleryConstants.itemSalePriceType: itemSalePriceType,
+      JewelleryConstants.itemDiscountAmount: itemDiscountAmount,
+      JewelleryConstants.itemDiscountAmountType: itemDiscountAmountType,
       JewelleryConstants.itemType: itemType,
       JewelleryConstants.itemKarat: itemKarat,
       JewelleryConstants.itemKartyType: itemKartyType,
@@ -329,6 +369,9 @@ class JewelleryModel {
       JewelleryConstants.itemRegion: itemRegion,
       JewelleryConstants.itemTotalPrice: itemTotalPrice,
       JewelleryConstants.itemPriceType: itemPriceType,
+      JewelleryConstants.itemSalePriceType: itemSalePriceType,
+      JewelleryConstants.itemDiscountAmount: itemDiscountAmount,
+      JewelleryConstants.itemDiscountAmountType: itemDiscountAmountType,
       JewelleryConstants.itemPublishStatus: itemPublishStatus,
       JewelleryConstants.itemSoldStatus: itemSoldStatus,
       JewelleryConstants.itemCreatedAt: itemCreatedAt,
@@ -369,6 +412,16 @@ class JewelleryModel {
       itemPriceType: map[JewelleryConstants.itemPriceType] != null
           ? map[JewelleryConstants.itemPriceType] as int
           : null,
+      itemSalePriceType: map[JewelleryConstants.itemSalePriceType] != null
+          ? map[JewelleryConstants.itemSalePriceType] as int
+          : null,
+      itemDiscountAmount: map[JewelleryConstants.itemDiscountAmount] != null
+          ? map[JewelleryConstants.itemDiscountAmount] as int
+          : null,
+      itemDiscountAmountType:
+          map[JewelleryConstants.itemDiscountAmountType] != null
+              ? map[JewelleryConstants.itemDiscountAmountType] as int
+              : null,
       itemType: map[JewelleryConstants.itemType] != null
           ? map[JewelleryConstants.itemType] as int
           : null,
@@ -439,6 +492,16 @@ class JewelleryModel {
       itemPriceType: map[JewelleryConstants.itemPriceType] != null
           ? map[JewelleryConstants.itemPriceType] as int
           : null,
+      itemSalePriceType: map[JewelleryConstants.itemSalePriceType] != null
+          ? map[JewelleryConstants.itemSalePriceType] as int
+          : null,
+      itemDiscountAmount: map[JewelleryConstants.itemDiscountAmount] != null
+          ? map[JewelleryConstants.itemDiscountAmount] as int
+          : null,
+      itemDiscountAmountType:
+          map[JewelleryConstants.itemDiscountAmountType] != null
+              ? map[JewelleryConstants.itemDiscountAmountType] as int
+              : null,
       itemPublishStatus: map[JewelleryConstants.itemPublishStatus] != null
           ? map[JewelleryConstants.itemPublishStatus] as String
           : null,
@@ -461,7 +524,7 @@ class JewelleryModel {
 
   @override
   String toString() {
-    return 'JewelleryModel(itemId: $itemId, itemCustomerId: $itemCustomerId, itemCategoryId: $itemCategoryId, itemSubCategoryId: $itemSubCategoryId, itemImages: $itemImages, itemTitle: $itemTitle, itemProvince: $itemProvince, itemRegion: $itemRegion, itemTotalPrice: $itemTotalPrice, itemPriceType: $itemPriceType, itemType: $itemType, itemKarat: $itemKarat, itemKartyType: $itemKartyType, itemWeight: $itemWeight, itemConstructionWages: $itemConstructionWages, itemDescription: $itemDescription, itemStatus: $itemStatus, itemPublishStatus: $itemPublishStatus, itemSoldStatus: $itemSoldStatus, itemCreatedAt: $itemCreatedAt, itemUpdatedAt: $itemUpdatedAt)';
+    return 'JewelleryModel(itemId: $itemId, itemCustomerId: $itemCustomerId, itemCategoryId: $itemCategoryId, itemSubCategoryId: $itemSubCategoryId, itemImages: $itemImages, itemTitle: $itemTitle, itemProvince: $itemProvince, itemRegion: $itemRegion, itemTotalPrice: $itemTotalPrice, itemPriceType: $itemPriceType, itemSalePriceType: $itemSalePriceType, itemDiscountAmount: $itemDiscountAmount, itemDiscountAmountType: $itemDiscountAmountType, itemType: $itemType, itemKarat: $itemKarat, itemKartyType: $itemKartyType, itemWeight: $itemWeight, itemConstructionWages: $itemConstructionWages, itemDescription: $itemDescription, itemStatus: $itemStatus, itemPublishStatus: $itemPublishStatus, itemSoldStatus: $itemSoldStatus, itemCreatedAt: $itemCreatedAt, itemUpdatedAt: $itemUpdatedAt)';
   }
 
   @override
@@ -478,6 +541,9 @@ class JewelleryModel {
         other.itemRegion == itemRegion &&
         other.itemTotalPrice == itemTotalPrice &&
         other.itemPriceType == itemPriceType &&
+        other.itemSalePriceType == itemSalePriceType &&
+        other.itemDiscountAmount == itemDiscountAmount &&
+        other.itemDiscountAmountType == itemDiscountAmountType &&
         other.itemType == itemType &&
         other.itemKarat == itemKarat &&
         other.itemKartyType == itemKartyType &&
@@ -503,6 +569,9 @@ class JewelleryModel {
         itemRegion.hashCode ^
         itemTotalPrice.hashCode ^
         itemPriceType.hashCode ^
+        itemSalePriceType.hashCode ^
+        itemDiscountAmount.hashCode ^
+        itemDiscountAmountType.hashCode ^
         itemType.hashCode ^
         itemKarat.hashCode ^
         itemKartyType.hashCode ^

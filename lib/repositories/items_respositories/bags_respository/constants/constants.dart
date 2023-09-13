@@ -19,6 +19,9 @@ class BagConstants {
   static const String itemRegion = 'item_region';
   static const String itemTotalPrice = 'item_total_price';
   static const String itemPriceType = 'item_price_type';
+  static const String itemSalePriceType = 'item_sale_price_type';
+  static const String itemDiscountAmount = 'item_discount_amount';
+  static const String itemDiscountAmountType = 'item_discount_amount_type';
   static const String itemType = 'item_type';
   static const String itemMaterial = 'item_material';
   static const String itemDescription = 'item_description';

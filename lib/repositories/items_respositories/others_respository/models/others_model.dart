@@ -14,6 +14,9 @@ class OthersModel {
   final String? itemRegion;
   final String? itemTotalPrice;
   final int? itemPriceType;
+  final int? itemSalePriceType;
+  final int? itemDiscountAmount;
+  final int? itemDiscountAmountType;
   final String? itemDescription;
   final int? itemStatus;
   final String? itemPublishStatus;
@@ -32,6 +35,9 @@ class OthersModel {
     required this.itemRegion,
     required this.itemTotalPrice,
     required this.itemPriceType,
+    required this.itemSalePriceType,
+    required this.itemDiscountAmount,
+    required this.itemDiscountAmountType,
     required this.itemDescription,
     required this.itemStatus,
     required this.itemPublishStatus,
@@ -51,6 +57,9 @@ class OthersModel {
     required this.itemRegion,
     required this.itemTotalPrice,
     required this.itemPriceType,
+    this.itemSalePriceType = -1,
+    this.itemDiscountAmount = -1,
+    this.itemDiscountAmountType = -1,
     this.itemDescription = '',
     this.itemStatus = -1,
     required this.itemPublishStatus,
@@ -70,6 +79,9 @@ class OthersModel {
     required this.itemRegion,
     required this.itemTotalPrice,
     required this.itemPriceType,
+    required this.itemSalePriceType,
+    required this.itemDiscountAmount,
+    required this.itemDiscountAmountType,
     required this.itemDescription,
     required this.itemStatus,
     required this.itemPublishStatus,
@@ -89,6 +101,9 @@ class OthersModel {
     String? itemRegion,
     String? itemTotalPrice,
     int? itemPriceType,
+    int? itemSalePriceType,
+    int? itemDiscountAmount,
+    int? itemDiscountAmountType,
     String? itemDescription,
     int? itemStatus,
     String? itemPublishStatus,
@@ -107,6 +122,10 @@ class OthersModel {
       itemRegion: itemRegion ?? this.itemRegion,
       itemTotalPrice: itemTotalPrice ?? this.itemTotalPrice,
       itemPriceType: itemPriceType ?? this.itemPriceType,
+      itemSalePriceType: itemSalePriceType ?? this.itemSalePriceType,
+      itemDiscountAmount: itemDiscountAmount ?? this.itemDiscountAmount,
+      itemDiscountAmountType:
+          itemDiscountAmountType ?? this.itemDiscountAmountType,
       itemDescription: itemDescription ?? this.itemDescription,
       itemStatus: itemStatus ?? this.itemStatus,
       itemPublishStatus: itemPublishStatus ?? this.itemPublishStatus,
@@ -128,6 +147,9 @@ class OthersModel {
       OthersConstants.itemRegion: itemRegion,
       OthersConstants.itemTotalPrice: itemTotalPrice,
       OthersConstants.itemPriceType: itemPriceType,
+      OthersConstants.itemSalePriceType: itemSalePriceType,
+      OthersConstants.itemDiscountAmount: itemDiscountAmount,
+      OthersConstants.itemDiscountAmountType: itemDiscountAmountType,
       OthersConstants.itemDescription: itemDescription,
       OthersConstants.itemStatus: itemStatus,
       OthersConstants.itemPublishStatus: itemPublishStatus,
@@ -149,6 +171,9 @@ class OthersModel {
       OthersConstants.itemRegion: itemRegion,
       OthersConstants.itemTotalPrice: itemTotalPrice,
       OthersConstants.itemPriceType: itemPriceType,
+      OthersConstants.itemSalePriceType: itemSalePriceType,
+      OthersConstants.itemDiscountAmount: itemDiscountAmount,
+      OthersConstants.itemDiscountAmountType: itemDiscountAmountType,
       OthersConstants.itemPublishStatus: itemPublishStatus,
       OthersConstants.itemSoldStatus: itemSoldStatus,
       OthersConstants.itemCreatedAt: itemCreatedAt,
@@ -188,6 +213,16 @@ class OthersModel {
       itemPriceType: map[OthersConstants.itemPriceType] != null
           ? map[OthersConstants.itemPriceType] as int
           : null,
+      itemSalePriceType: map[OthersConstants.itemSalePriceType] != null
+          ? map[OthersConstants.itemSalePriceType] as int
+          : null,
+      itemDiscountAmount: map[OthersConstants.itemDiscountAmount] != null
+          ? map[OthersConstants.itemDiscountAmount] as int
+          : null,
+      itemDiscountAmountType:
+          map[OthersConstants.itemDiscountAmountType] != null
+              ? map[OthersConstants.itemDiscountAmountType] as int
+              : null,
       itemDescription: map[OthersConstants.itemDescription] != null
           ? map[OthersConstants.itemDescription] as String
           : null,
@@ -241,6 +276,16 @@ class OthersModel {
       itemPriceType: map[OthersConstants.itemPriceType] != null
           ? map[OthersConstants.itemPriceType] as int
           : null,
+      itemSalePriceType: map[OthersConstants.itemSalePriceType] != null
+          ? map[OthersConstants.itemSalePriceType] as int
+          : null,
+      itemDiscountAmount: map[OthersConstants.itemDiscountAmount] != null
+          ? map[OthersConstants.itemDiscountAmount] as int
+          : null,
+      itemDiscountAmountType:
+          map[OthersConstants.itemDiscountAmountType] != null
+              ? map[OthersConstants.itemDiscountAmountType] as int
+              : null,
       itemPublishStatus: map[OthersConstants.itemPublishStatus] != null
           ? map[OthersConstants.itemPublishStatus] as String
           : null,
@@ -263,7 +308,7 @@ class OthersModel {
 
   @override
   String toString() {
-    return 'OthersModel(itemId: $itemId, itemCustomerId: $itemCustomerId, itemCategoryId: $itemCategoryId, itemSubCategoryId: $itemSubCategoryId, itemImages: $itemImages, itemTitle: $itemTitle, itemProvince: $itemProvince, itemRegion: $itemRegion, itemTotalPrice: $itemTotalPrice, itemPriceType: $itemPriceType, itemDescription: $itemDescription, itemStatus: $itemStatus, itemPublishStatus: $itemPublishStatus, itemSoldStatus: $itemSoldStatus, itemCreatedAt: $itemCreatedAt, itemUpdatedAt: $itemUpdatedAt)';
+    return 'OthersModel(itemId: $itemId, itemCustomerId: $itemCustomerId, itemCategoryId: $itemCategoryId, itemSubCategoryId: $itemSubCategoryId, itemImages: $itemImages, itemTitle: $itemTitle, itemProvince: $itemProvince, itemRegion: $itemRegion, itemTotalPrice: $itemTotalPrice, itemPriceType: $itemPriceType, itemSalePriceType: $itemSalePriceType, itemDiscountAmount: $itemDiscountAmount, itemDiscountAmountType: $itemDiscountAmountType, itemDescription: $itemDescription, itemStatus: $itemStatus, itemPublishStatus: $itemPublishStatus, itemSoldStatus: $itemSoldStatus, itemCreatedAt: $itemCreatedAt, itemUpdatedAt: $itemUpdatedAt)';
   }
 
   @override
@@ -280,6 +325,9 @@ class OthersModel {
         other.itemRegion == itemRegion &&
         other.itemTotalPrice == itemTotalPrice &&
         other.itemPriceType == itemPriceType &&
+        other.itemSalePriceType == itemSalePriceType &&
+        other.itemDiscountAmount == itemDiscountAmount &&
+        other.itemDiscountAmountType == itemDiscountAmountType &&
         other.itemDescription == itemDescription &&
         other.itemStatus == itemStatus &&
         other.itemPublishStatus == itemPublishStatus &&
@@ -300,6 +348,9 @@ class OthersModel {
         itemRegion.hashCode ^
         itemTotalPrice.hashCode ^
         itemPriceType.hashCode ^
+        itemSalePriceType.hashCode ^
+        itemDiscountAmount.hashCode ^
+        itemDiscountAmountType.hashCode ^
         itemDescription.hashCode ^
         itemStatus.hashCode ^
         itemPublishStatus.hashCode ^

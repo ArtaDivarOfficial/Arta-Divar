@@ -20,6 +20,8 @@ class FoodstuffsConstants {
   static const String itemTotalPrice = 'item_total_price';
   static const String itemPriceType = 'item_price_type';
   static const String itemSalePriceType = 'item_sale_price_type';
+  static const String itemDiscountAmount = 'item_discount_amount';
+  static const String itemDiscountAmountType = 'item_discount_amount_type';
   static const String itemDescription = 'item_description';
   static const String itemPublishStatus = 'item_publish_status';
   static const String itemSoldStatus = 'item_status_sold';

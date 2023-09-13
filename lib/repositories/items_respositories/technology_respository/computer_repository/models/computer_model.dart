@@ -14,6 +14,9 @@ class ComputerModel {
   final String? itemRegion;
   final String? itemTotalPrice;
   final int? itemPriceType;
+  final int? itemSalePriceType;
+  final int? itemDiscountAmount;
+  final int? itemDiscountAmountType;
   final String? itemModel;
   final String? itemCPU;
   final int? itemGeneration;
@@ -39,6 +42,9 @@ class ComputerModel {
     required this.itemRegion,
     required this.itemTotalPrice,
     required this.itemPriceType,
+    required this.itemSalePriceType,
+    required this.itemDiscountAmount,
+    required this.itemDiscountAmountType,
     required this.itemModel,
     required this.itemCPU,
     required this.itemGeneration,
@@ -65,6 +71,9 @@ class ComputerModel {
     required this.itemRegion,
     required this.itemTotalPrice,
     required this.itemPriceType,
+    this.itemSalePriceType = -1,
+    this.itemDiscountAmount = -1,
+    this.itemDiscountAmountType = -1,
     this.itemModel = '',
     this.itemCPU = '',
     this.itemGeneration = -1,
@@ -91,6 +100,9 @@ class ComputerModel {
     required this.itemRegion,
     required this.itemTotalPrice,
     required this.itemPriceType,
+    required this.itemSalePriceType,
+    required this.itemDiscountAmount,
+    required this.itemDiscountAmountType,
     required this.itemModel,
     required this.itemCPU,
     required this.itemGeneration,
@@ -117,6 +129,9 @@ class ComputerModel {
     String? itemRegion,
     String? itemTotalPrice,
     int? itemPriceType,
+    int? itemSalePriceType,
+    int? itemDiscountAmount,
+    int? itemDiscountAmountType,
     String? itemModel,
     String? itemCPU,
     int? itemGeneration,
@@ -142,6 +157,10 @@ class ComputerModel {
       itemRegion: itemRegion ?? this.itemRegion,
       itemTotalPrice: itemTotalPrice ?? this.itemTotalPrice,
       itemPriceType: itemPriceType ?? this.itemPriceType,
+      itemSalePriceType: itemSalePriceType ?? this.itemSalePriceType,
+      itemDiscountAmount: itemDiscountAmount ?? this.itemDiscountAmount,
+      itemDiscountAmountType:
+          itemDiscountAmountType ?? this.itemDiscountAmountType,
       itemModel: itemModel ?? this.itemModel,
       itemCPU: itemCPU ?? this.itemCPU,
       itemGeneration: itemGeneration ?? this.itemGeneration,
@@ -170,6 +189,9 @@ class ComputerModel {
       ComputerConstants.itemRegion: itemRegion,
       ComputerConstants.itemTotalPrice: itemTotalPrice,
       ComputerConstants.itemPriceType: itemPriceType,
+      ComputerConstants.itemSalePriceType: itemSalePriceType,
+      ComputerConstants.itemDiscountAmount: itemDiscountAmount,
+      ComputerConstants.itemDiscountAmountType: itemDiscountAmountType,
       ComputerConstants.itemModel: itemModel,
       ComputerConstants.itemCPU: itemCPU,
       ComputerConstants.itemGeneration: itemGeneration,
@@ -198,6 +220,9 @@ class ComputerModel {
       ComputerConstants.itemRegion: itemRegion,
       ComputerConstants.itemTotalPrice: itemTotalPrice,
       ComputerConstants.itemPriceType: itemPriceType,
+      ComputerConstants.itemSalePriceType: itemSalePriceType,
+      ComputerConstants.itemDiscountAmount: itemDiscountAmount,
+      ComputerConstants.itemDiscountAmountType: itemDiscountAmountType,
       ComputerConstants.itemPublishStatus: itemPublishStatus,
       ComputerConstants.itemSoldStatus: itemSoldStatus,
       ComputerConstants.itemCreatedAt: itemCreatedAt,
@@ -238,6 +263,16 @@ class ComputerModel {
       itemPriceType: map[ComputerConstants.itemPriceType] != null
           ? map[ComputerConstants.itemPriceType] as int
           : null,
+      itemSalePriceType: map[ComputerConstants.itemSalePriceType] != null
+          ? map[ComputerConstants.itemSalePriceType] as int
+          : null,
+      itemDiscountAmount: map[ComputerConstants.itemDiscountAmount] != null
+          ? map[ComputerConstants.itemDiscountAmount] as int
+          : null,
+      itemDiscountAmountType:
+          map[ComputerConstants.itemDiscountAmountType] != null
+              ? map[ComputerConstants.itemDiscountAmountType] as int
+              : null,
       itemModel: map[ComputerConstants.itemModel] != null
           ? map[ComputerConstants.itemModel] as String
           : null,
@@ -313,6 +348,16 @@ class ComputerModel {
       itemPriceType: map[ComputerConstants.itemPriceType] != null
           ? map[ComputerConstants.itemPriceType] as int
           : null,
+      itemSalePriceType: map[ComputerConstants.itemSalePriceType] != null
+          ? map[ComputerConstants.itemSalePriceType] as int
+          : null,
+      itemDiscountAmount: map[ComputerConstants.itemDiscountAmount] != null
+          ? map[ComputerConstants.itemDiscountAmount] as int
+          : null,
+      itemDiscountAmountType:
+          map[ComputerConstants.itemDiscountAmountType] != null
+              ? map[ComputerConstants.itemDiscountAmountType] as int
+              : null,
       itemPublishStatus: map[ComputerConstants.itemPublishStatus] != null
           ? map[ComputerConstants.itemPublishStatus] as String
           : null,
@@ -335,7 +380,7 @@ class ComputerModel {
 
   @override
   String toString() {
-    return 'ComputerModel(itemId: $itemId, itemCustomerId: $itemCustomerId, itemCategoryId: $itemCategoryId, itemSubCategoryId: $itemSubCategoryId, itemImages: $itemImages, itemTitle: $itemTitle, itemProvince: $itemProvince, itemRegion: $itemRegion, itemTotalPrice: $itemTotalPrice, itemPriceType: $itemPriceType, itemModel: $itemModel, itemCPU: $itemCPU, itemGeneration: $itemGeneration, itemGraphic: $itemGraphic, itemRam: $itemRam, itemStorage: $itemStorage, itemDescription: $itemDescription, itemStatus: $itemStatus, itemChangable: $itemChangable, itemPublishStatus: $itemPublishStatus, itemSoldStatus: $itemSoldStatus, itemCreatedAt: $itemCreatedAt, itemUpdatedAt: $itemUpdatedAt)';
+    return 'ComputerModel(itemId: $itemId, itemCustomerId: $itemCustomerId, itemCategoryId: $itemCategoryId, itemSubCategoryId: $itemSubCategoryId, itemImages: $itemImages, itemTitle: $itemTitle, itemProvince: $itemProvince, itemRegion: $itemRegion, itemTotalPrice: $itemTotalPrice, itemPriceType: $itemPriceType, itemSalePriceType: $itemSalePriceType, itemDiscountAmount: $itemDiscountAmount, itemDiscountAmountType: $itemDiscountAmountType, itemModel: $itemModel, itemCPU: $itemCPU, itemGeneration: $itemGeneration, itemGraphic: $itemGraphic, itemRam: $itemRam, itemStorage: $itemStorage, itemDescription: $itemDescription, itemStatus: $itemStatus, itemChangable: $itemChangable, itemPublishStatus: $itemPublishStatus, itemSoldStatus: $itemSoldStatus, itemCreatedAt: $itemCreatedAt, itemUpdatedAt: $itemUpdatedAt)';
   }
 
   @override
@@ -352,6 +397,9 @@ class ComputerModel {
         other.itemRegion == itemRegion &&
         other.itemTotalPrice == itemTotalPrice &&
         other.itemPriceType == itemPriceType &&
+        other.itemSalePriceType == itemSalePriceType &&
+        other.itemDiscountAmount == itemDiscountAmount &&
+        other.itemDiscountAmountType == itemDiscountAmountType &&
         other.itemModel == itemModel &&
         other.itemCPU == itemCPU &&
         other.itemGeneration == itemGeneration &&
@@ -379,6 +427,9 @@ class ComputerModel {
         itemRegion.hashCode ^
         itemTotalPrice.hashCode ^
         itemPriceType.hashCode ^
+        itemSalePriceType.hashCode ^
+        itemDiscountAmount.hashCode ^
+        itemDiscountAmountType.hashCode ^
         itemModel.hashCode ^
         itemCPU.hashCode ^
         itemGeneration.hashCode ^

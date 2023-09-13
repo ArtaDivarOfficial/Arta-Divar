@@ -19,6 +19,9 @@ class StationaryConstants {
   static const String itemRegion = 'item_region';
   static const String itemTotalPrice = 'item_total_price';
   static const String itemPriceType = 'item_price_type';
+  static const String itemSalePriceType = 'item_sale_price_type';
+  static const String itemDiscountAmount = 'item_discount_amount';
+  static const String itemDiscountAmountType = 'item_discount_amount_type';
   static const String itemWriter = 'item_writer';
   static const String itemTranslator = 'item_translator';
   static const String itemPageCount = 'item_page_count';
