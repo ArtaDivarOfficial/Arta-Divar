@@ -7,6 +7,7 @@ const kTransparentColor = Colors.transparent;
 const kWhiteColor = Colors.white;
 const kGreyColor = Colors.grey;
 const kBlackColor = Colors.black;
+const kRedColor = Colors.red;
 
 // App Colors light
 final kLightBackgroundColor = Colors.grey.shade100;

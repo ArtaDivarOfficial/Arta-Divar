@@ -31,31 +31,34 @@ class CustomTextField extends StatelessWidget {
         ),
         const SizedBox(height: 5),
         Container(
-          height: 55,
+          height: 70,
           margin: const EdgeInsets.symmetric(horizontal: 20),
-          decoration: const BoxDecoration(
-            color: kBlackColor,
-          ),
-          child: TextField(
-            maxLength: maxLength,
-            buildCounter: (context,
-                {required currentLength, required isFocused, maxLength}) {
-              return Container(
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  currentLength.toString() + "/" + maxLength.toString(),
+          child: Expanded(
+            // An Expanded for TextField to take all available space
+            child: TextField(
+              maxLength: maxLength,
+              buildCounter: (context,
+                  {required currentLength, required isFocused, maxLength}) {
+                return Text(
+                  "$currentLength/$maxLength",
+                  style: TextStyle(
+                    fontSize: 12,
+                    color: (currentLength == maxLength!)
+                        ? kRedColor.withOpacity(0.7)
+                        : kGreyColor,
+                  ),
+                );
+              },
+              decoration: InputDecoration(
+                enabledBorder: const OutlineInputBorder(),
+                focusedBorder: const OutlineInputBorder(),
+                hintText: hintText,
+                border: const OutlineInputBorder(),
+                hintStyle: TextStyle(
+                  fontWeight: FontWeight.w600,
+                  color: kGreyColor.withOpacity(0.5),
+                  fontSize: 13,
                 ),
-              );
-            },
-            decoration: InputDecoration(
-              enabledBorder: const OutlineInputBorder(),
-              focusedBorder: const OutlineInputBorder(),
-              hintText: hintText,
-              border: const OutlineInputBorder(),
-              hintStyle: TextStyle(
-                fontWeight: FontWeight.w600,
-                color: kGreyColor.withOpacity(0.5),
-                fontSize: 13,
               ),
             ),
           ),
