@@ -49,6 +49,9 @@ dependencies:
   dotted_border: ^2.0.0+3
   carousel_slider: ^4.2.1
   shrink_sidemenu: ^2.0.0+2-null-safety
+  adaptive_theme: ^3.2.1
+  url_launcher: ^6.1.11
+  flutter_linkify: ^6.0.0
 
 flutter_icons:
   android: true

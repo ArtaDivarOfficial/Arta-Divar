@@ -16,7 +16,6 @@ class TechnologyModel {
   final int? itemPriceType;
   final int? itemSalePriceType;
   final int? itemDiscountAmount;
-  final int? itemDiscountAmountType;
   final String? itemModel;
   final String? itemStorage;
   final String? itemSeries;
@@ -46,7 +45,6 @@ class TechnologyModel {
     required this.itemPriceType,
     required this.itemSalePriceType,
     required this.itemDiscountAmount,
-    required this.itemDiscountAmountType,
     required this.itemModel,
     required this.itemStorage,
     required this.itemSeries,
@@ -77,7 +75,6 @@ class TechnologyModel {
     required this.itemPriceType,
     this.itemSalePriceType = -1,
     this.itemDiscountAmount = -1,
-    this.itemDiscountAmountType = -1,
     this.itemModel = '',
     this.itemStorage = '',
     this.itemSeries = '',
@@ -108,7 +105,6 @@ class TechnologyModel {
     required this.itemPriceType,
     required this.itemSalePriceType,
     required this.itemDiscountAmount,
-    required this.itemDiscountAmountType,
     required this.itemModel,
     this.itemStorage = '',
     this.itemSeries = '',
@@ -139,7 +135,6 @@ class TechnologyModel {
     required this.itemPriceType,
     required this.itemSalePriceType,
     required this.itemDiscountAmount,
-    required this.itemDiscountAmountType,
     required this.itemModel,
     required this.itemStorage,
     this.itemSeries = '',
@@ -170,7 +165,6 @@ class TechnologyModel {
     required this.itemPriceType,
     required this.itemSalePriceType,
     required this.itemDiscountAmount,
-    required this.itemDiscountAmountType,
     required this.itemModel,
     this.itemStorage = '',
     this.itemSeries = '',
@@ -201,7 +195,6 @@ class TechnologyModel {
     required this.itemPriceType,
     required this.itemSalePriceType,
     required this.itemDiscountAmount,
-    required this.itemDiscountAmountType,
     required this.itemModel,
     this.itemStorage = '',
     required this.itemSeries,
@@ -232,7 +225,6 @@ class TechnologyModel {
     required this.itemPriceType,
     required this.itemSalePriceType,
     required this.itemDiscountAmount,
-    required this.itemDiscountAmountType,
     required this.itemModel,
     this.itemStorage = '',
     this.itemSeries = '',
@@ -263,7 +255,6 @@ class TechnologyModel {
     required this.itemPriceType,
     required this.itemSalePriceType,
     required this.itemDiscountAmount,
-    required this.itemDiscountAmountType,
     this.itemModel = '',
     this.itemStorage = '',
     this.itemSeries = '',
@@ -294,7 +285,6 @@ class TechnologyModel {
     required this.itemPriceType,
     required this.itemSalePriceType,
     required this.itemDiscountAmount,
-    required this.itemDiscountAmountType,
     this.itemModel = '',
     this.itemStorage = '',
     this.itemSeries = '',
@@ -356,8 +346,6 @@ class TechnologyModel {
       itemPriceType: itemPriceType ?? this.itemPriceType,
       itemSalePriceType: itemSalePriceType ?? this.itemSalePriceType,
       itemDiscountAmount: itemDiscountAmount ?? this.itemDiscountAmount,
-      itemDiscountAmountType:
-          itemDiscountAmountType ?? this.itemDiscountAmountType,
       itemModel: itemModel ?? this.itemModel,
       itemStorage: itemStorage ?? this.itemStorage,
       itemSeries: itemSeries ?? this.itemSeries,
@@ -392,7 +380,6 @@ class TechnologyModel {
       TechnologyConstants.itemPriceType: itemPriceType,
       TechnologyConstants.itemSalePriceType: itemSalePriceType,
       TechnologyConstants.itemDiscountAmount: itemDiscountAmount,
-      TechnologyConstants.itemDiscountAmountType: itemDiscountAmountType,
       TechnologyConstants.itemModel: itemModel,
       TechnologyConstants.itemStorage: itemStorage,
       TechnologyConstants.itemSeries: itemSeries,
@@ -426,7 +413,6 @@ class TechnologyModel {
       TechnologyConstants.itemPriceType: itemPriceType,
       TechnologyConstants.itemSalePriceType: itemSalePriceType,
       TechnologyConstants.itemDiscountAmount: itemDiscountAmount,
-      TechnologyConstants.itemDiscountAmountType: itemDiscountAmountType,
       TechnologyConstants.itemPublishStatus: itemPublishStatus,
       TechnologyConstants.itemSoldStatus: itemSoldStatus,
       TechnologyConstants.itemCreatedAt: itemCreatedAt,
@@ -473,10 +459,6 @@ class TechnologyModel {
       itemDiscountAmount: map[TechnologyConstants.itemDiscountAmount] != null
           ? map[TechnologyConstants.itemDiscountAmount] as int
           : null,
-      itemDiscountAmountType:
-          map[TechnologyConstants.itemDiscountAmountType] != null
-              ? map[TechnologyConstants.itemDiscountAmountType] as int
-              : null,
       itemModel: map[TechnologyConstants.itemModel] != null
           ? map[TechnologyConstants.itemModel] as String
           : null,
@@ -567,10 +549,6 @@ class TechnologyModel {
       itemDiscountAmount: map[TechnologyConstants.itemDiscountAmount] != null
           ? map[TechnologyConstants.itemDiscountAmount] as int
           : null,
-      itemDiscountAmountType:
-          map[TechnologyConstants.itemDiscountAmountType] != null
-              ? map[TechnologyConstants.itemDiscountAmountType] as int
-              : null,
       itemPublishStatus: map[TechnologyConstants.itemPublishStatus] != null
           ? map[TechnologyConstants.itemPublishStatus] as String
           : null,
@@ -593,7 +571,7 @@ class TechnologyModel {
 
   @override
   String toString() {
-    return 'TechnologyModel(itemId: $itemId, itemCustomerId: $itemCustomerId, itemCategoryId: $itemCategoryId, itemSubCategoryId: $itemSubCategoryId, itemImages: $itemImages, itemTitle: $itemTitle, itemProvince: $itemProvince, itemRegion: $itemRegion, itemTotalPrice: $itemTotalPrice, itemPriceType: $itemPriceType, itemSalePriceType: $itemSalePriceType, itemDiscountAmount: $itemDiscountAmount, itemDiscountAmountType: $itemDiscountAmountType, itemModel: $itemModel, itemStorage: $itemStorage, itemSeries: $itemSeries, itemDescription: $itemDescription, itemStatus: $itemStatus, itemConnectionType: $itemConnectionType, itemUSBPort: $itemUSBPort, itemMemoryCardPort: $itemMemoryCardPort, itemGamepadCount: $itemGamepadCount, itemBrandAuthenticity: $itemBrandAuthenticity, itemOperatingSystemTypeConnection: $itemOperatingSystemTypeConnection, itemPublishStatus: $itemPublishStatus, itemSoldStatus: $itemSoldStatus, itemCreatedAt: $itemCreatedAt, itemUpdatedAt: $itemUpdatedAt)';
+    return 'TechnologyModel(itemId: $itemId, itemCustomerId: $itemCustomerId, itemCategoryId: $itemCategoryId, itemSubCategoryId: $itemSubCategoryId, itemImages: $itemImages, itemTitle: $itemTitle, itemProvince: $itemProvince, itemRegion: $itemRegion, itemTotalPrice: $itemTotalPrice, itemPriceType: $itemPriceType, itemSalePriceType: $itemSalePriceType, itemDiscountAmount: $itemDiscountAmount, itemModel: $itemModel, itemStorage: $itemStorage, itemSeries: $itemSeries, itemDescription: $itemDescription, itemStatus: $itemStatus, itemConnectionType: $itemConnectionType, itemUSBPort: $itemUSBPort, itemMemoryCardPort: $itemMemoryCardPort, itemGamepadCount: $itemGamepadCount, itemBrandAuthenticity: $itemBrandAuthenticity, itemOperatingSystemTypeConnection: $itemOperatingSystemTypeConnection, itemPublishStatus: $itemPublishStatus, itemSoldStatus: $itemSoldStatus, itemCreatedAt: $itemCreatedAt, itemUpdatedAt: $itemUpdatedAt)';
   }
 
   @override
@@ -612,7 +590,6 @@ class TechnologyModel {
         other.itemPriceType == itemPriceType &&
         other.itemSalePriceType == itemSalePriceType &&
         other.itemDiscountAmount == itemDiscountAmount &&
-        other.itemDiscountAmountType == itemDiscountAmountType &&
         other.itemModel == itemModel &&
         other.itemStorage == itemStorage &&
         other.itemSeries == itemSeries &&
@@ -645,7 +622,6 @@ class TechnologyModel {
         itemPriceType.hashCode ^
         itemSalePriceType.hashCode ^
         itemDiscountAmount.hashCode ^
-        itemDiscountAmountType.hashCode ^
         itemModel.hashCode ^
         itemStorage.hashCode ^
         itemSeries.hashCode ^

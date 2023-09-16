@@ -1,3 +1,6 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
+import 'package:divar/packages/adaptive_theme/dark_theme/dark_theme.dart';
+import 'package:divar/packages/adaptive_theme/light_theme/light_theme.dart';
 import 'package:divar/repositories/chats_repositories/chat_messages_repository/cubit/chat_message_cubit.dart';
 import 'package:divar/repositories/chats_repositories/chat_repository/cubit/chat_cubit.dart';
 import 'package:divar/repositories/customers_repositories/cubit/customer_cubit.dart';
@@ -77,13 +80,22 @@ class MyApp extends StatelessWidget {
           create: (context) => BagCubit(),
         ),
       ],
-      child: MaterialApp(
-        onGenerateTitle: (context) => LocaleKeys.app_name.tr(),
-        debugShowCheckedModeBanner: false,
-        localizationsDelegates: context.localizationDelegates,
-        supportedLocales: context.supportedLocales,
-        locale: context.locale,
-        onGenerateRoute: appRouter.onGenerateRoute,
+      child: AdaptiveTheme(
+        dark: darkTheme(context: context),
+        light: lightTheme(context: context),
+        initial: AdaptiveThemeMode.system,
+        builder: (lightTheme, darkTheme) {
+          return MaterialApp(
+            onGenerateTitle: (context) => LocaleKeys.app_name.tr(),
+            debugShowCheckedModeBanner: false,
+            darkTheme: darkTheme,
+            theme: lightTheme,
+            localizationsDelegates: context.localizationDelegates,
+            supportedLocales: context.supportedLocales,
+            locale: context.locale,
+            onGenerateRoute: appRouter.onGenerateRoute,
+          );
+        },
       ),
     );
   }

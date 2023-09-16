@@ -15,7 +15,6 @@ class MyAdvertisementModel {
   final int? itemPriceType;
   final int? itemSalePriceType;
   final int? itemDiscountAmount;
-  final int? itemDiscountAmountType;
   final String? itemPublishStatus;
   final String? itemSoldStatus;
   final String? itemCreatedAt;
@@ -33,7 +32,6 @@ class MyAdvertisementModel {
     required this.itemPriceType,
     required this.itemSalePriceType,
     required this.itemDiscountAmount,
-    required this.itemDiscountAmountType,
     required this.itemPublishStatus,
     required this.itemSoldStatus,
     required this.itemCreatedAt,
@@ -52,7 +50,6 @@ class MyAdvertisementModel {
     required this.itemPriceType,
     required this.itemSalePriceType,
     required this.itemDiscountAmount,
-    required this.itemDiscountAmountType,
     required this.itemPublishStatus,
     required this.itemSoldStatus,
     required this.itemCreatedAt,
@@ -89,8 +86,6 @@ class MyAdvertisementModel {
       itemPriceType: itemPriceType ?? this.itemPriceType,
       itemSalePriceType: itemSalePriceType ?? this.itemSalePriceType,
       itemDiscountAmount: itemDiscountAmount ?? this.itemDiscountAmount,
-      itemDiscountAmountType:
-          itemDiscountAmountType ?? this.itemDiscountAmountType,
       itemPublishStatus: itemPublishStatus ?? this.itemPublishStatus,
       itemSoldStatus: itemSoldStatus ?? this.itemSoldStatus,
       itemCreatedAt: itemCreatedAt ?? this.itemCreatedAt,
@@ -111,7 +106,6 @@ class MyAdvertisementModel {
       MyAdvertisementsConstants.itemPriceType: itemPriceType,
       MyAdvertisementsConstants.itemSalePriceType: itemSalePriceType,
       MyAdvertisementsConstants.itemDiscountAmount: itemDiscountAmount,
-      MyAdvertisementsConstants.itemDiscountAmountType: itemDiscountAmountType,
       MyAdvertisementsConstants.itemPublishStatus: itemPublishStatus,
       MyAdvertisementsConstants.itemSoldStatus: itemSoldStatus,
       MyAdvertisementsConstants.itemCreatedAt: itemCreatedAt,
@@ -132,7 +126,6 @@ class MyAdvertisementModel {
       MyAdvertisementsConstants.itemPriceType: itemPriceType,
       MyAdvertisementsConstants.itemSalePriceType: itemSalePriceType,
       MyAdvertisementsConstants.itemDiscountAmount: itemDiscountAmount,
-      MyAdvertisementsConstants.itemDiscountAmountType: itemDiscountAmountType,
       MyAdvertisementsConstants.itemPublishStatus: itemPublishStatus,
       MyAdvertisementsConstants.itemSoldStatus: itemSoldStatus,
       MyAdvertisementsConstants.itemCreatedAt: itemCreatedAt,
@@ -178,10 +171,6 @@ class MyAdvertisementModel {
       itemDiscountAmount:
           map[MyAdvertisementsConstants.itemDiscountAmount] != null
               ? map[MyAdvertisementsConstants.itemDiscountAmount] as int
-              : null,
-      itemDiscountAmountType:
-          map[MyAdvertisementsConstants.itemDiscountAmountType] != null
-              ? map[MyAdvertisementsConstants.itemDiscountAmountType] as int
               : null,
       itemPublishStatus:
           map[MyAdvertisementsConstants.itemPublishStatus] != null
@@ -239,10 +228,6 @@ class MyAdvertisementModel {
           map[MyAdvertisementsConstants.itemDiscountAmount] != null
               ? map[MyAdvertisementsConstants.itemDiscountAmount] as int
               : null,
-      itemDiscountAmountType:
-          map[MyAdvertisementsConstants.itemDiscountAmountType] != null
-              ? map[MyAdvertisementsConstants.itemDiscountAmountType] as int
-              : null,
       itemPublishStatus:
           map[MyAdvertisementsConstants.itemPublishStatus] != null
               ? map[MyAdvertisementsConstants.itemPublishStatus] as String
@@ -266,7 +251,7 @@ class MyAdvertisementModel {
 
   @override
   String toString() {
-    return 'MyAdvertisementModel(itemId: $itemId, itemCustomerId: $itemCustomerId, itemCategoryId: $itemCategoryId, itemSubCategoryId: $itemSubCategoryId, itemImages: $itemImages, itemTitle: $itemTitle, itemAddress: $itemAddress, itemTotalPrice: $itemTotalPrice, itemPriceType: $itemPriceType, itemSalePriceType: $itemSalePriceType, itemDiscountAmount: $itemDiscountAmount, itemDiscountAmountType: $itemDiscountAmountType, itemPublishStatus: $itemPublishStatus, itemSoldStatus: $itemSoldStatus, itemCreatedAt: $itemCreatedAt, itemUpdatedAt: $itemUpdatedAt)';
+    return 'MyAdvertisementModel(itemId: $itemId, itemCustomerId: $itemCustomerId, itemCategoryId: $itemCategoryId, itemSubCategoryId: $itemSubCategoryId, itemImages: $itemImages, itemTitle: $itemTitle, itemAddress: $itemAddress, itemTotalPrice: $itemTotalPrice, itemPriceType: $itemPriceType, itemSalePriceType: $itemSalePriceType, itemDiscountAmount: $itemDiscountAmount, itemPublishStatus: $itemPublishStatus, itemSoldStatus: $itemSoldStatus, itemCreatedAt: $itemCreatedAt, itemUpdatedAt: $itemUpdatedAt)';
   }
 
   @override
@@ -284,7 +269,6 @@ class MyAdvertisementModel {
         other.itemPriceType == itemPriceType &&
         other.itemSalePriceType == itemSalePriceType &&
         other.itemDiscountAmount == itemDiscountAmount &&
-        other.itemDiscountAmountType == itemDiscountAmountType &&
         other.itemPublishStatus == itemPublishStatus &&
         other.itemSoldStatus == itemSoldStatus &&
         other.itemCreatedAt == itemCreatedAt &&
@@ -304,7 +288,6 @@ class MyAdvertisementModel {
         itemPriceType.hashCode ^
         itemSalePriceType.hashCode ^
         itemDiscountAmount.hashCode ^
-        itemDiscountAmountType.hashCode ^
         itemPublishStatus.hashCode ^
         itemSoldStatus.hashCode ^
         itemCreatedAt.hashCode ^

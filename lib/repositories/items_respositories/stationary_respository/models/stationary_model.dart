@@ -16,7 +16,6 @@ class StationaryModel {
   final int? itemPriceType;
   final int? itemSalePriceType;
   final int? itemDiscountAmount;
-  final int? itemDiscountAmountType;
   final String? itemWriter;
   final String? itemTranslator;
   final int? itemPageCount;
@@ -40,7 +39,6 @@ class StationaryModel {
     required this.itemPriceType,
     required this.itemSalePriceType,
     required this.itemDiscountAmount,
-    required this.itemDiscountAmountType,
     required this.itemWriter,
     required this.itemTranslator,
     required this.itemPageCount,
@@ -65,7 +63,6 @@ class StationaryModel {
     required this.itemPriceType,
     this.itemSalePriceType = -1,
     this.itemDiscountAmount = -1,
-    this.itemDiscountAmountType = -1,
     this.itemWriter = '',
     this.itemTranslator = '',
     this.itemPageCount = -1,
@@ -90,7 +87,6 @@ class StationaryModel {
     required this.itemPriceType,
     required this.itemSalePriceType,
     required this.itemDiscountAmount,
-    required this.itemDiscountAmountType,
     required this.itemWriter,
     required this.itemTranslator,
     this.itemPageCount = -1,
@@ -115,7 +111,6 @@ class StationaryModel {
     required this.itemPriceType,
     required this.itemSalePriceType,
     required this.itemDiscountAmount,
-    required this.itemDiscountAmountType,
     this.itemWriter = '',
     this.itemTranslator = '',
     required this.itemPageCount,
@@ -140,7 +135,6 @@ class StationaryModel {
     required this.itemPriceType,
     required this.itemSalePriceType,
     required this.itemDiscountAmount,
-    required this.itemDiscountAmountType,
     this.itemWriter = '',
     this.itemTranslator = '',
     this.itemPageCount = -1,
@@ -165,7 +159,6 @@ class StationaryModel {
     required this.itemPriceType,
     required this.itemSalePriceType,
     required this.itemDiscountAmount,
-    required this.itemDiscountAmountType,
     this.itemWriter = '',
     this.itemTranslator = '',
     this.itemPageCount = -1,
@@ -190,7 +183,6 @@ class StationaryModel {
     required this.itemPriceType,
     required this.itemSalePriceType,
     required this.itemDiscountAmount,
-    required this.itemDiscountAmountType,
     this.itemWriter = '',
     this.itemTranslator = '',
     this.itemPageCount = -1,
@@ -215,7 +207,6 @@ class StationaryModel {
     required this.itemPriceType,
     required this.itemSalePriceType,
     required this.itemDiscountAmount,
-    required this.itemDiscountAmountType,
     this.itemWriter = '',
     this.itemTranslator = '',
     this.itemPageCount = -1,
@@ -264,8 +255,6 @@ class StationaryModel {
       itemPriceType: itemPriceType ?? this.itemPriceType,
       itemSalePriceType: itemSalePriceType ?? this.itemSalePriceType,
       itemDiscountAmount: itemDiscountAmount ?? this.itemDiscountAmount,
-      itemDiscountAmountType:
-          itemDiscountAmountType ?? this.itemDiscountAmountType,
       itemWriter: itemWriter ?? this.itemWriter,
       itemTranslator: itemTranslator ?? this.itemTranslator,
       itemPageCount: itemPageCount ?? this.itemPageCount,
@@ -292,7 +281,6 @@ class StationaryModel {
       StationaryConstants.itemPriceType: itemPriceType,
       StationaryConstants.itemSalePriceType: itemSalePriceType,
       StationaryConstants.itemDiscountAmount: itemDiscountAmount,
-      StationaryConstants.itemDiscountAmountType: itemDiscountAmountType,
       StationaryConstants.itemWriter: itemWriter,
       StationaryConstants.itemTranslator: itemTranslator,
       StationaryConstants.itemPageCount: itemPageCount,
@@ -319,7 +307,6 @@ class StationaryModel {
       StationaryConstants.itemPriceType: itemPriceType,
       StationaryConstants.itemSalePriceType: itemSalePriceType,
       StationaryConstants.itemDiscountAmount: itemDiscountAmount,
-      StationaryConstants.itemDiscountAmountType: itemDiscountAmountType,
       StationaryConstants.itemPublishStatus: itemPublishStatus,
       StationaryConstants.itemSoldStatus: itemSoldStatus,
       StationaryConstants.itemCreatedAt: itemCreatedAt,
@@ -366,10 +353,6 @@ class StationaryModel {
       itemDiscountAmount: map[StationaryConstants.itemDiscountAmount] != null
           ? map[StationaryConstants.itemDiscountAmount] as int
           : null,
-      itemDiscountAmountType:
-          map[StationaryConstants.itemDiscountAmountType] != null
-              ? map[StationaryConstants.itemDiscountAmountType] as int
-              : null,
       itemWriter: map[StationaryConstants.itemWriter] != null
           ? map[StationaryConstants.itemWriter] as String
           : null,
@@ -439,10 +422,6 @@ class StationaryModel {
       itemDiscountAmount: map[StationaryConstants.itemDiscountAmount] != null
           ? map[StationaryConstants.itemDiscountAmount] as int
           : null,
-      itemDiscountAmountType:
-          map[StationaryConstants.itemDiscountAmountType] != null
-              ? map[StationaryConstants.itemDiscountAmountType] as int
-              : null,
       itemPublishStatus: map[StationaryConstants.itemPublishStatus] != null
           ? map[StationaryConstants.itemPublishStatus] as String
           : null,
@@ -465,7 +444,7 @@ class StationaryModel {
 
   @override
   String toString() {
-    return 'StationaryModel(itemId: $itemId, itemCustomerId: $itemCustomerId, itemCategoryId: $itemCategoryId, itemSubCategoryId: $itemSubCategoryId, itemImages: $itemImages, itemTitle: $itemTitle, itemProvince: $itemProvince, itemRegion: $itemRegion, itemTotalPrice: $itemTotalPrice, itemPriceType: $itemPriceType, itemSalePriceType: $itemSalePriceType, itemDiscountAmount: $itemDiscountAmount, itemDiscountAmountType: $itemDiscountAmountType, itemWriter: $itemWriter, itemTranslator: $itemTranslator, itemPageCount: $itemPageCount, itemDescription: $itemDescription, itemStatus: $itemStatus, itemPublishStatus: $itemPublishStatus, itemSoldStatus: $itemSoldStatus, itemCreatedAt: $itemCreatedAt, itemUpdatedAt: $itemUpdatedAt)';
+    return 'StationaryModel(itemId: $itemId, itemCustomerId: $itemCustomerId, itemCategoryId: $itemCategoryId, itemSubCategoryId: $itemSubCategoryId, itemImages: $itemImages, itemTitle: $itemTitle, itemProvince: $itemProvince, itemRegion: $itemRegion, itemTotalPrice: $itemTotalPrice, itemPriceType: $itemPriceType, itemSalePriceType: $itemSalePriceType, itemDiscountAmount: $itemDiscountAmount, itemWriter: $itemWriter, itemTranslator: $itemTranslator, itemPageCount: $itemPageCount, itemDescription: $itemDescription, itemStatus: $itemStatus, itemPublishStatus: $itemPublishStatus, itemSoldStatus: $itemSoldStatus, itemCreatedAt: $itemCreatedAt, itemUpdatedAt: $itemUpdatedAt)';
   }
 
   @override
@@ -484,7 +463,6 @@ class StationaryModel {
         other.itemPriceType == itemPriceType &&
         other.itemSalePriceType == itemSalePriceType &&
         other.itemDiscountAmount == itemDiscountAmount &&
-        other.itemDiscountAmountType == itemDiscountAmountType &&
         other.itemWriter == itemWriter &&
         other.itemTranslator == itemTranslator &&
         other.itemPageCount == itemPageCount &&
@@ -510,7 +488,6 @@ class StationaryModel {
         itemPriceType.hashCode ^
         itemSalePriceType.hashCode ^
         itemDiscountAmount.hashCode ^
-        itemDiscountAmountType.hashCode ^
         itemWriter.hashCode ^
         itemTranslator.hashCode ^
         itemPageCount.hashCode ^

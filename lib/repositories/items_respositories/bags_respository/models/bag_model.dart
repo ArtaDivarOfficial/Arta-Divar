@@ -17,7 +17,6 @@ class BagModel {
   final int? itemPriceType;
   final int? itemSalePriceType;
   final int? itemDiscountAmount;
-  final int? itemDiscountAmountType;
   final int? itemType;
   final String? itemMaterial;
   final String? itemDescription;
@@ -40,7 +39,6 @@ class BagModel {
     required this.itemPriceType,
     required this.itemSalePriceType,
     required this.itemDiscountAmount,
-    required this.itemDiscountAmountType,
     required this.itemType,
     required this.itemMaterial,
     required this.itemDescription,
@@ -64,7 +62,6 @@ class BagModel {
     required this.itemPriceType,
     this.itemSalePriceType = -1,
     this.itemDiscountAmount = -1,
-    this.itemDiscountAmountType = -1,
     this.itemType = -1,
     this.itemMaterial = '',
     this.itemDescription = '',
@@ -88,7 +85,6 @@ class BagModel {
     required this.itemPriceType,
     required this.itemSalePriceType,
     required this.itemDiscountAmount,
-    required this.itemDiscountAmountType,
     required this.itemType,
     required this.itemMaterial,
     required this.itemDescription,
@@ -112,7 +108,6 @@ class BagModel {
     required this.itemPriceType,
     required this.itemSalePriceType,
     required this.itemDiscountAmount,
-    required this.itemDiscountAmountType,
     this.itemType = -1,
     required this.itemMaterial,
     required this.itemDescription,
@@ -136,7 +131,6 @@ class BagModel {
     required this.itemPriceType,
     required this.itemSalePriceType,
     required this.itemDiscountAmount,
-    required this.itemDiscountAmountType,
     this.itemType = -1,
     required this.itemMaterial,
     required this.itemDescription,
@@ -160,7 +154,6 @@ class BagModel {
     required this.itemPriceType,
     required this.itemSalePriceType,
     required this.itemDiscountAmount,
-    required this.itemDiscountAmountType,
     this.itemType = -1,
     required this.itemMaterial,
     required this.itemDescription,
@@ -184,7 +177,6 @@ class BagModel {
     required this.itemPriceType,
     required this.itemSalePriceType,
     required this.itemDiscountAmount,
-    required this.itemDiscountAmountType,
     this.itemType = -1,
     required this.itemMaterial,
     required this.itemDescription,
@@ -232,8 +224,6 @@ class BagModel {
       itemPriceType: itemPriceType ?? this.itemPriceType,
       itemSalePriceType: itemSalePriceType ?? this.itemSalePriceType,
       itemDiscountAmount: itemDiscountAmount ?? this.itemDiscountAmount,
-      itemDiscountAmountType:
-          itemDiscountAmountType ?? this.itemDiscountAmountType,
       itemType: itemType ?? this.itemType,
       itemMaterial: itemMaterial ?? this.itemMaterial,
       itemDescription: itemDescription ?? this.itemDescription,
@@ -259,7 +249,6 @@ class BagModel {
       BagConstants.itemPriceType: itemPriceType,
       BagConstants.itemSalePriceType: itemSalePriceType,
       BagConstants.itemDiscountAmount: itemDiscountAmount,
-      BagConstants.itemDiscountAmountType: itemDiscountAmountType,
       BagConstants.itemType: itemType,
       BagConstants.itemMaterial: itemMaterial,
       BagConstants.itemDescription: itemDescription,
@@ -285,7 +274,6 @@ class BagModel {
       BagConstants.itemPriceType: itemPriceType,
       BagConstants.itemSalePriceType: itemSalePriceType,
       BagConstants.itemDiscountAmount: itemDiscountAmount,
-      BagConstants.itemDiscountAmountType: itemDiscountAmountType,
       BagConstants.itemPublishStatus: itemPublishStatus,
       BagConstants.itemSoldStatus: itemSoldStatus,
       BagConstants.itemCreatedAt: itemCreatedAt,
@@ -332,9 +320,6 @@ class BagModel {
           : null,
       itemDiscountAmount: map[BagConstants.itemDiscountAmount] != null
           ? map[BagConstants.itemDiscountAmount] as int
-          : null,
-      itemDiscountAmountType: map[BagConstants.itemDiscountAmountType] != null
-          ? map[BagConstants.itemDiscountAmountType] as int
           : null,
       itemType: map[BagConstants.itemType] != null
           ? map[BagConstants.itemType] as int
@@ -403,9 +388,6 @@ class BagModel {
       itemDiscountAmount: map[BagConstants.itemDiscountAmount] != null
           ? map[BagConstants.itemDiscountAmount] as int
           : null,
-      itemDiscountAmountType: map[BagConstants.itemDiscountAmountType] != null
-          ? map[BagConstants.itemDiscountAmountType] as int
-          : null,
       itemDescription: map[BagConstants.itemDescription] != null
           ? map[BagConstants.itemDescription] as String
           : null,
@@ -431,7 +413,7 @@ class BagModel {
 
   @override
   String toString() {
-    return 'BagModel(itemId: $itemId, itemCustomerId: $itemCustomerId, itemCategoryId: $itemCategoryId, itemSubCategoryId: $itemSubCategoryId, itemImages: $itemImages, itemTitle: $itemTitle, itemProvince: $itemProvince, itemRegion: $itemRegion, itemTotalPrice: $itemTotalPrice, itemPriceType: $itemPriceType, itemSalePriceType: $itemSalePriceType, itemDiscountAmount: $itemDiscountAmount, itemDiscountAmountType: $itemDiscountAmountType, itemType: $itemType, itemMaterial: $itemMaterial, itemDescription: $itemDescription, itemStatus: $itemStatus, itemPublishStatus: $itemPublishStatus, itemSoldStatus: $itemSoldStatus, itemCreatedAt: $itemCreatedAt, itemUpdatedAt: $itemUpdatedAt)';
+    return 'BagModel(itemId: $itemId, itemCustomerId: $itemCustomerId, itemCategoryId: $itemCategoryId, itemSubCategoryId: $itemSubCategoryId, itemImages: $itemImages, itemTitle: $itemTitle, itemProvince: $itemProvince, itemRegion: $itemRegion, itemTotalPrice: $itemTotalPrice, itemPriceType: $itemPriceType, itemSalePriceType: $itemSalePriceType, itemDiscountAmount: $itemDiscountAmount, itemType: $itemType, itemMaterial: $itemMaterial, itemDescription: $itemDescription, itemStatus: $itemStatus, itemPublishStatus: $itemPublishStatus, itemSoldStatus: $itemSoldStatus, itemCreatedAt: $itemCreatedAt, itemUpdatedAt: $itemUpdatedAt)';
   }
 
   @override
@@ -450,7 +432,6 @@ class BagModel {
         other.itemPriceType == itemPriceType &&
         other.itemSalePriceType == itemSalePriceType &&
         other.itemDiscountAmount == itemDiscountAmount &&
-        other.itemDiscountAmountType == itemDiscountAmountType &&
         other.itemType == itemType &&
         other.itemMaterial == itemMaterial &&
         other.itemDescription == itemDescription &&
@@ -475,7 +456,6 @@ class BagModel {
         itemPriceType.hashCode ^
         itemSalePriceType.hashCode ^
         itemDiscountAmount.hashCode ^
-        itemDiscountAmountType.hashCode ^
         itemType.hashCode ^
         itemMaterial.hashCode ^
         itemDescription.hashCode ^

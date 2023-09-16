@@ -16,7 +16,6 @@ class ClothingModel {
   final int? itemPriceType;
   final int? itemSalePriceType;
   final int? itemDiscountAmount;
-  final int? itemDiscountAmountType;
   final int? itemType;
   final String? itemColor;
   final String? itemSize;
@@ -41,7 +40,6 @@ class ClothingModel {
     required this.itemPriceType,
     required this.itemSalePriceType,
     required this.itemDiscountAmount,
-    required this.itemDiscountAmountType,
     required this.itemType,
     required this.itemColor,
     required this.itemSize,
@@ -67,7 +65,6 @@ class ClothingModel {
     required this.itemPriceType,
     this.itemSalePriceType = -1,
     this.itemDiscountAmount = -1,
-    this.itemDiscountAmountType = -1,
     this.itemType = -1,
     this.itemColor = '',
     this.itemSize = '',
@@ -93,7 +90,6 @@ class ClothingModel {
     required this.itemPriceType,
     required this.itemSalePriceType,
     required this.itemDiscountAmount,
-    required this.itemDiscountAmountType,
     required this.itemType,
     required this.itemColor,
     required this.itemSize,
@@ -119,7 +115,6 @@ class ClothingModel {
     required this.itemPriceType,
     required this.itemSalePriceType,
     required this.itemDiscountAmount,
-    required this.itemDiscountAmountType,
     required this.itemType,
     required this.itemColor,
     required this.itemSize,
@@ -145,7 +140,6 @@ class ClothingModel {
     required this.itemPriceType,
     required this.itemSalePriceType,
     required this.itemDiscountAmount,
-    required this.itemDiscountAmountType,
     this.itemType = -1,
     required this.itemColor,
     required this.itemSize,
@@ -171,7 +165,6 @@ class ClothingModel {
     required this.itemPriceType,
     required this.itemSalePriceType,
     required this.itemDiscountAmount,
-    required this.itemDiscountAmountType,
     this.itemType = -1,
     required this.itemColor,
     required this.itemSize,
@@ -197,7 +190,6 @@ class ClothingModel {
     required this.itemPriceType,
     required this.itemSalePriceType,
     required this.itemDiscountAmount,
-    required this.itemDiscountAmountType,
     required this.itemType,
     required this.itemColor,
     required this.itemSize,
@@ -223,7 +215,6 @@ class ClothingModel {
     required this.itemPriceType,
     required this.itemSalePriceType,
     required this.itemDiscountAmount,
-    required this.itemDiscountAmountType,
     required this.itemType,
     this.itemColor = '',
     this.itemSize = '',
@@ -249,7 +240,6 @@ class ClothingModel {
     required this.itemPriceType,
     required this.itemSalePriceType,
     required this.itemDiscountAmount,
-    required this.itemDiscountAmountType,
     this.itemType = -1,
     this.itemColor = '',
     this.itemSize = '',
@@ -275,7 +265,6 @@ class ClothingModel {
     required this.itemPriceType,
     required this.itemSalePriceType,
     required this.itemDiscountAmount,
-    required this.itemDiscountAmountType,
     this.itemType = -1,
     required this.itemColor,
     required this.itemSize,
@@ -326,8 +315,6 @@ class ClothingModel {
       itemPriceType: itemPriceType ?? this.itemPriceType,
       itemSalePriceType: itemSalePriceType ?? this.itemSalePriceType,
       itemDiscountAmount: itemDiscountAmount ?? this.itemDiscountAmount,
-      itemDiscountAmountType:
-          itemDiscountAmountType ?? this.itemDiscountAmountType,
       itemType: itemType ?? this.itemType,
       itemColor: itemColor ?? this.itemColor,
       itemSize: itemSize ?? this.itemSize,
@@ -355,7 +342,6 @@ class ClothingModel {
       ClothingConstants.itemPriceType: itemPriceType,
       ClothingConstants.itemSalePriceType: itemSalePriceType,
       ClothingConstants.itemDiscountAmount: itemDiscountAmount,
-      ClothingConstants.itemDiscountAmountType: itemDiscountAmountType,
       ClothingConstants.itemType: itemType,
       ClothingConstants.itemColor: itemColor,
       ClothingConstants.itemSize: itemSize,
@@ -383,7 +369,6 @@ class ClothingModel {
       ClothingConstants.itemPriceType: itemPriceType,
       ClothingConstants.itemSalePriceType: itemSalePriceType,
       ClothingConstants.itemDiscountAmount: itemDiscountAmount,
-      ClothingConstants.itemDiscountAmountType: itemDiscountAmountType,
       ClothingConstants.itemPublishStatus: itemPublishStatus,
       ClothingConstants.itemSoldStatus: itemSoldStatus,
       ClothingConstants.itemCreatedAt: itemCreatedAt,
@@ -430,10 +415,6 @@ class ClothingModel {
       itemDiscountAmount: map[ClothingConstants.itemDiscountAmount] != null
           ? map[ClothingConstants.itemDiscountAmount] as int
           : null,
-      itemDiscountAmountType:
-          map[ClothingConstants.itemDiscountAmountType] != null
-              ? map[ClothingConstants.itemDiscountAmountType] as int
-              : null,
       itemType: map[ClothingConstants.itemType] != null
           ? map[ClothingConstants.itemType] as int
           : null,
@@ -506,10 +487,6 @@ class ClothingModel {
       itemDiscountAmount: map[ClothingConstants.itemDiscountAmount] != null
           ? map[ClothingConstants.itemDiscountAmount] as int
           : null,
-      itemDiscountAmountType:
-          map[ClothingConstants.itemDiscountAmountType] != null
-              ? map[ClothingConstants.itemDiscountAmountType] as int
-              : null,
       itemDescription: map[ClothingConstants.itemDescription] != null
           ? map[ClothingConstants.itemDescription] as String
           : null,
@@ -535,7 +512,7 @@ class ClothingModel {
 
   @override
   String toString() {
-    return 'ClothingModel(itemId: $itemId, itemCustomerId: $itemCustomerId, itemCategoryId: $itemCategoryId, itemSubCategoryId: $itemSubCategoryId, itemImages: $itemImages, itemTitle: $itemTitle, itemProvince: $itemProvince, itemRegion: $itemRegion, itemTotalPrice: $itemTotalPrice, itemPriceType: $itemPriceType, itemSalePriceType: $itemSalePriceType, itemDiscountAmount: $itemDiscountAmount, itemDiscountAmountType: $itemDiscountAmountType, itemType: $itemType, itemColor: $itemColor, itemSize: $itemSize, itemBrand: $itemBrand, itemDescription: $itemDescription, itemStatus: $itemStatus, itemPublishStatus: $itemPublishStatus, itemSoldStatus: $itemSoldStatus, itemCreatedAt: $itemCreatedAt, itemUpdatedAt: $itemUpdatedAt)';
+    return 'ClothingModel(itemId: $itemId, itemCustomerId: $itemCustomerId, itemCategoryId: $itemCategoryId, itemSubCategoryId: $itemSubCategoryId, itemImages: $itemImages, itemTitle: $itemTitle, itemProvince: $itemProvince, itemRegion: $itemRegion, itemTotalPrice: $itemTotalPrice, itemPriceType: $itemPriceType, itemSalePriceType: $itemSalePriceType, itemDiscountAmount: $itemDiscountAmount, itemType: $itemType, itemColor: $itemColor, itemSize: $itemSize, itemBrand: $itemBrand, itemDescription: $itemDescription, itemStatus: $itemStatus, itemPublishStatus: $itemPublishStatus, itemSoldStatus: $itemSoldStatus, itemCreatedAt: $itemCreatedAt, itemUpdatedAt: $itemUpdatedAt)';
   }
 
   @override
@@ -554,7 +531,6 @@ class ClothingModel {
         other.itemPriceType == itemPriceType &&
         other.itemSalePriceType == itemSalePriceType &&
         other.itemDiscountAmount == itemDiscountAmount &&
-        other.itemDiscountAmountType == itemDiscountAmountType &&
         other.itemType == itemType &&
         other.itemColor == itemColor &&
         other.itemSize == itemSize &&
@@ -581,7 +557,6 @@ class ClothingModel {
         itemPriceType.hashCode ^
         itemSalePriceType.hashCode ^
         itemDiscountAmount.hashCode ^
-        itemDiscountAmountType.hashCode ^
         itemType.hashCode ^
         itemColor.hashCode ^
         itemSize.hashCode ^

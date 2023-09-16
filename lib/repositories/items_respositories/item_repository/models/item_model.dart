@@ -15,7 +15,6 @@ class ItemModel {
   final int? itemPriceType;
   final int? itemSalePriceType;
   final int? itemDiscountAmount;
-  final int? itemDiscountAmountType;
   final String? itemPublishStatus;
   final String? itemSoldStatus;
   final String? itemCreatedAt;
@@ -33,7 +32,6 @@ class ItemModel {
     required this.itemPriceType,
     required this.itemSalePriceType,
     required this.itemDiscountAmount,
-    required this.itemDiscountAmountType,
     required this.itemPublishStatus,
     required this.itemSoldStatus,
     required this.itemCreatedAt,
@@ -52,7 +50,6 @@ class ItemModel {
     required this.itemPriceType,
     required this.itemSalePriceType,
     required this.itemDiscountAmount,
-    required this.itemDiscountAmountType,
     required this.itemPublishStatus,
     required this.itemSoldStatus,
     required this.itemCreatedAt,
@@ -89,8 +86,6 @@ class ItemModel {
       itemPriceType: itemPriceType ?? this.itemPriceType,
       itemSalePriceType: itemSalePriceType ?? this.itemSalePriceType,
       itemDiscountAmount: itemDiscountAmount ?? this.itemDiscountAmount,
-      itemDiscountAmountType:
-          itemDiscountAmountType ?? this.itemDiscountAmountType,
       itemPublishStatus: itemPublishStatus ?? this.itemPublishStatus,
       itemSoldStatus: itemSoldStatus ?? this.itemSoldStatus,
       itemCreatedAt: itemCreatedAt ?? this.itemCreatedAt,
@@ -111,7 +106,6 @@ class ItemModel {
       ItemConstants.itemPriceType: itemPriceType,
       ItemConstants.itemSalePriceType: itemSalePriceType,
       ItemConstants.itemDiscountAmount: itemDiscountAmount,
-      ItemConstants.itemDiscountAmountType: itemDiscountAmountType,
       ItemConstants.itemPublishStatus: itemPublishStatus,
       ItemConstants.itemSoldStatus: itemSoldStatus,
       ItemConstants.itemCreatedAt: itemCreatedAt,
@@ -132,7 +126,6 @@ class ItemModel {
       ItemConstants.itemPriceType: itemPriceType,
       ItemConstants.itemSalePriceType: itemSalePriceType,
       ItemConstants.itemDiscountAmount: itemDiscountAmount,
-      ItemConstants.itemDiscountAmountType: itemDiscountAmountType,
       ItemConstants.itemPublishStatus: itemPublishStatus,
       ItemConstants.itemSoldStatus: itemSoldStatus,
       ItemConstants.itemCreatedAt: itemCreatedAt,
@@ -174,9 +167,6 @@ class ItemModel {
           : null,
       itemDiscountAmount: map[ItemConstants.itemDiscountAmount] != null
           ? map[ItemConstants.itemDiscountAmount] as int
-          : null,
-      itemDiscountAmountType: map[ItemConstants.itemDiscountAmountType] != null
-          ? map[ItemConstants.itemDiscountAmountType] as int
           : null,
       itemPublishStatus: map[ItemConstants.itemPublishStatus] != null
           ? map[ItemConstants.itemPublishStatus] as String
@@ -228,9 +218,6 @@ class ItemModel {
       itemDiscountAmount: map[ItemConstants.itemDiscountAmount] != null
           ? map[ItemConstants.itemDiscountAmount] as int
           : null,
-      itemDiscountAmountType: map[ItemConstants.itemDiscountAmountType] != null
-          ? map[ItemConstants.itemDiscountAmountType] as int
-          : null,
       itemPublishStatus: map[ItemConstants.itemPublishStatus] != null
           ? map[ItemConstants.itemPublishStatus] as String
           : null,
@@ -253,7 +240,7 @@ class ItemModel {
 
   @override
   String toString() {
-    return 'ItemModel(itemId: $itemId, itemCustomerId: $itemCustomerId, itemCategoryId: $itemCategoryId, itemSubCategoryId: $itemSubCategoryId, itemImages: $itemImages, itemTitle: $itemTitle, itemAddress: $itemAddress, itemTotalPrice: $itemTotalPrice, itemPriceType: $itemPriceType, itemSalePriceType: $itemSalePriceType, itemDiscountAmount: $itemDiscountAmount, itemDiscountAmountType: $itemDiscountAmountType, itemPublishStatus: $itemPublishStatus, itemSoldStatus: $itemSoldStatus, itemCreatedAt: $itemCreatedAt, itemUpdatedAt: $itemUpdatedAt)';
+    return 'ItemModel(itemId: $itemId, itemCustomerId: $itemCustomerId, itemCategoryId: $itemCategoryId, itemSubCategoryId: $itemSubCategoryId, itemImages: $itemImages, itemTitle: $itemTitle, itemAddress: $itemAddress, itemTotalPrice: $itemTotalPrice, itemPriceType: $itemPriceType, itemSalePriceType: $itemSalePriceType, itemDiscountAmount: $itemDiscountAmount, itemPublishStatus: $itemPublishStatus, itemSoldStatus: $itemSoldStatus, itemCreatedAt: $itemCreatedAt, itemUpdatedAt: $itemUpdatedAt)';
   }
 
   @override
@@ -271,7 +258,6 @@ class ItemModel {
         other.itemPriceType == itemPriceType &&
         other.itemSalePriceType == itemSalePriceType &&
         other.itemDiscountAmount == itemDiscountAmount &&
-        other.itemDiscountAmountType == itemDiscountAmountType &&
         other.itemPublishStatus == itemPublishStatus &&
         other.itemSoldStatus == itemSoldStatus &&
         other.itemCreatedAt == itemCreatedAt &&
@@ -291,7 +277,6 @@ class ItemModel {
         itemPriceType.hashCode ^
         itemSalePriceType.hashCode ^
         itemDiscountAmount.hashCode ^
-        itemDiscountAmountType.hashCode ^
         itemPublishStatus.hashCode ^
         itemSoldStatus.hashCode ^
         itemCreatedAt.hashCode ^

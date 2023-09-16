@@ -16,7 +16,6 @@ class CosmeticsModel {
   final int? itemPriceType;
   final int? itemSalePriceType;
   final int? itemDiscountAmount;
-  final int? itemDiscountAmountType;
   final String? itemBrand;
   final String? itemDescription;
   final int? itemStatus;
@@ -38,7 +37,6 @@ class CosmeticsModel {
     required this.itemPriceType,
     required this.itemSalePriceType,
     required this.itemDiscountAmount,
-    required this.itemDiscountAmountType,
     required this.itemBrand,
     required this.itemDescription,
     required this.itemStatus,
@@ -61,7 +59,6 @@ class CosmeticsModel {
     required this.itemPriceType,
     this.itemSalePriceType = -1,
     this.itemDiscountAmount = -1,
-    this.itemDiscountAmountType = -1,
     this.itemBrand = '',
     this.itemDescription = '',
     this.itemStatus = -1,
@@ -84,7 +81,6 @@ class CosmeticsModel {
     required this.itemPriceType,
     required this.itemSalePriceType,
     required this.itemDiscountAmount,
-    required this.itemDiscountAmountType,
     required this.itemBrand,
     required this.itemDescription,
     required this.itemStatus,
@@ -107,7 +103,6 @@ class CosmeticsModel {
     required this.itemPriceType,
     required this.itemSalePriceType,
     required this.itemDiscountAmount,
-    required this.itemDiscountAmountType,
     required this.itemBrand,
     required this.itemDescription,
     required this.itemStatus,
@@ -130,7 +125,6 @@ class CosmeticsModel {
     required this.itemPriceType,
     required this.itemSalePriceType,
     required this.itemDiscountAmount,
-    required this.itemDiscountAmountType,
     required this.itemBrand,
     required this.itemDescription,
     required this.itemStatus,
@@ -153,7 +147,6 @@ class CosmeticsModel {
     required this.itemPriceType,
     required this.itemSalePriceType,
     required this.itemDiscountAmount,
-    required this.itemDiscountAmountType,
     required this.itemBrand,
     required this.itemDescription,
     required this.itemStatus,
@@ -176,7 +169,6 @@ class CosmeticsModel {
     required this.itemPriceType,
     required this.itemSalePriceType,
     required this.itemDiscountAmount,
-    required this.itemDiscountAmountType,
     required this.itemBrand,
     required this.itemDescription,
     required this.itemStatus,
@@ -221,8 +213,6 @@ class CosmeticsModel {
       itemPriceType: itemPriceType ?? this.itemPriceType,
       itemSalePriceType: itemSalePriceType ?? this.itemSalePriceType,
       itemDiscountAmount: itemDiscountAmount ?? this.itemDiscountAmount,
-      itemDiscountAmountType:
-          itemDiscountAmountType ?? this.itemDiscountAmountType,
       itemBrand: itemBrand ?? this.itemBrand,
       itemDescription: itemDescription ?? this.itemDescription,
       itemStatus: itemStatus ?? this.itemStatus,
@@ -247,7 +237,6 @@ class CosmeticsModel {
       CosmeticsConstants.itemPriceType: itemPriceType,
       CosmeticsConstants.itemSalePriceType: itemSalePriceType,
       CosmeticsConstants.itemDiscountAmount: itemDiscountAmount,
-      CosmeticsConstants.itemDiscountAmountType: itemDiscountAmountType,
       CosmeticsConstants.itemBrand: itemBrand,
       CosmeticsConstants.itemDescription: itemDescription,
       CosmeticsConstants.itemStatus: itemStatus,
@@ -272,7 +261,6 @@ class CosmeticsModel {
       CosmeticsConstants.itemPriceType: itemPriceType,
       CosmeticsConstants.itemSalePriceType: itemSalePriceType,
       CosmeticsConstants.itemDiscountAmount: itemDiscountAmount,
-      CosmeticsConstants.itemDiscountAmountType: itemDiscountAmountType,
       CosmeticsConstants.itemPublishStatus: itemPublishStatus,
       CosmeticsConstants.itemSoldStatus: itemSoldStatus,
       CosmeticsConstants.itemCreatedAt: itemCreatedAt,
@@ -319,10 +307,6 @@ class CosmeticsModel {
       itemDiscountAmount: map[CosmeticsConstants.itemDiscountAmount] != null
           ? map[CosmeticsConstants.itemDiscountAmount] as int
           : null,
-      itemDiscountAmountType:
-          map[CosmeticsConstants.itemDiscountAmountType] != null
-              ? map[CosmeticsConstants.itemDiscountAmountType] as int
-              : null,
       itemBrand: map[CosmeticsConstants.itemBrand] != null
           ? map[CosmeticsConstants.itemBrand] as String
           : null,
@@ -386,10 +370,6 @@ class CosmeticsModel {
       itemDiscountAmount: map[CosmeticsConstants.itemDiscountAmount] != null
           ? map[CosmeticsConstants.itemDiscountAmount] as int
           : null,
-      itemDiscountAmountType:
-          map[CosmeticsConstants.itemDiscountAmountType] != null
-              ? map[CosmeticsConstants.itemDiscountAmountType] as int
-              : null,
       itemDescription: map[CosmeticsConstants.itemDescription] != null
           ? map[CosmeticsConstants.itemDescription] as String
           : null,
@@ -415,7 +395,7 @@ class CosmeticsModel {
 
   @override
   String toString() {
-    return 'CosmeticsModel(itemId: $itemId, itemCustomerId: $itemCustomerId, itemCategoryId: $itemCategoryId, itemSubCategoryId: $itemSubCategoryId, itemImages: $itemImages, itemTitle: $itemTitle, itemProvince: $itemProvince, itemRegion: $itemRegion, itemTotalPrice: $itemTotalPrice, itemPriceType: $itemPriceType, itemSalePriceType: $itemSalePriceType, itemDiscountAmount: $itemDiscountAmount, itemDiscountAmountType: $itemDiscountAmountType, itemBrand: $itemBrand, itemDescription: $itemDescription, itemStatus: $itemStatus, itemPublishStatus: $itemPublishStatus, itemSoldStatus: $itemSoldStatus, itemCreatedAt: $itemCreatedAt, itemUpdatedAt: $itemUpdatedAt)';
+    return 'CosmeticsModel(itemId: $itemId, itemCustomerId: $itemCustomerId, itemCategoryId: $itemCategoryId, itemSubCategoryId: $itemSubCategoryId, itemImages: $itemImages, itemTitle: $itemTitle, itemProvince: $itemProvince, itemRegion: $itemRegion, itemTotalPrice: $itemTotalPrice, itemPriceType: $itemPriceType, itemSalePriceType: $itemSalePriceType, itemDiscountAmount: $itemDiscountAmount, itemBrand: $itemBrand, itemDescription: $itemDescription, itemStatus: $itemStatus, itemPublishStatus: $itemPublishStatus, itemSoldStatus: $itemSoldStatus, itemCreatedAt: $itemCreatedAt, itemUpdatedAt: $itemUpdatedAt)';
   }
 
   @override
@@ -434,7 +414,6 @@ class CosmeticsModel {
         other.itemPriceType == itemPriceType &&
         other.itemSalePriceType == itemSalePriceType &&
         other.itemDiscountAmount == itemDiscountAmount &&
-        other.itemDiscountAmountType == itemDiscountAmountType &&
         other.itemBrand == itemBrand &&
         other.itemDescription == itemDescription &&
         other.itemStatus == itemStatus &&
@@ -458,7 +437,6 @@ class CosmeticsModel {
         itemPriceType.hashCode ^
         itemSalePriceType.hashCode ^
         itemDiscountAmount.hashCode ^
-        itemDiscountAmountType.hashCode ^
         itemBrand.hashCode ^
         itemDescription.hashCode ^
         itemStatus.hashCode ^

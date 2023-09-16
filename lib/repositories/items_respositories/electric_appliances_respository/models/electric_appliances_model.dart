@@ -16,7 +16,6 @@ class ElectricAppliancesModel {
   final int? itemPriceType;
   final int? itemSalePriceType;
   final int? itemDiscountAmount;
-  final int? itemDiscountAmountType;
   final String? itemMadeOf;
   final String? itemWattOrWolt;
   final String? itemDescription;
@@ -39,7 +38,6 @@ class ElectricAppliancesModel {
     required this.itemPriceType,
     required this.itemSalePriceType,
     required this.itemDiscountAmount,
-    required this.itemDiscountAmountType,
     required this.itemMadeOf,
     required this.itemWattOrWolt,
     required this.itemDescription,
@@ -63,7 +61,6 @@ class ElectricAppliancesModel {
     required this.itemPriceType,
     this.itemSalePriceType = -1,
     this.itemDiscountAmount = -1,
-    this.itemDiscountAmountType = -1,
     this.itemMadeOf = '',
     this.itemWattOrWolt = '',
     this.itemDescription = '',
@@ -87,7 +84,6 @@ class ElectricAppliancesModel {
     required this.itemPriceType,
     required this.itemSalePriceType,
     required this.itemDiscountAmount,
-    required this.itemDiscountAmountType,
     required this.itemMadeOf,
     required this.itemWattOrWolt,
     required this.itemDescription,
@@ -111,7 +107,6 @@ class ElectricAppliancesModel {
     required this.itemPriceType,
     required this.itemSalePriceType,
     required this.itemDiscountAmount,
-    required this.itemDiscountAmountType,
     required this.itemMadeOf,
     required this.itemWattOrWolt,
     required this.itemDescription,
@@ -158,8 +153,6 @@ class ElectricAppliancesModel {
       itemPriceType: itemPriceType ?? this.itemPriceType,
       itemSalePriceType: itemSalePriceType ?? this.itemSalePriceType,
       itemDiscountAmount: itemDiscountAmount ?? this.itemDiscountAmount,
-      itemDiscountAmountType:
-          itemDiscountAmountType ?? this.itemDiscountAmountType,
       itemMadeOf: itemMadeOf ?? this.itemMadeOf,
       itemWattOrWolt: itemWattOrWolt ?? this.itemWattOrWolt,
       itemDescription: itemDescription ?? this.itemDescription,
@@ -185,8 +178,6 @@ class ElectricAppliancesModel {
       ElectricAppliancesConstants.itemPriceType: itemPriceType,
       ElectricAppliancesConstants.itemSalePriceType: itemSalePriceType,
       ElectricAppliancesConstants.itemDiscountAmount: itemDiscountAmount,
-      ElectricAppliancesConstants.itemDiscountAmountType:
-          itemDiscountAmountType,
       ElectricAppliancesConstants.itemMadeOf: itemMadeOf,
       ElectricAppliancesConstants.itemWattOrWolt: itemWattOrWolt,
       ElectricAppliancesConstants.itemDescription: itemDescription,
@@ -212,8 +203,6 @@ class ElectricAppliancesModel {
       ElectricAppliancesConstants.itemPriceType: itemPriceType,
       ElectricAppliancesConstants.itemSalePriceType: itemSalePriceType,
       ElectricAppliancesConstants.itemDiscountAmount: itemDiscountAmount,
-      ElectricAppliancesConstants.itemDiscountAmountType:
-          itemDiscountAmountType,
       ElectricAppliancesConstants.itemPublishStatus: itemPublishStatus,
       ElectricAppliancesConstants.itemSoldStatus: itemSoldStatus,
       ElectricAppliancesConstants.itemCreatedAt: itemCreatedAt,
@@ -262,10 +251,6 @@ class ElectricAppliancesModel {
       itemDiscountAmount:
           map[ElectricAppliancesConstants.itemDiscountAmount] != null
               ? map[ElectricAppliancesConstants.itemDiscountAmount] as int
-              : null,
-      itemDiscountAmountType:
-          map[ElectricAppliancesConstants.itemDiscountAmountType] != null
-              ? map[ElectricAppliancesConstants.itemDiscountAmountType] as int
               : null,
       itemMadeOf: map[ElectricAppliancesConstants.itemMadeOf] != null
           ? map[ElectricAppliancesConstants.itemMadeOf] as String
@@ -337,10 +322,6 @@ class ElectricAppliancesModel {
           map[ElectricAppliancesConstants.itemDiscountAmount] != null
               ? map[ElectricAppliancesConstants.itemDiscountAmount] as int
               : null,
-      itemDiscountAmountType:
-          map[ElectricAppliancesConstants.itemDiscountAmountType] != null
-              ? map[ElectricAppliancesConstants.itemDiscountAmountType] as int
-              : null,
       itemPublishStatus:
           map[ElectricAppliancesConstants.itemPublishStatus] != null
               ? map[ElectricAppliancesConstants.itemPublishStatus] as String
@@ -365,7 +346,7 @@ class ElectricAppliancesModel {
 
   @override
   String toString() {
-    return 'ElectricAppliancesModel(itemId: $itemId, itemCustomerId: $itemCustomerId, itemCategoryId: $itemCategoryId, itemSubCategoryId: $itemSubCategoryId, itemImages: $itemImages, itemTitle: $itemTitle, itemProvince: $itemProvince, itemRegion: $itemRegion, itemTotalPrice: $itemTotalPrice, itemPriceType: $itemPriceType, itemSalePriceType: $itemSalePriceType, itemDiscountAmount: $itemDiscountAmount, itemDiscountAmountType: $itemDiscountAmountType, itemMadeOf: $itemMadeOf, itemWattOrWolt: $itemWattOrWolt, itemDescription: $itemDescription, itemStatus: $itemStatus, itemPublishStatus: $itemPublishStatus, itemSoldStatus: $itemSoldStatus, itemCreatedAt: $itemCreatedAt, itemUpdatedAt: $itemUpdatedAt)';
+    return 'ElectricAppliancesModel(itemId: $itemId, itemCustomerId: $itemCustomerId, itemCategoryId: $itemCategoryId, itemSubCategoryId: $itemSubCategoryId, itemImages: $itemImages, itemTitle: $itemTitle, itemProvince: $itemProvince, itemRegion: $itemRegion, itemTotalPrice: $itemTotalPrice, itemPriceType: $itemPriceType, itemSalePriceType: $itemSalePriceType, itemDiscountAmount: $itemDiscountAmount, itemMadeOf: $itemMadeOf, itemWattOrWolt: $itemWattOrWolt, itemDescription: $itemDescription, itemStatus: $itemStatus, itemPublishStatus: $itemPublishStatus, itemSoldStatus: $itemSoldStatus, itemCreatedAt: $itemCreatedAt, itemUpdatedAt: $itemUpdatedAt)';
   }
 
   @override
@@ -384,7 +365,6 @@ class ElectricAppliancesModel {
         other.itemPriceType == itemPriceType &&
         other.itemSalePriceType == itemSalePriceType &&
         other.itemDiscountAmount == itemDiscountAmount &&
-        other.itemDiscountAmountType == itemDiscountAmountType &&
         other.itemMadeOf == itemMadeOf &&
         other.itemWattOrWolt == itemWattOrWolt &&
         other.itemDescription == itemDescription &&
@@ -409,7 +389,6 @@ class ElectricAppliancesModel {
         itemPriceType.hashCode ^
         itemSalePriceType.hashCode ^
         itemDiscountAmount.hashCode ^
-        itemDiscountAmountType.hashCode ^
         itemMadeOf.hashCode ^
         itemWattOrWolt.hashCode ^
         itemDescription.hashCode ^

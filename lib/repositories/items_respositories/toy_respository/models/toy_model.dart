@@ -16,7 +16,6 @@ class ToyModel {
   final int? itemPriceType;
   final int? itemSalePriceType;
   final int? itemDiscountAmount;
-  final int? itemDiscountAmountType;
   final int? itemType;
   final String? itemDescription;
   final int? itemStatus;
@@ -38,7 +37,6 @@ class ToyModel {
     required this.itemPriceType,
     required this.itemSalePriceType,
     required this.itemDiscountAmount,
-    required this.itemDiscountAmountType,
     required this.itemType,
     required this.itemDescription,
     required this.itemStatus,
@@ -61,7 +59,6 @@ class ToyModel {
     required this.itemPriceType,
     this.itemSalePriceType = -1,
     this.itemDiscountAmount = -1,
-    this.itemDiscountAmountType = -1,
     this.itemType = -1,
     this.itemDescription = '',
     this.itemStatus = -1,
@@ -84,7 +81,6 @@ class ToyModel {
     required this.itemPriceType,
     required this.itemSalePriceType,
     required this.itemDiscountAmount,
-    required this.itemDiscountAmountType,
     required this.itemType,
     required this.itemDescription,
     required this.itemStatus,
@@ -129,8 +125,6 @@ class ToyModel {
       itemPriceType: itemPriceType ?? this.itemPriceType,
       itemSalePriceType: itemSalePriceType ?? this.itemSalePriceType,
       itemDiscountAmount: itemDiscountAmount ?? this.itemDiscountAmount,
-      itemDiscountAmountType:
-          itemDiscountAmountType ?? this.itemDiscountAmountType,
       itemType: itemType ?? this.itemType,
       itemDescription: itemDescription ?? this.itemDescription,
       itemStatus: itemStatus ?? this.itemStatus,
@@ -155,7 +149,6 @@ class ToyModel {
       ToyConstants.itemPriceType: itemPriceType,
       ToyConstants.itemSalePriceType: itemSalePriceType,
       ToyConstants.itemDiscountAmount: itemDiscountAmount,
-      ToyConstants.itemDiscountAmountType: itemDiscountAmountType,
       ToyConstants.itemType: itemType,
       ToyConstants.itemDescription: itemDescription,
       ToyConstants.itemStatus: itemStatus,
@@ -180,7 +173,6 @@ class ToyModel {
       ToyConstants.itemPriceType: itemPriceType,
       ToyConstants.itemSalePriceType: itemSalePriceType,
       ToyConstants.itemDiscountAmount: itemDiscountAmount,
-      ToyConstants.itemDiscountAmountType: itemDiscountAmountType,
       ToyConstants.itemPublishStatus: itemPublishStatus,
       ToyConstants.itemSoldStatus: itemSoldStatus,
       ToyConstants.itemCreatedAt: itemCreatedAt,
@@ -225,9 +217,6 @@ class ToyModel {
           : null,
       itemDiscountAmount: map[ToyConstants.itemDiscountAmount] != null
           ? map[ToyConstants.itemDiscountAmount] as int
-          : null,
-      itemDiscountAmountType: map[ToyConstants.itemDiscountAmountType] != null
-          ? map[ToyConstants.itemDiscountAmountType] as int
           : null,
       itemType: map[ToyConstants.itemType] != null
           ? map[ToyConstants.itemType] as int
@@ -291,9 +280,6 @@ class ToyModel {
       itemDiscountAmount: map[ToyConstants.itemDiscountAmount] != null
           ? map[ToyConstants.itemDiscountAmount] as int
           : null,
-      itemDiscountAmountType: map[ToyConstants.itemDiscountAmountType] != null
-          ? map[ToyConstants.itemDiscountAmountType] as int
-          : null,
       itemPublishStatus: map[ToyConstants.itemPublishStatus] != null
           ? map[ToyConstants.itemPublishStatus] as String
           : null,
@@ -316,7 +302,7 @@ class ToyModel {
 
   @override
   String toString() {
-    return 'ToyModel(itemId: $itemId, itemCustomerId: $itemCustomerId, itemCategoryId: $itemCategoryId, itemSubCategoryId: $itemSubCategoryId, itemImages: $itemImages, itemTitle: $itemTitle, itemProvince: $itemProvince, itemRegion: $itemRegion, itemTotalPrice: $itemTotalPrice, itemPriceType: $itemPriceType, itemSalePriceType: $itemSalePriceType, itemDiscountAmount: $itemDiscountAmount, itemDiscountAmountType: $itemDiscountAmountType, itemType: $itemType, itemDescription: $itemDescription, itemStatus: $itemStatus, itemPublishStatus: $itemPublishStatus, itemSoldStatus: $itemSoldStatus, itemCreatedAt: $itemCreatedAt, itemUpdatedAt: $itemUpdatedAt)';
+    return 'ToyModel(itemId: $itemId, itemCustomerId: $itemCustomerId, itemCategoryId: $itemCategoryId, itemSubCategoryId: $itemSubCategoryId, itemImages: $itemImages, itemTitle: $itemTitle, itemProvince: $itemProvince, itemRegion: $itemRegion, itemTotalPrice: $itemTotalPrice, itemPriceType: $itemPriceType, itemSalePriceType: $itemSalePriceType, itemDiscountAmount: $itemDiscountAmount, itemType: $itemType, itemDescription: $itemDescription, itemStatus: $itemStatus, itemPublishStatus: $itemPublishStatus, itemSoldStatus: $itemSoldStatus, itemCreatedAt: $itemCreatedAt, itemUpdatedAt: $itemUpdatedAt)';
   }
 
   @override
@@ -335,7 +321,6 @@ class ToyModel {
         other.itemPriceType == itemPriceType &&
         other.itemSalePriceType == itemSalePriceType &&
         other.itemDiscountAmount == itemDiscountAmount &&
-        other.itemDiscountAmountType == itemDiscountAmountType &&
         other.itemType == itemType &&
         other.itemDescription == itemDescription &&
         other.itemStatus == itemStatus &&
@@ -359,7 +344,6 @@ class ToyModel {
         itemPriceType.hashCode ^
         itemSalePriceType.hashCode ^
         itemDiscountAmount.hashCode ^
-        itemDiscountAmountType.hashCode ^
         itemType.hashCode ^
         itemDescription.hashCode ^
         itemStatus.hashCode ^

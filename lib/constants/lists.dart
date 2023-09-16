@@ -90,7 +90,7 @@ List<Map<String, dynamic>> itemsList = [
     'price': '۱۳۰۰۰۰',
   },
   {
-    'image': 'assets/images/home2.jpg',
+    'image': 'assets/app_logo/black_&_white_app_logo.png',
     'title': 'خانه گروی',
     'address': 'هرات، ۶۴ متره',
     'price': '۶۰۰۰۰۰',

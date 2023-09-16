@@ -16,7 +16,6 @@ class EstateModel {
   final int? itemPriceType;
   final int? itemSalePriceType;
   final int? itemDiscountAmount;
-  final int? itemDiscountAmountType;
   final int? itemBuildingMeterage;
   final int? itemLandMeterage;
   final double? itemPerMeterPrice;
@@ -45,7 +44,6 @@ class EstateModel {
     required this.itemPriceType,
     required this.itemSalePriceType,
     required this.itemDiscountAmount,
-    required this.itemDiscountAmountType,
     required this.itemBuildingMeterage,
     required this.itemLandMeterage,
     required this.itemPerMeterPrice,
@@ -75,7 +73,6 @@ class EstateModel {
     required this.itemPriceType,
     this.itemSalePriceType = -1,
     this.itemDiscountAmount = -1,
-    this.itemDiscountAmountType = -1,
     this.itemBuildingMeterage = -1,
     this.itemLandMeterage = -1,
     this.itemPerMeterPrice = -1,
@@ -105,7 +102,6 @@ class EstateModel {
     required this.itemPriceType,
     required this.itemSalePriceType,
     required this.itemDiscountAmount,
-    required this.itemDiscountAmountType,
     required this.itemBuildingMeterage,
     required this.itemLandMeterage,
     required this.itemPerMeterPrice,
@@ -135,7 +131,6 @@ class EstateModel {
     required this.itemPriceType,
     required this.itemSalePriceType,
     required this.itemDiscountAmount,
-    required this.itemDiscountAmountType,
     required this.itemBuildingMeterage,
     required this.itemLandMeterage,
     required this.itemPerMeterPrice,
@@ -165,7 +160,6 @@ class EstateModel {
     required this.itemPriceType,
     required this.itemSalePriceType,
     required this.itemDiscountAmount,
-    required this.itemDiscountAmountType,
     this.itemBuildingMeterage = -1,
     required this.itemLandMeterage,
     required this.itemPerMeterPrice,
@@ -195,7 +189,6 @@ class EstateModel {
     required this.itemPriceType,
     required this.itemSalePriceType,
     required this.itemDiscountAmount,
-    required this.itemDiscountAmountType,
     this.itemBuildingMeterage = -1,
     required this.itemLandMeterage,
     required this.itemPerMeterPrice,
@@ -254,8 +247,6 @@ class EstateModel {
       itemPriceType: itemPriceType ?? this.itemPriceType,
       itemSalePriceType: itemSalePriceType ?? this.itemSalePriceType,
       itemDiscountAmount: itemDiscountAmount ?? this.itemDiscountAmount,
-      itemDiscountAmountType:
-          itemDiscountAmountType ?? this.itemDiscountAmountType,
       itemBuildingMeterage: itemBuildingMeterage ?? this.itemBuildingMeterage,
       itemLandMeterage: itemLandMeterage ?? this.itemLandMeterage,
       itemPerMeterPrice: itemPerMeterPrice ?? this.itemPerMeterPrice,
@@ -288,7 +279,6 @@ class EstateModel {
       EstateConstants.itemPriceType: itemPriceType,
       EstateConstants.itemSalePriceType: itemSalePriceType,
       EstateConstants.itemDiscountAmount: itemDiscountAmount,
-      EstateConstants.itemDiscountAmountType: itemDiscountAmountType,
       EstateConstants.itemBuildingMeterage: itemBuildingMeterage,
       EstateConstants.itemLandMeterage: itemLandMeterage,
       EstateConstants.itemPerMeterPrice: itemPerMeterPrice,
@@ -320,7 +310,6 @@ class EstateModel {
       EstateConstants.itemPriceType: itemPriceType,
       EstateConstants.itemSalePriceType: itemSalePriceType,
       EstateConstants.itemDiscountAmount: itemDiscountAmount,
-      EstateConstants.itemDiscountAmountType: itemDiscountAmountType,
       EstateConstants.itemPublishStatus: itemPublishStatus,
       EstateConstants.itemSoldStatus: itemSoldStatus,
       EstateConstants.itemCreatedAt: itemCreatedAt,
@@ -366,10 +355,6 @@ class EstateModel {
       itemDiscountAmount: map[EstateConstants.itemDiscountAmount] != null
           ? map[EstateConstants.itemDiscountAmount] as int
           : null,
-      itemDiscountAmountType:
-          map[EstateConstants.itemDiscountAmountType] != null
-              ? map[EstateConstants.itemDiscountAmountType] as int
-              : null,
       itemBuildingMeterage: map[EstateConstants.itemBuildingMeterage] != null
           ? map[EstateConstants.itemBuildingMeterage] as int
           : null,
@@ -454,10 +439,6 @@ class EstateModel {
       itemDiscountAmount: map[EstateConstants.itemDiscountAmount] != null
           ? map[EstateConstants.itemDiscountAmount] as int
           : null,
-      itemDiscountAmountType:
-          map[EstateConstants.itemDiscountAmountType] != null
-              ? map[EstateConstants.itemDiscountAmountType] as int
-              : null,
       itemPublishStatus: map[EstateConstants.itemPublishStatus] != null
           ? map[EstateConstants.itemPublishStatus] as String
           : null,
@@ -480,7 +461,7 @@ class EstateModel {
 
   @override
   String toString() {
-    return 'EstateModel(itemId: $itemId, itemCustomerId: $itemCustomerId, itemCategoryId: $itemCategoryId, itemSubCategoryId: $itemSubCategoryId, itemImages: $itemImages, itemTitle: $itemTitle, itemProvince: $itemProvince, itemRegion: $itemRegion, itemTotalPrice: $itemTotalPrice, itemPriceType: $itemPriceType, itemSalePriceType: $itemSalePriceType, itemDiscountAmount: $itemDiscountAmount, itemDiscountAmountType: $itemDiscountAmountType, itemBuildingMeterage: $itemBuildingMeterage, itemLandMeterage: $itemLandMeterage, itemPerMeterPrice: $itemPerMeterPrice, itemRoomCount: $itemRoomCount, itemFloor: $itemFloor, itemSaleType: $itemSaleType, itemElectricityMeterType: $itemElectricityMeterType, itemWaterMeterType: $itemWaterMeterType, itemParking: $itemParking, itemDescription: $itemDescription, itemPublishStatus: $itemPublishStatus, itemSoldStatus: $itemSoldStatus, itemCreatedAt: $itemCreatedAt, itemUpdatedAt: $itemUpdatedAt)';
+    return 'EstateModel(itemId: $itemId, itemCustomerId: $itemCustomerId, itemCategoryId: $itemCategoryId, itemSubCategoryId: $itemSubCategoryId, itemImages: $itemImages, itemTitle: $itemTitle, itemProvince: $itemProvince, itemRegion: $itemRegion, itemTotalPrice: $itemTotalPrice, itemPriceType: $itemPriceType, itemSalePriceType: $itemSalePriceType, itemDiscountAmount: $itemDiscountAmount, itemBuildingMeterage: $itemBuildingMeterage, itemLandMeterage: $itemLandMeterage, itemPerMeterPrice: $itemPerMeterPrice, itemRoomCount: $itemRoomCount, itemFloor: $itemFloor, itemSaleType: $itemSaleType, itemElectricityMeterType: $itemElectricityMeterType, itemWaterMeterType: $itemWaterMeterType, itemParking: $itemParking, itemDescription: $itemDescription, itemPublishStatus: $itemPublishStatus, itemSoldStatus: $itemSoldStatus, itemCreatedAt: $itemCreatedAt, itemUpdatedAt: $itemUpdatedAt)';
   }
 
   @override
@@ -499,7 +480,6 @@ class EstateModel {
         other.itemPriceType == itemPriceType &&
         other.itemSalePriceType == itemSalePriceType &&
         other.itemDiscountAmount == itemDiscountAmount &&
-        other.itemDiscountAmountType == itemDiscountAmountType &&
         other.itemBuildingMeterage == itemBuildingMeterage &&
         other.itemLandMeterage == itemLandMeterage &&
         other.itemPerMeterPrice == itemPerMeterPrice &&
@@ -530,7 +510,6 @@ class EstateModel {
         itemPriceType.hashCode ^
         itemSalePriceType.hashCode ^
         itemDiscountAmount.hashCode ^
-        itemDiscountAmountType.hashCode ^
         itemBuildingMeterage.hashCode ^
         itemLandMeterage.hashCode ^
         itemPerMeterPrice.hashCode ^

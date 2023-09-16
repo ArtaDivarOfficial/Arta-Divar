@@ -16,7 +16,6 @@ class ScrapModel {
   final int? itemPriceType;
   final int? itemSalePriceType;
   final int? itemDiscountAmount;
-  final int? itemDiscountAmountType;
   final int? itemType;
   final String? itemBrand;
   final String? itemColor;
@@ -39,7 +38,6 @@ class ScrapModel {
     required this.itemPriceType,
     required this.itemSalePriceType,
     required this.itemDiscountAmount,
-    required this.itemDiscountAmountType,
     required this.itemType,
     required this.itemBrand,
     required this.itemColor,
@@ -63,7 +61,6 @@ class ScrapModel {
     required this.itemPriceType,
     this.itemSalePriceType = -1,
     this.itemDiscountAmount = -1,
-    this.itemDiscountAmountType = -1,
     this.itemType = -1,
     this.itemBrand = '',
     this.itemColor = '',
@@ -87,7 +84,6 @@ class ScrapModel {
     required this.itemPriceType,
     required this.itemSalePriceType,
     required this.itemDiscountAmount,
-    required this.itemDiscountAmountType,
     required this.itemType,
     required this.itemBrand,
     required this.itemColor,
@@ -135,8 +131,6 @@ class ScrapModel {
       itemPriceType: itemPriceType ?? this.itemPriceType,
       itemSalePriceType: itemSalePriceType ?? this.itemSalePriceType,
       itemDiscountAmount: itemDiscountAmount ?? this.itemDiscountAmount,
-      itemDiscountAmountType:
-          itemDiscountAmountType ?? this.itemDiscountAmountType,
       itemType: itemType ?? this.itemType,
       itemBrand: itemBrand ?? this.itemBrand,
       itemColor: itemColor ?? this.itemColor,
@@ -162,7 +156,6 @@ class ScrapModel {
       ScrapConstants.itemPriceType: itemPriceType,
       ScrapConstants.itemSalePriceType: itemSalePriceType,
       ScrapConstants.itemDiscountAmount: itemDiscountAmount,
-      ScrapConstants.itemDiscountAmountType: itemDiscountAmountType,
       ScrapConstants.itemType: itemType,
       ScrapConstants.itemBrand: itemBrand,
       ScrapConstants.itemColor: itemColor,
@@ -188,7 +181,6 @@ class ScrapModel {
       ScrapConstants.itemPriceType: itemPriceType,
       ScrapConstants.itemSalePriceType: itemSalePriceType,
       ScrapConstants.itemDiscountAmount: itemDiscountAmount,
-      ScrapConstants.itemDiscountAmountType: itemDiscountAmountType,
       ScrapConstants.itemPublishStatus: itemPublishStatus,
       ScrapConstants.itemSoldStatus: itemSoldStatus,
       ScrapConstants.itemCreatedAt: itemCreatedAt,
@@ -233,9 +225,6 @@ class ScrapModel {
           : null,
       itemDiscountAmount: map[ScrapConstants.itemDiscountAmount] != null
           ? map[ScrapConstants.itemDiscountAmount] as int
-          : null,
-      itemDiscountAmountType: map[ScrapConstants.itemDiscountAmountType] != null
-          ? map[ScrapConstants.itemDiscountAmountType] as int
           : null,
       itemType: map[ScrapConstants.itemType] != null
           ? map[ScrapConstants.itemType] as int
@@ -302,9 +291,6 @@ class ScrapModel {
       itemDiscountAmount: map[ScrapConstants.itemDiscountAmount] != null
           ? map[ScrapConstants.itemDiscountAmount] as int
           : null,
-      itemDiscountAmountType: map[ScrapConstants.itemDiscountAmountType] != null
-          ? map[ScrapConstants.itemDiscountAmountType] as int
-          : null,
       itemPublishStatus: map[ScrapConstants.itemPublishStatus] != null
           ? map[ScrapConstants.itemPublishStatus] as String
           : null,
@@ -327,7 +313,7 @@ class ScrapModel {
 
   @override
   String toString() {
-    return 'ScrapModel(itemId: $itemId, itemCustomerId: $itemCustomerId, itemCategoryId: $itemCategoryId, itemSubCategoryId: $itemSubCategoryId, itemImages: $itemImages, itemTitle: $itemTitle, itemProvince: $itemProvince, itemRegion: $itemRegion, itemPerMeterPrice: $itemPerMeterPrice, itemPriceType: $itemPriceType, itemSalePriceType: $itemSalePriceType, itemDiscountAmount: $itemDiscountAmount, itemDiscountAmountType: $itemDiscountAmountType, itemType: $itemType, itemBrand: $itemBrand, itemColor: $itemColor, itemDescription: $itemDescription, itemPublishStatus: $itemPublishStatus, itemSoldStatus: $itemSoldStatus, itemCreatedAt: $itemCreatedAt, itemUpdatedAt: $itemUpdatedAt)';
+    return 'ScrapModel(itemId: $itemId, itemCustomerId: $itemCustomerId, itemCategoryId: $itemCategoryId, itemSubCategoryId: $itemSubCategoryId, itemImages: $itemImages, itemTitle: $itemTitle, itemProvince: $itemProvince, itemRegion: $itemRegion, itemPerMeterPrice: $itemPerMeterPrice, itemPriceType: $itemPriceType, itemSalePriceType: $itemSalePriceType, itemDiscountAmount: $itemDiscountAmount, itemType: $itemType, itemBrand: $itemBrand, itemColor: $itemColor, itemDescription: $itemDescription, itemPublishStatus: $itemPublishStatus, itemSoldStatus: $itemSoldStatus, itemCreatedAt: $itemCreatedAt, itemUpdatedAt: $itemUpdatedAt)';
   }
 
   @override
@@ -346,7 +332,6 @@ class ScrapModel {
         other.itemPriceType == itemPriceType &&
         other.itemSalePriceType == itemSalePriceType &&
         other.itemDiscountAmount == itemDiscountAmount &&
-        other.itemDiscountAmountType == itemDiscountAmountType &&
         other.itemType == itemType &&
         other.itemBrand == itemBrand &&
         other.itemColor == itemColor &&
@@ -371,7 +356,6 @@ class ScrapModel {
         itemPriceType.hashCode ^
         itemSalePriceType.hashCode ^
         itemDiscountAmount.hashCode ^
-        itemDiscountAmountType.hashCode ^
         itemType.hashCode ^
         itemBrand.hashCode ^
         itemColor.hashCode ^

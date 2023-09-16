@@ -16,7 +16,6 @@ class SuppliesAndEquipmentsModel {
   final int? itemPriceType;
   final int? itemSalePriceType;
   final int? itemDiscountAmount;
-  final int? itemDiscountAmountType;
   final String? itemMadeOf;
   final String? itemDescription;
   final int? itemStatus;
@@ -38,7 +37,6 @@ class SuppliesAndEquipmentsModel {
     required this.itemPriceType,
     required this.itemSalePriceType,
     required this.itemDiscountAmount,
-    required this.itemDiscountAmountType,
     required this.itemMadeOf,
     required this.itemDescription,
     required this.itemStatus,
@@ -61,7 +59,6 @@ class SuppliesAndEquipmentsModel {
     required this.itemPriceType,
     this.itemSalePriceType = -1,
     this.itemDiscountAmount = -1,
-    this.itemDiscountAmountType = -1,
     this.itemMadeOf = '',
     this.itemDescription = '',
     this.itemStatus = -1,
@@ -84,7 +81,6 @@ class SuppliesAndEquipmentsModel {
     required this.itemPriceType,
     required this.itemSalePriceType,
     required this.itemDiscountAmount,
-    required this.itemDiscountAmountType,
     required this.itemMadeOf,
     required this.itemDescription,
     required this.itemStatus,
@@ -107,7 +103,6 @@ class SuppliesAndEquipmentsModel {
     required this.itemPriceType,
     required this.itemSalePriceType,
     required this.itemDiscountAmount,
-    required this.itemDiscountAmountType,
     required this.itemMadeOf,
     required this.itemDescription,
     required this.itemStatus,
@@ -130,7 +125,6 @@ class SuppliesAndEquipmentsModel {
     required this.itemPriceType,
     required this.itemSalePriceType,
     required this.itemDiscountAmount,
-    required this.itemDiscountAmountType,
     required this.itemMadeOf,
     required this.itemDescription,
     required this.itemStatus,
@@ -153,7 +147,6 @@ class SuppliesAndEquipmentsModel {
     required this.itemPriceType,
     required this.itemSalePriceType,
     required this.itemDiscountAmount,
-    required this.itemDiscountAmountType,
     required this.itemMadeOf,
     required this.itemDescription,
     required this.itemStatus,
@@ -176,7 +169,6 @@ class SuppliesAndEquipmentsModel {
     required this.itemPriceType,
     required this.itemSalePriceType,
     required this.itemDiscountAmount,
-    required this.itemDiscountAmountType,
     required this.itemMadeOf,
     required this.itemDescription,
     required this.itemStatus,
@@ -221,8 +213,6 @@ class SuppliesAndEquipmentsModel {
       itemPriceType: itemPriceType ?? this.itemPriceType,
       itemSalePriceType: itemSalePriceType ?? this.itemSalePriceType,
       itemDiscountAmount: itemDiscountAmount ?? this.itemDiscountAmount,
-      itemDiscountAmountType:
-          itemDiscountAmountType ?? this.itemDiscountAmountType,
       itemMadeOf: itemMadeOf ?? this.itemMadeOf,
       itemDescription: itemDescription ?? this.itemDescription,
       itemStatus: itemStatus ?? this.itemStatus,
@@ -247,8 +237,6 @@ class SuppliesAndEquipmentsModel {
       SuppliesAndEquipmentsConstants.itemPriceType: itemPriceType,
       SuppliesAndEquipmentsConstants.itemSalePriceType: itemSalePriceType,
       SuppliesAndEquipmentsConstants.itemDiscountAmount: itemDiscountAmount,
-      SuppliesAndEquipmentsConstants.itemDiscountAmountType:
-          itemDiscountAmountType,
       SuppliesAndEquipmentsConstants.itemMadeOf: itemMadeOf,
       SuppliesAndEquipmentsConstants.itemDescription: itemDescription,
       SuppliesAndEquipmentsConstants.itemStatus: itemStatus,
@@ -273,8 +261,6 @@ class SuppliesAndEquipmentsModel {
       SuppliesAndEquipmentsConstants.itemPriceType: itemPriceType,
       SuppliesAndEquipmentsConstants.itemSalePriceType: itemSalePriceType,
       SuppliesAndEquipmentsConstants.itemDiscountAmount: itemDiscountAmount,
-      SuppliesAndEquipmentsConstants.itemDiscountAmountType:
-          itemDiscountAmountType,
       SuppliesAndEquipmentsConstants.itemPublishStatus: itemPublishStatus,
       SuppliesAndEquipmentsConstants.itemSoldStatus: itemSoldStatus,
       SuppliesAndEquipmentsConstants.itemCreatedAt: itemCreatedAt,
@@ -323,11 +309,6 @@ class SuppliesAndEquipmentsModel {
       itemDiscountAmount:
           map[SuppliesAndEquipmentsConstants.itemDiscountAmount] != null
               ? map[SuppliesAndEquipmentsConstants.itemDiscountAmount] as int
-              : null,
-      itemDiscountAmountType:
-          map[SuppliesAndEquipmentsConstants.itemDiscountAmountType] != null
-              ? map[SuppliesAndEquipmentsConstants.itemDiscountAmountType]
-                  as int
               : null,
       itemMadeOf: map[SuppliesAndEquipmentsConstants.itemMadeOf] != null
           ? map[SuppliesAndEquipmentsConstants.itemMadeOf] as String
@@ -398,11 +379,6 @@ class SuppliesAndEquipmentsModel {
           map[SuppliesAndEquipmentsConstants.itemDiscountAmount] != null
               ? map[SuppliesAndEquipmentsConstants.itemDiscountAmount] as int
               : null,
-      itemDiscountAmountType:
-          map[SuppliesAndEquipmentsConstants.itemDiscountAmountType] != null
-              ? map[SuppliesAndEquipmentsConstants.itemDiscountAmountType]
-                  as int
-              : null,
       itemPublishStatus:
           map[SuppliesAndEquipmentsConstants.itemPublishStatus] != null
               ? map[SuppliesAndEquipmentsConstants.itemPublishStatus] as String
@@ -427,7 +403,7 @@ class SuppliesAndEquipmentsModel {
 
   @override
   String toString() {
-    return 'SuppliesAndEquipmentsModel(itemId: $itemId, itemCustomerId: $itemCustomerId, itemCategoryId: $itemCategoryId, itemSubCategoryId: $itemSubCategoryId, itemImages: $itemImages, itemTitle: $itemTitle, itemProvince: $itemProvince, itemRegion: $itemRegion, itemTotalPrice: $itemTotalPrice, itemPriceType: $itemPriceType, itemSalePriceType: $itemSalePriceType, itemDiscountAmount: $itemDiscountAmount, itemDiscountAmountType: $itemDiscountAmountType, itemMadeOf: $itemMadeOf, itemDescription: $itemDescription, itemStatus: $itemStatus, itemPublishStatus: $itemPublishStatus, itemSoldStatus: $itemSoldStatus, itemCreatedAt: $itemCreatedAt, itemUpdatedAt: $itemUpdatedAt)';
+    return 'SuppliesAndEquipmentsModel(itemId: $itemId, itemCustomerId: $itemCustomerId, itemCategoryId: $itemCategoryId, itemSubCategoryId: $itemSubCategoryId, itemImages: $itemImages, itemTitle: $itemTitle, itemProvince: $itemProvince, itemRegion: $itemRegion, itemTotalPrice: $itemTotalPrice, itemPriceType: $itemPriceType, itemSalePriceType: $itemSalePriceType, itemDiscountAmount: $itemDiscountAmount, itemMadeOf: $itemMadeOf, itemDescription: $itemDescription, itemStatus: $itemStatus, itemPublishStatus: $itemPublishStatus, itemSoldStatus: $itemSoldStatus, itemCreatedAt: $itemCreatedAt, itemUpdatedAt: $itemUpdatedAt)';
   }
 
   @override
@@ -446,7 +422,6 @@ class SuppliesAndEquipmentsModel {
         other.itemPriceType == itemPriceType &&
         other.itemSalePriceType == itemSalePriceType &&
         other.itemDiscountAmount == itemDiscountAmount &&
-        other.itemDiscountAmountType == itemDiscountAmountType &&
         other.itemMadeOf == itemMadeOf &&
         other.itemDescription == itemDescription &&
         other.itemStatus == itemStatus &&
@@ -470,7 +445,6 @@ class SuppliesAndEquipmentsModel {
         itemPriceType.hashCode ^
         itemSalePriceType.hashCode ^
         itemDiscountAmount.hashCode ^
-        itemDiscountAmountType.hashCode ^
         itemMadeOf.hashCode ^
         itemDescription.hashCode ^
         itemStatus.hashCode ^

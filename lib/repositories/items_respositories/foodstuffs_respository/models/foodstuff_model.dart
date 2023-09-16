@@ -16,7 +16,6 @@ class FoodstuffModel {
   final int? itemPriceType;
   final int? itemSalePriceType;
   final int? itemDiscountAmount;
-  final int? itemDiscountAmountType;
   final String? itemDescription;
   final String? itemPublishStatus;
   final String? itemSoldStatus;
@@ -36,7 +35,6 @@ class FoodstuffModel {
     required this.itemPriceType,
     required this.itemSalePriceType,
     required this.itemDiscountAmount,
-    required this.itemDiscountAmountType,
     required this.itemDescription,
     required this.itemPublishStatus,
     required this.itemSoldStatus,
@@ -57,7 +55,6 @@ class FoodstuffModel {
     required this.itemPriceType,
     this.itemSalePriceType = -1,
     this.itemDiscountAmount = -1,
-    this.itemDiscountAmountType = -1,
     this.itemDescription = '',
     required this.itemPublishStatus,
     required this.itemSoldStatus,
@@ -98,8 +95,6 @@ class FoodstuffModel {
       itemPriceType: itemPriceType ?? this.itemPriceType,
       itemSalePriceType: itemSalePriceType ?? this.itemSalePriceType,
       itemDiscountAmount: itemDiscountAmount ?? this.itemDiscountAmount,
-      itemDiscountAmountType:
-          itemDiscountAmountType ?? this.itemDiscountAmountType,
       itemDescription: itemDescription ?? this.itemDescription,
       itemPublishStatus: itemPublishStatus ?? this.itemPublishStatus,
       itemSoldStatus: itemSoldStatus ?? this.itemSoldStatus,
@@ -122,7 +117,6 @@ class FoodstuffModel {
       FoodstuffsConstants.itemPriceType: itemPriceType,
       FoodstuffsConstants.itemSalePriceType: itemSalePriceType,
       FoodstuffsConstants.itemDiscountAmount: itemDiscountAmount,
-      FoodstuffsConstants.itemDiscountAmountType: itemDiscountAmountType,
       FoodstuffsConstants.itemDescription: itemDescription,
       FoodstuffsConstants.itemPublishStatus: itemPublishStatus,
       FoodstuffsConstants.itemSoldStatus: itemSoldStatus,
@@ -145,7 +139,6 @@ class FoodstuffModel {
       FoodstuffsConstants.itemPriceType: itemPriceType,
       FoodstuffsConstants.itemSalePriceType: itemSalePriceType,
       FoodstuffsConstants.itemDiscountAmount: itemDiscountAmount,
-      FoodstuffsConstants.itemDiscountAmountType: itemDiscountAmountType,
       FoodstuffsConstants.itemPublishStatus: itemPublishStatus,
       FoodstuffsConstants.itemSoldStatus: itemSoldStatus,
       FoodstuffsConstants.itemCreatedAt: itemCreatedAt,
@@ -192,10 +185,6 @@ class FoodstuffModel {
       itemDiscountAmount: map[FoodstuffsConstants.itemDiscountAmount] != null
           ? map[FoodstuffsConstants.itemDiscountAmount] as int
           : null,
-      itemDiscountAmountType:
-          map[FoodstuffsConstants.itemDiscountAmountType] != null
-              ? map[FoodstuffsConstants.itemDiscountAmountType] as int
-              : null,
       itemDescription: map[FoodstuffsConstants.itemDescription] != null
           ? map[FoodstuffsConstants.itemDescription] as String
           : null,
@@ -253,10 +242,6 @@ class FoodstuffModel {
       itemDiscountAmount: map[FoodstuffsConstants.itemDiscountAmount] != null
           ? map[FoodstuffsConstants.itemDiscountAmount] as int
           : null,
-      itemDiscountAmountType:
-          map[FoodstuffsConstants.itemDiscountAmountType] != null
-              ? map[FoodstuffsConstants.itemDiscountAmountType] as int
-              : null,
       itemPublishStatus: map[FoodstuffsConstants.itemPublishStatus] != null
           ? map[FoodstuffsConstants.itemPublishStatus] as String
           : null,
@@ -279,7 +264,7 @@ class FoodstuffModel {
 
   @override
   String toString() {
-    return 'FoodstuffModel(itemId: $itemId, itemCustomerId: $itemCustomerId, itemCategoryId: $itemCategoryId, itemSubCategoryId: $itemSubCategoryId, itemImages: $itemImages, itemTitle: $itemTitle, itemProvince: $itemProvince, itemRegion: $itemRegion, itemTotalPrice: $itemTotalPrice, itemPriceType: $itemPriceType, itemSalePriceType: $itemSalePriceType, itemDiscountAmount: $itemDiscountAmount, itemDiscountAmountType: $itemDiscountAmountType, itemSalePriceType: $itemSalePriceType, itemDiscountAmount: $itemDiscountAmount, itemDiscountAmountType: $itemDiscountAmountType, itemDescription: $itemDescription, itemPublishStatus: $itemPublishStatus, itemSoldStatus: $itemSoldStatus, itemCreatedAt: $itemCreatedAt, itemUpdatedAt: $itemUpdatedAt)';
+    return 'FoodstuffModel(itemId: $itemId, itemCustomerId: $itemCustomerId, itemCategoryId: $itemCategoryId, itemSubCategoryId: $itemSubCategoryId, itemImages: $itemImages, itemTitle: $itemTitle, itemProvince: $itemProvince, itemRegion: $itemRegion, itemTotalPrice: $itemTotalPrice, itemPriceType: $itemPriceType, itemSalePriceType: $itemSalePriceType, itemDiscountAmount: $itemDiscountAmount, itemSalePriceType: $itemSalePriceType, itemDiscountAmount: $itemDiscountAmount, itemDescription: $itemDescription, itemPublishStatus: $itemPublishStatus, itemSoldStatus: $itemSoldStatus, itemCreatedAt: $itemCreatedAt, itemUpdatedAt: $itemUpdatedAt)';
   }
 
   @override
@@ -298,7 +283,6 @@ class FoodstuffModel {
         other.itemPriceType == itemPriceType &&
         other.itemSalePriceType == itemSalePriceType &&
         other.itemDiscountAmount == itemDiscountAmount &&
-        other.itemDiscountAmountType == itemDiscountAmountType &&
         other.itemDescription == itemDescription &&
         other.itemPublishStatus == itemPublishStatus &&
         other.itemSoldStatus == itemSoldStatus &&
@@ -320,7 +304,6 @@ class FoodstuffModel {
         itemPriceType.hashCode ^
         itemSalePriceType.hashCode ^
         itemDiscountAmount.hashCode ^
-        itemDiscountAmountType.hashCode ^
         itemDescription.hashCode ^
         itemPublishStatus.hashCode ^
         itemSoldStatus.hashCode ^
