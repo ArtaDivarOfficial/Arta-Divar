@@ -58,54 +58,51 @@ class _AdvertisementSelectImageState extends State<AdvertisementSelectImage> {
             children: [
               ...List.generate(
                 selectedImage,
-                (index) => Expanded(
-                  child: GestureDetector(
-                    onTap: () {
-                      setState(() {
-                        if (selectedImage <= 10) {
-                          selectedImage++;
-                          imgCounter++;
-                        }
-                      });
-                    },
-                    child: DottedBorder(
-                      dashPattern: const [12],
-                      child: Container(
-                        width: 100,
-                        height: 100,
-                        color: Colors.white,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(
-                              index != 0
-                                  ? Icons.photo_camera_rounded
-                                  : Icons.add_a_photo,
-                              size: index != 0 ? 40 : 35,
-                            ),
+                (index) => GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      if (selectedImage <= 10) {
+                        selectedImage++;
+                        imgCounter++;
+                      }
+                    });
+                  },
+                  child: DottedBorder(
+                    dashPattern: const [12],
+                    child: Container(
+                      width: 100,
+                      height: 100,
+                      color: Colors.white,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
                             index != 0
-                                ? const SizedBox()
-                                : Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    children: [
-                                      const SizedBox(height: 5),
-                                      Text(
-                                        'افزودن عکس',
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .titleSmall,
-                                      ),
-                                      Text(
-                                        '$imgCounter/10',
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .labelSmall,
-                                      ),
-                                    ],
-                                  ),
-                          ],
-                        ),
+                                ? Icons.photo_camera_rounded
+                                : Icons.add_a_photo,
+                            size: index != 0 ? 40 : 35,
+                          ),
+                          index != 0
+                              ? const SizedBox()
+                              : Column(
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    const SizedBox(height: 5),
+                                    Text(
+                                      'افزودن عکس',
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .titleSmall,
+                                    ),
+                                    Text(
+                                      '$imgCounter/10',
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .labelSmall,
+                                    ),
+                                  ],
+                                ),
+                        ],
                       ),
                     ),
                   ),

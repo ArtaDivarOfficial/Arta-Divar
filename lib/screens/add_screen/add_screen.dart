@@ -37,7 +37,7 @@ class _AddScreenState extends State<AddScreen> {
                 endIndent: 20,
                 color: Colors.grey.shade500,
               ),
-              const SizedBox(height: 15),
+              const SizedBox(height: 5),
               const AdvertisementSelectImage(),
               const SizedBox(height: 15),
               Divider(
@@ -45,21 +45,11 @@ class _AddScreenState extends State<AddScreen> {
                 endIndent: 20,
                 color: Colors.grey.shade500,
               ),
-              ListTileWidget(
-                title: 'وضعیت',
-                onListTilePressed: () {},
-                trailingText: 'انتخاب',
-              ),
-              Divider(
-                indent: 20,
-                endIndent: 20,
-                color: Colors.grey.shade500,
-              ),
-              const SizedBox(height: 10),
+              const SizedBox(height: 5),
               const CustomTextField(
                 text: 'عنوان',
                 maxLength: 32,
-                hintText: 'اپل واچ سریز ۸',
+                hintText: 'کیف پشتی برای مکاتب',
                 hasError: false,
               ),
               Divider(
@@ -77,7 +67,7 @@ class _AddScreenState extends State<AddScreen> {
                 endIndent: 20,
                 color: Colors.grey.shade500,
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: 5),
               const CustomTextField(
                 text: 'منطقه',
                 maxLength: 32,
@@ -89,7 +79,7 @@ class _AddScreenState extends State<AddScreen> {
                 endIndent: 20,
                 color: Colors.grey.shade500,
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: 5),
               const CustomPriceTextField(
                 text: 'قیمت (افغانی)',
                 maxLength: 32,
@@ -102,12 +92,11 @@ class _AddScreenState extends State<AddScreen> {
                 endIndent: 20,
                 color: Colors.grey.shade500,
               ),
-              const SizedBox(height: 10),
-              const CustomPriceTextField(
+              const SizedBox(height: 5),
+              const CustomTextField(
                 text: 'تخفیف (افغانی)',
                 maxLength: 32,
                 hintText: '1000',
-                priceSaleType: 'مقدار',
                 hasError: false,
               ),
               Divider(
@@ -115,7 +104,7 @@ class _AddScreenState extends State<AddScreen> {
                 endIndent: 20,
                 color: Colors.grey.shade500,
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: 5),
               const CustomTextField(
                 text: 'جنس (اختیاری)',
                 maxLength: 32,
@@ -127,7 +116,7 @@ class _AddScreenState extends State<AddScreen> {
                 endIndent: 20,
                 color: Colors.grey.shade500,
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: 5),
               const CustomDescriptionTextField(
                 text: 'توضیحات (اختیاری)',
                 maxLength: 32,

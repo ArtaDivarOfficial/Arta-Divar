@@ -25,12 +25,25 @@ class ListTileWidget extends StatelessWidget {
                 .titleMedium!
                 .copyWith(fontWeight: FontWeight.bold),
           ),
-          trailing: Text(
-            '$trailingText',
-            style: Theme.of(context)
-                .textTheme
-                .titleMedium!
-                .copyWith(color: Colors.grey.shade600),
+          trailing: SizedBox(
+            width: 150,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Text(
+                  '$trailingText ',
+                  style: Theme.of(context)
+                      .textTheme
+                      .titleMedium!
+                      .copyWith(color: Colors.grey.shade800),
+                ),
+                const Icon(
+                  Icons.arrow_forward_ios_rounded,
+                  color: Colors.black,
+                  size: 20,
+                ),
+              ],
+            ),
           ),
         ),
       ],
