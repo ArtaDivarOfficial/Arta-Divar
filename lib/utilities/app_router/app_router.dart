@@ -16,11 +16,11 @@ class AppRouter {
       //   );
       case '/':
         return MaterialPageRoute(
-          builder: (_) => const CategoriesScreen(),
+          builder: (_) => const HomeScreen(),
         );
-      case DetailsScreen.id:
+      case CategoriesScreen.id:
         return MaterialPageRoute(
-          builder: (_) => const DetailsScreen(),
+          builder: (_) => const CategoriesScreen(),
         );
       // case ChatsScreen.id:
       //   return MaterialPageRoute(

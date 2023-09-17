@@ -18,42 +18,46 @@ class _AdvertisementBannerWidgetState extends State<AdvertisementBannerWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        SizedBox(
-          child: CarouselSlider(
-            options: CarouselOptions(
-              height: 175,
-              viewportFraction: 0.78,
-              enableInfiniteScroll: true,
-              initialPage: 0,
-              enlargeCenterPage: true,
-              enlargeFactor: 0.175,
-              scrollDirection: Axis.horizontal,
-              scrollPhysics: const BouncingScrollPhysics(),
-              onPageChanged: (index, reason) {
-                setState(() {
-                  currentIndex = index;
-                });
-              },
-              autoPlay: true,
-              autoPlayInterval: const Duration(milliseconds: 7500),
-              autoPlayAnimationDuration: const Duration(seconds: 1),
+    return Container(
+      color: Colors.white,
+      child: Column(
+        children: [
+          Container(
+            padding: const EdgeInsets.symmetric(vertical: 5),
+            child: CarouselSlider(
+              options: CarouselOptions(
+                height: 175,
+                viewportFraction: 0.78,
+                enableInfiniteScroll: true,
+                initialPage: 0,
+                enlargeCenterPage: true,
+                enlargeFactor: 0.175,
+                scrollDirection: Axis.horizontal,
+                scrollPhysics: const BouncingScrollPhysics(),
+                onPageChanged: (index, reason) {
+                  setState(() {
+                    currentIndex = index;
+                  });
+                },
+                autoPlay: true,
+                autoPlayInterval: const Duration(milliseconds: 7500),
+                autoPlayAnimationDuration: const Duration(seconds: 1),
+              ),
+              items: List.generate(advertisementBannerList.length, (index) {
+                return ClipRRect(
+                  borderRadius: BorderRadius.circular(15),
+                  child: Image.asset(
+                    advertisementBannerList[index],
+                    fit: BoxFit.fitHeight,
+                  ),
+                );
+              }),
             ),
-            items: List.generate(advertisementBannerList.length, (index) {
-              return ClipRRect(
-                borderRadius: BorderRadius.circular(15),
-                child: Image.asset(
-                  advertisementBannerList[index],
-                  fit: BoxFit.fitHeight,
-                ),
-              );
-            }),
           ),
-        ),
-        const SizedBox(height: 10),
-        AdvertisementBannerIndicatorWidget(currentIndex: currentIndex),
-      ],
+          const SizedBox(height: 10),
+          AdvertisementBannerIndicatorWidget(currentIndex: currentIndex),
+        ],
+      ),
     );
   }
 }

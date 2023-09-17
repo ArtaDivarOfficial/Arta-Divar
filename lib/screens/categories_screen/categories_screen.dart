@@ -29,33 +29,34 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
             ),
           ],
         ),
-        body: SingleChildScrollView(
-          physics: const BouncingScrollPhysics(),
-          child: Column(
-            children: [
-              const SizedBox(height: 5),
-              FilterTabbar(
-                filterText: 'مسکونی / کرایی',
-                onFilterPressed: () {
-                  showModalBottomSheet(
-                      context: context,
-                      enableDrag: true,
-                      isScrollControlled: true,
-                      shape: const RoundedRectangleBorder(
-                        borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(20),
-                          topRight: Radius.circular(20),
-                        ),
+        body: Column(
+          children: [
+            const SizedBox(height: 5),
+            FilterTabbar(
+              filterText: 'مسکونی / کرایی',
+              onFilterPressed: () {
+                showModalBottomSheet(
+                    context: context,
+                    enableDrag: true,
+                    isScrollControlled: true,
+                    shape: const RoundedRectangleBorder(
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(20),
+                        topRight: Radius.circular(20),
                       ),
-                      builder: (BuildContext context) {
-                        return const BottomSheetListTile();
-                      });
-                },
+                    ),
+                    builder: (BuildContext context) {
+                      return const BottomSheetListTile();
+                    });
+              },
+            ),
+            const SizedBox(height: 5),
+            const Expanded(
+              child: SingleChildScrollView(
+                child: VerticalItemsWidgetList(),
               ),
-              const SizedBox(height: 5),
-              const VerticalItemsWidgetList(),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

@@ -18,7 +18,6 @@ class _BottomSheetListTileState extends State<BottomSheetListTile> {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      physics: const BouncingScrollPhysics(),
       child: Popover(
         child: Column(
           children: [

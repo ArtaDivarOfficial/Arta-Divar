@@ -19,6 +19,7 @@ class AdvertisementBannerIndicatorWidget extends StatelessWidget {
           margin: EdgeInsets.only(
             left: 5,
             right: index == advertisementBannerList.length - 1 ? 2 : 0,
+            bottom: 10,
           ),
           child: ClipRRect(
             borderRadius: BorderRadius.circular(10),

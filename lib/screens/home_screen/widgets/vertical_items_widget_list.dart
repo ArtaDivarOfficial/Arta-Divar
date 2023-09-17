@@ -17,6 +17,7 @@ class VerticalItemsWidgetList extends StatelessWidget {
       color: Colors.white,
       child: Column(
         children: [
+          const SizedBox(height: 5),
           showTitle
               ? Text(
                   'آگهی های آرتا دیوار',
@@ -47,7 +48,18 @@ class VerticalItemsWidgetList extends StatelessWidget {
                 ),
               ],
             ),
-          )
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(15),
+              child: Image.asset(
+                advertisementBannerList[0],
+                fit: BoxFit.fitHeight,
+              ),
+            ),
+          ),
+          const SizedBox(height: 10),
         ],
       ),
     );

@@ -1,5 +1,6 @@
 // ignore_for_file: deprecated_member_use
 
+import 'package:divar/constants/colors.dart';
 import 'package:divar/screens/home_screen/widgets/advertisement_banner_widget.dart';
 import 'package:divar/screens/home_screen/widgets/filter_and_searchbar_widgets.dart';
 import 'package:divar/screens/home_screen/widgets/horizontal_categories_widgets.dart';
@@ -41,15 +42,20 @@ class _HomeScreenState extends State<HomeScreen> {
           body: SingleChildScrollView(
             child: Column(
               children: [
+                const SizedBox(height: 5),
                 FilterAndSearchBarWidgets(
                   onFilterTap: () {},
                   onSearchIconTap: () {},
                 ),
+                const SizedBox(height: 5),
                 const AdvertisementBannerWidget(),
-                const SizedBox(height: 10),
+                const SizedBox(height: 5),
                 const HorizontalCategoriesWidgets(),
-                const SizedBox(height: 15),
-                const VerticalItemsWidgetList(),
+                const SizedBox(height: 5),
+                const VerticalItemsWidgetList(showTitle: true),
+                const SizedBox(height: 5),
+                const CircularProgressIndicator(color: kLightPrimaryColor),
+                const SizedBox(height: 10),
               ],
             ),
           ),
