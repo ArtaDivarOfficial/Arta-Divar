@@ -121,3 +121,19 @@ List<Map<String, dynamic>> itemsList = [
     'price': '۱۳۰۰۰۰',
   },
 ];
+
+List categoriesFilterList = [
+  'همه',
+  'املاک',
+  'لوازم خانه',
+  'وسایط نقلیه',
+  'تکنالوژی',
+];
+
+List subCategoriesFilterList = [
+  'همه',
+  'فروشی',
+  'کرایی',
+  'گرویی',
+  'گرویی',
+];

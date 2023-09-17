@@ -5,7 +5,6 @@ import 'package:divar/screens/initial_screens/registration_screens/widgets/custo
 import 'package:divar/screens/initial_screens/registration_screens/widgets/privacy_policy_text.dart';
 import 'package:divar/screens/initial_screens/registration_screens/widgets/sign_in_intro_text.dart';
 import 'package:divar/screens/main_screens/add_screen/widgets/custom_text_field.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 class SignInSignUpScreen extends StatefulWidget {
@@ -44,7 +43,7 @@ class _SignInSignUpScreenState extends State<SignInSignUpScreen> {
               maxLength: 10,
               textInputType: TextInputType.number,
             ),
-            CustomElevatedButton(
+            CustomElevatedButton( 
               text: 'ورود به آرتا دیوار',
               onPressed: () {},
             ),

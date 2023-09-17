@@ -2,6 +2,7 @@
 import 'package:divar/entry_point_screen.dart';
 import 'package:divar/screens/initial_screens/registration_screens/sign_in_sign_up_screen.dart';
 import 'package:divar/screens/main_screens/add_screen/add_screen.dart';
+import 'package:divar/screens/main_screens/categories_screen/categories_screen.dart';
 import 'package:divar/screens/main_screens/details_screen/details_screen.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -104,8 +105,9 @@ class MyApp extends StatelessWidget {
           EntryPointScreen.id: (context) => const EntryPointScreen(),
           AddScreen.id: (context) => const AddScreen(),
           SignInSignUpScreen.id: (context) => const SignInSignUpScreen(),
+          CategoriesScreen.id: (context) => const CategoriesScreen(),
         },
-        initialRoute: SignInSignUpScreen.id,
+        initialRoute: CategoriesScreen.id,
       ),
     );
   }
