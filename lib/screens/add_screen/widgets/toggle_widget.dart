@@ -17,34 +17,37 @@ class _ToggleWidgetState extends State<ToggleWidget> {
   bool _isToggled = false;
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        ListTile(
-          onTap: () {
-            setState(() {
-              _isToggled = !_isToggled;
-            });
-          },
-          contentPadding: const EdgeInsets.fromLTRB(10, 0, 20, 0),
-          horizontalTitleGap: 0,
-          title: Text(
-            widget.title,
-            style: const TextStyle(
-              fontSize: 14,
-              fontWeight: FontWeight.w600,
-              color: Colors.black,
-            ),
-          ),
-          trailing: Switch.adaptive(
-            value: _isToggled,
-            onChanged: (newValue) {
+    return Container(
+      color: Colors.white,
+      child: Column(
+        children: [
+          ListTile(
+            onTap: () {
               setState(() {
-                _isToggled = newValue;
+                _isToggled = !_isToggled;
               });
             },
+            contentPadding: const EdgeInsets.fromLTRB(10, 0, 20, 0),
+            horizontalTitleGap: 0,
+            title: Text(
+              widget.title,
+              style: const TextStyle(
+                fontSize: 14,
+                fontWeight: FontWeight.w600,
+                color: Colors.black,
+              ),
+            ),
+            trailing: Switch.adaptive(
+              value: _isToggled,
+              onChanged: (newValue) {
+                setState(() {
+                  _isToggled = newValue;
+                });
+              },
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

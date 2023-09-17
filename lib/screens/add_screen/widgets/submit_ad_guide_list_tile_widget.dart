@@ -7,22 +7,21 @@ class SubmitAdGuideListTileWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        ListTile(
-          onTap: () {},
-          horizontalTitleGap: 0,
-          leading: const Icon(Icons.info_outlined),
-          title: Text(
-            'راهنمایی ثبت آگهی',
-            style: Theme.of(context).textTheme.titleMedium,
-          ),
-          trailing: const Icon(
-            Icons.arrow_back_ios_new_rounded,
-            size: 15,
-          ),
+    return Container(
+      color: Colors.white,
+      child: ListTile(
+        onTap: () {},
+        horizontalTitleGap: 0,
+        leading: const Icon(Icons.info_outlined),
+        title: Text(
+          'راهنمایی ثبت آگهی',
+          style: Theme.of(context).textTheme.titleMedium,
         ),
-      ],
+        trailing: const Icon(
+          Icons.arrow_back_ios_new_rounded,
+          size: 20,
+        ),
+      ),
     );
   }
 }

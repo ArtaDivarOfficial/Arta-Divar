@@ -1,4 +1,5 @@
 import 'package:divar/screens/add_screen/add_screen.dart';
+import 'package:divar/screens/categories_screen/categories_screen.dart';
 import 'package:divar/screens/chats_screen/chat_screen/chat_screen.dart';
 import 'package:divar/screens/chats_screen/chats_screen/chats_screen.dart';
 import 'package:divar/screens/details_screen/details_screen.dart';
@@ -15,7 +16,7 @@ class AppRouter {
       //   );
       case '/':
         return MaterialPageRoute(
-          builder: (_) => const AddScreen(),
+          builder: (_) => const CategoriesScreen(),
         );
       case DetailsScreen.id:
         return MaterialPageRoute(

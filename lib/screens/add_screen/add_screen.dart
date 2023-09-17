@@ -31,41 +31,27 @@ class _AddScreenState extends State<AddScreen> {
         body: SingleChildScrollView(
           child: Column(
             children: [
+              const SizedBox(height: 5),
               const SubmitAdGuideListTileWidget(),
-              Divider(
-                indent: 20,
-                endIndent: 20,
-                color: Colors.grey.shade500,
-              ),
               const SizedBox(height: 5),
               const AdvertisementSelectImage(),
-              const SizedBox(height: 15),
-              Divider(
-                indent: 20,
-                endIndent: 20,
-                color: Colors.grey.shade500,
-              ),
               const SizedBox(height: 5),
+              // Divider(
+              //   indent: 20,
+              //   endIndent: 20,
+              //   color: Colors.grey.shade500,
+              // ),
               const CustomTextField(
                 text: 'عنوان',
                 maxLength: 32,
                 hintText: 'کیف پشتی برای مکاتب',
                 hasError: false,
               ),
-              Divider(
-                indent: 20,
-                endIndent: 20,
-                color: Colors.grey.shade500,
-              ),
+              const SizedBox(height: 5),
               ListTileWidget(
                 title: 'شهر',
                 onListTilePressed: () {},
                 trailingText: 'هرات',
-              ),
-              Divider(
-                indent: 20,
-                endIndent: 20,
-                color: Colors.grey.shade500,
               ),
               const SizedBox(height: 5),
               const CustomTextField(
@@ -73,11 +59,6 @@ class _AddScreenState extends State<AddScreen> {
                 maxLength: 32,
                 hintText: 'چوک گلها',
                 hasError: false,
-              ),
-              Divider(
-                indent: 20,
-                endIndent: 20,
-                color: Colors.grey.shade500,
               ),
               const SizedBox(height: 5),
               const CustomPriceTextField(
@@ -87,22 +68,12 @@ class _AddScreenState extends State<AddScreen> {
                 priceSaleType: 'تخفیف',
                 hasError: false,
               ),
-              Divider(
-                indent: 20,
-                endIndent: 20,
-                color: Colors.grey.shade500,
-              ),
               const SizedBox(height: 5),
               const CustomTextField(
                 text: 'تخفیف (افغانی)',
                 maxLength: 32,
                 hintText: '1000',
                 hasError: false,
-              ),
-              Divider(
-                indent: 20,
-                endIndent: 20,
-                color: Colors.grey.shade500,
               ),
               const SizedBox(height: 5),
               const CustomTextField(
@@ -111,11 +82,6 @@ class _AddScreenState extends State<AddScreen> {
                 hintText: 'تکه یی',
                 hasError: false,
               ),
-              Divider(
-                indent: 20,
-                endIndent: 20,
-                color: Colors.grey.shade500,
-              ),
               const SizedBox(height: 5),
               const CustomDescriptionTextField(
                 text: 'توضیحات (اختیاری)',
@@ -123,29 +89,17 @@ class _AddScreenState extends State<AddScreen> {
                 hintText: 'توضیحات',
                 hasError: false,
               ),
-              Divider(
-                indent: 20,
-                endIndent: 20,
-                color: Colors.grey.shade500,
-              ),
+              const SizedBox(height: 5),
               ListTileWidget(
                 title: 'وضعیت',
                 onListTilePressed: () {},
                 trailingText: 'انتخاب',
               ),
-              Divider(
-                indent: 20,
-                endIndent: 20,
-                color: Colors.grey.shade500,
-              ),
+              const SizedBox(height: 5),
               const ToggleWidget(
                 title: 'مالچه',
               ),
-              Divider(
-                indent: 20,
-                endIndent: 20,
-                color: Colors.grey.shade500,
-              ),
+              const SizedBox(height: 5),
               ContinueTextButtonWidget(
                 text: 'ادامه',
                 onPressed: () {

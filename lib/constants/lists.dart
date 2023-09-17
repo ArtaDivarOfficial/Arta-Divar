@@ -159,3 +159,18 @@ List<Map<String, dynamic>> communicationDrawerItemsList = [
 List<Map<String, dynamic>> appDrawerItemsList = [
   {'category_index': 3, 'icon': Icons.exit_to_app_rounded, 'title': 'Exit'},
 ];
+
+List categoriesFilterList = [
+  'همه',
+  'مسکونی',
+  'تجاری',
+  'دوکان',
+  'گدام',
+];
+
+List subCategoriesFilterList = [
+  'همه',
+  'فروشی',
+  'کرایی',
+  'گرویی',
+];
