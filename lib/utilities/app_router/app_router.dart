@@ -5,6 +5,7 @@ import 'package:divar/screens/chats_screen/chats_screen/chats_screen.dart';
 import 'package:divar/screens/details_screen/details_screen.dart';
 import 'package:divar/screens/home_screen/home_screen.dart';
 import 'package:divar/screens/initial_screens/splash_screen/splash_screen.dart';
+import 'package:divar/screens/search_screen/search_screen.dart';
 import 'package:flutter/material.dart';
 
 class AppRouter {
@@ -21,6 +22,10 @@ class AppRouter {
       case CategoriesScreen.id:
         return MaterialPageRoute(
           builder: (_) => const CategoriesScreen(),
+        );
+      case SearchScreen.id:
+        return MaterialPageRoute(
+          builder: (_) => const SearchScreen(),
         );
       // case ChatsScreen.id:
       //   return MaterialPageRoute(

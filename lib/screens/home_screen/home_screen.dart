@@ -41,21 +41,18 @@ class _HomeScreenState extends State<HomeScreen> {
           appBar: customAppBar(),
           body: SingleChildScrollView(
             child: Column(
-              children: [
-                const SizedBox(height: 5),
-                FilterAndSearchBarWidgets(
-                  onFilterTap: () {},
-                  onSearchIconTap: () {},
-                ),
-                const SizedBox(height: 5),
-                const AdvertisementBannerWidget(),
-                const SizedBox(height: 5),
-                const HorizontalCategoriesWidgets(),
-                const SizedBox(height: 5),
-                const VerticalItemsWidgetList(showTitle: true),
-                const SizedBox(height: 5),
-                const CircularProgressIndicator(color: kLightPrimaryColor),
-                const SizedBox(height: 10),
+              children: const [
+                SizedBox(height: 5),
+                FilterAndSearchBarWidgets(),
+                SizedBox(height: 5),
+                AdvertisementBannerWidget(),
+                SizedBox(height: 5),
+                HorizontalCategoriesWidgets(),
+                SizedBox(height: 5),
+                VerticalItemsWidgetList(showTitle: true),
+                SizedBox(height: 5),
+                CircularProgressIndicator(color: kLightPrimaryColor),
+                SizedBox(height: 10),
               ],
             ),
           ),
