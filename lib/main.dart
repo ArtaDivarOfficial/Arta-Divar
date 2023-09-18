@@ -1,5 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:divar/entry_point_screen.dart';
+import 'package:divar/screens/initial_screens/registration_screens/otp_code_screen.dart';
 import 'package:divar/screens/initial_screens/registration_screens/sign_in_sign_up_screen.dart';
 import 'package:divar/screens/main_screens/add_screen/add_screen.dart';
 import 'package:divar/screens/main_screens/categories_screen/categories_screen.dart';
@@ -102,14 +103,15 @@ class MyApp extends StatelessWidget {
         routes: {
           SplashScreen.id: (context) => const SplashScreen(),
           HomeScreen.id: (context) => const HomeScreen(),
+          SignInSignUpScreen.id: (context) => const SignInSignUpScreen(),
+          OtpCodeScreen.id: (context) => const OtpCodeScreen(),
           DetailsScreen.id: (context) => const DetailsScreen(),
           EntryPointScreen.id: (context) => const EntryPointScreen(),
           AddScreen.id: (context) => const AddScreen(),
-          SignInSignUpScreen.id: (context) => const SignInSignUpScreen(),
           CategoriesScreen.id: (context) => const CategoriesScreen(),
           MyAdvertisementScreen.id: (context) => const MyAdvertisementScreen(),
         },
-        initialRoute: MyAdvertisementScreen.id,
+        initialRoute: OtpCodeScreen.id,
       ),
     );
   }
