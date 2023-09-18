@@ -15,23 +15,26 @@ class CategoriesScreen extends StatefulWidget {
 }
 
 class _CategoriesScreenState extends State<CategoriesScreen> {
+  bool isSearchIconClicked = false;
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: appBarWithSearchTextField(context),
-        // AppBar(
-        //   title: Text(
-        //     'آگهی های املاک',
-        //     style: Theme.of(context).textTheme.titleLarge,
-        //   ),
-        //   actions: [
-        //     IconButton(
-        //       onPressed: () {},
-        //       icon: const Icon(Icons.search),
-        //     ),
-        //   ],
-        // ),
+        appBar: isSearchIconClicked
+            ? appBarWithSearchTextField(context)
+            : AppBar(
+                title: Text(
+                  'آگهی های املاک',
+                  style: Theme.of(context).textTheme.titleLarge,
+                ),
+                actions: [
+                  IconButton(
+                    onPressed: () {},
+                    icon: const Icon(Icons.search),
+                  ),
+                ],
+              ),
         body: Column(
           children: [
             const SizedBox(height: 5),
@@ -69,7 +72,16 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
     return appBarWithBackButtonActionAndTextField(
       context,
       SearchTextFieldWidget(
-        onSubmitted: (value) {},
+        onSubmitted: (value) {
+          // if (searchText.isNotEmpty) {
+          //     setState(() {
+          //       isSearching = true;
+          //       isLoading = true;
+          //     });
+          //     focusNodeSearchTextField.unfocus();
+          //     await getItemsBySearchedText();
+          //   }
+        },
         text: '',
         focusNodeSearchTextField: FocusNode(),
         onChangedSearch: (value) {
@@ -78,16 +90,6 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
           //     setState(() {
           //       isSearching = false;
           //     });
-          //   }
-          // },
-          // onSubmitted: (value) async {
-          //   if (searchText.isNotEmpty) {
-          //     setState(() {
-          //       isSearching = true;
-          //       isLoading = true;
-          //     });
-          //     focusNodeSearchTextField.unfocus();
-          //     await getItemsBySearchedText();
           //   }
         },
       ),
