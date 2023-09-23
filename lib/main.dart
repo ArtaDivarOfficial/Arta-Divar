@@ -111,7 +111,7 @@ class MyApp extends StatelessWidget {
           CategoriesScreen.id: (context) => const CategoriesScreen(),
           MyAdvertisementScreen.id: (context) => const MyAdvertisementScreen(),
         },
-        initialRoute: OtpCodeScreen.id,
+        initialRoute: SignInSignUpScreen.id,
       ),
     );
   }

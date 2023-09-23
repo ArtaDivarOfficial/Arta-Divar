@@ -10,18 +10,22 @@ class CustomTextField extends StatelessWidget {
     required this.hintText,
     required this.maxLength,
     this.textInputType,
+    this.downSizedBoxHeight,
+    this.topSizedBoxHeight,
   });
   final String text;
   final String hintText;
   final int maxLength;
   final TextInputType? textInputType;
+  final double? downSizedBoxHeight;
+  final double? topSizedBoxHeight;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const SizedBox(height: 10),
+        SizedBox(height: topSizedBoxHeight ?? 10),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Text(
@@ -68,7 +72,7 @@ class CustomTextField extends StatelessWidget {
             ),
           ),
         ),
-        const SizedBox(height: 10),
+        SizedBox(height: downSizedBoxHeight ?? 10),
       ],
     );
   }
