@@ -9,6 +9,7 @@ class CustomPriceTextField extends StatelessWidget {
     this.hasError = false,
     this.errorText,
     required this.onChange,
+    required this.onTapPriceSaleType,
   });
   final String title;
   final String hintText;
@@ -16,6 +17,7 @@ class CustomPriceTextField extends StatelessWidget {
   final bool? hasError;
   final String? errorText;
   final Function(double) onChange;
+  final Function() onTapPriceSaleType;
 
   @override
   Widget build(BuildContext context) {
@@ -80,45 +82,48 @@ class CustomPriceTextField extends StatelessWidget {
               const SizedBox(width: 10),
               Expanded(
                 flex: 1,
-                child: TextFormField(
-                  keyboardType: TextInputType.text,
-                  controller: TextEditingController(),
-                  onTap: () {},
-                  onChanged: (value) {},
-                  focusNode: FocusNode(),
-                  enabled: false,
-                  maxLength: 10,
-                  textAlign: TextAlign.center,
-                  decoration: InputDecoration(
-                    counterStyle: Theme.of(context)
-                        .textTheme
-                        .labelMedium!
-                        .copyWith(color: Colors.transparent),
-                    hintText: priceSaleType,
-                    hintStyle:
-                        Theme.of(context).textTheme.titleMedium!.copyWith(
-                              color: Colors.black,
-                            ),
-                    contentPadding: const EdgeInsets.symmetric(
-                        horizontal: 20, vertical: 12.5),
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Colors.grey.shade400,
+                child: GestureDetector(
+                  onTap: onTapPriceSaleType,
+                  child: TextFormField(
+                    keyboardType: TextInputType.text,
+                    controller: TextEditingController(),
+                    onTap: () {},
+                    onChanged: (value) {},
+                    focusNode: FocusNode(),
+                    enabled: false,
+                    maxLength: 10,
+                    textAlign: TextAlign.center,
+                    decoration: InputDecoration(
+                      counterStyle: Theme.of(context)
+                          .textTheme
+                          .labelMedium!
+                          .copyWith(color: Colors.transparent),
+                      hintText: priceSaleType,
+                      hintStyle:
+                          Theme.of(context).textTheme.titleMedium!.copyWith(
+                                color: Colors.black,
+                              ),
+                      contentPadding: const EdgeInsets.symmetric(
+                          horizontal: 20, vertical: 12.5),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Colors.grey.shade400,
+                        ),
                       ),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Colors.grey.shade400,
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Colors.grey.shade400,
+                        ),
                       ),
-                    ),
-                    errorBorder: const OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Colors.red,
+                      errorBorder: const OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Colors.red,
+                        ),
                       ),
-                    ),
-                    disabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Colors.grey.shade400,
+                      disabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Colors.grey.shade400,
+                        ),
                       ),
                     ),
                   ),

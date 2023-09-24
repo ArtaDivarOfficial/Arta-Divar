@@ -30,15 +30,15 @@ class Popover extends StatelessWidget {
 
   Widget _buildHandle(BuildContext context) {
     return FractionallySizedBox(
-      widthFactor: 0.25,
+      widthFactor: 0.20,
       child: Container(
-        margin: const EdgeInsets.symmetric(vertical: 12),
+        margin: const EdgeInsets.symmetric(vertical: 10),
         child: Container(
-          height: 5,
+          height: 4,
           decoration: const BoxDecoration(
             color: Colors.grey,
             borderRadius: BorderRadius.all(
-              Radius.circular(2),
+              Radius.circular(50),
             ),
           ),
         ),

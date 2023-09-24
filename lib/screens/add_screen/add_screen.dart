@@ -1,3 +1,4 @@
+import 'package:divar/heplers/modal_bottom_sheet/modal_bottom_sheet.dart';
 import 'package:divar/screens/add_screen/widgets/advertisement_select_image.dart';
 import 'package:divar/screens/add_screen/widgets/continue_text_button_widget.dart';
 import 'package:divar/screens/add_screen/widgets/custom_description_text_field.dart';
@@ -5,7 +6,6 @@ import 'package:divar/screens/add_screen/widgets/custom_price_text_field.dart';
 import 'package:divar/screens/add_screen/widgets/custom_text_field.dart';
 import 'package:divar/screens/add_screen/widgets/list_tile_widget.dart';
 import 'package:divar/screens/add_screen/widgets/submit_ad_guide_list_tile_widget.dart';
-import 'package:divar/screens/details_screen/details_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
@@ -150,8 +150,20 @@ class _AddScreenState extends State<AddScreen> {
               const SizedBox(height: 5),
               ListTileWidget(
                 title: 'شهر',
-                onListTilePressed: () {},
-                trailingText: 'هرات',
+                onListTilePressed: () {
+                  showSelectableModalBottomSheet(
+                    context: context,
+                    title: 'شهر',
+                    selectableItemsList: provincesList,
+                    onPressedButton: (value, index) {
+                      setState(() {
+                        itemProvince = index;
+                      });
+                    },
+                    selectedIndex: itemProvince,
+                  );
+                },
+                trailingText: provincesList[itemProvince],
               ),
               const SizedBox(height: 5),
               CustomTextField(
@@ -173,8 +185,21 @@ class _AddScreenState extends State<AddScreen> {
                 onChange: (value) {
                   itemTotalPrice = value;
                 },
+                onTapPriceSaleType: () {
+                  showSelectableModalBottomSheet(
+                    context: context,
+                    title: 'نوعیت قیمت فروش',
+                    selectableItemsList: priceSaleTypesList,
+                    onPressedButton: (value, index) {
+                      setState(() {
+                        itemSalePriceType = index;
+                      });
+                    },
+                    selectedIndex: itemSalePriceType,
+                  );
+                },
               ),
-              itemSalePriceType == 4
+              itemSalePriceType == 3
                   ? Column(
                       children: [
                         const SizedBox(height: 5),
@@ -215,8 +240,20 @@ class _AddScreenState extends State<AddScreen> {
               const SizedBox(height: 5),
               ListTileWidget(
                 title: 'وضعیت',
-                onListTilePressed: () {},
-                trailingText: 'انتخاب',
+                onListTilePressed: () {
+                  showSelectableModalBottomSheet(
+                    context: context,
+                    title: 'وضعیت',
+                    selectableItemsList: statusTypesList,
+                    onPressedButton: (value, index) {
+                      setState(() {
+                        itemStatus = index;
+                      });
+                    },
+                    selectedIndex: itemStatus,
+                  );
+                },
+                trailingText: statusTypesList[itemStatus],
               ),
               const SizedBox(height: 5),
               ContinueTextButtonWidget(

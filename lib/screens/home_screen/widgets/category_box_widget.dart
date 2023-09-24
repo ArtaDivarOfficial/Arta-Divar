@@ -1,8 +1,8 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:divar/constants/lists.dart';
+import 'package:divar/heplers/modal_bottom_sheet/modal_bottom_sheet.dart';
 import 'package:divar/screens/categories_screen/categories_screen.dart';
-import 'package:divar/screens/home_screen/widgets/bottom_sheet_categories.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -25,19 +25,7 @@ class CategoryBoxWidget extends StatelessWidget {
       child: GestureDetector(
         onTap: () {
           if (index == categoriesSvgListPart2.length - 1) {
-            showModalBottomSheet(
-                context: context,
-                enableDrag: true,
-                isScrollControlled: true,
-                shape: const RoundedRectangleBorder(
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(20),
-                    topRight: Radius.circular(20),
-                  ),
-                ),
-                builder: (BuildContext context) {
-                  return const BottomSheetCategories();
-                });
+            showCategoriesModalBottomSheet(context: context);
           } else {
             Navigator.pushNamed(context, CategoriesScreen.id);
           }

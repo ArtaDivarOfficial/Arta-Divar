@@ -1,4 +1,5 @@
 import 'package:divar/packages/dio/dio.dart';
+import 'package:flutter/material.dart';
 
 class HelperFunctions {
   static List<String>? getImages(
@@ -11,5 +12,11 @@ class HelperFunctions {
       }
     }
     return itemImages;
+  }
+
+  static void unFocusFocusNodes(List<FocusNode> focusNodes) {
+    for (var focusNode in focusNodes) {
+      focusNode.unfocus();
+    }
   }
 }
