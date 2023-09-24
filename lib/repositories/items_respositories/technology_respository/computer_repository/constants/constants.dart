@@ -21,7 +21,6 @@ class ComputerConstants {
   static const String itemPriceType = 'item_price_type';
   static const String itemSalePriceType = 'item_sale_price_type';
   static const String itemDiscountAmount = 'item_discount_amount';
-  static const String itemDiscountAmountType = 'item_discount_amount_type';
   static const String itemModel = 'item_model';
   static const String itemCPU = 'item_cpu';
   static const String itemGeneration = 'item_generation';

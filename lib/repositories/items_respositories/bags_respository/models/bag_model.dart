@@ -290,10 +290,10 @@ class BagModel {
           ? map[BagConstants.itemCustomerId] as String
           : null,
       itemCategoryId: map[BagConstants.itemCategoryId] != null
-          ? map[BagConstants.itemCategoryId] as int
+          ? int.parse(map[BagConstants.itemCategoryId].toString())
           : null,
       itemSubCategoryId: map[BagConstants.itemSubCategoryId] != null
-          ? map[BagConstants.itemCategoryId] as int
+          ? int.parse(map[BagConstants.itemSubCategoryId].toString())
           : null,
       itemImages: HelperFunctions.getImages(
                   map, BagConstants.itemImages, BagConstants.apiBagsImages) !=
@@ -304,25 +304,25 @@ class BagModel {
           ? map[BagConstants.itemTitle] as String
           : null,
       itemProvince: map[BagConstants.itemProvince] != null
-          ? map[BagConstants.itemProvince] as int
+          ? int.parse(map[BagConstants.itemProvince].toString())
           : null,
       itemRegion: map[BagConstants.itemRegion] != null
           ? map[BagConstants.itemRegion] as String
           : null,
       itemTotalPrice: map[BagConstants.itemTotalPrice] != null
-          ? map[BagConstants.itemTotalPrice] as double
+          ? double.parse(map[BagConstants.itemTotalPrice].toString())
           : null,
       itemPriceType: map[BagConstants.itemPriceType] != null
-          ? map[BagConstants.itemPriceType] as int
+          ? int.parse(map[BagConstants.itemPriceType].toString())
           : null,
       itemSalePriceType: map[BagConstants.itemSalePriceType] != null
-          ? map[BagConstants.itemSalePriceType] as int
+          ? int.parse(map[BagConstants.itemSalePriceType].toString())
           : null,
       itemDiscountAmount: map[BagConstants.itemDiscountAmount] != null
-          ? map[BagConstants.itemDiscountAmount] as int
+          ? int.parse(map[BagConstants.itemDiscountAmount].toString())
           : null,
       itemType: map[BagConstants.itemType] != null
-          ? map[BagConstants.itemType] as int
+          ? int.parse(map[BagConstants.itemType].toString())
           : null,
       itemMaterial: map[BagConstants.itemMaterial] != null
           ? map[BagConstants.itemMaterial] as String
@@ -331,7 +331,7 @@ class BagModel {
           ? map[BagConstants.itemDescription] as String
           : null,
       itemStatus: map[BagConstants.itemStatus] != null
-          ? map[BagConstants.itemStatus] as int
+          ? int.parse(map[BagConstants.itemStatus].toString())
           : null,
       itemPublishStatus: map[BagConstants.itemPublishStatus] != null
           ? map[BagConstants.itemPublishStatus] as String
@@ -357,10 +357,10 @@ class BagModel {
           ? map[BagConstants.itemCustomerId] as String
           : null,
       itemCategoryId: map[BagConstants.itemCategoryId] != null
-          ? map[BagConstants.itemCategoryId] as int
+          ? int.parse(map[BagConstants.itemCategoryId].toString())
           : null,
       itemSubCategoryId: map[BagConstants.itemSubCategoryId] != null
-          ? map[BagConstants.itemCategoryId] as int
+          ? int.parse(map[BagConstants.itemSubCategoryId].toString())
           : null,
       itemImages: HelperFunctions.getImages(
                   map, BagConstants.itemImages, BagConstants.apiBagsImages) !=
@@ -371,22 +371,22 @@ class BagModel {
           ? map[BagConstants.itemTitle] as String
           : null,
       itemProvince: map[BagConstants.itemProvince] != null
-          ? map[BagConstants.itemProvince] as int
+          ? int.parse(map[BagConstants.itemProvince].toString())
           : null,
       itemRegion: map[BagConstants.itemRegion] != null
           ? map[BagConstants.itemRegion] as String
           : null,
       itemTotalPrice: map[BagConstants.itemTotalPrice] != null
-          ? map[BagConstants.itemTotalPrice] as double
+          ? double.parse(map[BagConstants.itemTotalPrice].toString())
           : null,
       itemPriceType: map[BagConstants.itemPriceType] != null
-          ? map[BagConstants.itemPriceType] as int
+          ? int.parse(map[BagConstants.itemPriceType].toString())
           : null,
       itemSalePriceType: map[BagConstants.itemSalePriceType] != null
-          ? map[BagConstants.itemSalePriceType] as int
+          ? int.parse(map[BagConstants.itemSalePriceType].toString())
           : null,
       itemDiscountAmount: map[BagConstants.itemDiscountAmount] != null
-          ? map[BagConstants.itemDiscountAmount] as int
+          ? int.parse(map[BagConstants.itemDiscountAmount].toString())
           : null,
       itemDescription: map[BagConstants.itemDescription] != null
           ? map[BagConstants.itemDescription] as String

@@ -33,6 +33,8 @@ class BagDeleting extends BagState {}
 
 class BagDeleted extends BagState {}
 
+class BagSell extends BagState {}
+
 class BagSold extends BagState {}
 
 class BagError extends BagState {

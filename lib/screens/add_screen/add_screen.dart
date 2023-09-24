@@ -5,12 +5,12 @@ import 'package:divar/screens/add_screen/widgets/custom_price_text_field.dart';
 import 'package:divar/screens/add_screen/widgets/custom_text_field.dart';
 import 'package:divar/screens/add_screen/widgets/list_tile_widget.dart';
 import 'package:divar/screens/add_screen/widgets/submit_ad_guide_list_tile_widget.dart';
-import 'package:divar/screens/add_screen/widgets/toggle_widget.dart';
 import 'package:divar/screens/details_screen/details_screen.dart';
 import 'package:flutter/material.dart';
 
 class AddScreen extends StatefulWidget {
   const AddScreen({super.key});
+
   static const String id = '/add_screen';
 
   @override
@@ -36,11 +36,6 @@ class _AddScreenState extends State<AddScreen> {
               const SizedBox(height: 5),
               const AdvertisementSelectImage(),
               const SizedBox(height: 5),
-              // Divider(
-              //   indent: 20,
-              //   endIndent: 20,
-              //   color: Colors.grey.shade500,
-              // ),
               const CustomTextField(
                 text: 'عنوان',
                 maxLength: 32,
@@ -94,10 +89,6 @@ class _AddScreenState extends State<AddScreen> {
                 title: 'وضعیت',
                 onListTilePressed: () {},
                 trailingText: 'انتخاب',
-              ),
-              const SizedBox(height: 5),
-              const ToggleWidget(
-                title: 'مالچه',
               ),
               const SizedBox(height: 5),
               ContinueTextButtonWidget(

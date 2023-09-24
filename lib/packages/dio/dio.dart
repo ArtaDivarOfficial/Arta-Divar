@@ -4,8 +4,8 @@ class MyDio {
   static Dio? _dio = Dio();
   static const String _headerKey = 'Accept';
   static const String _headerValue = 'application/json';
-  static const String baseAPIUrl = 'https://artadivar.com/api';
-  static const String basePublicAPIUrl = 'https://artadivar.com/public';
+  static const String baseAPIUrl = 'http://apitest.artadivar.com/api';
+  static const String basePublicAPIUrl = 'http://apitest.artadivar.com/public';
   static late Response? response;
   static CancelToken cancelToken = CancelToken();
 
