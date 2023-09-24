@@ -21,7 +21,7 @@ class ItemModel {
   final String? itemUpdatedAt;
 
   ItemModel({
-    required this.itemId,
+    this.itemId = -1,
     required this.itemCustomerId,
     required this.itemCategoryId,
     required this.itemSubCategoryId,

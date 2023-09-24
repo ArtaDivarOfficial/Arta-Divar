@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:dio/dio.dart';
+import 'package:divar/constants/variables.dart';
 import 'package:divar/packages/dio/dio.dart';
 import 'package:divar/repositories/items_respositories/bags_respository/constants/constants.dart';
 import 'package:divar/repositories/items_respositories/bags_respository/models/bag_model.dart';
@@ -22,29 +23,30 @@ class BagCubit extends Cubit<BagState> {
     _bagModelsList = [];
   }
 
-  Future<void> emitAddBag(List itemImagesList) async {
+  Future<void> emitAddBag() async {
     _cancelToken = CancelToken();
     try {
       emit(BagAdding());
+      BagModel bagModel = Variables.itemModel as BagModel;
       FormData formData = FormData.fromMap({
-        BagConstants.itemCustomerId: '1',
-        BagConstants.itemCategoryId: 1,
-        BagConstants.itemSubCategoryId: 1,
-        BagConstants.itemTitle: 'title',
+        BagConstants.itemCustomerId: bagModel.itemCustomerId,
+        BagConstants.itemCategoryId: bagModel.itemCategoryId,
+        BagConstants.itemSubCategoryId: bagModel.itemSubCategoryId,
+        BagConstants.itemTitle: bagModel.itemTitle,
         'item_address': 'province',
-        BagConstants.itemProvince: 10,
-        BagConstants.itemRegion: 'region',
-        BagConstants.itemTotalPrice: 1000,
-        BagConstants.itemPriceType: 1,
-        BagConstants.itemSalePriceType: 1,
-        BagConstants.itemDiscountAmount: -1,
+        BagConstants.itemProvince: bagModel.itemProvince,
+        BagConstants.itemRegion: bagModel.itemRegion,
+        BagConstants.itemTotalPrice: bagModel.itemTotalPrice,
+        BagConstants.itemPriceType: bagModel.itemPriceType,
+        BagConstants.itemSalePriceType: bagModel.itemSalePriceType,
+        BagConstants.itemDiscountAmount: bagModel.itemDiscountAmount,
         'item_discount_amount_type': -1,
-        BagConstants.itemType: 1,
-        BagConstants.itemMaterial: 'material',
-        BagConstants.itemDescription: 'description',
-        BagConstants.itemStatus: 1,
+        BagConstants.itemType: bagModel.itemType,
+        BagConstants.itemMaterial: bagModel.itemMaterial,
+        BagConstants.itemDescription: bagModel.itemDescription,
+        BagConstants.itemStatus: bagModel.itemStatus,
       });
-      for (var item in itemImagesList) {
+      for (var item in bagModel.itemImages!) {
         formData.files.addAll([
           MapEntry('${BagConstants.itemImages}[]',
               await MultipartFile.fromFile(item)),
@@ -53,8 +55,12 @@ class BagCubit extends Cubit<BagState> {
       _response = await _dio!.post(
         '${MyDio.baseAPIUrl}${BagConstants.apiAddBag}',
         data: formData,
+        options: Options(
+          validateStatus: (status) => true,
+        ),
         cancelToken: _cancelToken,
       );
+      print(_response!.data);
       if (_response!.statusCode == 200) {
         emit(BagAdded());
       } else {

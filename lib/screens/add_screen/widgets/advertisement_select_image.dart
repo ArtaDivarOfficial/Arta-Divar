@@ -69,7 +69,10 @@ class AdvertisementSelectImage extends StatelessWidget {
                         height: 100,
                         color: Colors.white,
                         child: index != 0
-                            ? Image.file(File(bagImagesPathsList[index - 1]!))
+                            ? Image.file(
+                                File(bagImagesPathsList[index - 1]!),
+                                fit: BoxFit.cover,
+                              )
                             : Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [

@@ -27,7 +27,7 @@ class BagModel {
   final String? itemUpdatedAt;
 
   BagModel({
-    required this.itemId,
+    this.itemId = -1,
     required this.itemCustomerId,
     required this.itemCategoryId,
     required this.itemSubCategoryId,
@@ -36,17 +36,17 @@ class BagModel {
     required this.itemProvince,
     required this.itemRegion,
     required this.itemTotalPrice,
-    required this.itemPriceType,
+    this.itemPriceType = 0,
     required this.itemSalePriceType,
     required this.itemDiscountAmount,
     required this.itemType,
     required this.itemMaterial,
     required this.itemDescription,
     required this.itemStatus,
-    required this.itemPublishStatus,
-    required this.itemSoldStatus,
-    required this.itemCreatedAt,
-    required this.itemUpdatedAt,
+    this.itemPublishStatus = '',
+    this.itemSoldStatus = '',
+    this.itemCreatedAt = '',
+    this.itemUpdatedAt = '',
   });
 
   BagModel.itemModel({

@@ -1,8 +1,11 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:divar/constants/colors.dart';
 import 'package:divar/constants/lists.dart';
-import 'package:divar/screens/details_screen/description_widget.dart';
-import 'package:divar/screens/details_screen/detial_widget.dart';
+import 'package:divar/constants/variables.dart';
+import 'package:divar/heplers/functions/helper_functions.dart';
+import 'package:divar/repositories/items_respositories/bags_respository/models/bag_model.dart';
+import 'package:divar/screens/details_screen/widgets/description_widget.dart';
+import 'package:divar/screens/details_screen/widgets/detial_widget.dart';
 import 'package:divar/screens/home_screen/widgets/items_row_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -16,6 +19,14 @@ class DetailsScreen extends StatefulWidget {
 }
 
 class _DetailsScreenState extends State<DetailsScreen> {
+  late BagModel itemModel;
+
+  @override
+  void initState() {
+    super.initState();
+    itemModel = Variables.itemModel as BagModel;
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -44,7 +55,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                   child: Column(
                     children: [
                       Text(
-                        'خانه گروی ۳ طبق',
+                        itemModel.itemTitle!,
                         style: Theme.of(context).textTheme.titleLarge,
                       ),
                       Row(
@@ -56,7 +67,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                           ),
                           const SizedBox(width: 5),
                           Text(
-                            'هرات، ۶۴ متره',
+                            '${provincesList[itemModel.itemProvince!]}، ${itemModel.itemRegion}',
                             style: Theme.of(context).textTheme.titleMedium,
                           ),
                         ],
@@ -69,28 +80,42 @@ class _DetailsScreenState extends State<DetailsScreen> {
               Container(
                 color: Colors.white,
                 padding: const EdgeInsets.symmetric(vertical: 5),
-                child: CarouselSlider(
-                  options: CarouselOptions(
-                    height: 180,
-                    viewportFraction: 0.7,
-                    enableInfiniteScroll: true,
-                    initialPage: 0,
-                    enlargeCenterPage: true,
-                    enlargeFactor: 0.15,
-                    scrollDirection: Axis.horizontal,
-                    scrollPhysics: const BouncingScrollPhysics(),
-                    onPageChanged: (index, reason) {},
-                  ),
-                  items: List.generate(advertisementBannerList.length, (index) {
-                    return ClipRRect(
-                      borderRadius: BorderRadius.circular(15),
-                      child: Image.asset(
-                        'assets/images/home.jpg',
-                        fit: BoxFit.fitHeight,
+                child: itemModel.itemImages!.isEmpty
+                    ? Container(
+                        height: 225,
+                        width: double.infinity,
+                        color: Colors.white,
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(15),
+                          child: Image.asset(
+                            'assets/app_logo/black_&_white_app_logo.png',
+                            fit: BoxFit.fitHeight,
+                          ),
+                        ),
+                      )
+                    : CarouselSlider(
+                        options: CarouselOptions(
+                          height: 225,
+                          viewportFraction: 0.9,
+                          enableInfiniteScroll: true,
+                          initialPage: 0,
+                          enlargeCenterPage: true,
+                          enlargeFactor: 0.5,
+                          scrollDirection: Axis.horizontal,
+                          scrollPhysics: const BouncingScrollPhysics(),
+                          onPageChanged: (index, reason) {},
+                        ),
+                        items: List.generate(itemModel.itemImages!.length,
+                            (index) {
+                          return ClipRRect(
+                            borderRadius: BorderRadius.circular(15),
+                            child: Image.asset(
+                              itemModel.itemImages![index],
+                              fit: BoxFit.fitHeight,
+                            ),
+                          );
+                        }),
                       ),
-                    );
-                  }),
-                ),
               ),
               const SizedBox(height: 5),
               Container(
@@ -108,7 +133,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                     Row(
                       children: [
                         Text(
-                          '۱۳۰۰۰۰ ؋',
+                          '${itemModel.itemTotalPrice} ${itemModel.itemPriceType == 0 ? '؋' : '\$'}',
                           style: Theme.of(context).textTheme.titleLarge,
                         ),
                         const SizedBox(width: 10),
@@ -119,7 +144,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                             borderRadius: BorderRadius.circular(10),
                           ),
                           child: Text(
-                            '۶۰۰۰ ؋ تخفیف',
+                            '${itemModel.itemSalePriceType == 3 ? '${itemModel.itemDiscountAmount} ؋ تخفیف' : priceSaleTypesList[itemModel.itemSalePriceType!]}',
                             style: Theme.of(context)
                                 .textTheme
                                 .bodyMedium!
@@ -147,21 +172,26 @@ class _DetailsScreenState extends State<DetailsScreen> {
                           style: Theme.of(context).textTheme.titleLarge,
                         ),
                         const SizedBox(height: 10),
-                        const DetailWidget(
+                        DetailWidget(
                           title: 'دسته بندی',
-                          subTitle: 'املاک',
+                          subTitle: HelperFunctions.getCategoryNameById(
+                              itemModel.itemCategoryId!),
                         ),
-                        const DetailWidget(
+                        DetailWidget(
                           title: 'نوع آگهی',
-                          subTitle: 'مسکونی',
+                          subTitle: '${itemModel.itemSubCategoryId}',
                         ),
-                        const DetailWidget(
+                        DetailWidget(
+                          title: 'جنس',
+                          subTitle: '${itemModel.itemMaterial}',
+                        ),
+                        DetailWidget(
                           title: 'وضعیت',
-                          subTitle: 'نو',
+                          subTitle: '${statusTypesList[itemModel.itemStatus!]}',
                         ),
-                        const DescriptionWidget(
+                        DescriptionWidget(
                           title: 'توضیحات',
-                          subTitle: 'توضیحات',
+                          subTitle: itemModel.itemDescription!,
                         )
                       ],
                     ),

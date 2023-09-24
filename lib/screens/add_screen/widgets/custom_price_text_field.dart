@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class CustomPriceTextField extends StatelessWidget {
+class CustomPriceTextField extends StatefulWidget {
   const CustomPriceTextField({
     super.key,
     required this.title,
@@ -8,6 +8,8 @@ class CustomPriceTextField extends StatelessWidget {
     required this.priceSaleType,
     this.hasError = false,
     this.errorText,
+    required this.focusNode,
+    required this.textEditingController,
     required this.onChange,
     required this.onTapPriceSaleType,
   });
@@ -16,9 +18,16 @@ class CustomPriceTextField extends StatelessWidget {
   final String priceSaleType;
   final bool? hasError;
   final String? errorText;
+  final FocusNode focusNode;
+  final TextEditingController textEditingController;
   final Function(double) onChange;
   final Function() onTapPriceSaleType;
 
+  @override
+  State<CustomPriceTextField> createState() => _CustomPriceTextFieldState();
+}
+
+class _CustomPriceTextFieldState extends State<CustomPriceTextField> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -29,7 +38,7 @@ class CustomPriceTextField extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
             child: Text(
-              title,
+              widget.title,
               style: Theme.of(context)
                   .textTheme
                   .titleMedium!
@@ -44,17 +53,29 @@ class CustomPriceTextField extends StatelessWidget {
                 child: TextFormField(
                   keyboardType: TextInputType.number,
                   controller: TextEditingController(),
-                  onTap: () {},
+                  onTap: () {
+                    if (widget.textEditingController.selection ==
+                        TextSelection.fromPosition(TextPosition(
+                            offset: widget.textEditingController.text.length -
+                                1))) {
+                      setState(() {
+                        widget.textEditingController.selection =
+                            TextSelection.fromPosition(TextPosition(
+                                offset:
+                                    widget.textEditingController.text.length));
+                      });
+                    }
+                  },
                   onChanged: (value) {
-                    onChange(double.parse(value));
+                    widget.onChange(double.parse(value));
                   },
                   focusNode: FocusNode(),
                   enabled: true,
                   maxLength: 10,
                   decoration: InputDecoration(
                     counterStyle: Theme.of(context).textTheme.labelMedium,
-                    hintText: hintText,
-                    errorText: hasError! ? errorText : null,
+                    hintText: widget.hintText,
+                    errorText: widget.hasError! ? widget.errorText : null,
                     hintStyle:
                         Theme.of(context).textTheme.titleMedium!.copyWith(
                               color: Colors.grey,
@@ -83,7 +104,7 @@ class CustomPriceTextField extends StatelessWidget {
               Expanded(
                 flex: 1,
                 child: GestureDetector(
-                  onTap: onTapPriceSaleType,
+                  onTap: widget.onTapPriceSaleType,
                   child: TextFormField(
                     keyboardType: TextInputType.text,
                     controller: TextEditingController(),
@@ -98,7 +119,7 @@ class CustomPriceTextField extends StatelessWidget {
                           .textTheme
                           .labelMedium!
                           .copyWith(color: Colors.transparent),
-                      hintText: priceSaleType,
+                      hintText: widget.priceSaleType,
                       hintStyle:
                           Theme.of(context).textTheme.titleMedium!.copyWith(
                                 color: Colors.black,

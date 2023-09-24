@@ -1,4 +1,3 @@
-import 'package:bottom_sheet/bottom_sheet.dart';
 import 'package:divar/heplers/modal_bottom_sheet/bottom_sheet_model_body_widget.dart';
 import 'package:divar/screens/home_screen/widgets/bottom_sheet_categories.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +13,7 @@ showCustomModalBottomSheet(
         topLeft: Radius.circular(20),
         topRight: Radius.circular(20),
       ),
-    ), //
+    ),
     useSafeArea: true,
     builder: (context) {
       return SingleChildScrollView(

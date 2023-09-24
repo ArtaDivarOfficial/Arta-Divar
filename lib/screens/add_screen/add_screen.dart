@@ -1,4 +1,7 @@
+import 'package:divar/constants/lists.dart';
+import 'package:divar/constants/variables.dart';
 import 'package:divar/heplers/modal_bottom_sheet/modal_bottom_sheet.dart';
+import 'package:divar/repositories/items_respositories/bags_respository/models/bag_model.dart';
 import 'package:divar/screens/add_screen/widgets/advertisement_select_image.dart';
 import 'package:divar/screens/add_screen/widgets/continue_text_button_widget.dart';
 import 'package:divar/screens/add_screen/widgets/custom_description_text_field.dart';
@@ -6,6 +9,7 @@ import 'package:divar/screens/add_screen/widgets/custom_price_text_field.dart';
 import 'package:divar/screens/add_screen/widgets/custom_text_field.dart';
 import 'package:divar/screens/add_screen/widgets/list_tile_widget.dart';
 import 'package:divar/screens/add_screen/widgets/submit_ad_guide_list_tile_widget.dart';
+import 'package:divar/screens/details_screen/add_details_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
@@ -28,7 +32,6 @@ class _AddScreenState extends State<AddScreen> {
       itemType = 0,
       itemStatus = 0;
   XFile? image;
-  List<XFile?> bagImagesList = [];
   List<String> bagImagesPathsList = [];
   String itemTitle = '',
       itemRegion = '',
@@ -37,71 +40,22 @@ class _AddScreenState extends State<AddScreen> {
   double itemTotalPrice = -1.0;
   FocusNode focusNodeTitle = FocusNode(),
       focusNodeRegion = FocusNode(),
+      focusNodeTotalPrice = FocusNode(),
+      focusNodeDiscountAmount = FocusNode(),
       focusNodeMaterial = FocusNode(),
       focusNodeDescription = FocusNode();
+  TextEditingController textEditingControllerTitle = TextEditingController(),
+      textEditingControllerRegion = TextEditingController(),
+      textEditingControllerTotalPrice = TextEditingController(),
+      textEditingControllerDiscountAmount = TextEditingController(),
+      textEditingControllerMaterial = TextEditingController(),
+      textEditingControllerDescription = TextEditingController();
   bool isTitleHasError = false,
       isRegionHasError = false,
       isTotalPriceHasError = false,
       isDiscountAmountHasError = false,
       isMaterialHasError = false,
       isDescriptionHasError = false;
-  List priceSaleTypesList = [
-    'مقطوع',
-    'جورآمد',
-    'توافقی',
-    'تخفیف',
-  ];
-  List priceTypesList = [
-    'افغانی',
-    'دالر',
-  ];
-  List genderTypesList = [
-    'پسرانه',
-    'دخترانه',
-    'مردانه',
-    'زنانه',
-  ];
-  List statusTypesList = [
-    'نو',
-    'در حد نو',
-    'استفاده شده',
-  ];
-  List<String> provincesList = [
-    'ارزگان',
-    'بادغیس',
-    'بامیان',
-    'بدخشان',
-    'بغلان',
-    'بلخ',
-    'پروان',
-    'پکتیا',
-    'پکتیکا',
-    'پنجشیر',
-    'تخار',
-    'جوزجان',
-    'خوست',
-    'دایکندی',
-    'زابل',
-    'سر پل',
-    'سمنگان',
-    'غزنی',
-    'غور',
-    'فاریاب',
-    'فراه',
-    'قندهار',
-    'کابل',
-    'کاپیسا',
-    'کندز',
-    'کنر',
-    'لغمان',
-    'لوگر',
-    'میدان وردک',
-    'ننگرهار',
-    'نورستان',
-    'نیمروز',
-    'هرات',
-    'هلمند',
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -143,6 +97,8 @@ class _AddScreenState extends State<AddScreen> {
                 hintText: 'کیف پشتی برای مکاتب',
                 hasError: isTitleHasError,
                 errorText: '',
+                focusNode: focusNodeTitle,
+                textEditingController: textEditingControllerTitle,
                 onChange: (value) {
                   itemTitle = value;
                 },
@@ -171,6 +127,8 @@ class _AddScreenState extends State<AddScreen> {
                 hintText: 'چوک گلها',
                 hasError: isRegionHasError,
                 errorText: '',
+                focusNode: focusNodeRegion,
+                textEditingController: textEditingControllerRegion,
                 onChange: (value) {
                   itemRegion = value;
                 },
@@ -182,6 +140,8 @@ class _AddScreenState extends State<AddScreen> {
                 priceSaleType: priceSaleTypesList[itemSalePriceType],
                 hasError: isTotalPriceHasError,
                 errorText: '',
+                focusNode: focusNodeTotalPrice,
+                textEditingController: textEditingControllerTotalPrice,
                 onChange: (value) {
                   itemTotalPrice = value;
                 },
@@ -209,6 +169,9 @@ class _AddScreenState extends State<AddScreen> {
                           hintText: '1000',
                           hasError: isDiscountAmountHasError,
                           errorText: '',
+                          focusNode: focusNodeDiscountAmount,
+                          textEditingController:
+                              textEditingControllerDiscountAmount,
                           onChange: (value) {
                             itemDiscountAmount = int.parse(value);
                           },
@@ -222,6 +185,8 @@ class _AddScreenState extends State<AddScreen> {
                 hintText: 'تکه یی',
                 hasError: isMaterialHasError,
                 errorText: '',
+                focusNode: focusNodeMaterial,
+                textEditingController: textEditingControllerMaterial,
                 onChange: (value) {
                   itemMaterial = value;
                 },
@@ -233,6 +198,8 @@ class _AddScreenState extends State<AddScreen> {
                 maxLength: 1024,
                 hasError: isDescriptionHasError,
                 errorText: '',
+                focusNode: focusNodeDescription,
+                textEditingController: textEditingControllerDescription,
                 onChange: (value) {
                   itemDescription = value;
                 },
@@ -256,10 +223,27 @@ class _AddScreenState extends State<AddScreen> {
                 trailingText: statusTypesList[itemStatus],
               ),
               const SizedBox(height: 5),
-              ContinueTextButtonWidget(
+              BottomPageTextButtonWidget(
                 text: 'ادامه',
                 onPressed: () {
-                  // Navigator.pushNamed(context, DetailsScreen.id);
+                  Variables.itemModel = BagModel(
+                    itemCustomerId: '-NUYakSiJAtqZOTugjAN',
+                    itemCategoryId: 13,
+                    itemSubCategoryId: 13011,
+                    itemImages: bagImagesPathsList,
+                    itemTitle: itemTitle,
+                    itemProvince: itemProvince,
+                    itemRegion: itemRegion,
+                    itemTotalPrice: itemTotalPrice,
+                    itemPriceType: itemPriceType,
+                    itemSalePriceType: itemSalePriceType,
+                    itemDiscountAmount: itemDiscountAmount,
+                    itemType: itemType,
+                    itemMaterial: itemMaterial,
+                    itemDescription: itemDescription,
+                    itemStatus: itemStatus,
+                  );
+                  Navigator.pushNamed(context, AddDetailsScreen.id);
                 },
               ),
             ],

@@ -1,8 +1,8 @@
 import 'package:divar/constants/colors.dart';
 import 'package:flutter/material.dart';
 
-class ContinueTextButtonWidget extends StatelessWidget {
-  const ContinueTextButtonWidget({
+class BottomPageTextButtonWidget extends StatelessWidget {
+  const BottomPageTextButtonWidget({
     super.key,
     required this.text,
     required this.onPressed,
