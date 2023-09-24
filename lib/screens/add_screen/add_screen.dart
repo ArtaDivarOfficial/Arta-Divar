@@ -7,6 +7,7 @@ import 'package:divar/screens/add_screen/widgets/list_tile_widget.dart';
 import 'package:divar/screens/add_screen/widgets/submit_ad_guide_list_tile_widget.dart';
 import 'package:divar/screens/details_screen/details_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 
 class AddScreen extends StatefulWidget {
   const AddScreen({super.key});
@@ -18,6 +19,90 @@ class AddScreen extends StatefulWidget {
 }
 
 class _AddScreenState extends State<AddScreen> {
+  int itemCategoryId = -1,
+      itemSubCategoryId = -1,
+      itemProvince = 0,
+      itemPriceType = 0,
+      itemSalePriceType = 0,
+      itemDiscountAmount = -1,
+      itemType = 0,
+      itemStatus = 0;
+  XFile? image;
+  List<XFile?> bagImagesList = [];
+  List<String> bagImagesPathsList = [];
+  String itemTitle = '',
+      itemRegion = '',
+      itemMaterial = '',
+      itemDescription = '';
+  double itemTotalPrice = -1.0;
+  FocusNode focusNodeTitle = FocusNode(),
+      focusNodeRegion = FocusNode(),
+      focusNodeMaterial = FocusNode(),
+      focusNodeDescription = FocusNode();
+  bool isTitleHasError = false,
+      isRegionHasError = false,
+      isTotalPriceHasError = false,
+      isDiscountAmountHasError = false,
+      isMaterialHasError = false,
+      isDescriptionHasError = false;
+  List priceSaleTypesList = [
+    'مقطوع',
+    'جورآمد',
+    'توافقی',
+    'تخفیف',
+  ];
+  List priceTypesList = [
+    'افغانی',
+    'دالر',
+  ];
+  List genderTypesList = [
+    'پسرانه',
+    'دخترانه',
+    'مردانه',
+    'زنانه',
+  ];
+  List statusTypesList = [
+    'نو',
+    'در حد نو',
+    'استفاده شده',
+  ];
+  List<String> provincesList = [
+    'ارزگان',
+    'بادغیس',
+    'بامیان',
+    'بدخشان',
+    'بغلان',
+    'بلخ',
+    'پروان',
+    'پکتیا',
+    'پکتیکا',
+    'پنجشیر',
+    'تخار',
+    'جوزجان',
+    'خوست',
+    'دایکندی',
+    'زابل',
+    'سر پل',
+    'سمنگان',
+    'غزنی',
+    'غور',
+    'فاریاب',
+    'فراه',
+    'قندهار',
+    'کابل',
+    'کاپیسا',
+    'کندز',
+    'کنر',
+    'لغمان',
+    'لوگر',
+    'میدان وردک',
+    'ننگرهار',
+    'نورستان',
+    'نیمروز',
+    'هرات',
+    'هلمند',
+  ];
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -34,13 +119,33 @@ class _AddScreenState extends State<AddScreen> {
               const SizedBox(height: 5),
               const SubmitAdGuideListTileWidget(),
               const SizedBox(height: 5),
-              const AdvertisementSelectImage(),
+              AdvertisementSelectImage(
+                bagImagesPathsList: bagImagesPathsList,
+                onTapClearImages: () {
+                  setState(() {
+                    bagImagesPathsList.clear();
+                  });
+                },
+                onTapAddImages: () async {
+                  if (bagImagesPathsList.length < 10) {
+                    image = await ImagePicker()
+                        .pickImage(source: ImageSource.gallery);
+                    if (image != null) {
+                      bagImagesPathsList.add(image!.path);
+                      setState(() {});
+                    }
+                  }
+                },
+              ),
               const SizedBox(height: 5),
-              const CustomTextField(
-                text: 'عنوان',
-                maxLength: 32,
+              CustomTextField(
+                title: 'عنوان',
                 hintText: 'کیف پشتی برای مکاتب',
-                hasError: false,
+                hasError: isTitleHasError,
+                errorText: '',
+                onChange: (value) {
+                  itemTitle = value;
+                },
               ),
               const SizedBox(height: 5),
               ListTileWidget(
@@ -49,40 +154,63 @@ class _AddScreenState extends State<AddScreen> {
                 trailingText: 'هرات',
               ),
               const SizedBox(height: 5),
-              const CustomTextField(
-                text: 'منطقه',
-                maxLength: 32,
+              CustomTextField(
+                title: 'منطقه',
                 hintText: 'چوک گلها',
-                hasError: false,
+                hasError: isRegionHasError,
+                errorText: '',
+                onChange: (value) {
+                  itemRegion = value;
+                },
               ),
               const SizedBox(height: 5),
-              const CustomPriceTextField(
-                text: 'قیمت (افغانی)',
-                maxLength: 32,
+              CustomPriceTextField(
+                title: 'قیمت (افغانی)',
                 hintText: '10000',
-                priceSaleType: 'تخفیف',
-                hasError: false,
+                priceSaleType: priceSaleTypesList[itemSalePriceType],
+                hasError: isTotalPriceHasError,
+                errorText: '',
+                onChange: (value) {
+                  itemTotalPrice = value;
+                },
               ),
+              itemSalePriceType == 4
+                  ? Column(
+                      children: [
+                        const SizedBox(height: 5),
+                        CustomTextField(
+                          title: 'تخفیف (افغانی)',
+                          maxLength: 10,
+                          hintText: '1000',
+                          hasError: isDiscountAmountHasError,
+                          errorText: '',
+                          onChange: (value) {
+                            itemDiscountAmount = int.parse(value);
+                          },
+                        ),
+                      ],
+                    )
+                  : const SizedBox(),
               const SizedBox(height: 5),
-              const CustomTextField(
-                text: 'تخفیف (افغانی)',
-                maxLength: 32,
-                hintText: '1000',
-                hasError: false,
-              ),
-              const SizedBox(height: 5),
-              const CustomTextField(
-                text: 'جنس (اختیاری)',
-                maxLength: 32,
+              CustomTextField(
+                title: 'جنس (اختیاری)',
                 hintText: 'تکه یی',
-                hasError: false,
+                hasError: isMaterialHasError,
+                errorText: '',
+                onChange: (value) {
+                  itemMaterial = value;
+                },
               ),
               const SizedBox(height: 5),
-              const CustomDescriptionTextField(
-                text: 'توضیحات (اختیاری)',
-                maxLength: 32,
+              CustomDescriptionTextField(
+                title: 'توضیحات (اختیاری)',
                 hintText: 'توضیحات',
-                hasError: false,
+                maxLength: 1024,
+                hasError: isDescriptionHasError,
+                errorText: '',
+                onChange: (value) {
+                  itemDescription = value;
+                },
               ),
               const SizedBox(height: 5),
               ListTileWidget(
@@ -94,7 +222,7 @@ class _AddScreenState extends State<AddScreen> {
               ContinueTextButtonWidget(
                 text: 'ادامه',
                 onPressed: () {
-                  Navigator.pushNamed(context, DetailsScreen.id);
+                  // Navigator.pushNamed(context, DetailsScreen.id);
                 },
               ),
             ],

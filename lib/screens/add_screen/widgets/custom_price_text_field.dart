@@ -3,19 +3,19 @@ import 'package:flutter/material.dart';
 class CustomPriceTextField extends StatelessWidget {
   const CustomPriceTextField({
     super.key,
-    required this.text,
+    required this.title,
     required this.hintText,
     required this.priceSaleType,
-    required this.maxLength,
-    required this.hasError,
-    this.textInputType,
+    this.hasError = false,
+    this.errorText,
+    required this.onChange,
   });
-  final String text;
+  final String title;
   final String hintText;
   final String priceSaleType;
-  final int maxLength;
-  final bool hasError;
-  final TextInputType? textInputType;
+  final bool? hasError;
+  final String? errorText;
+  final Function(double) onChange;
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +27,7 @@ class CustomPriceTextField extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
             child: Text(
-              text,
+              title,
               style: Theme.of(context)
                   .textTheme
                   .titleMedium!
@@ -40,17 +40,19 @@ class CustomPriceTextField extends StatelessWidget {
               Expanded(
                 flex: 3,
                 child: TextFormField(
-                  keyboardType: TextInputType.text,
+                  keyboardType: TextInputType.number,
                   controller: TextEditingController(),
                   onTap: () {},
-                  onChanged: (value) {},
+                  onChanged: (value) {
+                    onChange(double.parse(value));
+                  },
                   focusNode: FocusNode(),
                   enabled: true,
                   maxLength: 10,
                   decoration: InputDecoration(
                     counterStyle: Theme.of(context).textTheme.labelMedium,
                     hintText: hintText,
-                    errorText: hasError ? 'لطفا قیمت را وارد نمایید' : null,
+                    errorText: hasError! ? errorText : null,
                     hintStyle:
                         Theme.of(context).textTheme.titleMedium!.copyWith(
                               color: Colors.grey,

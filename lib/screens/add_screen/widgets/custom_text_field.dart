@@ -3,17 +3,22 @@ import 'package:flutter/material.dart';
 class CustomTextField extends StatelessWidget {
   const CustomTextField({
     super.key,
-    required this.text,
+    required this.title,
     required this.hintText,
-    required this.maxLength,
-    required this.hasError,
-    this.textInputType,
+    this.maxLength = 32,
+    this.hasError = false,
+    required this.errorText,
+    this.textInputType = TextInputType.text,
+    required this.onChange,
   });
-  final String text;
+
+  final String title;
   final String hintText;
-  final int maxLength;
-  final bool hasError;
+  final int? maxLength;
+  final bool? hasError;
+  final String errorText;
   final TextInputType? textInputType;
+  final Function(String) onChange;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +30,7 @@ class CustomTextField extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
             child: Text(
-              text,
+              title,
               style: Theme.of(context)
                   .textTheme
                   .titleMedium!
@@ -36,17 +41,17 @@ class CustomTextField extends StatelessWidget {
             padding: const EdgeInsets.symmetric(vertical: 5),
             child: ListTile(
               title: TextFormField(
-                keyboardType: TextInputType.text,
+                keyboardType: textInputType,
                 controller: TextEditingController(),
                 onTap: () {},
-                onChanged: (value) {},
+                onChanged: onChange,
                 focusNode: FocusNode(),
                 enabled: true,
                 maxLength: maxLength,
                 decoration: InputDecoration(
                   counterStyle: Theme.of(context).textTheme.labelMedium,
                   hintText: hintText,
-                  errorText: hasError ? 'لطفا عنوان را وارد نمایید' : null,
+                  errorText: hasError! ? errorText : null,
                   hintStyle: Theme.of(context).textTheme.titleMedium!.copyWith(
                         color: Colors.grey,
                       ),
