@@ -4,6 +4,24 @@ List<String> advertisementBannerList = [
   'assets/images/123.jpg',
 ];
 
+List<Map<String, dynamic>> onboardingList = [
+  {
+    'title': 'خوش آمدید',
+    'subTitle': 'آرتا دیوار، فروشگاه خانگی شما!',
+    'image': '',
+  },
+  {
+    'title': 'همه چیزی که نیاز دارید را در یک مکان پیدا کنید!',
+    'subTitle': '',
+    'image': '',
+  },
+  {
+    'title': 'به جمع خریداران ما بپیوندید و خرید خود را شروع کنید!',
+    'subTitle': '',
+    'image': '',
+  },
+];
+
 List<Map<String, dynamic>> categoriesSvgList = [
   {
     'icon': 'assets/icons/home_property.svg',

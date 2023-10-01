@@ -2,6 +2,7 @@
 import 'package:divar/entry_point_screen.dart';
 import 'package:divar/screens/initial_screens/registration_screens/otp_code_screen.dart';
 import 'package:divar/screens/initial_screens/registration_screens/sign_in_sign_up_screen.dart';
+import 'package:divar/screens/main_screens/add_categories_screen/add_categories_screen.dart';
 import 'package:divar/screens/main_screens/add_screen/add_screen.dart';
 import 'package:divar/screens/main_screens/categories_screen/categories_screen.dart';
 import 'package:divar/screens/main_screens/details_screen/details_screen.dart';
@@ -20,6 +21,7 @@ import 'package:divar/translations/locale_keys.g.dart';
 import 'package:divar/utilities/app_router.dart';
 import 'package:divar/constants/colors.dart';
 
+import 'screens/initial_screens/onboarding_screen/onboarding_screen.dart';
 import 'screens/initial_screens/splash_screen/splash_screen.dart';
 import 'screens/main_screens/home_screen/home_screen.dart';
 
@@ -110,8 +112,10 @@ class MyApp extends StatelessWidget {
           AddScreen.id: (context) => const AddScreen(),
           CategoriesScreen.id: (context) => const CategoriesScreen(),
           MyAdvertisementScreen.id: (context) => const MyAdvertisementScreen(),
+          AddCategoriesScreen.id: (context) => const AddCategoriesScreen(),
+          OnboardingScreen.id: (context) => const OnboardingScreen(),
         },
-        initialRoute: SignInSignUpScreen.id,
+        initialRoute: OnboardingScreen.id,
       ),
     );
   }
