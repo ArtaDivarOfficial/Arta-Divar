@@ -8,17 +8,20 @@ List<Map<String, dynamic>> onboardingList = [
   {
     'title': 'خوش آمدید',
     'subTitle': 'آرتا دیوار، فروشگاه خانگی شما!',
-    'image': '',
+    'image': 'assets/onboarding/47215472.png',
+    'bottomImage': 'assets/onboarding/Path-1_01.png',
   },
   {
     'title': 'همه چیزی که نیاز دارید را در یک مکان پیدا کنید!',
     'subTitle': '',
-    'image': '',
+    'image': 'assets/onboarding/4721547.png',
+    'bottomImage': 'assets/onboarding/Path-1_02.png',
   },
   {
     'title': 'به جمع خریداران ما بپیوندید و خرید خود را شروع کنید!',
     'subTitle': '',
-    'image': '',
+    'image': 'assets/onboarding/47215472.png',
+    'bottomImage': 'assets/onboarding/Path-1_03.png',
   },
 ];
 
