@@ -1,5 +1,7 @@
 import 'dart:convert';
 
+import 'package:divar/heplers/functions/helper_functions.dart';
+import 'package:divar/repositories/items_respositories/bags_respository/constants/constants.dart';
 import 'package:divar/repositories/items_respositories/item_repository/constants/constants.dart';
 import 'package:flutter/foundation.dart';
 
@@ -10,7 +12,8 @@ class ItemModel {
   final int? itemSubCategoryId;
   final List<String>? itemImages;
   final String? itemTitle;
-  final String? itemAddress;
+  final int? itemProvince;
+  final String? itemRegion;
   final double? itemTotalPrice;
   final int? itemPriceType;
   final int? itemSalePriceType;
@@ -27,7 +30,8 @@ class ItemModel {
     required this.itemSubCategoryId,
     required this.itemImages,
     required this.itemTitle,
-    required this.itemAddress,
+    required this.itemProvince,
+    required this.itemRegion,
     required this.itemTotalPrice,
     required this.itemPriceType,
     required this.itemSalePriceType,
@@ -45,7 +49,8 @@ class ItemModel {
     required this.itemSubCategoryId,
     required this.itemImages,
     required this.itemTitle,
-    required this.itemAddress,
+    required this.itemProvince,
+    required this.itemRegion,
     required this.itemTotalPrice,
     required this.itemPriceType,
     required this.itemSalePriceType,
@@ -63,7 +68,8 @@ class ItemModel {
     int? itemSubCategoryId,
     List<String>? itemImages,
     String? itemTitle,
-    String? itemAddress,
+    int? itemProvince,
+    String? itemRegion,
     double? itemTotalPrice,
     int? itemPriceType,
     int? itemSalePriceType,
@@ -81,7 +87,8 @@ class ItemModel {
       itemSubCategoryId: itemSubCategoryId ?? this.itemSubCategoryId,
       itemImages: itemImages ?? this.itemImages,
       itemTitle: itemTitle ?? this.itemTitle,
-      itemAddress: itemAddress ?? this.itemAddress,
+      itemProvince: itemProvince ?? this.itemProvince,
+      itemRegion: itemRegion ?? this.itemRegion,
       itemTotalPrice: itemTotalPrice ?? this.itemTotalPrice,
       itemPriceType: itemPriceType ?? this.itemPriceType,
       itemSalePriceType: itemSalePriceType ?? this.itemSalePriceType,
@@ -101,7 +108,8 @@ class ItemModel {
       ItemConstants.itemSubCategoryId: itemSubCategoryId,
       ItemConstants.itemImages: itemImages,
       ItemConstants.itemTitle: itemTitle,
-      ItemConstants.itemAddress: itemAddress,
+      ItemConstants.itemProvince: itemProvince,
+      ItemConstants.itemRegion: itemRegion,
       ItemConstants.itemTotalPrice: itemTotalPrice,
       ItemConstants.itemPriceType: itemPriceType,
       ItemConstants.itemSalePriceType: itemSalePriceType,
@@ -121,7 +129,8 @@ class ItemModel {
       ItemConstants.itemSubCategoryId: itemSubCategoryId,
       ItemConstants.itemImages: itemImages,
       ItemConstants.itemTitle: itemTitle,
-      ItemConstants.itemAddress: itemAddress,
+      ItemConstants.itemProvince: itemProvince,
+      ItemConstants.itemRegion: itemRegion,
       ItemConstants.itemTotalPrice: itemTotalPrice,
       ItemConstants.itemPriceType: itemPriceType,
       ItemConstants.itemSalePriceType: itemSalePriceType,
@@ -153,8 +162,11 @@ class ItemModel {
       itemTitle: map[ItemConstants.itemTitle] != null
           ? map[ItemConstants.itemTitle] as String
           : null,
-      itemAddress: map[ItemConstants.itemAddress] != null
-          ? map[ItemConstants.itemAddress] as String
+      itemProvince: map[ItemConstants.itemProvince] != null
+          ? map[ItemConstants.itemProvince] as int
+          : null,
+      itemRegion: map[ItemConstants.itemRegion] != null
+          ? map[ItemConstants.itemRegion] as String
           : null,
       itemTotalPrice: map[ItemConstants.itemTotalPrice] != null
           ? map[ItemConstants.itemTotalPrice] as double
@@ -184,6 +196,7 @@ class ItemModel {
   }
 
   factory ItemModel.fromMapItemModel(Map<String, dynamic> map) {
+    print('object');
     return ItemModel.itemModel(
       itemId: map[ItemConstants.itemId] != null
           ? map[ItemConstants.itemId] as int
@@ -192,31 +205,36 @@ class ItemModel {
           ? map[ItemConstants.itemCustomerId] as String
           : null,
       itemCategoryId: map[ItemConstants.itemCategoryId] != null
-          ? map[ItemConstants.itemCategoryId] as int
+          ? int.parse(map[ItemConstants.itemCategoryId].toString())
           : null,
       itemSubCategoryId: map[ItemConstants.itemSubCategoryId] != null
-          ? map[ItemConstants.itemSubCategoryId] as int
+          ? int.parse(map[ItemConstants.itemSubCategoryId].toString())
           : null,
-      itemImages: map[ItemConstants.itemImages] != null
-          ? List<String>.from((map[ItemConstants.itemImages] as List<String>))
+      itemImages: HelperFunctions.getImages(
+                  map, ItemConstants.itemImages, BagConstants.apiBagsImages) !=
+              null
+          ? []
           : null,
       itemTitle: map[ItemConstants.itemTitle] != null
           ? map[ItemConstants.itemTitle] as String
           : null,
-      itemAddress: map[ItemConstants.itemAddress] != null
-          ? map[ItemConstants.itemAddress] as String
+      itemProvince: map[ItemConstants.itemProvince] != null
+          ? int.parse(map[ItemConstants.itemProvince].toString())
+          : null,
+      itemRegion: map[ItemConstants.itemRegion] != null
+          ? map[ItemConstants.itemRegion] as String
           : null,
       itemTotalPrice: map[ItemConstants.itemTotalPrice] != null
-          ? map[ItemConstants.itemTotalPrice] as double
+          ? double.parse(map[ItemConstants.itemTotalPrice].toString())
           : null,
       itemPriceType: map[ItemConstants.itemPriceType] != null
-          ? map[ItemConstants.itemPriceType] as int
+          ? int.parse(map[ItemConstants.itemPriceType].toString())
           : null,
       itemSalePriceType: map[ItemConstants.itemSalePriceType] != null
-          ? map[ItemConstants.itemSalePriceType] as int
+          ? int.parse(map[ItemConstants.itemSalePriceType].toString())
           : null,
       itemDiscountAmount: map[ItemConstants.itemDiscountAmount] != null
-          ? map[ItemConstants.itemDiscountAmount] as int
+          ? int.parse(map[ItemConstants.itemDiscountAmount].toString())
           : null,
       itemPublishStatus: map[ItemConstants.itemPublishStatus] != null
           ? map[ItemConstants.itemPublishStatus] as String
@@ -240,7 +258,7 @@ class ItemModel {
 
   @override
   String toString() {
-    return 'ItemModel(itemId: $itemId, itemCustomerId: $itemCustomerId, itemCategoryId: $itemCategoryId, itemSubCategoryId: $itemSubCategoryId, itemImages: $itemImages, itemTitle: $itemTitle, itemAddress: $itemAddress, itemTotalPrice: $itemTotalPrice, itemPriceType: $itemPriceType, itemSalePriceType: $itemSalePriceType, itemDiscountAmount: $itemDiscountAmount, itemPublishStatus: $itemPublishStatus, itemSoldStatus: $itemSoldStatus, itemCreatedAt: $itemCreatedAt, itemUpdatedAt: $itemUpdatedAt)';
+    return 'ItemModel(itemId: $itemId, itemCustomerId: $itemCustomerId, itemCategoryId: $itemCategoryId, itemSubCategoryId: $itemSubCategoryId, itemImages: $itemImages, itemTitle: $itemTitle, itemProvince: $itemProvince, itemRegion: $itemRegion, itemTotalPrice: $itemTotalPrice, itemPriceType: $itemPriceType, itemSalePriceType: $itemSalePriceType, itemDiscountAmount: $itemDiscountAmount, itemPublishStatus: $itemPublishStatus, itemSoldStatus: $itemSoldStatus, itemCreatedAt: $itemCreatedAt, itemUpdatedAt: $itemUpdatedAt)';
   }
 
   @override
@@ -253,7 +271,8 @@ class ItemModel {
         other.itemSubCategoryId == itemSubCategoryId &&
         listEquals(other.itemImages, itemImages) &&
         other.itemTitle == itemTitle &&
-        other.itemAddress == itemAddress &&
+        other.itemProvince == itemProvince &&
+        other.itemRegion == itemRegion &&
         other.itemTotalPrice == itemTotalPrice &&
         other.itemPriceType == itemPriceType &&
         other.itemSalePriceType == itemSalePriceType &&
@@ -272,7 +291,8 @@ class ItemModel {
         itemSubCategoryId.hashCode ^
         itemImages.hashCode ^
         itemTitle.hashCode ^
-        itemAddress.hashCode ^
+        itemProvince.hashCode ^
+        itemRegion.hashCode ^
         itemTotalPrice.hashCode ^
         itemPriceType.hashCode ^
         itemSalePriceType.hashCode ^

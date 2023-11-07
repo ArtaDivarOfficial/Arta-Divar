@@ -1,9 +1,12 @@
+import 'package:divar/constants/lists.dart';
+import 'package:divar/repositories/items_respositories/bags_respository/cubit/bag_cubit.dart';
 import 'package:divar/screens/categories_screen/app_bar_back_icon_button_widget.dart';
 import 'package:divar/screens/categories_screen/bottom_sheet_list_tile.dart';
 import 'package:divar/screens/categories_screen/filter_tabbar.dart';
 import 'package:divar/screens/categories_screen/search_text_field_widget.dart';
 import 'package:divar/screens/home_screen/widgets/vertical_items_widget_list.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CategoriesScreen extends StatefulWidget {
   const CategoriesScreen({super.key});
@@ -16,6 +19,14 @@ class CategoriesScreen extends StatefulWidget {
 
 class _CategoriesScreenState extends State<CategoriesScreen> {
   bool isSearchIconClicked = false;
+  String hintTextSearch = 'کیف مکتب', searchText = '';
+  FocusNode focusNodeSearch = FocusNode();
+
+  @override
+  void initState() {
+    super.initState();
+    // context.read<BagCubit>().emitGetBags();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -30,16 +41,32 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
                 ),
                 actions: [
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      setState(() {
+                        isSearchIconClicked = true;
+                      });
+                    },
                     icon: const Icon(Icons.search),
                   ),
                 ],
               ),
-        body: Column(
+        body:
+            // BlocBuilder<BagCubit, BagState>(
+            //   builder: (context, state) {
+            //     if (state is BagLoading ||
+            //         state is BagFetchingData ||
+            //         state is BagSearching) {
+            //       return const Center(child: CircularProgressIndicator());
+            //     } else if (state is BagsListLoaded) {
+            //       if (state is BagEmpty) {
+            //         return const Center(child: Text('list empty'));
+            //       }
+            //       return
+            Column(
           children: [
             const SizedBox(height: 5),
             FilterTabbar(
-              filterText: 'مسکونی / کرایی',
+              filterText: 'همه',
               onFilterPressed: () {
                 showModalBottomSheet(
                     context: context,
@@ -57,13 +84,22 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
               },
             ),
             const SizedBox(height: 5),
-            const Expanded(
+            Expanded(
               child: SingleChildScrollView(
-                child: VerticalItemsWidgetList(),
+                child: VerticalItemsWidgetList(
+                  itemsList: itemsList,
+                ),
               ),
             ),
           ],
         ),
+        // } else if (state is BagError) {
+        //   return Center(child: Text('error: ${state.message}'));
+        // } else {
+        //   return const Center(child: Text('error'));
+        // }
+        // },
+        // ),
       ),
     );
   }
@@ -73,47 +109,32 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
       context,
       SearchTextFieldWidget(
         onSubmitted: (value) {
-          // if (searchText.isNotEmpty) {
-          //     setState(() {
-          //       isSearching = true;
-          //       isLoading = true;
-          //     });
-          //     focusNodeSearchTextField.unfocus();
-          //     await getItemsBySearchedText();
-          //   }
+          if (searchText.isNotEmpty) {
+            focusNodeSearch.unfocus();
+            context.read<BagCubit>().emitSearchBags(searchText);
+          }
         },
         text: '',
-        focusNodeSearchTextField: FocusNode(),
+        hintText: hintTextSearch,
+        focusNodeSearchTextField: focusNodeSearch,
         onChangedSearch: (value) {
-          //   searchText = value;
-          //   if (searchText.isEmpty) {
-          //     setState(() {
-          //       isSearching = false;
-          //     });
-          //   }
+          searchText = value;
         },
       ),
       () {
-        // if (isLoading) {
-        //   onWillPopLoadingFalse();
-        //   return;
-        // }
-        // setState(() {
-        //   isSearchButtonClicked = false;
-        //   isSearching = false;
-        // });
+        setState(() {
+          isSearchIconClicked = false;
+        });
       },
       [
         IconButton(
           onPressed: () async {
-            // if (searchText.isNotEmpty) {
-            //   setState(() {
-            //     isSearching = true;
-            //     isLoading = true;
-            //   });
-            //   focusNodeSearchTextField.unfocus();
-            //   await getItemsBySearchedText();
-            // }
+            if (searchText.isNotEmpty) {
+              focusNodeSearch.unfocus();
+              context.read<BagCubit>().emitSearchBags(searchText);
+            } else {
+              focusNodeSearch.requestFocus();
+            }
           },
           icon: const Icon(
             Icons.search_rounded,

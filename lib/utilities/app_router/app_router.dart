@@ -5,7 +5,6 @@ import 'package:divar/screens/details_screen/add_details_screen.dart';
 import 'package:divar/screens/details_screen/details_screen.dart';
 import 'package:divar/screens/home_screen/home_screen.dart';
 import 'package:divar/screens/my_advertisement_screen/my_advertisement_screen.dart';
-import 'package:divar/screens/screens.dart';
 import 'package:divar/screens/search_screen/search_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -14,7 +13,8 @@ class AppRouter {
     switch (routeSettings.name) {
       case '/':
         return MaterialPageRoute(
-          builder: (_) => const Screens(),
+          builder: (_) => const MyAdvertisementScreen(),
+          // builder: (_) => const AddScreen(),
         );
       case AddScreen.id:
         return MaterialPageRoute(

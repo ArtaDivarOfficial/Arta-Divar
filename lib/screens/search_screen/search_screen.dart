@@ -56,7 +56,7 @@ class _SearchScreenState extends State<SearchScreen> {
             const SizedBox(height: 5),
             const Expanded(
               child: SingleChildScrollView(
-                child: VerticalItemsWidgetList(),
+                child: VerticalItemsWidgetList(itemsList: []),
               ),
             ),
           ],

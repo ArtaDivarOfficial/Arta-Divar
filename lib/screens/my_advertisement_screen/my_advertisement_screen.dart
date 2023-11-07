@@ -1,7 +1,9 @@
 import 'package:divar/constants/colors.dart';
 import 'package:divar/constants/lists.dart';
+import 'package:divar/repositories/my_advertisements_repository/cubit/my_advertisements_cubit.dart';
 import 'package:divar/screens/my_advertisement_screen/widgets/my_ad_card_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class MyAdvertisementScreen extends StatefulWidget {
   const MyAdvertisementScreen({super.key});
@@ -13,6 +15,14 @@ class MyAdvertisementScreen extends StatefulWidget {
 }
 
 class _MyAdvertisementScreenState extends State<MyAdvertisementScreen> {
+  @override
+  void initState() {
+    super.initState();
+    context
+        .read<MyAdvertisementsCubit>()
+        .emitGetMyAdvertisements(itemCustomerId: '-NUYakSiJAtqZOTugjAN');
+  }
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(

@@ -1,15 +1,8 @@
 class MyAdvertisementsConstants {
   // API Constants
-  static const String apiAddMyAdvertisements = '/add_my_advertisements';
-  static const String apiShowMyAdvertisementsDetails =
-      '/show_my_advertisements_details';
-  static const String apiEditMyAdvertisements = '/edit_my_advertisements';
-  static const String apiDeleteMyAdvertisements = '/delete_my_advertisements';
-  static const String apiShowAllMyAdvertisements =
-      '/show_all_my_advertisements';
+  //TODO
+  static const String apiShowMyAdvertisements = '/my_advertisement';
   static const String apiSearchMyAdvertisements = '/search_my_advertisements';
-  static const String apiMyAdvertisementsImages = '/my_advertisements_images';
-  static const String apiSoldMyAdvertisements = '/sold_my_advertisements';
   // Model Constants
   static const String itemId = 'item_id';
   static const String itemCustomerId = 'item_customer_id';

@@ -4,6 +4,7 @@ import 'package:divar/constants/variables.dart';
 import 'package:divar/packages/dio/dio.dart';
 import 'package:divar/repositories/items_respositories/bags_respository/constants/constants.dart';
 import 'package:divar/repositories/items_respositories/bags_respository/models/bag_model.dart';
+import 'package:divar/repositories/items_respositories/item_repository/models/item_model.dart';
 import 'package:divar/repositories/pagination_repository/models/pagination_model.dart';
 import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
@@ -15,7 +16,7 @@ class BagCubit extends Cubit<BagState> {
   late PaginationModel? _paginationModel;
   late CancelToken _cancelToken;
   late Response? _response;
-  late List<BagModel>? _bagModelsList;
+  late List<ItemModel>? _bagModelsList;
 
   BagCubit() : super(BagLoading()) {
     _dio = MyDio.getInstance();
@@ -55,12 +56,8 @@ class BagCubit extends Cubit<BagState> {
       _response = await _dio!.post(
         '${MyDio.baseAPIUrl}${BagConstants.apiAddBag}',
         data: formData,
-        options: Options(
-          validateStatus: (status) => true,
-        ),
         cancelToken: _cancelToken,
       );
-      print(_response!.data);
       if (_response!.statusCode == 200) {
         emit(BagAdded());
       } else {
@@ -132,8 +129,12 @@ class BagCubit extends Cubit<BagState> {
         _paginationModel = PaginationModel.fromMap(_response!.data);
         List? bagItemsList = _paginationModel!.paginationData;
         bagItemsList?.forEach((bagMapModel) {
-          _bagModelsList!.add(BagModel.fromMapItemModel(bagMapModel));
+          _bagModelsList!.add(ItemModel.fromMapItemModel(bagMapModel));
         });
+        if (_bagModelsList!.isEmpty) {
+          emit(BagEmpty());
+          return;
+        }
         emit(BagsListLoaded(_bagModelsList!));
       } else {
         emit(BagError('error'));
@@ -283,7 +284,7 @@ class BagCubit extends Cubit<BagState> {
     try {
       _bagModelsList = [];
       emit(BagLoading());
-      emit(BagFetchingData());
+      emit(BagSearching());
       FormData formData =
           FormData.fromMap({BagConstants.itemTitle: searchText});
       _response = await _dio!.post(
@@ -294,7 +295,7 @@ class BagCubit extends Cubit<BagState> {
       if (_response!.statusCode == 200) {
         List? bagItemsList = (_response!.data as List).reversed.toList();
         for (var bagModel in bagItemsList) {
-          _bagModelsList!.add(BagModel.fromMapItemModel(bagModel));
+          _bagModelsList!.add(ItemModel.fromMapItemModel(bagModel));
         }
         emit(BagsListLoaded(_bagModelsList!));
       } else {

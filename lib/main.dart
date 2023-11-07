@@ -5,6 +5,7 @@ import 'package:divar/repositories/chats_repositories/chat_messages_repository/c
 import 'package:divar/repositories/chats_repositories/chat_repository/cubit/chat_cubit.dart';
 import 'package:divar/repositories/customers_repositories/cubit/customer_cubit.dart';
 import 'package:divar/repositories/items_respositories/bags_respository/cubit/bag_cubit.dart';
+import 'package:divar/repositories/my_advertisements_repository/cubit/my_advertisements_cubit.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -78,6 +79,9 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => BagCubit(),
+        ),
+        BlocProvider(
+          create: (context) => MyAdvertisementsCubit(),
         ),
       ],
       child: AdaptiveTheme(

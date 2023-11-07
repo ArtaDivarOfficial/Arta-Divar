@@ -1,18 +1,19 @@
 import 'dart:ui' as ui;
 
-import 'package:divar/translations/locale_keys.g.dart';
 import 'package:flutter/material.dart';
 
 class SearchTextFieldWidget extends StatefulWidget {
   const SearchTextFieldWidget({
     super.key,
     required this.text,
+    required this.hintText,
     required this.focusNodeSearchTextField,
     required this.onChangedSearch,
     required this.onSubmitted,
   });
 
   final String text;
+  final String hintText;
   final FocusNode focusNodeSearchTextField;
   final Function(String) onChangedSearch;
   final Function(String) onSubmitted;
@@ -54,13 +55,13 @@ class _SearchTextFieldWidgetState extends State<SearchTextFieldWidget> {
           ),
       decoration: InputDecoration(
         border: InputBorder.none,
-        hintText: 'خانه فروشی',
+        hintText: widget.hintText,
         hintStyle: Theme.of(context).textTheme.titleMedium!.copyWith(
               color: Theme.of(context)
                   .textTheme
                   .titleMedium!
                   .color!
-                  .withOpacity(1),
+                  .withOpacity(0.5),
             ),
       ),
     );

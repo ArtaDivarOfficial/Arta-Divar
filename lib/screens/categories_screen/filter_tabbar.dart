@@ -33,7 +33,7 @@ class FilterTabbar extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Text(
-                  'مسکونی / کرایی',
+                  filterText,
                   style: Theme.of(context)
                       .textTheme
                       .titleMedium!
@@ -42,6 +42,7 @@ class FilterTabbar extends StatelessWidget {
                 const SizedBox(width: 5),
                 const Icon(
                   Icons.arrow_back_ios_new_rounded,
+                  color: Colors.black,
                   size: 20,
                 ),
               ],

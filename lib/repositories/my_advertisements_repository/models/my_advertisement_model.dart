@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:divar/repositories/items_respositories/my_advertisements_repository/constants/constants.dart';
+import 'package:divar/repositories/my_advertisements_repository/constants/constants.dart';
 import 'package:flutter/foundation.dart';
 
 class MyAdvertisementModel {

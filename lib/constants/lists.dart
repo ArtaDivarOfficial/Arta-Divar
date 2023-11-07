@@ -163,17 +163,19 @@ List<Map<String, dynamic>> appDrawerItemsList = [
 
 List categoriesFilterList = [
   'همه',
-  'مسکونی',
-  'تجاری',
-  'دوکان',
-  'گدام',
+  'کیف پشتی',
+  'کیف مسافرت',
+  'کیف مجلسی',
+  'کیف پول',
+  'سایر کیف',
 ];
 
 List subCategoriesFilterList = [
   'همه',
-  'فروشی',
-  'کرایی',
-  'گرویی',
+  'پسرانه',
+  'دخترانه',
+  'مردانه',
+  'زنانه',
 ];
 
 List priceSaleTypesList = [

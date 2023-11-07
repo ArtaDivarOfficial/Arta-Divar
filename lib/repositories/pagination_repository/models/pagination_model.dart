@@ -54,7 +54,7 @@ class PaginationModel {
           map[PaginationConstants.paginationCurrentPage] != null
               ? map[PaginationConstants.paginationCurrentPage] as int
               : null,
-      // paginationData: map[PaginationConstants.paginationData],
+      paginationData: map[PaginationConstants.paginationData] as List,
       paginationFirstPageUrl:
           map[PaginationConstants.paginationFirstPageUrl] != null
               ? map[PaginationConstants.paginationFirstPageUrl] as String

@@ -24,7 +24,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
   @override
   void initState() {
     super.initState();
-    itemModel = Variables.itemModel as BagModel;
+    // itemModel = Variables.itemModel as BagModel;
   }
 
   @override
@@ -55,7 +55,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                   child: Column(
                     children: [
                       Text(
-                        itemModel.itemTitle!,
+                        'کیف مکتب',
                         style: Theme.of(context).textTheme.titleLarge,
                       ),
                       Row(
@@ -67,7 +67,8 @@ class _DetailsScreenState extends State<DetailsScreen> {
                           ),
                           const SizedBox(width: 5),
                           Text(
-                            '${provincesList[itemModel.itemProvince!]}، ${itemModel.itemRegion}',
+                            // '${provincesList[itemModel.itemProvince!]}، ${itemModel.itemRegion}',
+                            itemsList[0]['address'],
                             style: Theme.of(context).textTheme.titleMedium,
                           ),
                         ],
@@ -80,7 +81,8 @@ class _DetailsScreenState extends State<DetailsScreen> {
               Container(
                 color: Colors.white,
                 padding: const EdgeInsets.symmetric(vertical: 5),
-                child: itemModel.itemImages!.isEmpty
+                // child: itemModel.itemImages!.isEmpty
+                child: false
                     ? Container(
                         height: 225,
                         width: double.infinity,
@@ -105,12 +107,12 @@ class _DetailsScreenState extends State<DetailsScreen> {
                           scrollPhysics: const BouncingScrollPhysics(),
                           onPageChanged: (index, reason) {},
                         ),
-                        items: List.generate(itemModel.itemImages!.length,
-                            (index) {
+                        items: List.generate(5, (index) {
                           return ClipRRect(
                             borderRadius: BorderRadius.circular(15),
                             child: Image.asset(
-                              itemModel.itemImages![index],
+                              // itemModel.itemImages![index],
+                              'assets/images/bag.jpeg',
                               fit: BoxFit.fitHeight,
                             ),
                           );
@@ -133,7 +135,8 @@ class _DetailsScreenState extends State<DetailsScreen> {
                     Row(
                       children: [
                         Text(
-                          '${itemModel.itemTotalPrice} ${itemModel.itemPriceType == 0 ? '؋' : '\$'}',
+                          // '${itemModel.itemTotalPrice} ${itemModel.itemPriceType == 0 ? '؋' : '\$'}',
+                          '${itemsList[0]['price']} ؋',
                           style: Theme.of(context).textTheme.titleLarge,
                         ),
                         const SizedBox(width: 10),
@@ -144,7 +147,8 @@ class _DetailsScreenState extends State<DetailsScreen> {
                             borderRadius: BorderRadius.circular(10),
                           ),
                           child: Text(
-                            '${itemModel.itemSalePriceType == 3 ? '${itemModel.itemDiscountAmount} ؋ تخفیف' : priceSaleTypesList[itemModel.itemSalePriceType!]}',
+                            // '${itemModel.itemSalePriceType == 3 ? '${itemModel.itemDiscountAmount} ؋ تخفیف' : priceSaleTypesList[itemModel.itemSalePriceType!]}',
+                            '۶۰۰ ؋ تخفیف',
                             style: Theme.of(context)
                                 .textTheme
                                 .bodyMedium!
@@ -174,24 +178,25 @@ class _DetailsScreenState extends State<DetailsScreen> {
                         const SizedBox(height: 10),
                         DetailWidget(
                           title: 'دسته بندی',
-                          subTitle: HelperFunctions.getCategoryNameById(
-                              itemModel.itemCategoryId!),
+                          // subTitle: HelperFunctions.getCategoryNameById(
+                          //     itemModel.itemCategoryId!),
+                          subTitle: HelperFunctions.getCategoryNameById(1),
                         ),
                         DetailWidget(
                           title: 'نوع آگهی',
-                          subTitle: '${itemModel.itemSubCategoryId}',
+                          subTitle: 'مسکونی',
                         ),
                         DetailWidget(
                           title: 'جنس',
-                          subTitle: '${itemModel.itemMaterial}',
+                          subTitle: 'تکه یی',
                         ),
                         DetailWidget(
                           title: 'وضعیت',
-                          subTitle: '${statusTypesList[itemModel.itemStatus!]}',
+                          subTitle: 'نو',
                         ),
                         DescriptionWidget(
                           title: 'توضیحات',
-                          subTitle: itemModel.itemDescription!,
+                          subTitle: 'کیف مکتب پسرانه برای صنوف ابتدایی',
                         )
                       ],
                     ),
@@ -233,7 +238,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  'آرتا دیوار',
+                                  'کیف فروشی محمدی',
                                   style: Theme.of(context)
                                       .textTheme
                                       .titleMedium!
